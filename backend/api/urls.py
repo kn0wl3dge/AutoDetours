@@ -18,9 +18,11 @@ from django.urls import path, include
 from rest_framework import routers
 
 from malwaredb.views import MalwareViewSet
+from workers.views import WorkerViewSet
 
 router = routers.DefaultRouter()
 router.register(r'malware', MalwareViewSet)
+router.register(r'workers', WorkerViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
