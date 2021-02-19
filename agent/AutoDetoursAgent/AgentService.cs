@@ -123,7 +123,7 @@ namespace AutoDetoursAgent
             // Compute download URL
             StringBuilder url = new StringBuilder();
             url.Append(Constants.apiBaseURL);
-            url.Append("malware/");
+            url.Append("malwares/");
             url.Append(worker.malware);
             url.Append("/download/");
 
