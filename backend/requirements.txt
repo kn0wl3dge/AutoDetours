@@ -4,3 +4,4 @@ djangorestframework==3.12.2
 Markdown==3.3.3
 psycopg2==2.8.6
 django_fsm==2.7.1
+django_cors_headers==3.7.0
