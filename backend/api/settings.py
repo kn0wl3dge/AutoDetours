@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'rest_framework',
     'django_fsm',
     'malwaredb',
@@ -46,6 +47,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -106,6 +108,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Cors policy for dev
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000'
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
