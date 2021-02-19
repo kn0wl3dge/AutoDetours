@@ -1,0 +1,26 @@
+@import 'assets/scss/_variables.scss';
+
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+@import 'assets/scss/_bootswatch.scss';
+
+@import 'node_modules/bootstrap-vue/src/index.scss';
+
+body {
+  overflow-x: hidden;
+}
+
+// Toast
+@each $color, $value in $theme-colors {
+  .b-toast-#{$color} .toast {
+    background-color: $value !important;
+    border-color: $value !important;
+    color: $white !important;
+  }
+
+  .b-toast-#{$color} .toast .toast-header {
+    background-color: $value !important;
+    border-color: $value !important;
+    color: $white !important;
+  }
+}
