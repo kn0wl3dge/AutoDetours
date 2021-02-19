@@ -23,6 +23,7 @@ class Worker(models.Model):
                                 editable=False)
     state = FSMField(default=WorkerState.REGISTERED, protected=True,
                      editable=False)
+    date = models.DateTimeField(auto_now_add=True, editable=False)
 
     @transition(field=state, source=WorkerState.REGISTERED,
                 target=WorkerState.TASKED)
