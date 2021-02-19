@@ -21,7 +21,7 @@ from malwaredb.views import MalwareViewSet
 from workers.views import WorkerViewSet
 
 router = routers.DefaultRouter()
-router.register(r'malware', MalwareViewSet)
+router.register(r'malwares', MalwareViewSet)
 router.register(r'workers', WorkerViewSet)
 
 urlpatterns = [
