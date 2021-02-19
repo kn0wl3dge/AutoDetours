@@ -50,12 +50,12 @@ export default {
       display: true,
       items: [
         { key: 1, name: 'Dashboard', href: '/', icon: 'graph-up' },
-        { key: 2, name: 'Malware', href: '/malware', icon: 'bug' },
+        { key: 2, name: 'Malwares', href: '/malwares', icon: 'bug' },
         { key: 3, name: 'Workers', href: '/workers', icon: 'box' },
         {
           key: 4,
           name: 'Add a Malware',
-          href: '/malware/add',
+          href: '/malwares/add',
           icon: 'plus-square'
         },
         { key: 5, name: 'Settings', href: '/settings', icon: 'gear' }
