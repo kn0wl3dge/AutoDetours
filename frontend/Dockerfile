@@ -1,10 +1,12 @@
 FROM node:latest
 
+ENV HOST 0.0.0.0
+ENV NODE_ENV development
+
 RUN npm install -g nodemon
 
 RUN mkdir -p /usr/src/app/
 WORKDIR /usr/src/app/
 
-ONBUILD RUN npm install
-
-ENV HOST 0.0.0.0
+COPY package*.json ./
+RUN npm install
