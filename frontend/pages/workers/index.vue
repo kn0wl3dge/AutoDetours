@@ -1,12 +1,14 @@
 <template>
   <b-container fluid>
-    <h3>Workers</h3>
-    <b-row class="mb-4">
-      <ul>
-        <li v-for="w in workers" :key="w.id">
-          {{ w.id }}
-        </li>
-      </ul>
+    <b-row class="mb-2">
+      <h3>Workers</h3>
+    </b-row>
+    <b-row>
+      <worker-card
+        v-for="w in workers"
+        :key="w.id"
+        :worker="w"
+      />
     </b-row>
   </b-container>
 </template>
@@ -27,4 +29,7 @@ export default {
 </script>
 
 <style scoped>
+  .card {
+    width: 480px;
+  }
 </style>
