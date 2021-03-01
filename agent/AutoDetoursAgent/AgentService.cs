@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -53,6 +53,7 @@ namespace AutoDetoursAgent
             client.BaseAddress = new Uri(Constants.apiBaseURL);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.Timeout = TimeSpan.FromSeconds(5);
 
             // Init Worker
             worker.id = "";
@@ -71,14 +72,22 @@ namespace AutoDetoursAgent
 
         private async Task<bool> RegisterWorker()
         {
+            HttpResponseMessage response = null;
             // Make post request to /workers/
-            HttpResponseMessage response = await client.PostAsync(
-                "workers/",
-                new StringContent("{}", Encoding.UTF8, "application/json")
-            );
+            try
+            {
+                response = await client.PostAsync(
+                    "workers/",
+                    new StringContent("{}", Encoding.UTF8, "application/json")
+                );
+            }
+            catch (Exception ex)
+            {
+
+            }
             
             // If everything is okay
-            if (response.IsSuccessStatusCode)
+            if (response != null && response.IsSuccessStatusCode)
             {
                 // Get response data as a String
                 String resp = await response.Content.ReadAsStringAsync();
@@ -96,11 +105,19 @@ namespace AutoDetoursAgent
 
         private async Task<bool> GetTask()
         {
+            HttpResponseMessage response = null;
             // Make get request to /workers/{id}
-            HttpResponseMessage response = await client.GetAsync("workers/" + worker.id + "/get_task/");
+            try
+            {
+                response = await client.GetAsync("workers/" + worker.id + "/get_task/");
+            }
+            catch (Exception ex)
+            {
+
+            }
 
             // If everything is okay
-            if (response.IsSuccessStatusCode)
+            if (response != null && response.IsSuccessStatusCode)
             {
                 // Get response data as a String
                 String resp = await response.Content.ReadAsStringAsync();
@@ -130,6 +147,7 @@ namespace AutoDetoursAgent
             eventLog1.WriteEntry("Downloading file at " + url.ToString());
 
             // Download and save sample to C:/Temp/sample.exe
+            // TODO : Maybe add a try/catch in case the API go down
             WebClient downloader = new WebClient();
             downloader.DownloadFile(url.ToString(), "C:\\Temp\\sample.exe");
 
@@ -203,7 +221,7 @@ namespace AutoDetoursAgent
                 //SubmitTask();
                 ServiceController control = new ServiceController(ServiceName);
                 control.Stop();
-                // We should poweroff the VM instead of stopping the service
+                // /!\ We should poweroff the VM instead of stopping the service /!\
             }
         }
     }
