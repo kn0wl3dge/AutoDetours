@@ -25,5 +25,5 @@ router.register(r'malwares', MalwareViewSet)
 router.register(r'workers', WorkerViewSet)
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('api/', include(router.urls)),
 ]
