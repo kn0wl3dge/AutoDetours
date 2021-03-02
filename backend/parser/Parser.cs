@@ -13,7 +13,7 @@ namespace Parser
     {
         public string timestamp { get; set; }
         public long epoch { get; set; }
-        public int time { get; set; }
+        public long time_ms { get; set; }
         public string func_name { get; set; }
         public string[] func_params { get; set; }
         public string func_output { get; set; }
@@ -33,6 +33,15 @@ namespace Parser
             return Int64.TryParse(thread_string, out thread_int);
         }
 
+        static long convert_to_timestamp(string timestamp_8601)
+        {
+            DateTime value = DateTime.Parse(timestamp_8601);
+            DateTime epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+
+            TimeSpan elapsedTime = value - epoch;
+            return (long)elapsedTime.TotalMilliseconds;
+        }
+
         static Tuple<string, long> reformat_timestamp(String timestamp)
         {
             string year = timestamp.Substring(0, 4);
@@ -46,7 +55,7 @@ namespace Parser
             string timestamp_8601 = year + "-" + month + "-" + day + " " + hour + ":" + min + ":" + sec + "." + ms + "+00";
             
             DateTime datetime = DateTime.Parse(timestamp_8601);
-            long epoch = (datetime.Ticks - 621355968000000000) / 10000000;
+            long epoch = convert_to_timestamp(timestamp_8601);
 
             var result = Tuple.Create<string, long>(timestamp_8601, epoch);
 
@@ -112,17 +121,19 @@ namespace Parser
                     
             }
         }
-
+        
         static void parse_logs(string filename)
         {
             StreamReader reader = File.OpenText(filename);
             string[] lines = reader.ReadToEnd().Split('\n');
             List<string> json_list = new List<string>();
+
+            long start_time = reformat_timestamp(lines[0].Split(' ')[0]).Item2;
+            Console.WriteLine(start_time);
             
             for (int i = 0; i < lines.Length; i++)
             {
                 string[] items = lines[i].Split(' ');
-
                 if (is_valid_length_for_items(items))
                 {
                     if (is_thread_valid(items[4])) //Check if it is a thread 
@@ -134,6 +145,7 @@ namespace Parser
                             Tuple<string, long> timestamps = reformat_timestamp(items[0]);
                             log.timestamp = timestamps.Item1;
                             log.epoch = timestamps.Item2;
+                            log.time_ms = log.epoch - start_time;
 
                             log.func_name = get_func(items[5]);
                             log.func_params = get_func_params(items[5]);
