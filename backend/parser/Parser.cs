@@ -22,18 +22,18 @@ namespace Parser
 
     class Parser
     {
-        static bool is_valid_length_for_items(String[] items)
+        private static bool is_valid_length_for_items(String[] items)
         {
             return items.Length >= 5;
         }
 
-        static bool is_thread_valid(String thread_string)
+        private static bool is_thread_valid(String thread_string)
         {
             long thread_int; 
             return Int64.TryParse(thread_string, out thread_int);
         }
 
-        static long convert_to_timestamp(string timestamp_8601)
+        private static long convert_to_timestamp(string timestamp_8601)
         {
             DateTime value = DateTime.Parse(timestamp_8601);
             DateTime epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
@@ -42,7 +42,7 @@ namespace Parser
             return (long)elapsedTime.TotalMilliseconds;
         }
 
-        static Tuple<string, long> reformat_timestamp(String timestamp)
+        private static Tuple<string, long> reformat_timestamp(String timestamp)
         {
             string year = timestamp.Substring(0, 4);
             string month = timestamp.Substring(4, 2);
@@ -62,25 +62,25 @@ namespace Parser
             return result;
         }
 
-        static bool is_entry(String function_call)
+        private static bool is_entry(String function_call)
         {
             return function_call[0] == '+';
         }
 
-        static string[] get_func_params(string function_call)
+        private static string[] get_func_params(string function_call)
         {
             string start = function_call.Split('(')[1];
             string params_string = start.Split(')')[0];
             return params_string.Split(',');
         }
 
-        static string get_func(string function_call)
+        private static string get_func(string function_call)
         {
             string start = function_call.Substring(1);
             return start.Split('(')[0];            
         }
         
-        static string get_func_output(int i, string[] lines, string func_name)
+        private static string get_func_output(int i, string[] lines, string func_name)
         {
             for (; i < lines.Length; i++)
             {
@@ -106,30 +106,28 @@ namespace Parser
             return null;
         }
 
-        static void write_json(List<string> json_list)
+        private static void write_json(List<string> json_list)
         {
             FileStream stream = null;
             stream = new FileStream("log.json", FileMode.OpenOrCreate);
             using (StreamWriter writer = new StreamWriter(stream, Encoding.UTF8))
             {
                 writer.WriteLine('[');
-                json_list.ForEach(delegate (string json)
-                { 
-                    writer.WriteLine(json + ','); 
-                });
+                writer.Write(json_list[0]);
+                for (int i = 1; i < json_list.Count; i ++)
+                    writer.WriteLine(',' + json_list[i]);
                 writer.WriteLine(']');
                     
             }
         }
         
-        static void parse_logs(string filename)
+        public static void parse_logs(string filename)
         {
             StreamReader reader = File.OpenText(filename);
             string[] lines = reader.ReadToEnd().Split('\n');
             List<string> json_list = new List<string>();
 
             long start_time = reformat_timestamp(lines[0].Split(' ')[0]).Item2;
-            Console.WriteLine(start_time);
             
             for (int i = 0; i < lines.Length; i++)
             {
@@ -151,9 +149,13 @@ namespace Parser
                             log.func_params = get_func_params(items[5]);
                             log.func_output = get_func_output(i + 1, lines, log.func_name);
 
-                            json_list.Add(JsonConvert.SerializeObject(log, Formatting.Indented));
+                            try
+                            {
+                                json_list.Add(JsonConvert.SerializeObject(log, Formatting.Indented));
+                            }
+                            catch (JsonException) { }
+                                                                
                         }
-
                     }
                 }
             }
