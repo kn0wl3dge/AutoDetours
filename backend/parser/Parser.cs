@@ -14,6 +14,8 @@ namespace Parser
         public string timestamp { get; set; }
         public long epoch { get; set; }
         public long time_ms { get; set; }
+
+        public int thread { get; set; }
         public string func_name { get; set; }
         public string[] func_params { get; set; }
         public string func_output { get; set; }
@@ -62,9 +64,13 @@ namespace Parser
             return result;
         }
 
-        private static bool is_entry(String function_call)
+        private static int is_entry(String function_call)
         {
-            return function_call[0] == '+';
+            if (function_call.Length == 0)
+                return -1;
+            if (function_call[0] == '+')
+                return 1;
+            return 0;
         }
 
         private static string[] get_func_params(string function_call)
@@ -89,12 +95,17 @@ namespace Parser
                 {
                     if (is_thread_valid(items[4]))
                     {
-                        if (!is_entry(items[5]))
+                        int index_func_name = 5;
+
+                        while (is_entry(items[index_func_name]) == -1)
+                            index_func_name++;
+
+                        if (is_entry(items[index_func_name]) == 0)
                         {
-                            if (string.Compare(get_func(items[5]), func_name) == 0)
+                            if (string.Compare(get_func(items[index_func_name]), func_name) == 0)
                             {
-                                if (items.Length >= 8)
-                                    return items[7]; //Check if several return
+                                if (items.Length == index_func_name + 3)
+                                    return items[index_func_name + 2]; //Check if several return
                                 return "";
                             }
                         }
@@ -134,9 +145,14 @@ namespace Parser
                 string[] items = lines[i].Split(' ');
                 if (is_valid_length_for_items(items))
                 {
-                    if (is_thread_valid(items[4])) //Check if it is a thread 
+                    
+                    if (is_thread_valid(items[4]))
                     {
-                        if (is_entry(items[5]))
+                        int index_func_name = 5;
+                        while (is_entry(items[index_func_name]) == -1)
+                            index_func_name++;
+
+                        if (is_entry(items[index_func_name]) == 1)
                         {
                             Log log = new Log();
 
@@ -145,27 +161,34 @@ namespace Parser
                             log.epoch = timestamps.Item2;
                             log.time_ms = log.epoch - start_time;
 
-                            log.func_name = get_func(items[5]);
-                            log.func_params = get_func_params(items[5]);
+                            log.thread = int.Parse(items[4]);
+
+                            log.func_name = get_func(items[index_func_name]);
+                            log.func_params = get_func_params(items[index_func_name]);
                             log.func_output = get_func_output(i + 1, lines, log.func_name);
 
                             try
                             {
                                 json_list.Add(JsonConvert.SerializeObject(log, Formatting.Indented));
                             }
-                            catch (JsonException) { }
+                            catch (JsonException) 
+                            {
+                                Console.WriteLine("Didn't work for " + log.func_name);
+                                Thread.Sleep(100);
+                            }
                                                                 
                         }
                     }
                 }
             }
+
             write_json(json_list);
             reader.Close();
         }
         
         static void Main(string[] args)
         {
-            string filename = "traces.txt";
+            string filename = "traces2.txt";
             parse_logs(filename);
             
         }
