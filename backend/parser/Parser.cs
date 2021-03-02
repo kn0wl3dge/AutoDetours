@@ -11,22 +11,12 @@ namespace Parser
 {
     public class Log
     {
-        public string Timestamp { get; set; }
-        public string Pid { get; set; }
-        public string Hook { get; set; }
-        public string Func_name { get; set; }
-        public string[] Func_params { get; set; }
-        public string Func_output { get; set; }
-
-        public Log()
-        {
-            Timestamp = null;
-            Pid = null;
-            Hook = null;
-            Func_name = null;
-            Func_output = null;
-            Func_params = null;
-        }
+        public string timestamp { get; set; }
+        public long epoch { get; set; }
+        public int time { get; set; }
+        public string func_name { get; set; }
+        public string[] func_params { get; set; }
+        public string func_output { get; set; }
 
     }
 
@@ -43,7 +33,7 @@ namespace Parser
             return Int64.TryParse(thread_string, out thread_int);
         }
 
-        static string reformat_timestamp(String timestamp)
+        static Tuple<string, long> reformat_timestamp(String timestamp)
         {
             string year = timestamp.Substring(0, 4);
             string month = timestamp.Substring(4, 2);
@@ -52,8 +42,15 @@ namespace Parser
             string min = timestamp.Substring(10, 2);
             string sec = timestamp.Substring(12, 2);
             string ms = timestamp.Substring(14);
-            string timestamp_ret = year + "/" + month + "/" + day + "-" + hour + ":" + min + ":" + sec + ":" + ms;
-            return timestamp_ret;
+
+            string timestamp_8601 = year + "-" + month + "-" + day + " " + hour + ":" + min + ":" + sec + "." + ms + "+00";
+            
+            DateTime datetime = DateTime.Parse(timestamp_8601);
+            long epoch = (datetime.Ticks - 621355968000000000) / 10000000;
+
+            var result = Tuple.Create<string, long>(timestamp_8601, epoch);
+
+            return result;
         }
 
         static bool is_entry(String function_call)
@@ -68,17 +65,36 @@ namespace Parser
             return params_string.Split(',');
         }
 
-        static string get_func_output(string function_call)
-        {
-            if (function_call.Split('>').Length < 2)
-                return "";
-            return function_call.Split('>')[1];
-        }
-
         static string get_func(string function_call)
         {
             string start = function_call.Substring(1);
             return start.Split('(')[0];            
+        }
+        
+        static string get_func_output(int i, string[] lines, string func_name)
+        {
+            for (; i < lines.Length; i++)
+            {
+                string[] items = lines[i].Split();
+                if (is_valid_length_for_items(items))
+                {
+                    if (is_thread_valid(items[4]))
+                    {
+                        if (!is_entry(items[5]))
+                        {
+                            if (string.Compare(get_func(items[5]), func_name) == 0)
+                            {
+                                if (items.Length >= 8)
+                                    return items[7]; //Check if several return
+                                return "";
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            return null;
         }
 
         static void write_json(List<string> json_list)
@@ -87,10 +103,12 @@ namespace Parser
             stream = new FileStream("log.json", FileMode.OpenOrCreate);
             using (StreamWriter writer = new StreamWriter(stream, Encoding.UTF8))
             {
+                writer.WriteLine('[');
                 json_list.ForEach(delegate (string json)
                 { 
-                    writer.WriteLine(json); 
+                    writer.WriteLine(json + ','); 
                 });
+                writer.WriteLine(']');
                     
             }
         }
@@ -98,37 +116,39 @@ namespace Parser
         static void parse_logs(string filename)
         {
             StreamReader reader = File.OpenText(filename);
-
-            string line;
+            string[] lines = reader.ReadToEnd().Split('\n');
             List<string> json_list = new List<string>();
-            while ((line = reader.ReadLine()) != null)
+            
+            for (int i = 0; i < lines.Length; i++)
             {
-                Log log = new Log();
-                string[] items = line.Split(' ');
+                string[] items = lines[i].Split(' ');
+
                 if (is_valid_length_for_items(items))
                 {
                     if (is_thread_valid(items[4])) //Check if it is a thread 
                     {
-                        log.Timestamp = reformat_timestamp(items[0]);
-                        log.Pid = items[1];
-                        log.Hook = items[3].Substring(0, items[3].Length-1);
-
-                        log.Func_name = get_func(items[5]);
                         if (is_entry(items[5]))
-                            log.Func_params = get_func_params(items[5]);
+                        {
+                            Log log = new Log();
 
-                        else
-                            log.Func_output = get_func_output(items[5]);
+                            Tuple<string, long> timestamps = reformat_timestamp(items[0]);
+                            log.timestamp = timestamps.Item1;
+                            log.epoch = timestamps.Item2;
 
-                        json_list.Add(JsonConvert.SerializeObject(log, Formatting.Indented));               
+                            log.func_name = get_func(items[5]);
+                            log.func_params = get_func_params(items[5]);
+                            log.func_output = get_func_output(i + 1, lines, log.func_name);
+
+                            json_list.Add(JsonConvert.SerializeObject(log, Formatting.Indented));
+                        }
 
                     }
                 }
             }
             write_json(json_list);
+            reader.Close();
         }
         
-
         static void Main(string[] args)
         {
             string filename = "traces.txt";
