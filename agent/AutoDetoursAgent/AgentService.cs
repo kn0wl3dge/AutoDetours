@@ -228,7 +228,7 @@ namespace AutoDetoursAgent
 
     public class Constants
     {
-        static public string apiBaseURL = "http://192.168.0.68:8000/";
+        static public string apiBaseURL = "http://192.168.0.68/api/"; // CHANGE ME to docker host address. Maybe this will be fixed with container DNS
         static public int apiCheckPeriod = 30000; // 30 sec
     }
 
