@@ -21,7 +21,7 @@
           {{ worker.malware }}
         </b-col>
         <b-col v-else>
-          Waiting for a malware not analyzed yet...
+          Waiting for a malware not yet analyzed...
         </b-col>
       </b-row>
     </b-card-text>
