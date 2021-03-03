@@ -13,38 +13,36 @@ namespace Parser
     {
         public string timestamp { get; set; }
         public long epoch { get; set; }
-        public long time_ms { get; set; }
-
+        public long timeMs { get; set; }
         public int thread { get; set; }
-        public string func_name { get; set; }
-        public string[] func_params { get; set; }
-        public string func_output { get; set; }
-
+        public string funcName { get; set; }
+        public string[] funcParams { get; set; }
+        public string funcOutput { get; set; }
     }
 
     class Parser
     {
-        private static bool is_valid_length_for_items(String[] items)
+        private static bool isValidLengthForItems(String[] items)
         {
             return items.Length >= 5;
         }
 
-        private static bool is_thread_valid(String thread_string)
+        private static bool isThreadValid(String threadString)
         {
-            long thread_int; 
-            return Int64.TryParse(thread_string, out thread_int);
+            long threadInt; 
+            return Int64.TryParse(threadString, out threadInt);
         }
 
-        private static long convert_to_timestamp(string timestamp_8601)
+        private static long convertToTimestamp(string timestamp8601)
         {
-            DateTime value = DateTime.Parse(timestamp_8601);
+            DateTime value = DateTime.Parse(timestamp8601);
             DateTime epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
 
             TimeSpan elapsedTime = value - epoch;
             return (long)elapsedTime.TotalMilliseconds;
         }
 
-        private static Tuple<string, long> reformat_timestamp(String timestamp)
+        private static Tuple<string, long> reformatTimestamp(String timestamp)
         {
             string year = timestamp.Substring(0, 4);
             string month = timestamp.Substring(4, 2);
@@ -54,126 +52,115 @@ namespace Parser
             string sec = timestamp.Substring(12, 2);
             string ms = timestamp.Substring(14);
 
-            string timestamp_8601 = year + "-" + month + "-" + day + " " + hour + ":" + min + ":" + sec + "." + ms + "+00";
+            string timestamp8601 = year + "-" + month + "-" + day + " " + hour + ":" + min + ":" + sec + "." + ms + "+00";
             
-            DateTime datetime = DateTime.Parse(timestamp_8601);
-            long epoch = convert_to_timestamp(timestamp_8601);
+            DateTime datetime = DateTime.Parse(timestamp8601);
+            long epoch = convertToTimestamp(timestamp8601);
 
-            var result = Tuple.Create<string, long>(timestamp_8601, epoch);
+            var result = Tuple.Create<string, long>(timestamp8601, epoch);
 
             return result;
         }
 
-        private static int is_entry(String function_call)
+        private static int isEntry(String functionCall)
         {
-            if (function_call.Length == 0)
+            if (functionCall.Length == 0)
                 return -1;
-            if (function_call[0] == '+')
+            if (functionCall[0] == '+')
                 return 1;
             return 0;
         }
 
-        private static string[] get_func_params(string function_call)
+        private static string[] getFuncParams(string functionCall)
         {
-            string start = function_call.Split('(')[1];
-            string params_string = start.Split(')')[0];
-            return params_string.Split(',');
+            string start = functionCall.Split('(')[1];
+            string paramsString = start.Split(')')[0];
+            return paramsString.Split(',');
         }
 
-        private static string get_func(string function_call)
+        private static string getFunc(string functionCall)
         {
-            string start = function_call.Substring(1);
+            string start = functionCall.Substring(1);
             return start.Split('(')[0];            
         }
         
-        private static string get_func_output(int i, string[] lines, string func_name)
+        private static string getFuncOutput(int i, string[] lines, string funcName)
         {
             for (; i < lines.Length; i++)
             {
                 string[] items = lines[i].Split();
-                if (is_valid_length_for_items(items))
-                {
-                    if (is_thread_valid(items[4]))
+                if (isValidLengthForItems(items))
+                    if (isThreadValid(items[4]))
                     {
-                        int index_func_name = 5;
+                        int indexFuncName = 5;
+                        while (isEntry(items[indexFuncName]) == -1)
+                            indexFuncName++;
 
-                        while (is_entry(items[index_func_name]) == -1)
-                            index_func_name++;
-
-                        if (is_entry(items[index_func_name]) == 0)
-                        {
-                            if (string.Compare(get_func(items[index_func_name]), func_name) == 0)
+                        if (isEntry(items[indexFuncName]) == 0)
+                            if (string.Compare(getFunc(items[indexFuncName]), funcName) == 0)
                             {
-                                if (items.Length == index_func_name + 3)
-                                    return items[index_func_name + 2]; //Check if several return
+                                if (items.Length == indexFuncName + 3)
+                                    return items[indexFuncName + 2]; //Check if several return
                                 return "";
                             }
-                        }
-
                     }
-                }
             }
-
             return null;
         }
 
-        private static void write_json(List<string> json_list)
+        private static void writeJson(List<string> jsonList)
         {
             FileStream stream = null;
             stream = new FileStream("log.json", FileMode.OpenOrCreate);
             using (StreamWriter writer = new StreamWriter(stream, Encoding.UTF8))
             {
                 writer.WriteLine('[');
-                writer.Write(json_list[0]);
-                for (int i = 1; i < json_list.Count; i ++)
-                    writer.WriteLine(',' + json_list[i]);
-                writer.WriteLine(']');
-                    
+                writer.Write(jsonList[0]);
+                for (int i = 1; i < jsonList.Count; i ++)
+                    writer.WriteLine(',' + jsonList[i]);
+                writer.WriteLine(']');      
             }
         }
         
-        public static void parse_logs(string filename)
+        public static void parseLogs(string filename)
         {
             StreamReader reader = File.OpenText(filename);
             string[] lines = reader.ReadToEnd().Split('\n');
-            List<string> json_list = new List<string>();
-
-            long start_time = reformat_timestamp(lines[0].Split(' ')[0]).Item2;
+            List<string> jsonList = new List<string>();
+            long start_time = reformatTimestamp(lines[0].Split(' ')[0]).Item2;
             
             for (int i = 0; i < lines.Length; i++)
             {
                 string[] items = lines[i].Split(' ');
-                if (is_valid_length_for_items(items))
-                {
-                    
-                    if (is_thread_valid(items[4]))
+                if (isValidLengthForItems(items))
+                { 
+                    if (isThreadValid(items[4]))
                     {
-                        int index_func_name = 5;
-                        while (is_entry(items[index_func_name]) == -1)
-                            index_func_name++;
+                        int indexFuncName = 5;
+                        while (isEntry(items[indexFuncName]) == -1)
+                            indexFuncName++;
 
-                        if (is_entry(items[index_func_name]) == 1)
+                        if (isEntry(items[indexFuncName]) == 1)
                         {
                             Log log = new Log();
-
-                            Tuple<string, long> timestamps = reformat_timestamp(items[0]);
+                            Tuple<string, long> timestamps = reformatTimestamp(items[0]);
                             log.timestamp = timestamps.Item1;
                             log.epoch = timestamps.Item2;
-                            log.time_ms = log.epoch - start_time;
+                            log.timeMs = log.epoch - start_time;
 
                             log.thread = int.Parse(items[4]);
 
-                            log.func_name = get_func(items[index_func_name]);
-                            log.func_params = get_func_params(items[index_func_name]);
-                            log.func_output = get_func_output(i + 1, lines, log.func_name);
+                            log.funcName = getFunc(items[indexFuncName]);
+                            log.funcParams = getFuncParams(items[indexFuncName]);
+                            log.funcOutput = getFuncOutput(i + 1, lines, log.funcName);
 
                             try
                             {
-                                json_list.Add(JsonConvert.SerializeObject(log, Formatting.Indented));
+                                jsonList.Add(JsonConvert.SerializeObject(log, Formatting.Indented));
                             }
                             catch (JsonException) 
                             {
-                                Console.WriteLine("Didn't work for " + log.func_name);
+                                Console.WriteLine("Didn't work for " + log.funcName);
                                 Thread.Sleep(100);
                             }
                                                                 
@@ -181,16 +168,14 @@ namespace Parser
                     }
                 }
             }
-
-            write_json(json_list);
+            writeJson(jsonList);
             reader.Close();
         }
         
         static void Main(string[] args)
         {
-            string filename = "traces2.txt";
-            parse_logs(filename);
-            
+            string filename = "traces.txt";
+            parseLogs(filename);       
         }
     }
 }
