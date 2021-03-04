@@ -1,0 +1,15 @@
+E:\Documents\EPITA\Ing3\PFA\AutoDetours\agent\AutoDetoursAgent\bin\Debug\AutoDetoursAgent.exe.config
+E:\Documents\EPITA\Ing3\PFA\AutoDetours\agent\AutoDetoursAgent\bin\Debug\AutoDetoursAgent.exe
+E:\Documents\EPITA\Ing3\PFA\AutoDetours\agent\AutoDetoursAgent\bin\Debug\AutoDetoursAgent.pdb
+E:\Documents\EPITA\Ing3\PFA\AutoDetours\agent\AutoDetoursAgent\bin\Debug\Newtonsoft.Json.dll
+E:\Documents\EPITA\Ing3\PFA\AutoDetours\agent\AutoDetoursAgent\bin\Debug\System.Net.Http.Formatting.dll
+E:\Documents\EPITA\Ing3\PFA\AutoDetours\agent\AutoDetoursAgent\bin\Debug\Newtonsoft.Json.xml
+E:\Documents\EPITA\Ing3\PFA\AutoDetours\agent\AutoDetoursAgent\bin\Debug\System.Net.Http.Formatting.xml
+E:\Documents\EPITA\Ing3\PFA\AutoDetours\agent\AutoDetoursAgent\obj\Debug\AutoDetoursAgent.csprojAssemblyReference.cache
+E:\Documents\EPITA\Ing3\PFA\AutoDetours\agent\AutoDetoursAgent\obj\Debug\AutoDetoursAgent.AgentService.resources
+E:\Documents\EPITA\Ing3\PFA\AutoDetours\agent\AutoDetoursAgent\obj\Debug\AutoDetoursAgent.ProjectInstaller.resources
+E:\Documents\EPITA\Ing3\PFA\AutoDetours\agent\AutoDetoursAgent\obj\Debug\AutoDetoursAgent.csproj.GenerateResource.cache
+E:\Documents\EPITA\Ing3\PFA\AutoDetours\agent\AutoDetoursAgent\obj\Debug\AutoDetoursAgent.csproj.CoreCompileInputs.cache
+E:\Documents\EPITA\Ing3\PFA\AutoDetours\agent\AutoDetoursAgent\obj\Debug\AutoDetoursAgent.csproj.CopyComplete
+E:\Documents\EPITA\Ing3\PFA\AutoDetours\agent\AutoDetoursAgent\obj\Debug\AutoDetoursAgent.exe
+E:\Documents\EPITA\Ing3\PFA\AutoDetours\agent\AutoDetoursAgent\obj\Debug\AutoDetoursAgent.pdb
