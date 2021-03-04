@@ -169,18 +169,41 @@ namespace AutoDetoursAgent
 
         private void StopTracing()
         {
-            withdll.Kill();
-            syelogd.Kill();
+            eventLog1.WriteEntry("We entered StopTracing.");
+            //withdll.Kill();
+            eventLog1.WriteEntry("We killed withdll.");
+            //syelogd.Kill();
+            eventLog1.WriteEntry("StopTracing is done.");
         }
 
-        private void ParseResults()
+        private string ParseResults()
         {
-
+            eventLog1.WriteEntry("We entered ParseREsults function");
+            string inputFilename = "C:\\Temp\\traces.txt";
+            string outputFilename = "C:\\Temp\\logs.json";
+            string logs = Parser.ParseLogs(inputFilename, outputFilename);
+            eventLog1.WriteEntry(logs);
+            return logs;
         }
 
-        private void SubmitTask()
+        private async Task SubmitTask(string jsonLogs)
         {
+            eventLog1.WriteEntry("We entered Submit Task function");
 
+            string url = "workers/" + worker.id + "/submit_task/";
+
+            HttpResponseMessage response = null;
+            try
+            {
+                response = await client.PostAsync(url, new StringContent(jsonLogs, Encoding.UTF8, "application/json"));
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            if (response != null && response.IsSuccessStatusCode)
+                eventLog1.WriteEntry("Successfully registered as worker : " + worker.id);
         }
 
         private async void OnTimerCheckAPI(object source, ElapsedEventArgs e)
@@ -217,8 +240,8 @@ namespace AutoDetoursAgent
             // Kill it at the second timer iteration(after 30 sec)
             else if (isTracing) {
                 StopTracing();
-                //ParseResults();
-                //SubmitTask();
+                string logs = ParseResults();
+                await SubmitTask(logs);
                 ServiceController control = new ServiceController(ServiceName);
                 control.Stop();
                 // /!\ We should poweroff the VM instead of stopping the service /!\
@@ -228,7 +251,7 @@ namespace AutoDetoursAgent
 
     public class Constants
     {
-        static public string apiBaseURL = "http://192.168.0.68/api/"; // CHANGE ME to docker host address. Maybe this will be fixed with container DNS
+        static public string apiBaseURL = "http://10.41.174.143/api/"; // CHANGE ME to docker host address. Maybe this will be fixed with container DNS
         static public int apiCheckPeriod = 30000; // 30 sec
     }
 

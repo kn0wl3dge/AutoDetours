@@ -7,7 +7,7 @@ using System.IO;
 using System.Threading;
 using Newtonsoft.Json;
 
-namespace Parser
+namespace AutoDetoursAgent
 {
     public class Log
     {
@@ -53,7 +53,7 @@ namespace Parser
             string ms = timestamp.Substring(14);
 
             string timestamp8601 = year + "-" + month + "-" + day + " " + hour + ":" + min + ":" + sec + "." + ms + "+00";
-            
+
             DateTime datetime = DateTime.Parse(timestamp8601);
             long epoch = convertToTimestamp(timestamp8601);
 
@@ -81,9 +81,9 @@ namespace Parser
         private static string getFunc(string functionCall)
         {
             string start = functionCall.Substring(1);
-            return start.Split('(')[0];            
+            return start.Split('(')[0];
         }
-        
+
         private static string getFuncOutput(int i, string[] lines, string funcName)
         {
             for (; i < lines.Length; i++)
@@ -113,7 +113,7 @@ namespace Parser
             if (File.Exists(filename))
                 File.Delete(filename);
 
-            string tmp = "{\"results\":{[";
+            string tmp = "{\"results\":[";
             using (StreamWriter writer = File.CreateText(filename))
             {
                 writer.WriteLine('[');
@@ -125,7 +125,7 @@ namespace Parser
                     writer.WriteLine(',' + jsonList[i]);
                 }
                 writer.WriteLine(']');
-                tmp += "]}}";
+                tmp += "]}";
             }
             return tmp;
         }
@@ -135,7 +135,7 @@ namespace Parser
             int nb_items = 0;
             int i = 0;
 
-            while ( nb_items < length && i < items.Count)
+            while (nb_items < length && i < items.Count)
             {
                 if (items[i] == "")
                     items.RemoveAt(i);
@@ -145,16 +145,16 @@ namespace Parser
             }
         }
 
-        public static void parseLogs(string filename, string output)
+        public static string ParseLogs(string filename, string output)
         {
             string[] lines = null;
             using (StreamReader reader = File.OpenText(filename))
             {
                 lines = reader.ReadToEnd().Split('\n');
-            }   
+            }
             List<string> jsonList = new List<string>();
             long start_time = reformatTimestamp(lines[0].Split(' ')[0]).Item2;
-            
+
             for (int i = 0; i < lines.Length; i++)
             {
 
@@ -167,7 +167,7 @@ namespace Parser
 
                     if (isThreadValid(items[4]))
                     {
-                        
+
                         int indexFuncName = 5;
                         deleteSpaces(items, indexFuncName);
 
@@ -184,29 +184,21 @@ namespace Parser
                             log.funcName = getFunc(items[indexFuncName]);
                             log.funcParams = getFuncParams(items[indexFuncName]);
                             log.funcOutput = getFuncOutput(i + 1, lines, log.funcName);
-                            
+
                             try
                             {
                                 jsonList.Add(JsonConvert.SerializeObject(log, Formatting.Indented));
                             }
-                            catch (JsonException) 
+                            catch (JsonException)
                             {
                                 jsonList.Add("Error during serialization");
                             }
-                                                                
+
                         }
                     }
                 }
             }
-            Console.WriteLine(writeJson(jsonList, output));
-            Thread.Sleep(10);
-        }
-        
-        static void Main(string[] args)
-        {
-            string inputFilename = "traces.txt";
-            string outputFilename = "logs.json";
-            parseLogs(inputFilename, outputFilename);       
+            return writeJson(jsonList, output);
         }
     }
 }
