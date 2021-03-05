@@ -11,6 +11,7 @@ To host the application (nginx-server) you can use an other OS like linux or
 MacOS.
 
 ### Prerequisites
+
 [x] Docker installed on windows
 [x] Create C/Temp/ folder in windows
 [x] Move files `hooking/*.exe` in the previous file
