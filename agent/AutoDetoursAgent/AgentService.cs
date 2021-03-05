@@ -17,7 +17,9 @@ namespace AutoDetoursAgent
 {
     public partial class AgentService : ServiceBase
     {
-        private Timer timer = new Timer();
+        private Timer timer_agent = new Timer();
+        private Timer timer_trace = new Timer();
+
         private HttpClient client = new HttpClient();
         private Worker worker = new Worker();
 
@@ -26,6 +28,8 @@ namespace AutoDetoursAgent
 
         private Process syelogd = new Process();
         private Process withdll = new Process();
+
+        private int traceCheckPeriod;
 
 
         public AgentService()
@@ -45,9 +49,11 @@ namespace AutoDetoursAgent
         protected override void OnStart(string[] args)
         {
             // Set up a timer
-            timer.Interval = Constants.apiCheckPeriod;
-            timer.Elapsed += new ElapsedEventHandler(OnTimerCheckAPI);
-            timer.Start();
+            //apiCheckPeriod = int.Parse(JsonConvert.DeserializeObject<WorkerTask>(resp).time) * 100;
+            timer_agent.Interval = Constants.agentCheckPeriod;
+            timer_agent.Elapsed += new ElapsedEventHandler(OnTimerCheckAgent);
+            timer_agent.Start();
+            //eventLog1.WriteEntry("Timer set to : " + apiCheckPeriod / 100 + "s");
 
             // Set up HTTP Client
             client.BaseAddress = new Uri(Constants.apiBaseURL);
@@ -72,6 +78,7 @@ namespace AutoDetoursAgent
 
         private async Task<bool> RegisterWorker()
         {
+            eventLog1.WriteEntry("Trying to register");
             HttpResponseMessage response = null;
             // Make post request to /workers/
             try
@@ -81,7 +88,7 @@ namespace AutoDetoursAgent
                     new StringContent("{}", Encoding.UTF8, "application/json")
                 );
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -100,18 +107,20 @@ namespace AutoDetoursAgent
 
                 return true;
             }
+            eventLog1.WriteEntry("Wasn't able to register worker");
             return false;
         }
 
         private async Task<bool> GetTask()
         {
+            eventLog1.WriteEntry("Trying to get task");
             HttpResponseMessage response = null;
             // Make get request to /workers/{id}
             try
             {
                 response = await client.GetAsync("workers/" + worker.id + "/get_task/");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -126,12 +135,17 @@ namespace AutoDetoursAgent
                 {
                     // Deserialize the JSON to get a Worker obejct
                     worker.malware = JsonConvert.DeserializeObject<WorkerTask>(resp).malware;
-
                     eventLog1.WriteEntry("Agent is now tasked with sample : " + worker.malware);
 
+                    traceCheckPeriod = int.Parse(JsonConvert.DeserializeObject<WorkerTask>(resp).time) * 100;
+                    timer_trace.Interval = traceCheckPeriod;
+                    timer_trace.Elapsed += new ElapsedEventHandler(OnTimerCheckTrace);
+                    timer_trace.Start();
+                    eventLog1.WriteEntry("Trace duration set to : " + traceCheckPeriod / 100 + "s");
                     return true;
                 }
             }
+            eventLog1.WriteEntry("No task available");
             return false;
         }
 
@@ -183,7 +197,7 @@ namespace AutoDetoursAgent
 
         }
 
-        private async void OnTimerCheckAPI(object source, ElapsedEventArgs e)
+        private async void OnTimerCheckAgent(object source, ElapsedEventArgs e)
         {
             if (!readyForTracing)
             {
@@ -192,14 +206,11 @@ namespace AutoDetoursAgent
                 {
                     // If worker isn't registered
                     if (worker.id == "")
-                    {
                         await RegisterWorker();
-                    }
+
                     // If worker is now registered (or previously)
                     if (worker.id != "")
-                    {
                         await GetTask();
-                    }
                 }
                 // Not an else because task could be assigned in the previous condition
                 if (worker.malware != "")
@@ -208,6 +219,10 @@ namespace AutoDetoursAgent
                     readyForTracing = true;
                 }
             }
+        }
+
+        private async void OnTimerCheckTrace(object source, ElapsedEventArgs e)
+        { 
             // Launch the process the first time
             if (readyForTracing && !isTracing)
             {
@@ -228,8 +243,8 @@ namespace AutoDetoursAgent
 
     public class Constants
     {
-        static public string apiBaseURL = "http://192.168.0.68/api/"; // CHANGE ME to docker host address. Maybe this will be fixed with container DNS
-        static public int apiCheckPeriod = 30000; // 30 sec
+        static public string apiBaseURL = "http://192.168.208.1/api/"; // CHANGE ME to docker host address. Maybe this will be fixed with container DNS
+        static public int agentCheckPeriod = 30000;
     }
 
     public class Worker
@@ -242,5 +257,6 @@ namespace AutoDetoursAgent
     public class WorkerTask
     {
         public String malware { get; set; }
+        public String time { get; set; }
     }
 }
