@@ -169,16 +169,14 @@ namespace AutoDetoursAgent
 
         private void StopTracing()
         {
-            eventLog1.WriteEntry("We entered StopTracing.");
-            //withdll.Kill();
-            eventLog1.WriteEntry("We killed withdll.");
-            //syelogd.Kill();
-            eventLog1.WriteEntry("StopTracing is done.");
+            //if (!withdll.HasExited)
+            withdll.Kill();
+            if (!syelogd.HasExited)
+                syelogd.Kill();
         }
 
         private string ParseResults()
         {
-            eventLog1.WriteEntry("We entered ParseREsults function");
             string inputFilename = "C:\\Temp\\traces.txt";
             string outputFilename = "C:\\Temp\\logs.json";
             string logs = Parser.ParseLogs(inputFilename, outputFilename);
@@ -188,10 +186,7 @@ namespace AutoDetoursAgent
 
         private async Task SubmitTask(string jsonLogs)
         {
-            eventLog1.WriteEntry("We entered Submit Task function");
-
             string url = "workers/" + worker.id + "/submit_task/";
-
             HttpResponseMessage response = null;
             try
             {
@@ -203,7 +198,7 @@ namespace AutoDetoursAgent
             }
 
             if (response != null && response.IsSuccessStatusCode)
-                eventLog1.WriteEntry("Successfully registered as worker : " + worker.id);
+                eventLog1.WriteEntry("Task successfully submitted.");
         }
 
         private async void OnTimerCheckAPI(object source, ElapsedEventArgs e)
@@ -251,7 +246,7 @@ namespace AutoDetoursAgent
 
     public class Constants
     {
-        static public string apiBaseURL = "http://10.41.174.143/api/"; // CHANGE ME to docker host address. Maybe this will be fixed with container DNS
+        static public string apiBaseURL = "http://192.168.42.97/api/"; // CHANGE ME to docker host address. Maybe this will be fixed with container DNS
         static public int apiCheckPeriod = 30000; // 30 sec
     }
 
