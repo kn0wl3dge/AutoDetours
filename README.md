@@ -12,10 +12,10 @@ MacOS.
 
 ### Prerequisites
 
-[x] Docker installed on windows
-[x] Create C/Temp/ folder in windows
-[x] Move files `hooking/*.exe` in the previous file
-[x] VSCode with C# packages installed
+[X] Docker installed on windows
+[X] Create C/Temp/ folder in windows
+[X] Move files `hooking/*.exe` in the previous file
+[X] VSCode with C# packages installed
 
 ### Launching Agent
 Before building the agent update the ip adress in the `AgentService.cs` file
