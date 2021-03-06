@@ -183,18 +183,36 @@ namespace AutoDetoursAgent
 
         private void StopTracing()
         {
+            //if (!withdll.HasExited)
             withdll.Kill();
-            syelogd.Kill();
+            if (!syelogd.HasExited)
+                syelogd.Kill();
         }
 
-        private void ParseResults()
+        private string ParseResults()
         {
-
+            string inputFilename = "C:\\Temp\\traces.txt";
+            string outputFilename = "C:\\Temp\\logs.json";
+            string logs = Parser.ParseLogs(inputFilename, outputFilename);
+            eventLog1.WriteEntry(logs);
+            return logs;
         }
 
-        private void SubmitTask()
+        private async Task SubmitTask(string jsonLogs)
         {
+            string url = "workers/" + worker.id + "/submit_task/";
+            HttpResponseMessage response = null;
+            try
+            {
+                response = await client.PostAsync(url, new StringContent(jsonLogs, Encoding.UTF8, "application/json"));
+            }
+            catch (Exception ex)
+            {
 
+            }
+
+            if (response != null && response.IsSuccessStatusCode)
+                eventLog1.WriteEntry("Task successfully submitted.");
         }
 
         private async void OnTimerCheckAgent(object source, ElapsedEventArgs e)
@@ -232,8 +250,8 @@ namespace AutoDetoursAgent
             // Kill it at the second timer iteration(after 30 sec)
             else if (isTracing) {
                 StopTracing();
-                //ParseResults();
-                //SubmitTask();
+                string logs = ParseResults();
+                await SubmitTask(logs);
                 ServiceController control = new ServiceController(ServiceName);
                 control.Stop();
                 // /!\ We should poweroff the VM instead of stopping the service /!\
