@@ -3,16 +3,59 @@ version: "3.9"
 services:
   db:
     image: postgres
+    networks:
+      autodetours_lan:
+        ipv4_address: 172.20.0.13
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+
+  redis:
+    image: redis:alpine
+    networks:
+      autodetours_lan:
+        ipv4_address: 172.20.0.14
+
+  celery:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    entrypoint: []
+    command: celery -A api worker -l info
+    networks:
+      autodetours_lan:
+        ipv4_address: 172.20.0.15
+    volumes:
+      - ./backend:/app
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      - db
+      - redis
+      - api
+
+  celery-beat:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    entrypoint: []
+    command: celery -A api beat -l info
+    networks:
+      autodetours_lan:
+        ipv4_address: 172.20.0.16
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - celery
 
   api:
     build:
       context: ./backend
       dockerfile: Dockerfile
     command: python manage.py runserver 0.0.0.0:8000
+    networks:
+      autodetours_lan:
+        ipv4_address: 172.20.0.12
     volumes:
       - ./backend:/app
     depends_on:
@@ -23,6 +66,9 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     command: npm run dev
+    networks:
+      autodetours_lan:
+        ipv4_address: 172.20.0.11
     volumes:
       - ./frontend:/usr/src/app/
       - node_modules:/usr/src/app/node_modules
@@ -35,6 +81,9 @@ services:
       dockerfile: Dockerfile
     ports:
       - "80:80"
+    networks:
+      autodetours_lan:
+        ipv4_address: 172.20.0.10
     environment:
       - NGINX_PORT=80
     depends_on:
@@ -43,3 +92,11 @@ services:
 
 volumes:
   node_modules:
+
+networks:
+  autodetours_lan:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 172.20.0.0/24
+         gateway: 172.20.0.1
