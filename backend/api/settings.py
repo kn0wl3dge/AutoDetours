@@ -132,3 +132,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/api/static/'
+
+
+# Celery
+CELERY_BROKER_URL = "redis://redis:6379"
+CELERY_RESULT_BACKEND = "redis://redis:6379"
+
+CELERY_BEAT_SCHEDULE = {
+    "workers_pool": {
+        "task": "api.celery.workers_automation",
+        "schedule": 120.0,
+    }
+}
