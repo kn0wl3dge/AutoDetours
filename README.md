@@ -12,51 +12,44 @@ MacOS.
 
 ### Prerequisites
 
-- [X] Docker installed on windows
-- [X] Create C/Temp/ folder in windows
-- [X] Move files `hooking/*.exe` in the previous file
+- [X] Docker installed
 - [X] VSCode with C# packages installed
+- [X] Agent installed in a qcow2 Win7 image (+ .Net Framework 4.7.2)
 
-### Launching Agent
-Before building the agent update the ip adress in the `AgentService.cs` file
-at the class `Constants`.
+### Building the VM with the Agent
 
 #### Build
-- Open the project in VSCode and generate the solution.
+- Open the Agent project in VSCode and generate the solution for x86 if using Windows 7 32bits
 
 #### Installation
-- Open VSConsole as administrator and install the service previously created
-with the command:
-```
-InstallUtil AutoDetoursAgent.exe
-```
+- Download a Windows IE VirtualBox VM (https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/)
+- Unzip the VM and the untart the ova file
+- Convert the VMDK into a qcow2 image using `qemu-img convert -O qcow2 input.vmdk output.qcow2`
+- Run the VM using qemu : `.\qemu-system-i386.exe -monitor stdio -show-cursor -m 1024 -hda output.qcow2`
+- Copy the agent and its dependancies into the directory C:\\Temp\\agent of the Win7 VM (using qemu)
+- Copy files in the folder hooking into the directory C:\\Temp of the Win7 VM (using qemu)
+- Create a Windows Service (`sc create "Agent Detours" start= auto binPath= "C:\Temp\agent\AutoDetoursAgent.exe"`
+- Launch the service (`sc start "Agent Detours"`)
+- Take a snapshot of the running VM using `savevm agent`
 
-#### Uninstall
-- Open VSConsole as administrator and uninstall the service with the command:
-```
-InstallUtil /u AutoDetoursAgent.exe
-```
-
-### Docker
-To launch the docker you must use the `docker-compose.yml` in the root folder
+### Running the projet
+To run the project you must use the `docker-compose.yml` in the root folder
 of the project with the command:
 ```
 docker-compose up
 ```
 
-**Attention**: If there is an error during the docker compose command, you can
+**Warning**: If there is an error during the docker compose command, you can
 rebuild the docker with the command:
 ```
 docker-compose build
 ```
 
-Once the docker installed you can launch it in the windows docker interface and
-wait it starts.
-
-### Try the app
+## Usage
 You can now launch the app on your favorite Browser `#Brave <3` and upload a
 malware. Once the treatment is done you can dowload the result list on your
 computer.
+The application should be available at http://ip:80
 
 ## Main Contributors
 - [Radion94200](https://github.com/Radion94200)
