@@ -28,7 +28,7 @@ class WorkerViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
                 worker.save()
             except:
                 return Response({"error": "No task available"})
-            return Response({"malware": worker.malware.sha256})
+            return Response({"malware": worker.malware.sha256, "time": worker.malware.time})
         else:
             return Response({"error": "Worker is busy"})
 
