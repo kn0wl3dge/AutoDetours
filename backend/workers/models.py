@@ -18,7 +18,7 @@ class WorkerState(object):
 
 
 class Worker(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     malware = models.ForeignKey(Malware, on_delete=models.CASCADE, null=True,
                                 editable=False)
     state = FSMField(default=WorkerState.REGISTERED, protected=True,
