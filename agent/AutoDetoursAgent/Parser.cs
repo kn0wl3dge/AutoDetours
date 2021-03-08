@@ -105,7 +105,7 @@ namespace AutoDetoursAgent
                             }
                     }
             }
-            return null;
+            return "Program never closed in traces.";
         }
 
         private static string writeJson(List<string> jsonList, string filename)
@@ -184,6 +184,7 @@ namespace AutoDetoursAgent
                             log.funcName = getFunc(items[indexFuncName]);
                             log.funcParams = getFuncParams(items[indexFuncName]);
                             log.funcOutput = getFuncOutput(i + 1, lines, log.funcName);
+
 
                             try
                             {
