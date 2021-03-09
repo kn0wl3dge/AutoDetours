@@ -141,7 +141,7 @@ CELERY_RESULT_BACKEND = "redis://redis:6379"
 CELERY_BEAT_SCHEDULE = {
     "workers_pool": {
         "task": "workers.tasks.workers_automation",
-        "schedule": 30.0,
+        "schedule": 10.0,
     },
     "workers_timeout": {
         "task": "workers.tasks.workers_timeout",

@@ -6,6 +6,7 @@ from rest_framework.response import Response
 
 from workers.models import Worker, WorkerState
 from workers.serializers import WorkerSerializer
+from workers.tasks import worker_delete
 
 
 class WorkerViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
@@ -19,7 +20,7 @@ class WorkerViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
             raise ValidationError("You can delete a worker in this state")
         ip = instance.ip
         instance.delete()
-        worker_delete.s(ip)
+        worker_delete.delay(ip)
 
     @action(detail=True, methods=['GET'])
     def get_task(self, request, pk=None):
