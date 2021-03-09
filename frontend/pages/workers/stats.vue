@@ -2,7 +2,7 @@
   <b-container fluid>
     <h3>{{ stats.toto }}</h3>
     <b-row class="mb-4">
-      <repartitioncharts :data> </repartitioncharts>
+      <repartitioncharts> </repartitioncharts>
     </b-row>
   </b-container>
 </template>
