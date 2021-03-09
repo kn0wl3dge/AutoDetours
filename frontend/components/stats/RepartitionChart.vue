@@ -11,8 +11,14 @@ export default {
       type: Object,
       default () {
         return {
-          stateanalyse: [0, 0, 0],
-          labels: ['', '', '']
+          malware: {
+            stateanalyse: [0, 0, 0],
+            labels: ['', '', '']
+          },
+          worker: {
+            stateanalyse: [0, 0, 0],
+            labels: ['', '', '']
+          }
         }
       }
     }
@@ -27,11 +33,11 @@ export default {
   mounted () {
     this.chartdata = {
       datasets: [{
-        data: this.stats.stateanalyze,
+        data: this.stats.malware.stateanalyze,
         backgroundColor: ['#e74c3c', '#fd7e14', '#00bc8c'],
         borderColor: ['##fff', '##fff', '##fff']
       }],
-      labels: this.stats.labels
+      labels: this.stats.malware.labels
     }
     this.options = {
       responsive: true,
