@@ -4,12 +4,12 @@
     <b-row class="mb-4">
       <b-col>
         <b-card header="Malwares States" class="text-center">
-          <repartition-chart :stats="stats" />
+          <repartition-chart :stats="stats.malware" />
         </b-card>
       </b-col>
       <b-col>
         <b-card header="Workers States" class="text-center">
-          <repartition-chart />
+          <repartition-chart :stats="stats.worker" />
         </b-card>
       </b-col>
     </b-row>
@@ -25,12 +25,12 @@ export default {
     return {
       stats: {
         malware: {
-          stateanalyze: stats.datafrommalware,
+          stateanalyze: stats.info_malware.status,
           labels: ['Not Analyzed', 'Analyzing', 'Analyzed']
         },
         worker: {
-          workersup: stats.infoworker,
-          labels: ['REGISTERED', 'TASKED', 'FINISHED']
+          stateanalyze: stats.info_workers.status,
+          labels: ['Finished', 'Tasked', 'Registered']
         }
       }
     }
