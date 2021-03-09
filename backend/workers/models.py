@@ -1,5 +1,6 @@
 import uuid
 
+from django.utils import timezone
 from django.db import models
 from django_fsm import FSMField, transition
 
@@ -19,11 +20,14 @@ class WorkerState(object):
 
 class Worker(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
+    ip = models.GenericIPAddressField(editable=False)
     malware = models.ForeignKey(Malware, on_delete=models.CASCADE, null=True,
                                 editable=False)
     state = FSMField(default=WorkerState.REGISTERED, protected=True,
                      editable=False)
-    date = models.DateTimeField(auto_now_add=True, editable=False)
+    creation_date = models.DateTimeField(auto_now_add=True, editable=False)
+    analysis_start_date = models.DateTimeField(default=None, null=True, editable=False)
+    analysis_end_date = models.DateTimeField(default=None, null=True, editable=False)
 
     @transition(field=state, source=WorkerState.REGISTERED,
                 target=WorkerState.TASKED)
@@ -34,6 +38,7 @@ class Worker(models.Model):
             malware.analyze()
             malware.save()
             self.malware = malware
+            self.analysis_start_date = timezone.now()
         else:
             raise NoTaskAvailable
 
@@ -42,4 +47,5 @@ class Worker(models.Model):
     def finish_task(self, report):
         self.malware.end_analysis(report)
         self.malware.save()
-        # TODO : kill the VM
+        self.analysis_end_date = timezone.now()
+        

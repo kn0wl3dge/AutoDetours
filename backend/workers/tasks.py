@@ -1,6 +1,9 @@
 import docker
 
 from celery import shared_task
+from django.utils import timezone
+
+from workers.models import Worker, WorkerState
 
 @shared_task
 def worker_delete(ip):
@@ -14,8 +17,18 @@ def worker_delete(ip):
             break
 
 @shared_task
+def workers_timeout():
+    for worker in Worker.objects.filter(state=WorkerState.TASKED):
+        if timezone.now() - worker.analysis_start_date * 2 > worker.malware.time:
+            print("Worker %s timed out !" % worker.id)
+            worker.malware.end_analysis({"error": "Timed out.."})
+            worker.malware.save()
+            worker_delete.s(worker.ip)
+            worker.delete()
+
+@shared_task
 def workers_automation():
-    input_dir = "D:/IE9.Win7.VirtualBox/"
+    input_dir = "/home/ssg/Documents/qemu_img/"
     output_dir = "/image/"
     network = "autodetours_autodetours_lan"
     workers = {
@@ -24,6 +37,11 @@ def workers_automation():
         "autodetours_worker3": "win7-2.qcow2",
         "autodetours_worker4": "win7-3.qcow2",
         "autodetours_worker5": "win7-4.qcow2",
+        "autodetours_worker6": "win7-5.qcow2",
+        "autodetours_worker7": "win7-6.qcow2",
+        "autodetours_worker8": "win7-7.qcow2",
+        "autodetours_worker9": "win7-8.qcow2",
+        "autodetours_worker10": "win7-9.qcow2",
     }
     client = docker.DockerClient(base_url='unix://var/run/docker.sock')
 

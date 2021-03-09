@@ -141,5 +141,9 @@ CELERY_BEAT_SCHEDULE = {
     "workers_pool": {
         "task": "workers.tasks.workers_automation",
         "schedule": 30.0,
+    },
+    "workers_timeout": {
+        "task": "workers.tasks.workers_timeout",
+        "schedule": 10.0,
     }
 }
