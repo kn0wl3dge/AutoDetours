@@ -7,8 +7,6 @@ from rest_framework.response import Response
 from workers.models import Worker, WorkerState
 from workers.serializers import WorkerSerializer
 
-from workers.tasks import worker_delete
-
 
 class WorkerViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
                     mixins.RetrieveModelMixin, mixins.DestroyModelMixin,
@@ -16,16 +14,12 @@ class WorkerViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
     queryset = Worker.objects.all()
     serializer_class = WorkerSerializer
 
-    def destroy(self, request, *args, **kwargs):
-        instance = self.get_object()
-        self.perform_destroy(instance)
-        worker_delete.s(request.headers['X-Forwarded-For']) # This is not safe !!!
-        return Response(status=status.HTTP_204_NO_CONTENT)
-
     def perform_destroy(self, instance):
         if instance.state != WorkerState.FINISHED:
             raise ValidationError("You can delete a worker in this state")
+        ip = instance.ip
         instance.delete()
+        worker_delete.s(ip)
 
     @action(detail=True, methods=['GET'])
     def get_task(self, request, pk=None):
