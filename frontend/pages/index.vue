@@ -24,8 +24,14 @@ export default {
     const stats = await app.$axios.$get('/stats/')
     return {
       stats: {
-        stateanalyze: stats.status,
-        labels: ['Not Analyzed', 'Analyzing', 'Analyzed']
+        malware: {
+          stateanalyze: stats.datafrommalware,
+          labels: ['Not Analyzed', 'Analyzing', 'Analyzed']
+        },
+        worker: {
+          workersup: stats.infoworker,
+          labels: ['REGISTERED', 'TASKED', 'FINISHED']
+        }
       }
     }
   }
