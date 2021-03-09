@@ -6,9 +6,17 @@ import DoughnutChart from './doughnutchart'
 export default {
   name: 'repartitionchart',
   components: { DoughnutChart },
-  // props: {
-  //  top5: { type: Array, default () { return [] } }
-  // },
+  props: {
+    datafrommalware: {
+      type: Object,
+      default () {
+        return {
+          stateanalyse: [0, 0, 0],
+          labels: ['', '', '']
+        }
+      }
+    }
+  },
   data () {
     return {
       chartdata: null,
@@ -19,10 +27,11 @@ export default {
   mounted () {
     this.chartdata = {
       datasets: [{
-        data: [2, 5, 3], // data.toto,
-        backgroundColor: ['#E74C3C', '#fd7e14', '#18BC9C']
+        data: this.datafrommalware.stateanalyze,
+        backgroundColor: ['#E74C3C', '#fd7e14', '#18BC9C'],
+        borderColor: ['##fff', '##fff', '##fff']
       }],
-      labels: ['Analyzed', 'Test', 'Passed']
+      labels: this.datafrommalware.labels
     }
     this.options = {
       responsive: true,
