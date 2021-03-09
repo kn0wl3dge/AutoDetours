@@ -2,10 +2,10 @@
   <doughnut-chart v-if="loaded" :chartdata="chartdata" :options="options" />
 </template>
 <script>
-import DoughnutChart from './Chart'
+import DoughnutChart from './chart'
 export default {
-  name: 'RepartitionChart',
-  components: { DoughnutChart },
+  name: 'repartitionchart',
+  components: { doughnutchart },
   props: {
     top5: { type: Array, default () { return [] } }
   },
@@ -19,10 +19,10 @@ export default {
   mounted () {
     this.chartdata = {
       datasets: [{
-        data: this.getData(this.top5),
+        data: [7, 3, 1],
         backgroundColor: ['#E74C3C', '#fd7e14', '#18BC9C', '#3498DB', '#6610f2']
       }],
-      labels: this.getLabels(this.top5)
+      labels: ["Analyzed", "Test", "Passed"]
     }
     this.options = {
       responsive: true,
