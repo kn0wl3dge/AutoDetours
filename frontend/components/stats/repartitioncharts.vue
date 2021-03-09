@@ -2,13 +2,13 @@
   <doughnut-chart v-if="loaded" :chartdata="chartdata" :options="options" />
 </template>
 <script>
-import DoughnutChart from './chart'
+import DoughnutChart from './doughnutchart'
 export default {
   name: 'repartitionchart',
-  components: { doughnutchart },
-  props: {
-    top5: { type: Array, default () { return [] } }
-  },
+  components: { DoughnutChart },
+  // props: {
+  //  top5: { type: Array, default () { return [] } }
+  // },
   data () {
     return {
       chartdata: null,
@@ -19,35 +19,19 @@ export default {
   mounted () {
     this.chartdata = {
       datasets: [{
-        data: [7, 3, 1],
-        backgroundColor: ['#E74C3C', '#fd7e14', '#18BC9C', '#3498DB', '#6610f2']
+        data: [2, 5, 3], // data.toto,
+        backgroundColor: ['#E74C3C', '#fd7e14', '#18BC9C']
       }],
-      labels: ["Analyzed", "Test", "Passed"]
+      labels: ['Analyzed', 'Test', 'Passed']
     }
     this.options = {
       responsive: true,
       maintainAspectRatio: false,
       title: {
-        display: false
+        display: true
       }
     }
     this.loaded = true
-  },
-  methods: {
-    getLabels (main) {
-      const labels = []
-      for (let i = 0; i < main.length; i++) {
-        labels.push(main[i].name)
-      }
-      return labels
-    },
-    getData (main) {
-      const d = []
-      for (let i = 0; i < main.length; i++) {
-        d.push(Number(main[i].nbr))
-      }
-      return d
-    }
   }
 }
 </script>
