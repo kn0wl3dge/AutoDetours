@@ -9,7 +9,7 @@
       }"
     >
       <navbar />
-      <nuxt keep-alive :keep-alive-props="{ max: 20 }" />
+      <nuxt />
     </div>
   </div>
 </template>
