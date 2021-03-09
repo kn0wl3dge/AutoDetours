@@ -28,7 +28,7 @@ export default {
     this.chartdata = {
       datasets: [{
         data: this.stats.stateanalyze,
-        backgroundColor: ['#E74C3C', '#fd7e14', '#18BC9C'],
+        backgroundColor: ['#e74c3c', '#fd7e14', '#00bc8c'],
         borderColor: ['##fff', '##fff', '##fff']
       }],
       labels: this.stats.labels
@@ -38,6 +38,9 @@ export default {
       maintainAspectRatio: false,
       title: {
         display: true
+      },
+      legend: {
+        position: 'bottom'
       }
     }
     this.loaded = true
