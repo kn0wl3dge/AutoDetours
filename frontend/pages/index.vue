@@ -2,21 +2,29 @@
   <b-container fluid>
     <h3> Dashboard </h3>
     <b-row class="mb-4">
-      <repartitioncharts :datafrommalware="stats"> </repartitioncharts>
+      <b-col>
+        <b-card header="Malwares States" class="text-center">
+          <repartition-chart :stats="stats" />
+        </b-card>
+      </b-col>
+      <b-col>
+        <b-card header="Workers States" class="text-center">
+          <repartition-chart />
+        </b-card>
+      </b-col>
     </b-row>
   </b-container>
 </template>
 
 <script>
-import repartitioncharts from '../components/stats/repartitioncharts.vue'
+import RepartitionChart from '../components/stats/RepartitionChart'
 export default {
-  components: { repartitioncharts },
-  name: 'Dashoard',
+  components: { RepartitionChart },
   async asyncData ({ app }) {
-    const datafrommalware = await app.$axios.$get('/stats/')
+    const stats = await app.$axios.$get('/stats/')
     return {
       stats: {
-        stateanalyze: datafrommalware.status,
+        stateanalyze: stats.status,
         labels: ['Not Analyzed', 'Analyzing', 'Analyzed']
       }
     }
