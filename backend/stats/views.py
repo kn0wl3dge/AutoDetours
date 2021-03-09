@@ -32,7 +32,8 @@ def get_info_state_malware():
 
 class StatsView(APIView):
     def get(self, request, pk=None):
-        toto = {
-            'toto' : 'tata',
+        data = get_info_state_malware()
+        datafrommalware = {
+            'status' : data,
         }
-        return Response(toto)
+        return Response(datafrommalware)
