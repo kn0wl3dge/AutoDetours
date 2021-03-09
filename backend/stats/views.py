@@ -49,10 +49,10 @@ class StatsView(APIView):
         data = get_info_state_malwares()
         status_worker = get_info_workers()
         all_data = { 
-            'datafrommalware': {
+            'info_malware': {
                 'status' : data,
             },
-            'infoworkers': {
+            'info_workers': {
                 'status' : status_worker
             }
         }
