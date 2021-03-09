@@ -1,9 +1,41 @@
 <template>
-  <div class="container" />
+  <b-container fluid>
+    <h3> Dashboard </h3>
+    <b-row class="mb-4">
+      <b-col>
+        <b-card header="Malwares States" class="text-center">
+          <repartition-chart :stats="stats.malware" />
+        </b-card>
+      </b-col>
+      <b-col>
+        <b-card header="Workers States" class="text-center">
+          <repartition-chart :stats="stats.worker" />
+        </b-card>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>
-export default {}
+import RepartitionChart from '../components/stats/RepartitionChart'
+export default {
+  components: { RepartitionChart },
+  async asyncData ({ app }) {
+    const stats = await app.$axios.$get('/stats/')
+    return {
+      stats: {
+        malware: {
+          stateanalyze: stats.info_malware.status,
+          labels: ['Not Analyzed', 'Analyzing', 'Analyzed']
+        },
+        worker: {
+          stateanalyze: stats.info_workers.status,
+          labels: ['Finished', 'Tasked', 'Registered']
+        }
+      }
+    }
+  }
+}
 </script>
 
 <style>

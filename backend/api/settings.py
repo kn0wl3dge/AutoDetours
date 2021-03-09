@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_fsm',
     'malwaredb',
-    'workers'
+    'workers',
+    'stats'
 ]
 
 MIDDLEWARE = [
