@@ -11,15 +11,14 @@ def extract_json(file):
 
 
 def extract_funcname(json_list):
-    func_list = []
-    for api_call in json_list:
-        if api_call['funcName'] not in func_list:
-            func_list.append(api_call['funcName'])
-    return func_list
+    json_list = json_list['hooks_result']
+    func_list = {}
+    if not "error" in json_list :
+        for api_call in json_list:
+            func_list[(api_call['funcName'])] = api_call['funcParams']
+        return func_list
+    return {"error" : json_list['error']}
 
 
 liste = extract_json("test.json")
-print("Type: ", type(liste))
-# print("1st: ", liste[0]['funcName'])
-print("2nd: ", liste['hooks_result'][0]['funcName'])
-# print(extract_funcname(liste))
+print(extract_funcname(liste))
