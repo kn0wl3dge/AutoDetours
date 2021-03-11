@@ -159,6 +159,9 @@ namespace AutoDetoursAgent
 
                 deleteSpaces(items, 4);
 
+                if (items.Contains("Error") || items.Contains("error"))
+                    break;
+
                 if (isValidLengthForItems(items))
                 {
 
