@@ -1,5 +1,6 @@
-name: Mutex_creation
+name: Mutex_Usage
 features:
     - CreateMutexW
     - ReleaseMutex
+    - OpenMutexW
 tag: Mutex
