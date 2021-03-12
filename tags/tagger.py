@@ -1,6 +1,11 @@
 from os import listdir, path
 from os.path import isfile, join
-import yaml #install ruamel.yaml.cmd
+import os
+os.system("python result.py")
+import yaml
+# install pyyaml
+import result
+
 
 class Rule(object):
     YAMLTag = 'Rule'
@@ -22,14 +27,15 @@ class Rule(object):
         ret += "  tag : " + self.tag + "\n}"
         return ret
 
+
 def from_yaml(node):
     return Rule(name = node['name'],
     patterns = node['features'],
     tag = node['tag'])
 
-rules = []
 
 def get_db_rules(directory):
+    rules = []
     files = [f for f in listdir(directory) if isfile(join(directory, f))]
     for f in files:
         with open(path.join(directory,f), 'r') as rule:
@@ -39,15 +45,14 @@ def get_db_rules(directory):
                 
             except yaml.YAMLError as exc:
                 print(exc)
-        
+    return rules
 
 
-def set_tags():
+def set_tags(api_calls,rules):
     tags = []
-    
-    # parcours des rules 
-
-    return ['None']
-
-get_db_rules('db_rules')
-print(rules)
+    for rule in rules:
+        for pattern in rule.patterns:
+            if pattern in api_calls:
+                tags.append(rule.tag)
+                break
+    return tags
