@@ -10,7 +10,7 @@ def extract_json(file):
     return json_list
 
 
-def extract_funcname(json_list):
+def extract_funcname_list(json_list):
     func_list = []
     if not "error" in json_list :
         for api_call in json_list:
