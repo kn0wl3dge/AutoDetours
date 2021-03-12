@@ -1,0 +1,5 @@
+name: Mutex_creation
+features:
+    - CreateMutexW
+    - ReleaseMutex
+tag: Mutex
