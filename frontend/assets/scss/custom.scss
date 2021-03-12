@@ -24,3 +24,7 @@ body {
     color: $white !important;
   }
 }
+
+th:focus {
+  outline: none;
+}
