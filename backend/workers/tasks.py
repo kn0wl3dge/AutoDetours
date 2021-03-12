@@ -22,7 +22,7 @@ def workers_timeout():
         delta = timezone.now() - worker.analysis_start_date
         if delta.seconds > worker.malware.time * 3:
             print("Worker %s timed out !" % worker.id)
-            worker.malware.end_analysis({"error": "Timed out.."})
+            worker.malware.end_analysis(None)
             worker.malware.save()
             worker_delete.delay(worker.ip)
             worker.delete()
