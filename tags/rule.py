@@ -1,10 +1,6 @@
 from os import listdir, path
 from os.path import isfile, join
-import os
-os.system("python extract.py")
 import yaml
-import json
-import extract
 # install pyyaml
 
 
@@ -28,15 +24,10 @@ class Rule(object):
         ret += "  tag : " + self.tag + "\n}"
         return ret
 
-    def toJSON(self):
-        return json.dumps(self, default=lambda o: o.__dict__,
-            sort_keys=True, indent=4)
-
 def from_yaml(node):
     return Rule(name = node['name'],
     patterns = node['features'],
     tag = node['tag'])
-
 
 def get_db_rules(directory):
     rules = []
@@ -50,11 +41,3 @@ def get_db_rules(directory):
             except yaml.YAMLError as exc:
                 print(exc)
     return rules
-
-#rules = get_db_rules('db_rules')
-#print(rules)
-#json_extract = extract.extract_json("../../loul.json")
-#api_calls = extract.extract_funcname_list(json_extract)
-#print(api_calls)
-#print(set_tags(api_calls, rules))
-
