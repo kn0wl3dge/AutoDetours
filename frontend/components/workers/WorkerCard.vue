@@ -13,6 +13,22 @@
           <worker-state class="ml-3" :state="worker.state" />
         </b-col>
       </b-row>
+      <b-row v-if="worker.malware !== null">
+        <b-col sm="4">
+          Analysis Started:
+        </b-col>
+        <b-col>
+          {{ $moment(worker.analysis_start_date).format('LLL') }}
+        </b-col>
+      </b-row>
+      <b-row>
+        <b-col sm="4">
+          IP Address:
+        </b-col>
+        <b-col>
+          {{ worker.ip }}
+        </b-col>
+      </b-row>
       <b-row>
         <b-col sm="4">
           Malware:
