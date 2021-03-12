@@ -24,3 +24,15 @@ body {
     color: $white !important;
   }
 }
+
+th:focus {
+  outline: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+.page-link:focus {
+  box-shadow: none;
+}
