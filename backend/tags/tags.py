@@ -3,7 +3,7 @@ import rule
 
 BROKER_URL = 'redis://localhost:6379/0'
 
-celery_app = Celery('Restaurant', broker=BROKER_URL)
+celery_app = Celery('task', broker=BROKER_URL)
 
 rules = rule.get_db_rules('db_rules')
 
