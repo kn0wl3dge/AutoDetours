@@ -142,10 +142,10 @@ CELERY_RESULT_BACKEND = "redis://redis:6379"
 CELERY_BEAT_SCHEDULE = {
     "workers_pool": {
         "task": "workers.tasks.workers_automation",
-        "schedule": int(os.environ.get("CELERY_TASKS_SCHEDULE")),
+        "schedule": os.environ.get("CELERY_TASKS_SCHEDULE"),
     },
     "workers_timeout": {
         "task": "workers.tasks.workers_timeout",
-        "schedule": int(os.environ.get("CELERY_TASKS_SCHEDULE")),
+        "schedule": os.environ.get("CELERY_TASKS_SCHEDULE"),
     }
 }
