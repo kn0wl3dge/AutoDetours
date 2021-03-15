@@ -8,6 +8,7 @@ from workers.models import Worker, WorkerState
 from workers.serializers import WorkerSerializer
 from workers.tasks import worker_delete
 
+from tags.tags import set_tags
 
 class WorkerViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
                     mixins.RetrieveModelMixin, mixins.DestroyModelMixin,
@@ -45,6 +46,7 @@ class WorkerViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
                     worker.save()
                 except:
                     return Response({"error": "Results can't be parsed"})
+                worker.malware.tags = set_tags(worker.malware.hooks_result)
                 return Response({"success": "Results successfully stored"})
             else:
                 return Response({"error": "Can't find 'results' param"})
