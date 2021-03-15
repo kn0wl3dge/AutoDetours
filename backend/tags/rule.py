@@ -24,10 +24,12 @@ class Rule(object):
         ret += "  tag : " + self.tag + "\n}"
         return ret
 
+
 def from_yaml(node):
     return Rule(name = node['name'],
     patterns = node['features'],
     tag = node['tag'])
+
 
 def get_db_rules(directory):
     rules = []
