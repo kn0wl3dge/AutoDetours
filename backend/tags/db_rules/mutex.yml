@@ -1,5 +1,8 @@
 name: Mutex_Usage
 features:
+    - CreateMutexA
+    - CreateMutexExA
+    - CreateMutexExW
     - CreateMutexW
     - ReleaseMutex
     - OpenMutexW

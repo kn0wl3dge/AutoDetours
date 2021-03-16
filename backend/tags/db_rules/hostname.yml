@@ -1,0 +1,4 @@
+name: Hostname
+features:
+    - gethostname
+tag: GetHostname
