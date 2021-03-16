@@ -6,10 +6,8 @@ services:
     networks:
       autodetours_lan:
         ipv4_address: 172.20.0.13
-    environment:
-      - POSTGRES_DB=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+    env_file:
+      - ./.env.dev
 
   redis:
     image: redis:alpine
@@ -34,6 +32,8 @@ services:
       - db
       - redis
       - api
+    env_file:
+      - ./.env.dev
 
   celery-beat:
     build:
@@ -48,6 +48,8 @@ services:
       - ./backend:/app
     depends_on:
       - celery
+    env_file:
+      - ./.env.dev
 
   api:
     build:
@@ -62,6 +64,8 @@ services:
       - tmp:/tmp
     depends_on:
       - db
+    env_file:
+      - ./.env.dev
 
   front:
     build:
