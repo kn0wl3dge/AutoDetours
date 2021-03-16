@@ -1,0 +1,12 @@
+name: File_Usage
+features:
+    - WriteFile
+    - GetWindowsDirectoryW
+    - GetTempsFileNameW
+    - DeleteFileW
+    - CreateFileW
+    - GetFileSizeW
+    - CreateDirectoryW
+    - GetFileType
+    - ReadFile
+tag: File/Directory

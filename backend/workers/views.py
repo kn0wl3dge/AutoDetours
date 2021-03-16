@@ -8,6 +8,7 @@ from workers.models import Worker, WorkerState
 from workers.serializers import WorkerSerializer
 from workers.tasks import worker_delete
 
+from tags.tags import set_tags
 
 class WorkerViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
                     mixins.RetrieveModelMixin, mixins.DestroyModelMixin,
@@ -43,6 +44,7 @@ class WorkerViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
                 try:
                     worker.finish_task(request.data["results"])
                     worker.save()
+                    set_tags.delay(worker.malware.sha256)
                 except:
                     return Response({"error": "Results can't be parsed"})
                 return Response({"success": "Results successfully stored"})
