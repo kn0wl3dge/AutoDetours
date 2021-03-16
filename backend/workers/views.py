@@ -44,9 +44,9 @@ class WorkerViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
                 try:
                     worker.finish_task(request.data["results"])
                     worker.save()
+                    set_tags.delay(worker.malware.sha256)
                 except:
                     return Response({"error": "Results can't be parsed"})
-                worker.malware.tags = set_tags(worker.malware.hooks_result)
                 return Response({"success": "Results successfully stored"})
             else:
                 return Response({"error": "Can't find 'results' param"})
