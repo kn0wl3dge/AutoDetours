@@ -1,0 +1,40 @@
+name: Thread
+features:
+    - CreateRemoteThread
+    - CreateRemoteThreadEx
+    - CreateThread
+    - DeleteProcThreadAttributeList
+    - ExitThread
+    - GetCurrentThread
+    - GetCurrentThreadEffectiveToken
+    - GetCurrentThreadId
+    - GetCurrentThreadStackLimits
+    - GetCurrentThreadToken
+    - GetExitCodeThread
+    - GetThreadContext
+    - GetThreadDescription
+    - GetThreadId
+    - GetThreadIdealProcessorEx
+    - GetThreadInformation
+    - GetThreadIOPendingFlag
+    - GetThreadPriority
+    - GetThreadPriorityBoost
+    - GetThreadTimes
+    - InitializeProcThreadAttributeList
+    - OpenThread
+    - OpenThreadToken
+    - ResumeThread
+    - SetThreadContext
+    - SetThreadDescription
+    - SetThreadIdealProcessor
+    - SetThreadIdealProcessorEx
+    - SetThreadInformation
+    - SetThreadPriority
+    - SetThreadPriorityBoost
+    - SetThreadStackGuarantee
+    - SetThreadToken
+    - SuspendThread
+    - SwitchToThread
+    - TerminateThread
+    - UpdateProcThreadAttribute
+tag: Thread
