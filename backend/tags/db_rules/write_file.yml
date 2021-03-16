@@ -1,0 +1,8 @@
+name: Write_files
+features:
+    - WriteFile
+    - CreateFileW
+    - DeleteFileW
+    - CreateDirectoryW
+    - DeleteDirectory
+tag: Write File/Directory

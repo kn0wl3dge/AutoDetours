@@ -1,0 +1,44 @@
+name: Registry
+features:
+    - GetSystemRegistryQuota
+    - RegCloseKey
+    - RegConnectRegistry
+    - RegCopyTree
+    - RegCreateKeyEx
+    - RegCreateKeyTransacted
+    - RegDeleteKey
+    - RegDeleteKeyEx
+    - RegDeleteKeyTransacted
+    - RegDeleteKeyValue
+    - RegDeleteTree
+    - RegDeleteValue
+    - RegDisablePredefinedCache
+    - RegDisablePredefinedCacheEx
+    - RegDisableReflectionKey
+    - RegEnableReflectionKey
+    - RegEnumKeyEx
+    - RegEnumValue
+    - RegFlushKey
+    - RegGetKeySecurity
+    - RegGetValue
+    - RegLoadKey
+    - RegLoadMUIString
+    - RegNotifyChangeKeyValue
+    - RegOpenCurrentUser
+    - RegOpenKeyEx
+    - RegOpenKeyTransacted
+    - RegOpenUserClassesRoot
+    - RegOverridePredefKey
+    - RegQueryInfoKey
+    - RegQueryMultipleValues
+    - RegQueryReflectionKey
+    - RegQueryValueEx
+    - RegReplaceKey
+    - RegRestoreKey
+    - RegSaveKey
+    - RegSaveKeyEx
+    - RegSetKeyValue
+    - RegSetKeySecurity
+    - RegSetValueEx
+    - RegUnLoadKey
+tag: Registry
