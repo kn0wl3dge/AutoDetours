@@ -18,14 +18,16 @@ def get_workers_list():
 
 def get_info_state_malwares():
     queryset = get_malwares_list()
-    data = [0, 0, 0]
+    data = [0, 0, 0, 0]
     for malware in queryset:
         if malware.state == "ANALYZED":
             data[2] += 1
         elif malware.state == "ANALYZING":
             data[1] += 1
-        if malware.state == "NOT_ANALYZED":
+        elif malware.state == "NOT_ANALYZED":
             data[0] += 1
+        elif malware.state == "TIMED_OUT":
+            data[3] += 1
     
     return data
 
@@ -36,9 +38,9 @@ def get_info_workers():
     for worker in queryset:
         if worker.state == "REGISTERED":
             data[2] += 1
-        if worker.state == "TASKED":
+        elif worker.state == "TASKED":
             data[1] += 1
-        if worker.state == "FINISHED":
+        elif worker.state == "FINISHED":
             data[0] += 1
     
     return data

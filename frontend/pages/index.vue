@@ -26,11 +26,15 @@ export default {
       stats: {
         malware: {
           stateanalyze: stats.info_malware.status,
-          labels: ['Not Analyzed', 'Analyzing', 'Analyzed']
+          labels: ['Not Analyzed', 'Analyzing', 'Analyzed', 'Timed Out'],
+          borderColors: ['##fff', '##fff', '##fff', '##fff'],
+          colors: ['#e74c3c', '#fd7e14', '#00bc8c', '#375a7f']
         },
         worker: {
           stateanalyze: stats.info_workers.status,
-          labels: ['Finished', 'Tasked', 'Registered']
+          labels: ['Finished', 'Tasked', 'Registered'],
+          borderColors: ['##fff', '##fff', '##fff'],
+          colors: ['#e74c3c', '#fd7e14', '#00bc8c']
         }
       }
     }
