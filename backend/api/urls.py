@@ -17,7 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 
-from malwaredb.views import MalwareViewSet, DatasetGenerationView, DatasetDownloadView
+from malwaredb.views import MalwareViewSet, DatasetGenerationView, \
+                            DatasetDownloadView, DatasetCheckView
 from workers.views import WorkerViewSet
 from stats.views import StatsView
 
@@ -30,5 +31,7 @@ urlpatterns = [
     path('api/stats/', StatsView.as_view()),
     path('api/dataset/generate/', DatasetGenerationView.as_view()),
     path('api/dataset/download/', DatasetDownloadView.as_view()),
-    path('api/dataset/download/<slug:pk>/', DatasetDownloadView.as_view())
+    path('api/dataset/download/<slug:pk>/', DatasetDownloadView.as_view()),
+    path('api/dataset/check/', DatasetCheckView.as_view()),
+    path('api/dataset/check/<slug:pk>/', DatasetCheckView.as_view())
 ]
