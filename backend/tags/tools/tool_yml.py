@@ -22,7 +22,7 @@ def write_rule(name, tag, functions):
         f.write("name: %s\n" % name)
         f.write("features:\n")
         for func in functions:
-            f.write("\t- %s\n" % func)
+            f.write("    - %s\n" % func)
         f.write("tag: %s" % tag)
     
     
@@ -32,8 +32,7 @@ if __name__ == "__main__":
 
     parser.add_argument('-n', '--name', help='Rule name', required=True)
     parser.add_argument('-t', '--tag', help='Rule tag', required=True)
-    parser.add_argument('-f', '--functions', help='List of functions to add to rule. Format MSDN',  required=True)
-
+    parser.add_argument('-f', '--functions', help='List of functions to add to rule. MSDN format.',  required=True)
 
     args = parser.parse_args()
     name = args.name
