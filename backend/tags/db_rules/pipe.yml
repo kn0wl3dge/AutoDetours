@@ -1,0 +1,10 @@
+name: Pipe
+features:
+	- ConnectNamedPipe
+	- CreatePipe
+	- DisconnectNamedPipe
+	- GetNamedPipeInfo
+	- PeekNamedPipe
+	- SetNamedPipeHandleState
+	- TransactNamedPipe
+tag: Pipe
