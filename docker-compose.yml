@@ -29,6 +29,7 @@ services:
     volumes:
       - ./backend:/app
       - /var/run/docker.sock:/var/run/docker.sock
+      - tmp:/tmp
     depends_on:
       - db
       - redis
@@ -58,6 +59,7 @@ services:
         ipv4_address: 172.20.0.12
     volumes:
       - ./backend:/app
+      - tmp:/tmp
     depends_on:
       - db
 
@@ -92,6 +94,7 @@ services:
 
 volumes:
   node_modules:
+  tmp:
 
 networks:
   autodetours_lan:
