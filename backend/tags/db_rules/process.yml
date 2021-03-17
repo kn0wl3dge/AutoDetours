@@ -4,7 +4,6 @@ features:
     - CreateProcessAsUserA
     - CreateProcessAsUserW
     - CreateProcessW
-    - ExitProcess
     - FlushProcessWriteBuffers
     - GetCurrentProcess
     - GetCurrentProcessId
@@ -22,7 +21,6 @@ features:
     - GetProcessTimes
     - GetProcessVersion
     - IsProcessCritical
-    - IsProcessorFeaturePresent
     - OpenProcess
     - OpenProcessToken
     - ProcessIdToSessionId
