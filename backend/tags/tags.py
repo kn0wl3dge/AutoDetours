@@ -12,10 +12,15 @@ def set_tags(mal_sha256):
     json_string = malware.hooks_result
     api_calls = extract.extract_funcname_list(json_string)
     tags = []
+    tags2 = {}
     for rule in rules:
         for pattern in rule.patterns:
             if pattern in api_calls:
                 tags.append(rule.tag)
+                if rule in tags2:
+                    tags2[rule.tag] += 1
+                else:
+                    tags2[rule.tag] = 0
                 #break
     malware.tags = tags
     malware.save()
