@@ -4,7 +4,7 @@ using System.Linq;
 using System.IO;
 using Newtonsoft.Json;
 
-namespace AutoDetoursAgent
+namespace Parser
 {
     public class Log
     {
@@ -39,7 +39,7 @@ namespace AutoDetoursAgent
             return (long)elapsedTime.TotalMilliseconds;
         }
 
-        private static Tuple<string, long> FormatTimestamps(String timestamp)
+        private static Tuple<string, long> reformatTimestamp(String timestamp)
         {
             string year = timestamp.Substring(0, 4);
             string month = timestamp.Substring(4, 2);
@@ -105,7 +105,7 @@ namespace AutoDetoursAgent
             return "Program never closed in traces.";
         }
 
-        private static string StringToJson(List<string> jsonList, string filename)
+        private static string writeJson(List<string> jsonList, string filename)
         {
             if (File.Exists(filename))
                 File.Delete(filename);
@@ -127,7 +127,7 @@ namespace AutoDetoursAgent
             return tmp;
         }
 
-        private static void DeleteSpaces(List<string> items, int length)
+        private static void deleteSpaces(List<string> items, int length)
         {
             int nb_items = 0;
             int i = 0;
@@ -142,59 +142,45 @@ namespace AutoDetoursAgent
             }
         }
 
-        public static string ParseLogs(string input_filename, string output_filename)
+        public static string ParseLogs(string filename, string output)
         {
-            List<string> jsonList = new List<string>();
-
-            using (StreamReader file = new StreamReader(input_filename))
+            string[] lines = null;
+            using (StreamReader reader = File.OpenText(filename))
             {
-                string line = file.ReadLine();
-                if (line == null)
-                    return "[]";
+                lines = reader.ReadToEnd().Split('\n');
+            }
+            List<string> jsonList = new List<string>();
+            long start_time = reformatTimestamp(lines[0].Split(' ')[0]).Item2;
 
-                long start_time = FormatTimestamps(line.Split(' ')[0]).Item2;
+            for (int i = 0; i < lines.Length; i++)
+            {
 
-                while ((line = file.ReadLine()) != null)
+                List<string> items = lines[i].Split(' ').ToList();
+
+                deleteSpaces(items, 4);
+
+                if (items.Contains("Error") || items.Contains("error"))
+                    break;
+
+                if (isValidLengthForItems(items))
                 {
-                    List<string> items = line.Split(' ').ToList();
 
-                    if (items.Contains("Error") || items.Contains("error"))
-                        break;
-
-                    //Remove indentation from line and get the 5 firsts items of traces
-                    DeleteSpaces(items, 5);
-
-                    if (!isValidLengthForItems(items))
-                        break;
-
-                    if (!isThreadValid(items[4]))
-                        break;
-
-                    //Check if we have the function call or output
-                    if (isEntry(items[5]) == 1)
+                    if (isThreadValid(items[4]))
                     {
-                        Log log = new Log();
-
-                        Tuple<String, long> timestamps = FormatTimestamps(items[0]);
-                        log.timestamp = timestamps.Item1;
-                        log.epoch = timestamps.Item2;
-                        log.timeMs = log.epoch - start_time;
-
-                        log.thread = int.Parse(items[4]);
-                        log.funcName = GetFuncName(items[5]);
-
-                    }
-
-                }
-            };
-
-            return jsonList;
 
                         int indexFuncName = 5;
-                        
+                        deleteSpaces(items, indexFuncName);
 
                         if (isEntry(items[indexFuncName]) == 1)
                         {
+                            Log log = new Log();
+                            Tuple<string, long> timestamps = reformatTimestamp(items[0]);
+                            log.timestamp = timestamps.Item1;
+                            log.epoch = timestamps.Item2;
+                            log.timeMs = log.epoch - start_time;
+
+                            log.thread = int.Parse(items[4]);
+
                             log.funcName = getFunc(items[indexFuncName]);
                             log.funcParams = getFuncParams(items[indexFuncName]);
                             log.funcOutput = getFuncOutput(i + 1, lines, log.funcName);
