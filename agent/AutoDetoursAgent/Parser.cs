@@ -116,7 +116,7 @@ namespace AutoDetoursAgent
             {
                 writer.WriteLine('[');
                 writer.Write(jsonList[0]);
-                for (int i = 0; i < jsonList.Count; i++)
+                for (int i = 1; i < jsonList.Count; i++)
                     writer.WriteLine(',' + jsonList[i]);
 
                 writer.WriteLine(']');
@@ -126,7 +126,7 @@ namespace AutoDetoursAgent
         private static string LogToJson(List<string> jsonList)
         {
             string ret = "{\"results\":[" + jsonList[0];
-            for (int i = 0; i < jsonList.Count; i++)
+            for (int i = 1; i < jsonList.Count; i++)
                 ret += (',' + jsonList[i]);
 
             ret += "]}";
