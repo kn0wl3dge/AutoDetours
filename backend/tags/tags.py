@@ -16,6 +16,6 @@ def set_tags(mal_sha256):
         for pattern in rule.patterns:
             if pattern in api_calls:
                 tags.append(rule.tag)
-                break
+                #break
     malware.tags = tags
     malware.save()
