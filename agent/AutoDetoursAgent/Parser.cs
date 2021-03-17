@@ -15,6 +15,12 @@ namespace AutoDetoursAgent
         public string funcName { get; set; }
         public string[] funcParams { get; set; }
         public string funcOutput { get; set; }
+
+        public void Print()
+        {
+            Console.WriteLine("{ timestamp : " + timestamp + ", epoch : " + epoch + ", timeMs : " + timeMs + ", thread : "
+                + thread + ", funcName : " + funcName + ", funcParams " + funcParams + ", funcOutput : " + funcOutput);
+        }
     }
 
     class Parser
@@ -32,6 +38,8 @@ namespace AutoDetoursAgent
 
         private static bool isValidTrace(List<string> items)
         {
+
+
             if (items.Contains("Error") || items.Contains("error"))
                 return false;
 
@@ -39,8 +47,7 @@ namespace AutoDetoursAgent
             DeleteSpaces(items, 5);
 
             return isValidLengthForItems(items)
-                && isThreadValid(items[4])
-                && isValidTrace(items);
+                && isThreadValid(items[4]);
         }
 
         private static long ConvertToTimestamp(string timestamp8601)
@@ -89,36 +96,42 @@ namespace AutoDetoursAgent
             return Tuple.Create<string, string[]>(funcName, funcParams);
         }
 
-        private static Tuple<string, string> GetFuncOutputInfos(string functionCall)
+        private static Tuple<string, string> GetFuncOutputInfos(List<string> items)
         {
-            functionCall = functionCall.Substring(1);
-            string[] name_output_split = functionCall.Split(' ');
-            string funcName = name_output_split[0];
-            string funcOutput = name_output_split[2];
+            string funcName = items[5].Substring(1).Split('(')[0];
+
+            string funcOutput = "";
+            if (items.Count >= 8)
+                funcOutput = items[7];
 
             return Tuple.Create<string, string>(funcName, funcOutput);
         }
 
-        private static string LogToJson(List<string> jsonList, string filename)
+        private static void WriteJson(List<string> jsonList, string filename)
         {
             if (File.Exists(filename))
                 File.Delete(filename);
 
-            string tmp = "{\"results\":[";
             using (StreamWriter writer = File.CreateText(filename))
             {
                 writer.WriteLine('[');
                 writer.Write(jsonList[0]);
-                tmp += jsonList[0];
                 for (int i = 0; i < jsonList.Count; i++)
-                {
-                    tmp += (',' + jsonList[i]);
                     writer.WriteLine(',' + jsonList[i]);
-                }
+
                 writer.WriteLine(']');
-                tmp += "]}";
             }
-            return tmp;
+        }
+
+        private static string LogToJson(List<string> jsonList)
+        {
+            string ret = "{\"results\":[" + jsonList[0];
+            for (int i = 0; i < jsonList.Count; i++)
+                ret += (',' + jsonList[i]);
+
+            ret += "]}";
+
+            return ret;
         }
 
         private static void DeleteSpaces(List<string> items, int length)
@@ -135,7 +148,7 @@ namespace AutoDetoursAgent
                 i++;
             }
         }
-        
+
         private static Log FindAssociatedLog(string funcName, List<Log> waitingOutput)
         {
             for (int i = (waitingOutput.Count() - 1); i >= 0; i--)
@@ -185,7 +198,7 @@ namespace AutoDetoursAgent
             return log;
         }
 
-        public static string ParseLogs(string input_filename, string output_filename)
+        public static string ParseLogs(string input_filename)
         {
             List<string> jsonList = new List<string>();
 
@@ -195,7 +208,7 @@ namespace AutoDetoursAgent
                 if (line == null)
                     return "[]";
 
-                long start_time = FormatTimestamps(line.Split(' ')[0]).Item2;                
+                long start_time = FormatTimestamps(line.Split(' ')[0]).Item2;
                 List<Log> waitingOutput = new List<Log>();
 
                 while ((line = file.ReadLine()) != null)
@@ -203,7 +216,7 @@ namespace AutoDetoursAgent
                     List<string> items = line.Split(' ').ToList();
 
                     if (!isValidTrace(items))
-                        break;
+                        continue;
 
                     // Check if we have the function call or output
                     int funcType = isEntry(items[5]);
@@ -214,8 +227,8 @@ namespace AutoDetoursAgent
                     }
 
                     else if (funcType == 0)
-                    { 
-                        Tuple<String, String> outputInfos = GetFuncOutputInfos(items[5]);
+                    {
+                        Tuple<String, String> outputInfos = GetFuncOutputInfos(items);
                         string funcName = outputInfos.Item1;
                         string funcOutput = outputInfos.Item2;
 
@@ -232,12 +245,13 @@ namespace AutoDetoursAgent
                             jsonList.Add("Error during serialization");
                         }
                     }
-
-                    // Add opened functions with no output
-                    AddNotExitingLogs(jsonList, waitingOutput);
                 }
+
+                // Add opened functions with no output
+                AddNotExitingLogs(jsonList, waitingOutput);
             }
-            return LogToJson(jsonList, output_filename);
+
+            return LogToJson(jsonList);
         }
     }
 }
