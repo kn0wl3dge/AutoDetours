@@ -80,7 +80,6 @@
       <DependentUpon>AgentService.cs</DependentUpon>
     </Compile>
     <Compile Include="Parser.cs" />
-    <Compile Include="Parser_old.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProjectInstaller.cs">
       <SubType>Component</SubType>
