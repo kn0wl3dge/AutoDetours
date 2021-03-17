@@ -30,7 +30,20 @@ namespace AutoDetoursAgent
             return Int64.TryParse(threadString, out threadInt);
         }
 
-        private static long convertToTimestamp(string timestamp8601)
+        private static bool isValidTrace(List<string> items)
+        {
+            if (items.Contains("Error") || items.Contains("error"))
+                return false;
+
+            // Remove indentation from line and get the 5 firsts items of traces
+            DeleteSpaces(items, 5);
+
+            return isValidLengthForItems(items)
+                && isThreadValid(items[4])
+                && isValidTrace(items);
+        }
+
+        private static long ConvertToTimestamp(string timestamp8601)
         {
             DateTime value = DateTime.Parse(timestamp8601);
             DateTime epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
@@ -52,11 +65,9 @@ namespace AutoDetoursAgent
             string timestamp8601 = year + "-" + month + "-" + day + " " + hour + ":" + min + ":" + sec + "." + ms + "+00";
 
             DateTime datetime = DateTime.Parse(timestamp8601);
-            long epoch = convertToTimestamp(timestamp8601);
+            long epoch = ConvertToTimestamp(timestamp8601);
 
-            var result = Tuple.Create<string, long>(timestamp8601, epoch);
-
-            return result;
+            return Tuple.Create<string, long>(timestamp8601, epoch);
         }
 
         private static int isEntry(String functionCall)
@@ -68,44 +79,27 @@ namespace AutoDetoursAgent
             return 0;
         }
 
-        private static string[] getFuncParams(string functionCall)
+        private static Tuple<string, string[]> GetFuncEntryInfos(string functionCall)
         {
-            string start = functionCall.Split('(')[1];
-            string paramsString = start.Split(')')[0];
-            return paramsString.Split(',');
+            functionCall = functionCall.Substring(1);
+            string[] name_params_split = functionCall.Split('(');
+            string funcName = name_params_split[0];
+            string[] funcParams = name_params_split[1].Split(')')[0].Split(',');
+
+            return Tuple.Create<string, string[]>(funcName, funcParams);
         }
 
-        private static string getFunc(string functionCall)
+        private static Tuple<string, string> GetFuncOutputInfos(string functionCall)
         {
-            string start = functionCall.Substring(1);
-            return start.Split('(')[0];
+            functionCall = functionCall.Substring(1);
+            string[] name_output_split = functionCall.Split(' ');
+            string funcName = name_output_split[0];
+            string funcOutput = name_output_split[2];
+
+            return Tuple.Create<string, string>(funcName, funcOutput);
         }
 
-        private static string getFuncOutput(int i, string[] lines, string funcName)
-        {
-            for (; i < lines.Length; i++)
-            {
-                List<string> items = lines[i].Split().ToList();
-                if (isValidLengthForItems(items))
-                    if (isThreadValid(items[4]))
-                    {
-                        int indexFuncName = 5;
-                        while (isEntry(items[indexFuncName]) == -1)
-                            indexFuncName++;
-
-                        if (isEntry(items[indexFuncName]) == 0)
-                            if (string.Compare(getFunc(items[indexFuncName]), funcName) == 0)
-                            {
-                                if (items.Count == indexFuncName + 3)
-                                    return items[indexFuncName + 2]; //Check if several return
-                                return "";
-                            }
-                    }
-            }
-            return "Program never closed in traces.";
-        }
-
-        private static string StringToJson(List<string> jsonList, string filename)
+        private static string LogToJson(List<string> jsonList, string filename)
         {
             if (File.Exists(filename))
                 File.Delete(filename);
@@ -141,6 +135,55 @@ namespace AutoDetoursAgent
                 i++;
             }
         }
+        
+        private static Log FindAssociatedLog(string funcName, List<Log> waitingOutput)
+        {
+            for (int i = (waitingOutput.Count() - 1); i >= 0; i--)
+            {
+                if (waitingOutput[i].funcName == funcName)
+                {
+                    Log ret = waitingOutput[i];
+                    waitingOutput.RemoveAt(i);
+                    return ret;
+                }
+            }
+
+            return null;
+        }
+
+        private static void AddNotExitingLogs(List<string> jsonList, List<Log> waitingOutput)
+        {
+            for (int i = (waitingOutput.Count() - 1); i >= 0; i--)
+            {
+                waitingOutput[i].funcOutput = "No output";
+                try
+                {
+                    jsonList.Add(JsonConvert.SerializeObject(waitingOutput[i], Formatting.Indented));
+                }
+                catch (JsonException)
+                {
+                    jsonList.Add("Error during serialization");
+                }
+            }
+        }
+
+        private static Log createLog(List<string> items, long start_time)
+        {
+            Log log = new Log();
+
+            Tuple<String, long> timestamps = FormatTimestamps(items[0]);
+            log.timestamp = timestamps.Item1;
+            log.epoch = timestamps.Item2;
+            log.timeMs = log.epoch - start_time;
+
+            log.thread = int.Parse(items[4]);
+
+            Tuple<String, String[]> entryInfos = GetFuncEntryInfos(items[5]);
+            log.funcName = entryInfos.Item1;
+            log.funcParams = entryInfos.Item2;
+
+            return log;
+        }
 
         public static string ParseLogs(string input_filename, string output_filename)
         {
@@ -152,68 +195,49 @@ namespace AutoDetoursAgent
                 if (line == null)
                     return "[]";
 
-                long start_time = FormatTimestamps(line.Split(' ')[0]).Item2;
+                long start_time = FormatTimestamps(line.Split(' ')[0]).Item2;                
+                List<Log> waitingOutput = new List<Log>();
 
                 while ((line = file.ReadLine()) != null)
                 {
                     List<string> items = line.Split(' ').ToList();
 
-                    if (items.Contains("Error") || items.Contains("error"))
+                    if (!isValidTrace(items))
                         break;
 
-                    //Remove indentation from line and get the 5 firsts items of traces
-                    DeleteSpaces(items, 5);
-
-                    if (!isValidLengthForItems(items))
-                        break;
-
-                    if (!isThreadValid(items[4]))
-                        break;
-
-                    //Check if we have the function call or output
-                    if (isEntry(items[5]) == 1)
+                    // Check if we have the function call or output
+                    int funcType = isEntry(items[5]);
+                    if (funcType == 1)
                     {
-                        Log log = new Log();
-
-                        Tuple<String, long> timestamps = FormatTimestamps(items[0]);
-                        log.timestamp = timestamps.Item1;
-                        log.epoch = timestamps.Item2;
-                        log.timeMs = log.epoch - start_time;
-
-                        log.thread = int.Parse(items[4]);
-                        log.funcName = GetFuncName(items[5]);
-
+                        Log log = createLog(items, start_time);
+                        waitingOutput.Add(log);
                     }
 
-                }
-            };
+                    else if (funcType == 0)
+                    { 
+                        Tuple<String, String> outputInfos = GetFuncOutputInfos(items[5]);
+                        string funcName = outputInfos.Item1;
+                        string funcOutput = outputInfos.Item2;
 
-            return jsonList;
+                        // Get associated log
+                        Log log = FindAssociatedLog(funcName, waitingOutput);
+                        log.funcOutput = funcOutput;
 
-                        int indexFuncName = 5;
-                        
-
-                        if (isEntry(items[indexFuncName]) == 1)
+                        try
                         {
-                            log.funcName = getFunc(items[indexFuncName]);
-                            log.funcParams = getFuncParams(items[indexFuncName]);
-                            log.funcOutput = getFuncOutput(i + 1, lines, log.funcName);
-
-
-                            try
-                            {
-                                jsonList.Add(JsonConvert.SerializeObject(log, Formatting.Indented));
-                            }
-                            catch (JsonException)
-                            {
-                                jsonList.Add("Error during serialization");
-                            }
-
+                            jsonList.Add(JsonConvert.SerializeObject(log, Formatting.Indented));
+                        }
+                        catch (JsonException)
+                        {
+                            jsonList.Add("Error during serialization");
                         }
                     }
+
+                    // Add opened functions with no output
+                    AddNotExitingLogs(jsonList, waitingOutput);
                 }
             }
-            return writeJson(jsonList, output);
+            return LogToJson(jsonList, output_filename);
         }
     }
 }
