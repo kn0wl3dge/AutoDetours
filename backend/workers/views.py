@@ -1,4 +1,4 @@
-from rest_framework import mixins, viewsets
+from rest_framework import mixins, viewsets, status
 from rest_framework.decorators import action
 from rest_framework.exceptions import ValidationError
 from rest_framework.generics import get_object_or_404
@@ -6,6 +6,7 @@ from rest_framework.response import Response
 
 from workers.models import Worker, WorkerState
 from workers.serializers import WorkerSerializer
+from workers.tasks import worker_delete
 
 
 class WorkerViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
@@ -17,7 +18,9 @@ class WorkerViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
     def perform_destroy(self, instance):
         if instance.state != WorkerState.FINISHED:
             raise ValidationError("You can delete a worker in this state")
+        ip = instance.ip
         instance.delete()
+        worker_delete.delay(ip)
 
     @action(detail=True, methods=['GET'])
     def get_task(self, request, pk=None):
