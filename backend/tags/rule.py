@@ -1,6 +1,6 @@
+import yaml
 from os import listdir, path
 from os.path import isfile, join
-import yaml
 # install pyyaml
 
 
@@ -32,14 +32,17 @@ def from_yaml(node):
 
 
 def get_db_rules(directory):
-    rules = []
+    rules = {}
     files = [f for f in listdir(directory) if isfile(join(directory, f))]
     for f in files:
         with open(path.join(directory,f), 'r') as rule:
             try:
                 yaml_rule = yaml.safe_load(rule)
-                rules.append(from_yaml(yaml_rule))
-                
+                if from_yaml(yaml_rule) in rules:
+                    rules[from_yaml(yaml_rule)] += 1 
+                else:
+                    rules[from_yaml(yaml_rule)] = 1            
             except yaml.YAMLError as exc:
                 print(exc)
+    print(rules)
     return rules
