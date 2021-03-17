@@ -5,7 +5,8 @@ export default (ctx, inject) => {
 
   const repositories = {
     malware: repositoryWithAxios('malwares'),
-    workers: repositoryWithAxios('workers')
+    workers: repositoryWithAxios('workers'),
+    settings: repositoryWithAxios('settings')
   }
 
   inject('api', repositories)
