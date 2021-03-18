@@ -190,19 +190,17 @@ namespace AutoDetoursAgent
             syelogd.StartInfo.Arguments = "/o C:\\Temp\\traces.txt";
             syelogd.Start();
 
+            withdll.StartInfo.FileName = "C:\\Temp\\withdll.exe";
+
+            // We inject Traceapi DLL into the malware process using withdll.exe
             if (workerTask.isDll == false)
-            { 
-                // We inject Traceapi DLL into the malware process using withdll.exe
-                withdll.StartInfo.FileName = "C:\\Temp\\withdll.exe";
                 withdll.StartInfo.Arguments = "/d:C:\\Temp\\trcapi32.dll C:\\Temp\\sample.exe";
-                withdll.Start();
-            }
 
+            // In case of a DLL we use RunDLL32 to launch the DLL
             else 
-            {
-                // In case of a DLL we use RunDLL32 to launch the DLL
+                withdll.StartInfo.Arguments = "/d:C:\\Temp\\trcapi32.dll rundll32.exe C:\\Temp\\sample.exe," + workerTask.exportName;
 
-            }
+            withdll.Start();
 
             eventLog.WriteEntry("Tracing started...");
         }
