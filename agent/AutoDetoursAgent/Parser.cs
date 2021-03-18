@@ -16,10 +16,21 @@ namespace AutoDetoursAgent
         public string[] funcParams { get; set; }
         public string funcOutput { get; set; }
 
-        public void Print()
+        override public string ToString()
         {
-            Console.WriteLine("{ timestamp : " + timestamp + ", epoch : " + epoch + ", timeMs : " + timeMs + ", thread : "
-                + thread + ", funcName : " + funcName + ", funcParams " + funcParams + ", funcOutput : " + funcOutput);
+            string ret = "{\n  \"timestamp\" : \"" + timestamp + "\",\n  \"epoch\" : \""
+                + epoch + "\",\n  \"timeMs\" : \"" + timeMs + "\",\n  \"thread\" : \""
+                + thread + "\",\n  \"funcName\" : \"" + funcName + "\",\n  \"funcParams\" : [\n";
+
+            if (funcParams.Length > 0)
+            {
+                ret += "    \"" + funcParams[0] + "\"";
+                for (int i = 1; i < funcParams.Length; i++)
+                    ret += ",\n    \"" + funcParams[i] + "\"";
+            }
+            ret += "\n  ],\n  \"funcOutput\" : \"" + funcOutput + "\"\n}";
+
+            return ret;
         }
     }
 
@@ -35,11 +46,23 @@ namespace AutoDetoursAgent
             long threadInt;
             return Int64.TryParse(threadString, out threadInt);
         }
+        private static void DeleteSpaces(List<string> items, int length)
+        {
+            int nb_items = 0;
+            int i = 0;
+
+            while (nb_items < length && i < items.Count)
+            {
+                if (items[i] == "")
+                    items.RemoveAt(i);
+                else
+                    nb_items++;
+                i++;
+            }
+        }
 
         private static bool isValidTrace(List<string> items)
         {
-
-
             if (items.Contains("Error") || items.Contains("error"))
                 return false;
 
@@ -107,47 +130,19 @@ namespace AutoDetoursAgent
             return Tuple.Create<string, string>(funcName, funcOutput);
         }
 
-        private static void WriteJson(List<string> jsonList, string filename)
+        private static string ListToJson(List<string> jsonList)
         {
-            if (File.Exists(filename))
-                File.Delete(filename);
+            string ret = "{\"results\": [\n" + jsonList[0];
 
-            using (StreamWriter writer = File.CreateText(filename))
-            {
-                writer.WriteLine('[');
-                writer.Write(jsonList[0]);
-                for (int i = 1; i < jsonList.Count; i++)
-                    writer.WriteLine(',' + jsonList[i]);
-
-                writer.WriteLine(']');
-            }
-        }
-
-        private static string LogToJson(List<string> jsonList)
-        {
-            string ret = "{\"results\":[" + jsonList[0];
             for (int i = 1; i < jsonList.Count; i++)
-                ret += (',' + jsonList[i]);
+                ret += (",\n" + jsonList[i]);
 
-            ret += "]}";
-
+            ret += "\n]}";
+            Console.WriteLine(ret);
             return ret;
         }
 
-        private static void DeleteSpaces(List<string> items, int length)
-        {
-            int nb_items = 0;
-            int i = 0;
 
-            while (nb_items < length && i < items.Count)
-            {
-                if (items[i] == "")
-                    items.RemoveAt(i);
-                else
-                    nb_items++;
-                i++;
-            }
-        }
 
         private static Log FindAssociatedLog(string funcName, List<Log> waitingOutput)
         {
@@ -169,14 +164,7 @@ namespace AutoDetoursAgent
             for (int i = (waitingOutput.Count() - 1); i >= 0; i--)
             {
                 waitingOutput[i].funcOutput = "No output";
-                try
-                {
-                    jsonList.Add(JsonConvert.SerializeObject(waitingOutput[i], Formatting.Indented));
-                }
-                catch (JsonException)
-                {
-                    jsonList.Add("Error during serialization");
-                }
+                jsonList.Add(waitingOutput[i].ToString());
             }
         }
 
@@ -201,7 +189,7 @@ namespace AutoDetoursAgent
         public static string ParseLogs(string input_filename)
         {
             List<string> jsonList = new List<string>();
-
+            
             using (StreamReader file = new StreamReader(input_filename))
             {
                 string line = file.ReadLine();
@@ -210,7 +198,7 @@ namespace AutoDetoursAgent
 
                 long start_time = FormatTimestamps(line.Split(' ')[0]).Item2;
                 List<Log> waitingOutput = new List<Log>();
-
+                
                 while ((line = file.ReadLine()) != null)
                 {
                     List<string> items = line.Split(' ').ToList();
@@ -236,22 +224,17 @@ namespace AutoDetoursAgent
                         Log log = FindAssociatedLog(funcName, waitingOutput);
                         log.funcOutput = funcOutput;
 
-                        try
-                        {
-                            jsonList.Add(JsonConvert.SerializeObject(log, Formatting.Indented));
-                        }
-                        catch (JsonException)
-                        {
-                            jsonList.Add("Error during serialization");
-                        }
+                        jsonList.Add(log.ToString());
                     }
                 }
 
                 // Add opened functions with no output
                 AddNotExitingLogs(jsonList, waitingOutput);
             }
+            
 
-            return LogToJson(jsonList);
+            return ListToJson(jsonList);
         }
     }
 }
+
