@@ -122,8 +122,9 @@ namespace AutoDetoursAgent
                     writer.WriteLine(',' + jsonList[i]);
                 }
                 writer.WriteLine(']');
-                tmp += "]}";
+                
             }
+            tmp += "]}";
             return tmp;
         }
 
@@ -160,7 +161,7 @@ namespace AutoDetoursAgent
                 deleteSpaces(items, 4);
 
                 if (items.Contains("Error") || items.Contains("error"))
-                    break;
+                    continue;
 
                 if (isValidLengthForItems(items))
                 {
@@ -199,6 +200,7 @@ namespace AutoDetoursAgent
                     }
                 }
             }
+            Console.WriteLine(jsonList.Count);
             return writeJson(jsonList, output);
         }
     }
