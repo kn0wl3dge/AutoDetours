@@ -1,5 +1,6 @@
 name: Process
 features:
+    - CreateProcess
     - CreateProcessA
     - CreateProcessAsUserA
     - CreateProcessAsUserW
