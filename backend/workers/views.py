@@ -17,7 +17,7 @@ class WorkerViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
 
     def perform_destroy(self, instance):
         if instance.state != WorkerState.FINISHED:
-            raise ValidationError("You can delete a worker in this state")
+            raise ValidationError("You can't delete a worker in this state")
         ip = instance.ip
         instance.delete()
         worker_delete.delay(ip)

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.IO;
-using Newtonsoft.Json;
 
 namespace AutoDetoursAgent
 {
@@ -18,17 +17,23 @@ namespace AutoDetoursAgent
 
         override public string ToString()
         {
-            string ret = "{\n  \"timestamp\" : \"" + timestamp + "\",\n  \"epoch\" : \""
-                + epoch + "\",\n  \"timeMs\" : \"" + timeMs + "\",\n  \"thread\" : \""
-                + thread + "\",\n  \"funcName\" : \"" + funcName + "\",\n  \"funcParams\" : [\n";
+            string ret = "{\n\"timestamp\":\"" + timestamp + "\",\n"
+                + "\"epoch\":" + epoch + ",\n"
+                + "\"timeMs\":" + timeMs + ",\n"
+                + "\"thread\":" + thread + ",\n"
+                + "\"funcName\":\"" + funcName + "\",\n"
+                + "\"funcParams\": [\n";
 
             if (funcParams.Length > 0)
             {
-                ret += "    \"" + funcParams[0] + "\"";
+                ret += "\"" + funcParams[0] + "\"";
                 for (int i = 1; i < funcParams.Length; i++)
-                    ret += ",\n    \"" + funcParams[i] + "\"";
+                    ret += ",\n" + "\"" + funcParams[i] + "\"";
             }
-            ret += "\n  ],\n  \"funcOutput\" : \"" + funcOutput + "\"\n}";
+
+            ret += "\n],\n"
+                + "\"funcOutput\":\"" + funcOutput + "\"\n"
+                + "}";
 
             return ret;
         }
@@ -40,7 +45,6 @@ namespace AutoDetoursAgent
         {
             return items.Count >= 5;
         }
-
         private static bool isThreadValid(String threadString)
         {
             long threadInt;
@@ -60,7 +64,6 @@ namespace AutoDetoursAgent
                 i++;
             }
         }
-
         private static bool isValidTrace(List<string> items)
         {
             if (items.Contains("Error") || items.Contains("error"))
@@ -72,7 +75,6 @@ namespace AutoDetoursAgent
             return isValidLengthForItems(items)
                 && isThreadValid(items[4]);
         }
-
         private static long ConvertToTimestamp(string timestamp8601)
         {
             DateTime value = DateTime.Parse(timestamp8601);
@@ -81,7 +83,6 @@ namespace AutoDetoursAgent
             TimeSpan elapsedTime = value - epoch;
             return (long)elapsedTime.TotalMilliseconds;
         }
-
         private static Tuple<string, long> FormatTimestamps(String timestamp)
         {
             string year = timestamp.Substring(0, 4);
@@ -99,7 +100,6 @@ namespace AutoDetoursAgent
 
             return Tuple.Create<string, long>(timestamp8601, epoch);
         }
-
         private static int isEntry(String functionCall)
         {
             if (functionCall.Length == 0)
@@ -108,7 +108,6 @@ namespace AutoDetoursAgent
                 return 1;
             return 0;
         }
-
         private static Tuple<string, string[]> GetFuncEntryInfos(string functionCall)
         {
             functionCall = functionCall.Substring(1);
@@ -118,7 +117,6 @@ namespace AutoDetoursAgent
 
             return Tuple.Create<string, string[]>(funcName, funcParams);
         }
-
         private static Tuple<string, string> GetFuncOutputInfos(List<string> items)
         {
             string funcName = items[5].Substring(1).Split('(')[0];
@@ -129,21 +127,22 @@ namespace AutoDetoursAgent
 
             return Tuple.Create<string, string>(funcName, funcOutput);
         }
-
         private static string ListToJson(List<string> jsonList)
         {
-            string ret = "{\"results\": [\n" + jsonList[0];
+            string ret = "{\"results\": [";
 
-            for (int i = 1; i < jsonList.Count; i++)
-                ret += (",\n" + jsonList[i]);
+            if (jsonList.Count > 0)
+            {
+                ret += '\n' + jsonList[0];
 
-            ret += "\n]}";
-            Console.WriteLine(ret);
-            return ret;
+                for (int i = 1; i < jsonList.Count; i++)
+                    ret += (",\n" + jsonList[i]);
+
+                ret += '\n';
+            }
+
+            return (ret + "]}");
         }
-
-
-
         private static Log FindAssociatedLog(string funcName, List<Log> waitingOutput)
         {
             for (int i = (waitingOutput.Count() - 1); i >= 0; i--)
@@ -158,7 +157,6 @@ namespace AutoDetoursAgent
 
             return null;
         }
-
         private static void AddNotExitingLogs(List<string> jsonList, List<Log> waitingOutput)
         {
             for (int i = (waitingOutput.Count() - 1); i >= 0; i--)
@@ -167,7 +165,6 @@ namespace AutoDetoursAgent
                 jsonList.Add(waitingOutput[i].ToString());
             }
         }
-
         private static Log createLog(List<string> items, long start_time)
         {
             Log log = new Log();
@@ -185,7 +182,6 @@ namespace AutoDetoursAgent
 
             return log;
         }
-
         public static string ParseLogs(string input_filename)
         {
             List<string> jsonList = new List<string>();
@@ -202,7 +198,7 @@ namespace AutoDetoursAgent
                 while ((line = file.ReadLine()) != null)
                 {
                     List<string> items = line.Split(' ').ToList();
-
+                    
                     if (!isValidTrace(items))
                         continue;
 
@@ -227,11 +223,11 @@ namespace AutoDetoursAgent
                         jsonList.Add(log.ToString());
                     }
                 }
-
+                
                 // Add opened functions with no output
                 AddNotExitingLogs(jsonList, waitingOutput);
+                
             }
-            
 
             return ListToJson(jsonList);
         }
