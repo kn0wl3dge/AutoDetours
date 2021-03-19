@@ -1,0 +1,6 @@
+name: Keyboard_Usage
+features:
+  - GetRawInputData
+  - GetKeyboardState
+  - GetAsyncKeyboardState
+tag: Keyboard
