@@ -3,59 +3,44 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import authentication, permissions
 from django.contrib.auth.models import User
+from django.db.models import Count
 
-from workers.models import Worker
-from malwaredb.models import Malware
+from workers.models import Worker, WorkerState
+from malwaredb.models import Malware, MalwareState
 
+def getStateRepartition(model, enum):
+    return [
+                model.objects.filter(state=v).count()
+                for v, m in vars(enum).items()
+                if not (v.startswith('_') or callable(m))
+            ]
 
-def get_malwares_list():
-    return Malware.objects.all()
+def getTimeLineChart(model, field):
+    dates = model.objects \
+        .datetimes(field, "minute") \
+        .values("datetimefield") \
+        .annotate(count_by_date=Count('name'))
+    return [{"t": str(d["datetimefield"]), "y": d["count_by_date"]} for d in dates]
 
-
-def get_workers_list():
-    return Worker.objects.all()
-
-
-def get_info_state_malwares():
-    queryset = get_malwares_list()
-    data = [0, 0, 0, 0]
-    for malware in queryset:
-        if malware.state == "ANALYZED":
-            data[2] += 1
-        elif malware.state == "ANALYZING":
-            data[1] += 1
-        elif malware.state == "NOT_ANALYZED":
-            data[0] += 1
-        elif malware.state == "TIMED_OUT":
-            data[3] += 1
-    
-    return data
-
-
-def get_info_workers():
-    queryset = get_workers_list()
-    data = [0, 0, 0]
-    for worker in queryset:
-        if worker.state == "REGISTERED":
-            data[2] += 1
-        elif worker.state == "TASKED":
-            data[1] += 1
-        elif worker.state == "FINISHED":
-            data[0] += 1
-    
-    return data
-
+def getTop7Labels():
+    return Malware.objects \
+        .values("label")\
+        .annotate(nbr=Count("sha256")) \
+        .order_by("-nbr") \
+        .values('label', 'nbr')[:7]
 
 class StatsView(APIView):
     def get(self, request, pk=None):
-        data = get_info_state_malwares()
-        status_worker = get_info_workers()
-        all_data = { 
-            'info_malware': {
-                'status' : data,
+        all_data = {
+            "count": {
+                "total_malwares": Malware.objects.count(),
+                "total_malwares_analyzed": Malware.objects.filter(state=MalwareState.ANALYZED).count(),
+                "distinct_labels_number": Malware.objects.distinct("label").count(),
+                "workers_number": Worker.objects.count()
             },
-            'info_workers': {
-                'status' : status_worker
-            }
+            "malwares_repartition": getStateRepartition(Malware, MalwareState),
+            "workers_repartition": getStateRepartition(Worker, WorkerState),
+            "malware_import_timeline": getTimeLineChart(Malware, "date"),
+            "most_seen_labels": getTop7Labels()
         }
         return Response(all_data)
