@@ -1,0 +1,5 @@
+name: Get_command_line
+features:
+    - GetCommandLineA
+    - GetCommandLineW
+tag: GetCommandLine

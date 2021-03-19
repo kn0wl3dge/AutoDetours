@@ -1,0 +1,14 @@
+name: Service_Usage
+features:
+    - CreateService
+    - CreateServiceA
+    - CreateServiceW
+    - DeleteService
+    - ControlService
+    - ControlServiceExA
+    - ControlServiceExW
+    - OpenService
+    - StartService
+    - StartServiceA
+    - StartServiceW
+tag: Service

@@ -22,7 +22,7 @@ def workers_timeout():
         delta = timezone.now() - worker.analysis_start_date
         if delta.seconds > worker.malware.time * 3:
             print("Worker %s timed out !" % worker.id)
-            worker.malware.end_analysis({"error": "Timed out.."})
+            worker.malware.end_analysis(None)
             worker.malware.save()
             worker_delete.delay(worker.ip)
             worker.delete()
@@ -32,18 +32,10 @@ def workers_automation():
     input_dir = "/home/ssg/Documents/qemu_img/"
     output_dir = "/image/"
     network = "autodetours_autodetours_lan"
-    workers = {
-        "autodetours_worker1": "win7.qcow2",
-        "autodetours_worker2": "win7-1.qcow2",
-        "autodetours_worker3": "win7-2.qcow2",
-        "autodetours_worker4": "win7-3.qcow2",
-        "autodetours_worker5": "win7-4.qcow2",
-        "autodetours_worker6": "win7-5.qcow2",
-        "autodetours_worker7": "win7-6.qcow2",
-        "autodetours_worker8": "win7-7.qcow2",
-        "autodetours_worker9": "win7-8.qcow2",
-        "autodetours_worker10": "win7-9.qcow2",
-    }
+    nb_workers = 5 # Change Me
+    workers = {}
+    for i in range(nb_workers):
+        workers["autodetours_workers_%i" %i] = "win7-%i.qcow2" % i
     client = docker.DockerClient(base_url='unix://var/run/docker.sock')
 
     for worker, image in workers.items():

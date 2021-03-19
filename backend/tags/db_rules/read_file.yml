@@ -1,0 +1,8 @@
+name: Read_files
+features:
+    - GetWindowsDirectoryW
+    - GetTempsFileNameW
+    - GetFileSizeW
+    - GetFileType
+    - ReadFile
+tag: Read File/Directory

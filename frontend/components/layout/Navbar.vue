@@ -1,6 +1,7 @@
 <template>
   <b-navbar fixed="top" class="navbar-dark bg-secondary shadow-lg">
     <nuxt-link class="navbar-brand" to="/">
+      <img src="~/assets/img/logo-small.png" height="30" class="mr-2 pb-1">
       AutoDetours
     </nuxt-link>
   </b-navbar>
