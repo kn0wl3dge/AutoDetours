@@ -47,7 +47,7 @@ namespace AutoDetoursAgent
             writer.WriteEndArray();
 
             writer.WritePropertyName("funcOutput");
-            writer.WriteValue(timestamp);
+            writer.WriteValue(funcOutput);
 
             writer.WriteEndObject();
 
