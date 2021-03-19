@@ -26,8 +26,8 @@
         </b-card>
       </b-col>
       <b-col sm="4">
-        <b-card header="Most Seen Labels" class="text-center">
-          <repartition-area-chart :stats="stats.worker" />
+        <b-card header="Malwares Type" class="text-center">
+          <repartition-area-chart :stats="stats.malwares_family" />
         </b-card>
       </b-col>
       <b-col sm="4">
@@ -39,7 +39,7 @@
     <b-row class="mb-4">
       <b-col>
         <b-card header="Analysis Load" class="text-center">
-          <time-line-chart :stats="stats.worker" />
+          <time-line-chart :stats="stats.malwares_analysis_timeline" />
         </b-card>
       </b-col>
     </b-row>
@@ -69,7 +69,13 @@ export default {
           borderColors: ['##fff', '##fff', '##fff'],
           colors: ['#00bc8c', '#fd7e14', '#e74c3c']
         },
-        malware_import_timeline: resp.malware_import_timeline,
+        malwares_family: {
+          stateanalyze: resp.malwares_family.count,
+          labels: resp.malwares_family.labels,
+          borderColors: ['##fff', '##fff', '##fff', '##fff', '##fff', '##fff'],
+          colors: ['#e74c3c', '#fd7e14', '#00bc8c', '#375a7f', '#6f42c1', '#3498db']
+        },
+        malwares_analysis_timeline: resp.malwares_analysis_timeline,
         count: resp.count
       }
     }
