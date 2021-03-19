@@ -1,0 +1,36 @@
+name: Process
+features:
+    - CreateProcessA
+    - CreateProcessAsUserA
+    - CreateProcessAsUserW
+    - CreateProcessW
+    - FlushProcessWriteBuffers
+    - GetCurrentProcess
+    - GetCurrentProcessId
+    - GetCurrentProcessorNumber
+    - GetCurrentProcessorNumberEx
+    - GetCurrentProcessToken
+    - GetExitCodeProcess
+    - GetPriorityClass
+    - GetProcessHandleCount
+    - GetProcessId
+    - GetProcessInformation
+    - GetProcessMitigationPolicy
+    - GetProcessPriorityBoost
+    - GetProcessShutdownParameters
+    - GetProcessTimes
+    - GetProcessVersion
+    - IsProcessCritical
+    - OpenProcess
+    - OpenProcessToken
+    - ProcessIdToSessionId
+    - QueryProcessAffinityUpdateMode
+    - SetProcessAffinityUpdateMode
+    - SetProcessDynamicEHContinuationTargets
+    - SetProcessDynamicEnforcedCetCompatibleRanges
+    - SetProcessInformation
+    - SetProcessMitigationPolicy
+    - SetProcessPriorityBoost
+    - SetProcessShutdownParameters
+    - TerminateProcess
+tag: Process

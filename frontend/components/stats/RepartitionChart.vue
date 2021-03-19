@@ -28,8 +28,8 @@ export default {
     this.chartdata = {
       datasets: [{
         data: this.stats.stateanalyze,
-        backgroundColor: ['#e74c3c', '#fd7e14', '#00bc8c'],
-        borderColor: ['##fff', '##fff', '##fff']
+        backgroundColor: this.stats.colors,
+        borderColor: this.stats.borderColors
       }],
       labels: this.stats.labels
     }
