@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace AutoDetoursAgent
 {
@@ -17,25 +18,40 @@ namespace AutoDetoursAgent
 
         override public string ToString()
         {
-            string ret = "{\n\"timestamp\":\"" + timestamp + "\",\n"
-                + "\"epoch\":" + epoch + ",\n"
-                + "\"timeMs\":" + timeMs + ",\n"
-                + "\"thread\":" + thread + ",\n"
-                + "\"funcName\":\"" + funcName + "\",\n"
-                + "\"funcParams\": [\n";
+            StringWriter sw = new StringWriter();
+            JsonTextWriter writer = new JsonTextWriter(sw);
 
-            if (funcParams.Length > 0)
+            writer.WriteStartObject();
+
+            writer.WritePropertyName("timestamp");
+            writer.WriteValue(timestamp);
+
+            writer.WritePropertyName("epoch");
+            writer.WriteValue(epoch);
+
+            writer.WritePropertyName("timeMs");
+            writer.WriteValue(timeMs);
+
+            writer.WritePropertyName("thread");
+            writer.WriteValue(thread);
+
+            writer.WritePropertyName("funcName");
+            writer.WriteValue(funcName);
+
+            writer.WritePropertyName("funcParams");
+            writer.WriteStartArray();
+            foreach (string param in funcParams)
             {
-                ret += "\"" + funcParams[0] + "\"";
-                for (int i = 1; i < funcParams.Length; i++)
-                    ret += ",\n" + "\"" + funcParams[i] + "\"";
+                writer.WriteValue(param);
             }
+            writer.WriteEndArray();
 
-            ret += "\n],\n"
-                + "\"funcOutput\":\"" + funcOutput + "\"\n"
-                + "}";
+            writer.WritePropertyName("funcOutput");
+            writer.WriteValue(timestamp);
 
-            return ret;
+            writer.WriteEndObject();
+
+            return sw.ToString();
         }
     }
 
