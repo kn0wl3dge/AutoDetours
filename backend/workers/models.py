@@ -34,7 +34,7 @@ class Worker(models.Model):
     def find_task(self):
         potential_tasks = Malware.objects.filter(state=MalwareState.NOT_ANALYZED)
         if potential_tasks.exists():
-            malware = potential_tasks.earliest("date")
+            malware = potential_tasks.earliest("creation_date")
             malware.analyze()
             malware.save()
             self.malware = malware

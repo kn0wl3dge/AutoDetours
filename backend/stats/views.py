@@ -22,12 +22,16 @@ def getTimeLineChart(model, field):
         .annotate(count_by_date=Count('name'))
     return [{"t": str(d["datetimefield"]), "y": d["count_by_date"]} for d in dates]
 
-def getTop7Labels():
-    return Malware.objects \
-        .values("label")\
+def getMalwaresFamily():
+    res = Malware.objects \
+        .values("family")\
         .annotate(nbr=Count("sha256")) \
         .order_by("-nbr") \
-        .values('label', 'nbr')[:7]
+        .values("family", "nbr")
+    return {
+        "labels": [x["family"] for x in res],
+        "count": [x["nbr"] for x in res]
+    }
 
 class StatsView(APIView):
     def get(self, request, pk=None):
@@ -40,7 +44,7 @@ class StatsView(APIView):
             },
             "malwares_repartition": getStateRepartition(Malware, MalwareState),
             "workers_repartition": getStateRepartition(Worker, WorkerState),
-            "malware_import_timeline": getTimeLineChart(Malware, "date"),
-            "most_seen_labels": getTop7Labels()
+            "malwares_analysis_timeline": getTimeLineChart(Malware, "analysis_ended_at"),
+            "malwares_family": getMalwaresFamily()
         }
         return Response(all_data)
