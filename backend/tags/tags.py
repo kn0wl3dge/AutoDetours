@@ -1,7 +1,10 @@
-from celery import shared_task
 import tags.rule as rule
 import tags.extract as extract
+
 from malwaredb.models import Malware
+from celery import shared_task
+from  tags.rule import check_family
+
 
 rules = rule.get_db_rules('tags/db_rules')
 
@@ -17,10 +20,14 @@ def set_tags(mal_sha256):
         for pattern in rule.patterns:
             if pattern in api_calls:
                 tags.append(rule.tag)
-                if rule in tags2:
+                if tags2.get(rule.tag) != None:
                     tags2[rule.tag] += 1
                 else:
-                    tags2[rule.tag] = 0
-                #break
-    malware.tags = tags
+                    tags2[rule.tag] = 1
+    val = check_family(tags2)
+    malware.tags = list(tags2)
+    if val != None:
+        malware.family = val
+    else:
+        malware.family = "Unknown"
     malware.save()
