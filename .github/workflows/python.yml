@@ -16,9 +16,8 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         pip install pylint
-        pip install pyyaml
-        pip install Django
     - name: Analysing the code with pylint
       run: |
         find . -type f -name "*.py" | xargs pylint
