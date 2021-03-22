@@ -3,7 +3,7 @@ from argparse import ArgumentParser
 
 def extract_functions_from_file(filename):
     function_list = []
-    
+
     try:        
         with open(filename, 'r') as f:
             for line in f.readlines():
@@ -13,7 +13,7 @@ def extract_functions_from_file(filename):
                 function_list.append(line.split()[0])
     except IOError:
         print("File does not exist", file=sys.stderr)
-    
+
     return function_list
 
 
