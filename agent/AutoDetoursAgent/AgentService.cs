@@ -148,9 +148,8 @@ namespace AutoDetoursAgent
                     // Deserialize the JSON to get a Worker obejct
                     workerTask = JsonConvert.DeserializeObject<WorkerTask>(resp);
                     worker.malware = workerTask.malware;
-                    eventLog.WriteEntry("Agent is now tasked with sample : " + worker.malware);
 
-                    eventLog.WriteEntry("Tracing duration set to : " + workerTask.time + "s");
+                    eventLog.WriteEntry("Agent is now tasked with sample : " + worker.malware);
                     return true;
                 }
             }
@@ -191,9 +190,16 @@ namespace AutoDetoursAgent
             syelogd.StartInfo.Arguments = "/o C:\\Temp\\traces.txt";
             syelogd.Start();
 
-            // We inject Traceapi DLL into the malware process using withdll.exe
             withdll.StartInfo.FileName = "C:\\Temp\\withdll.exe";
-            withdll.StartInfo.Arguments = "/d:C:\\Temp\\trcapi32.dll C:\\Temp\\sample.exe";
+
+            // We inject Traceapi DLL into the malware process using withdll.exe
+            if (workerTask.isDll == false)
+                withdll.StartInfo.Arguments = "/d:C:\\Temp\\trcapi32.dll C:\\Temp\\sample.exe";
+
+            // In case of a DLL we use RunDLL32 to launch the DLL
+            else 
+                withdll.StartInfo.Arguments = "/d:C:\\Temp\\trcapi32.dll rundll32.exe C:\\Temp\\sample.exe," + workerTask.exportName;
+
             withdll.Start();
 
             eventLog.WriteEntry("Tracing started...");
@@ -378,5 +384,8 @@ namespace AutoDetoursAgent
     {
         public String malware { get; set; }
         public int time { get; set; }
+        public bool isDll { get; set; }
+        public string exportName { get; set; }
     }
 }
+
