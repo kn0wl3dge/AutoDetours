@@ -1,4 +1,5 @@
 import docker
+import os
 
 from celery import shared_task
 from django.utils import timezone
@@ -20,7 +21,10 @@ def worker_delete(ip):
 def workers_timeout():
     for worker in Worker.objects.filter(state=WorkerState.TASKED):
         delta = timezone.now() - worker.analysis_start_date
-        if delta.seconds > worker.malware.time * 3:
+        limit = worker.malware.time * 10
+        if limit > 600: # 10minutes max of timeout after analysis
+            limit = 600
+        if delta.seconds > worker.malware.time * 10:
             print("Worker %s timed out !" % worker.id)
             worker.malware.end_analysis(None)
             worker.malware.save()
@@ -29,10 +33,10 @@ def workers_timeout():
 
 @shared_task
 def workers_automation():
-    input_dir = "/home/ssg/Documents/qemu_img/"
+    input_dir = os.environ.get("WIN7_IMAGES_DIR")
     output_dir = "/image/"
     network = "autodetours_autodetours_lan"
-    nb_workers = 5 # Change Me
+    nb_workers = int(os.environ.get("NB_WIN7_WORKERS"))
     workers = {}
     for i in range(nb_workers):
         workers["autodetours_workers_%i" %i] = "win7-%i.qcow2" % i
@@ -47,8 +51,10 @@ def workers_automation():
                 "qemu",
                 command=f"-hda {output_dir}{image}",
                 network=network,
+                devices=['/dev/kvm'],
                 volumes={input_dir: {'bind': output_dir, 'mode': 'rw'}},
                 remove=True,
                 name=worker,
-                detach=True
+                detach=True,
+                privileged=True
             )
