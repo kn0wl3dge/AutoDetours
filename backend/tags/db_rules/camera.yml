@@ -1,0 +1,7 @@
+name: Camera
+features:
+  - CameraCaptureUI
+  - CameraCaptureUIContract
+  - CapturedPhoto
+  - CapturedFramed
+tag: Camera

@@ -38,4 +38,10 @@ features:
     - HttpWaitForDemandStart
     - HttpWaitForDisconnect
     - HttpWaitForDisconnectEx
+    - InternetOpen
+    - InternetConnect
+    - HttpOpenRequest
+    - HttpAddRequestHeaders
+    - HttpSendRequest
+    - InternetReadFile
 tag: Http Request

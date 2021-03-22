@@ -44,38 +44,28 @@ def get_db_rules(directory):
     return rules
 
 
-def check_ransomware(dict_tags):
-    ransomware_tags = {"Write File/Directory": 15, "Read File/Directory": 15, "Crypto": 10}
+def check_type(dict_tags, reference):
     for k in dict_tags:
-        for key in ransomware_tags:
-            if k == key and dict_tags[k] >= ransomware_tags[key]:
-                return "Ransomware"
-    
-    return None
+        for key in reference:
+            if k == key and dict_tags[k] >= reference[key]:
+                return True
 
-def check_keylogger(dict_tags):
-    keylogger_tags = {"Keyboard": 1}
-    for k in dict_tags:
-        for key in keylogger_tags:
-            if k == key and dict_tags[k] >= keylogger_tags[key]:
-                return "Keylogger"
+    return False
 
-    return None
-
-def check_obfuscation(dict_tags):
-    obfuscation_tags = {"GetProcess": 30, "Obfuscation": 1}
-    for k in dict_tags:
-        for key in obfuscation_tags:
-            if k == key and dict_tags[k] >= obfuscation_tags[key]:
-                return "Obfuscation"
-
-    return None
 
 def check_family(dict_tags):
-    if check_ransomware(dict_tags) != None:
+    ransomware_tags = {"Write File/Directory": 15,
+                       "Read File/Directory": 15, "Crypto": 10}
+    keylogger_tags = {"Keyboard": 1}
+    spyware_tags = {"Camera": 1}
+    c2_tags = {"Http Request": 1}
+    if check_type(dict_tags, ransomware_tags) != False:
         return "Ransomware"
-    elif check_keylogger(dict_tags) != None:
+    elif check_type(dict_tags, keylogger_tags) != False:
         return "Keylogger"
-    elif check_obfuscation(dict_tags) != None:
-        return "Obfuscation"
-    return None
+    elif check_type(dict_tags, spyware_tags) != False:
+        return "Spyware"
+    elif check_type(dict_tags, c2_tags) != False:
+        return "RAT/Trojan"
+    
+    return "Unknown"

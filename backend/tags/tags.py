@@ -24,10 +24,6 @@ def set_tags(mal_sha256):
                     tags2[rule.tag] += 1
                 else:
                     tags2[rule.tag] = 1
-    val = check_family(tags2)
+    malware.family = check_family(tags2)
     malware.tags = list(tags2)
-    if val != None:
-        malware.family = val
-    else:
-        malware.family = "Unknown"
     malware.save()
