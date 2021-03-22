@@ -174,7 +174,7 @@ namespace AutoDetoursAgent
             {
                 downloader.DownloadFile(url.ToString(), "C:\\Temp\\sample.exe");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -220,8 +220,7 @@ namespace AutoDetoursAgent
         {
             // Convert the traces.txt to json format
             string inputFilename = "C:\\Temp\\traces.txt";
-            string outputFilename = "C:\\Temp\\logs.json";
-            string logs = Parser.ParseLogs(inputFilename, outputFilename);
+            string logs = Parser.ParseLogs(inputFilename);
             eventLog.WriteEntry("Json output has been generated.");
             return logs;
         }
@@ -235,7 +234,7 @@ namespace AutoDetoursAgent
             {
                 response = await client.PostAsync(url, new StringContent(jsonLogs, Encoding.UTF8, "application/json"));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -257,7 +256,7 @@ namespace AutoDetoursAgent
             {
                 response = await client.DeleteAsync(url);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -277,7 +276,7 @@ namespace AutoDetoursAgent
             {
                 response = await client.GetAsync("");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
