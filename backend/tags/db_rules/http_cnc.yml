@@ -1,0 +1,9 @@
+name: Http_cnc
+features:
+  - InternetOpen
+  - InternetConnect
+  - HttpOpenRequest
+  - HttpAddRequestHeaders
+  - HttpSendRequest
+  - InternetReadFile
+tag: C2
