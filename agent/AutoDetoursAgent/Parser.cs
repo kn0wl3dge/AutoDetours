@@ -66,18 +66,14 @@ namespace AutoDetoursAgent
             long threadInt;
             return Int64.TryParse(threadString, out threadInt);
         }
-        private static void DeleteSpaces(List<string> items, int length)
+        private static void DeleteSpaces(List<string> items)
         {
-            int nb_items = 0;
-            int i = 0;
-
-            while (nb_items < length && i < items.Count)
+            for (int i = 0; i < items.Count;)
             {
-                if (items[i] == "")
+                if (items[i].Length == 0)
                     items.RemoveAt(i);
                 else
-                    nb_items++;
-                i++;
+                    i++;
             }
         }
         private static bool isValidTrace(List<string> items)
@@ -85,8 +81,8 @@ namespace AutoDetoursAgent
             if (items.Contains("Error") || items.Contains("error"))
                 return false;
 
-            // Remove indentation from line and get the 5 firsts items of traces
-            DeleteSpaces(items, 5);
+            // Remove indentation from line
+            DeleteSpaces(items);
 
             return isValidLengthForItems(items)
                 && isThreadValid(items[4]);
