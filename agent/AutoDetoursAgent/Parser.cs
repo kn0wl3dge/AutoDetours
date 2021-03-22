@@ -166,7 +166,6 @@ namespace AutoDetoursAgent
                     return ret;
                 }
             }
-
             return null;
         }
         private static void AddNotExitingLogs(List<string> jsonList, List<Log> waitingOutput)
@@ -240,7 +239,6 @@ namespace AutoDetoursAgent
                 AddNotExitingLogs(jsonList, waitingOutput);
                 
             }
-
             return ListToJson(jsonList);
         }
     }
