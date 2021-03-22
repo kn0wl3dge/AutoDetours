@@ -1,6 +1,8 @@
 name: Keyboard_Usage
 features:
   - GetRawInputData
+  - GetKeyState
   - GetKeyboardState
   - GetAsyncKeyboardState
+  - SetWindowsHookExA
 tag: Keyboard
