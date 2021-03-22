@@ -168,11 +168,17 @@ namespace AutoDetoursAgent
 
             eventLog.WriteEntry("Downloading file at " + url.ToString());
 
+            String filename = null;
+            if (workerTask.isDll == false)
+                filename = "C:\\Temp\\sample.exe";
+            else
+                filename = "C:\\Temp\\sample.dll";
+
             // Download and save sample to C:/Temp/sample.exe
             WebClient downloader = new WebClient();
             try
             {
-                downloader.DownloadFile(url.ToString(), "C:\\Temp\\sample.exe");
+                downloader.DownloadFile(url.ToString(), filename);
             }
             catch (Exception)
             {
@@ -198,7 +204,7 @@ namespace AutoDetoursAgent
 
             // In case of a DLL we use RunDLL32 to launch the DLL
             else 
-                withdll.StartInfo.Arguments = "/d:C:\\Temp\\trcapi32.dll rundll32.exe C:\\Temp\\sample.exe," + workerTask.exportName;
+                withdll.StartInfo.Arguments = "/d:C:\\Temp\\trcapi32.dll rundll32.exe C:\\Temp\\sample.dll," + workerTask.exportName;
 
             withdll.Start();
 
