@@ -1,8 +1,0 @@
-name: Network
-features:
-  - WSASocket
-  - Socket
-  - bind
-  - WSAIoctl
-  - ioctlsocket
-tag:  Network
