@@ -20,4 +20,4 @@ jobs:
         sudo npm i -g eslint
     - name: Analysing the code with eslint
       run: |
-        find . -type f -name "*.vue" | xargs eslint -c "frontend/.eslintrc.js"
+        find . -type f -name "*.vue" | xargs eslint -c "/home/runner/work/AutoDetours/AutoDetours/frontend/.eslintrc.js"
