@@ -26,10 +26,10 @@ jobs:
         npm install eslint
     - name: Init eslint
       run: |
-        npx eslint --init
+        npm -i -g eslint
     # - name: Analysing the code with pylint
     #   run: |
     #     find . -type f -name "*.py" | xargs pylint
     - name: Analysing the code with eslint
       run: |
-        find . -type f -name "*.vue" | xargs npm eslint
+        find . -type f -name "*.vue" | eslint
