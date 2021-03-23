@@ -5,11 +5,10 @@ def extract_functions_from_file(filename):
     function_list = []
 
     try:
-        with open(filename, 'r') as f:
-            for line in f.readlines():
+        with open(filename, 'r') as open_file:
+            for line in open_file.readlines():
                 if ("function" not in line) or ("callback" in line):
                     continue
-
                 function_list.append(line.split()[0])
     except IOError:
         print("File does not exist", file=sys.stderr)
@@ -40,5 +39,3 @@ if __name__ == "__main__":
     functions = extract_functions_from_file(args.functions)
 
     write_rule(name, tag, functions)
-
-    
