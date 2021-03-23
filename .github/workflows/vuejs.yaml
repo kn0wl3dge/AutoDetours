@@ -15,8 +15,8 @@ jobs:
         npm install @nuxtjs/eslint-config
     - name: Install eslint
       run: |
-        npm i -D eslint
-        npm i -D babel-eslint
+        sudo npm install -g eslint
+        npm install babel-eslint
     - name: Analysing the code with eslint
       run: |
-        find . -type f -name "*.vue" | xargs eslint --fix
+        find . -type f -name "*.vue" | xargs eslint
