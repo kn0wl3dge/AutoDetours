@@ -13,10 +13,10 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: 3.8
-    - name: Set up Vuejs
-      uses: actions/setup-vuejs@v1
-      with:
-        vuesjs-version: 3.0.7
+    # - name: Set up Vuejs
+    #   uses: actions/setup-vuejs@v1
+    #   with:
+    #     vuesjs-version: 3.0.7
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
