@@ -13,7 +13,7 @@ namespace AutoDetoursAgent
         public long timeMs { get; set; }
         public int thread { get; set; }
         public string funcName { get; set; }
-        public string[] funcParams { get; set; }
+        public List<string> funcParams { get; set; }
         public string funcOutput { get; set; }
 
         override public string ToString()
@@ -86,6 +86,7 @@ namespace AutoDetoursAgent
 
             return isValidLengthForItems(items)
                 && isThreadValid(items[4]);
+
         }
         private static long ConvertToTimestamp(string timestamp8601)
         {
@@ -120,23 +121,38 @@ namespace AutoDetoursAgent
                 return 1;
             return 0;
         }
-        private static Tuple<string, string[]> GetFuncEntryInfos(string functionCall)
+        private static Tuple<string, List<string>> GetFuncEntryInfos(List<string> items)
         {
-            functionCall = functionCall.Substring(1);
+            // Remove the first char ('+')
+            string functionCall = items[5].Substring(1);
             string[] name_params_split = functionCall.Split('(');
             string funcName = name_params_split[0];
-            string[] funcParams = name_params_split[1].Split(')')[0].Split(',');
 
-            return Tuple.Create<string, string[]>(funcName, funcParams);
+            List<string> funcParams = name_params_split[1].Split(')')[0].Split(',').ToList();
+
+            for (int i = 6; i < items.Count; i++)
+            {
+                List<string> new_params = items[i].Split(')')[0].Split(',').ToList();
+
+                funcParams[funcParams.Count - 1] += " " + new_params[0];
+                funcParams.AddRange(new_params.GetRange(1, new_params.Count() - 1));
+
+            }
+
+
+            return Tuple.Create<string, List<string>>(funcName, funcParams);
         }
         private static Tuple<string, string> GetFuncOutputInfos(List<string> items)
         {
             string funcName = items[5].Substring(1).Split('(')[0];
-
             string funcOutput = "";
-            if (items.Count >= 8)
-                funcOutput = items[7];
 
+            if (items.Count() >= 8)
+            {
+                funcOutput += items[7];
+                for (int i = 8; i < items.Count(); i++)
+                    funcOutput += " " + items[i];
+            }
             return Tuple.Create<string, string>(funcName, funcOutput);
         }
         private static string ListToJson(List<string> jsonList)
@@ -166,6 +182,7 @@ namespace AutoDetoursAgent
                     return ret;
                 }
             }
+
             return null;
         }
         private static void AddNotExitingLogs(List<string> jsonList, List<Log> waitingOutput)
@@ -187,7 +204,7 @@ namespace AutoDetoursAgent
 
             log.thread = int.Parse(items[4]);
 
-            Tuple<String, String[]> entryInfos = GetFuncEntryInfos(items[5]);
+            Tuple<String, List<string>> entryInfos = GetFuncEntryInfos(items);
             log.funcName = entryInfos.Item1;
             log.funcParams = entryInfos.Item2;
 
@@ -196,25 +213,26 @@ namespace AutoDetoursAgent
         public static string ParseLogs(string input_filename)
         {
             List<string> jsonList = new List<string>();
-            
+
             using (StreamReader file = new StreamReader(input_filename))
             {
                 string line = file.ReadLine();
-                if (line == null)
+                if (line.Length == 0)
                     return "[]";
 
                 long start_time = FormatTimestamps(line.Split(' ')[0]).Item2;
                 List<Log> waitingOutput = new List<Log>();
-                
+
                 while ((line = file.ReadLine()) != null)
                 {
                     List<string> items = line.Split(' ').ToList();
-                    
+
                     if (!isValidTrace(items))
                         continue;
 
                     // Check if we have the function call or output
                     int funcType = isEntry(items[5]);
+
                     if (funcType == 1)
                     {
                         Log log = createLog(items, start_time);
@@ -229,15 +247,18 @@ namespace AutoDetoursAgent
 
                         // Get associated log
                         Log log = FindAssociatedLog(funcName, waitingOutput);
-                        log.funcOutput = funcOutput;
 
-                        jsonList.Add(log.ToString());
+                        // Shall not append
+                        if (log != null)
+                        {
+                            log.funcOutput = funcOutput;
+                            jsonList.Add(log.ToString());
+                        }
                     }
                 }
-                
+
                 // Add opened functions with no output
                 AddNotExitingLogs(jsonList, waitingOutput);
-                
             }
             return ListToJson(jsonList);
         }
