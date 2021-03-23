@@ -1,6 +1,7 @@
 from os import listdir, path
 from os.path import isfile, join
 import yaml
+import re
 # install pyyaml
 
 
@@ -41,3 +42,7 @@ def get_db_rules(directory):
             except yaml.YAMLError as exc:
                 print(exc)
     return rules
+
+
+def valid_filename(name):
+    return bool(re.match("[0-9a-zA-Z-_]+", name))

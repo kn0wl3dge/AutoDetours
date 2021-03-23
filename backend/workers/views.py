@@ -5,7 +5,7 @@ from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from os import walk
+import os
 
 from workers.models import Worker, WorkerState
 from workers.serializers import WorkerSerializer
@@ -13,6 +13,7 @@ from workers.tasks import worker_delete
 
 from tags.tags import set_tags
 from tags.rule import Rule
+from tags.rule import valid_filename
 
 class WorkerViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
                     mixins.RetrieveModelMixin, mixins.DestroyModelMixin,
@@ -71,8 +72,34 @@ class RuleFormView(APIView):
 
     def get(self, request):
         rules_list = []
-        for files in walk("tags/db_rules"):
-            f = (files, 'r')
-            content = f.readlines()
-            rules_list.append()
-        return Response(list)
+        for filename in os.listdir("tags/db_rules"):
+            with open(os.path.join("tags/db_rules", filename), 'r') as f:
+                content = f.readlines()
+                new_rule = Rule(name="", patterns = [], tag="")
+                is_pattern = False
+                for line in content:
+                    if "tag: " in line:
+                        is_pattern = False
+                        new_rule.tag = line.split(": ")[1].rstrip()
+                    if "name: " in line:
+                        new_rule.name = line.split(": ")[1].rstrip()
+                    elif "features:" in line:
+                        is_pattern = True
+                    elif is_pattern:
+                        new_rule.patterns.append(line.split("- ")[1].rstrip())
+                json_format = {"name": new_rule.name, "patterns": new_rule.patterns, "tag": new_rule.tag}
+                rules_list.append(json_format)
+        return Response(rules_list)
+
+    def delete(self, request):
+        name = request.query_params['rule']
+        if valid_filename(name):
+            path = "tags/db_rules/" + name + ".yml"
+            print(path)
+            if os.path.exists(path):
+                os.remove(path)
+            return Response({"success": "nickel"})
+        else:
+            return Response({"error": "file is not valid"})
+
+
