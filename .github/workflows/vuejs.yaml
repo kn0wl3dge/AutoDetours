@@ -21,7 +21,7 @@ jobs:
         npm install eslint
     - name: Install eslint
       run: |
-        npm i -g eslint
+        sudo npm i -g eslint
     - name: Analysing the code with eslint
       run: |
         find . -type f -name "*.vue" | eslint
