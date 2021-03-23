@@ -17,4 +17,4 @@ jobs:
         npm install @nuxtjs/eslint-config
     - name: Analysing the code with eslint
       run: |
-        find . -type f -name "*.vue" | xargs eslint
+        find . -type f -name "*.vue" | xargs eslint --fix
