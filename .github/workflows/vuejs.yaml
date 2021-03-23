@@ -12,6 +12,9 @@ jobs:
     - name: Install dependencies
       run: |
         yarn add eslint --dev
+        npm install @babel/core
+        npm install webpack
+        npm install typescript
         npm install @babel/eslint-parser
         npm install @nuxtjs/eslint-module
         npm install @nuxtjs/eslint-config
