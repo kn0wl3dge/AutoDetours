@@ -15,6 +15,7 @@ jobs:
         npm install @babel/core 
         npm install webpack
         npm install typescript
+        npm install eslint-plugin-nuxt@latest --save-dev
         npm install @babel/eslint-parser
         npm install @nuxtjs/eslint-module
         npm install @nuxtjs/eslint-config
