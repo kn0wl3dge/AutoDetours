@@ -6,7 +6,7 @@ from os.path import isfile, join
 
 class Rule(object):
     YAMLTag = 'Rule'
-    
+
     def __init__(self, name, patterns, tag):
         self.name = name
         self.patterns = patterns
@@ -26,19 +26,19 @@ class Rule(object):
 
 
 def from_yaml(node):
-    return Rule(name = node['name'],
-    patterns = node['features'],
-    tag = node['tag'])
+    return Rule(name=node['name'],
+                patterns=node['features'],
+                tag=node['tag'])
 
 
 def get_db_rules(directory):
     rules = []
     files = [f for f in listdir(directory) if isfile(join(directory, f))]
     for f in files:
-        with open(path.join(directory,f), 'r') as rule:
+        with open(path.join(directory, f), 'r') as rule:
             try:
                 yaml_rule = yaml.safe_load(rule)
-                rules.append(from_yaml(yaml_rule))               
+                rules.append(from_yaml(yaml_rule))
             except yaml.YAMLError as exc:
                 print(exc)
     return rules
@@ -59,13 +59,13 @@ def check_family(dict_tags):
     keylogger_tags = {"Keyboard": 1}
     spyware_tags = {"Camera": 1}
     c2_tags = {"Http Request": 1}
-    if check_type(dict_tags, ransomware_tags) != False:
+    if check_type(dict_tags, ransomware_tags):
         return "Ransomware"
-    elif check_type(dict_tags, keylogger_tags) != False:
+    elif check_type(dict_tags, keylogger_tags):
         return "Keylogger"
-    elif check_type(dict_tags, spyware_tags) != False:
+    elif check_type(dict_tags, spyware_tags):
         return "Spyware"
-    elif check_type(dict_tags, c2_tags) != False:
+    elif check_type(dict_tags, c2_tags):
         return "RAT/Trojan"
-    
+
     return "Unknown"

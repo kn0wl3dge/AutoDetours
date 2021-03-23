@@ -26,13 +26,16 @@ class Worker(models.Model):
     state = FSMField(default=WorkerState.REGISTERED, protected=True,
                      editable=False)
     creation_date = models.DateTimeField(auto_now_add=True, editable=False)
-    analysis_start_date = models.DateTimeField(default=None, null=True, editable=False)
-    analysis_end_date = models.DateTimeField(default=None, null=True, editable=False)
+    analysis_start_date = models.DateTimeField(
+        default=None, null=True, editable=False)
+    analysis_end_date = models.DateTimeField(
+        default=None, null=True, editable=False)
 
     @transition(field=state, source=WorkerState.REGISTERED,
                 target=WorkerState.TASKED)
     def find_task(self):
-        potential_tasks = Malware.objects.filter(state=MalwareState.NOT_ANALYZED)
+        potential_tasks = Malware.objects.filter(
+            state=MalwareState.NOT_ANALYZED)
         if potential_tasks.exists():
             malware = potential_tasks.earliest("date")
             malware.analyze()
@@ -48,4 +51,3 @@ class Worker(models.Model):
         self.malware.end_analysis(report)
         self.malware.save()
         self.analysis_end_date = timezone.now()
-        

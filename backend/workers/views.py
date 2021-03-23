@@ -8,6 +8,7 @@ from workers.serializers import WorkerSerializer
 from workers.tasks import worker_delete
 from tags.tags import set_tags
 
+
 class WorkerViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
                     mixins.RetrieveModelMixin, mixins.DestroyModelMixin,
                     viewsets.GenericViewSet):
@@ -28,12 +29,12 @@ class WorkerViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
             try:
                 worker.find_task()
                 worker.save()
-            except:
+            except BaseException:
                 return Response({"error": "No task available"})
             return Response({"malware": worker.malware.sha256,
                             "time": worker.malware.time,
-                            "isDll": worker.malware.is_dll,
-                            "exportName": worker.malware.export_dll})
+                             "isDll": worker.malware.is_dll,
+                             "exportName": worker.malware.export_dll})
         else:
             return Response({"error": "Worker is busy"})
 
@@ -46,7 +47,7 @@ class WorkerViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
                     worker.finish_task(request.data["results"])
                     worker.save()
                     set_tags.delay(worker.malware.sha256)
-                except:
+                except BaseException:
                     return Response({"error": "Results can't be parsed"})
                 return Response({"success": "Results successfully stored"})
             else:

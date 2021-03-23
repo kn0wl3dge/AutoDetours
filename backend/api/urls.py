@@ -18,7 +18,7 @@ from django.urls import path, include
 from rest_framework import routers
 
 from malwaredb.views import MalwareViewSet, DatasetGenerationView, \
-                            DatasetDownloadView, DatasetCheckView
+    DatasetDownloadView, DatasetCheckView
 from workers.views import WorkerViewSet
 from stats.views import StatsView
 
