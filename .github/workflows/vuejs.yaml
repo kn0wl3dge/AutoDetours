@@ -9,6 +9,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        persist-credentials: false
     - name: Install dependencies
       run: |
         npm install nuxt@nuxtjs/eslint-module
