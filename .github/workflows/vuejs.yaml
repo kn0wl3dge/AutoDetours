@@ -19,6 +19,9 @@ jobs:
         if [ -f backend/requirements.txt ]; then pip install -r backend/requirements.txt; fi
         npm install vue@next
         npm install eslint
+    - name: Install eslint
+      run: |
+        npm i -g eslint
     - name: Analysing the code with eslint
       run: |
         find . -type f -name "*.vue" | eslint
