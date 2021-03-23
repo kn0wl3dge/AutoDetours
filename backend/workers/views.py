@@ -60,6 +60,8 @@ class WorkerViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
 class RuleFormView(APIView):
     def post(self, request):
         rule = request.data['rule']
+        if not valid_filename(rule):
+            return Response({"error": "name format is incorrect"})
         functions = request.data['functions']
         tag = request.data['tag']
         with open("tags/db_rules/" + rule.lower() + ".yml", "w") as f:
@@ -87,7 +89,7 @@ class RuleFormView(APIView):
                         is_pattern = True
                     elif is_pattern:
                         new_rule.patterns.append(line.split("- ")[1].rstrip())
-                json_format = {"name": new_rule.name, "patterns": new_rule.patterns, "tag": new_rule.tag}
+                json_format = {"name": new_rule.name, "functions": new_rule.patterns, "tag": new_rule.tag}
                 rules_list.append(json_format)
         return Response(rules_list)
 
