@@ -26,9 +26,7 @@ class Rule(object):
 
 
 def from_yaml(node):
-    return Rule(name = node['name'],
-    patterns = node['features'],
-    tag = node['tag'])
+    return Rule(name=node['name'], patterns=node['features'], tag=node['tag'])
 
 
 def get_db_rules(directory):
