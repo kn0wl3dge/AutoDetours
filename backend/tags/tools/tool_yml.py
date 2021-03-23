@@ -1,6 +1,7 @@
 import sys
 from argparse import ArgumentParser
 
+
 def extract_functions_from_file(filename):
     function_list = []
 
@@ -30,8 +31,11 @@ if __name__ == "__main__":
 
     parser.add_argument('-n', '--name', help='Rule name', required=True)
     parser.add_argument('-t', '--tag', help='Rule tag', required=True)
-    parser.add_argument('-f', '--functions',
-                        help='List of functions to add to rule. MSDN format.',  required=True)
+    parser.add_argument(
+        '-f',
+        '--functions',
+        help='List of functions to add to rule. MSDN format.',
+        required=True)
 
     args = parser.parse_args()
     name = args.name
