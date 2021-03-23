@@ -24,9 +24,9 @@ jobs:
         pip install pylint
         npm install vue@next
         npm install eslint --save-dev
-    - name: Analysing the code with pylint
-      run: |
-        find . -type f -name "*.py" | xargs pylint
+    # - name: Analysing the code with pylint
+    #   run: |
+    #     find . -type f -name "*.py" | xargs pylint
     - name: Analysing the code with eslint
       run: |
         find . -type f -name "*.vue" | npm eslint
