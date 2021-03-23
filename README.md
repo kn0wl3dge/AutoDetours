@@ -1,55 +1,60 @@
-# AutoDetours
-AutoDetours is an application which permit to analyze malwares and to provide
-for each of them a card index about systems calls.  
-To provide this solution we are using `Detour`  from Microsoft.  
+<p align="center">
+  <img width="200" height="200" src="doc/logoyellow.png">
+</p>
 
-The provided solution contains an agent which permit to treat all the malwares.
+
+# AutoDetours
+
+## Introduction
+
+AutoDetours is an application allowing to trace syscall from multiple samples at the same time.
+
+The goal is to be able to generate a large dataset of Windows API calls by malwares.
+This dataset could then be used in machine learning to try to classify samples by families.
+To provide this solution we are using `Detours` project from Microsoft.
+
+## Architecture
+<p align="center">
+  <img height="500" src="doc/AutoDetoursArchi.png">
+</p>
+
 
 ## Installation
-First of all the installation can just be done on windows for the agent.  
-To host the application (nginx-server) you can use an other OS like linux or
-MacOS.
 
 ### Prerequisites
 
 - [X] Docker installed
-- [X] VSCode with C# packages installed
 - [X] Agent installed in a qcow2 Win7 image (+ .Net Framework 4.7.2)
 
-### Building the VM with the Agent
-
-#### Build
-- Open the Agent project in VSCode and generate the solution for x86 if using Windows 7 32bits
-
-#### Installation
-- Download a Windows IE VirtualBox VM (https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/)
+### Creating the VM with the Agent
+- Download a Windows IE9 VirtualBox VM (https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/)
 - Unzip the VM and the untart the ova file
 - Convert the VMDK into a qcow2 image using `qemu-img convert -O qcow2 input.vmdk output.qcow2`
-- Run the VM using qemu : `.\qemu-system-i386.exe -monitor stdio -show-cursor -m 1024 -hda output.qcow2`
-- Copy the agent and its dependancies into the directory C:\\Temp\\agent of the Win7 VM (using qemu)
-- Copy files in the folder hooking into the directory C:\\Temp of the Win7 VM (using qemu)
+- Run the VM using qemu : `qemu-system-i386 -monitor stdio -show-cursor -m 1024 -hda output.qcow2`
+- Copy files from the folder hooking into the directory C:/Temp of the Win7 VM (using qemu)
+- Start a cmd.exe with admin privileges
 - Create a Windows Service (`sc create "Agent Detours" start= auto binPath= "C:\Temp\agent\AutoDetoursAgent.exe"`
 - Launch the service (`sc start "Agent Detours"`)
-- Take a snapshot of the running VM using `savevm agent`
+- Take a snapshot of the running VM using `savevm agent` (in qemu)
 
 ### Running the projet
+Now rename your image `win7-0.qcow2`. If you want multiple workers (so you can have multiple analysis at the same time), copy/paste the qemu image.
+For example, if you need 3 workers, you'll have in you directory:
+- win7-0.qcow2
+- win7-1.qcow2
+- win7-2.qcow2
+
+Then, update the `.env.dev` file to you need. You should at least specify the number of workers you have and the associated directory.
+
 To run the project you must use the `docker-compose.yml` in the root folder
 of the project with the command:
 ```
 docker-compose up
 ```
 
-**Warning**: If there is an error during the docker compose command, you can
-rebuild the docker with the command:
-```
-docker-compose build
-```
-
 ## Usage
-You can now launch the app on your favorite Browser `#Brave <3` and upload a
-malware. Once the treatment is done you can dowload the result list on your
-computer.
-The application should be available at http://ip:80
+You can now launch the app on your favorite Browser and upload your samples. Once the treatment is done you can download the results list (in a JSON format) on your computer.
+The application should be available at http://localhost:80
 
 ## Main Contributors
 - [Radion94200](https://github.com/Radion94200)
