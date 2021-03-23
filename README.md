@@ -30,7 +30,7 @@ To provide this solution we are using `Detours` project from Microsoft.
 - Download a Windows IE9 VirtualBox VM (https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/)
 - Unzip the VM and the untart the ova file
 - Convert the VMDK into a qcow2 image using `qemu-img convert -O qcow2 input.vmdk output.qcow2`
-- Run the VM using qemu : `qemu-system-i386 -monitor stdio -show-cursor -m 1024 -hda output.qcow2`
+- Run the VM using qemu : `qemu-system-i386 -monitor stdio -show-cursor -m 1024 -enable-kvm -hda output.qcow2`
 - Copy files from the folder hooking into the directory C:/Temp of the Win7 VM (using qemu)
 - Start a cmd.exe with admin privileges
 - Create a Windows Service (`sc create "Agent Detours" start= auto binPath= "C:\Temp\agent\AutoDetoursAgent.exe"`
