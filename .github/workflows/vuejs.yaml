@@ -11,6 +11,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Install dependencies
       run: |
+        sudo npm install @nuxtjs
         sudo npm install @nuxtjs/eslint-module
         sudo npm install eslint
     - name: Install eslint
