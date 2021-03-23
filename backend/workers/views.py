@@ -3,12 +3,16 @@ from rest_framework.decorators import action
 from rest_framework.exceptions import ValidationError
 from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
+from rest_framework.views import APIView
+
+from os import walk
 
 from workers.models import Worker, WorkerState
 from workers.serializers import WorkerSerializer
 from workers.tasks import worker_delete
 
 from tags.tags import set_tags
+from tags.rule import Rule
 
 class WorkerViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
                     mixins.RetrieveModelMixin, mixins.DestroyModelMixin,
@@ -51,3 +55,24 @@ class WorkerViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
             else:
                 return Response({"error": "Can't find 'results' param"})
         return Response({"error": "Worker is in an incorrect state"})
+
+class RuleFormView(APIView):
+    def post(self, request):
+        rule = request.data['rule']
+        functions = request.data['functions']
+        tag = request.data['tag']
+        with open("tags/db_rules/" + rule.lower() + ".yml", "w") as f:
+            f.write("name: %s\n" % rule)
+            f.write("features:\n")
+            for func in functions:
+                f.write("   - %s\n" % func)
+            f.write("tag: %s" % tag)
+        return Response({"success": "OK"})
+
+    def get(self, request):
+        rules_list = []
+        for files in walk("tags/db_rules"):
+            f = (files, 'r')
+            content = f.readlines()
+            rules_list.append()
+        return Response(list)

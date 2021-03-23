@@ -20,6 +20,7 @@ from rest_framework import routers
 from malwaredb.views import MalwareViewSet
 from workers.views import WorkerViewSet
 from stats.views import StatsView
+from workers.views import RuleFormView
 
 router = routers.DefaultRouter()
 router.register(r'malwares', MalwareViewSet)
@@ -28,4 +29,5 @@ router.register(r'workers', WorkerViewSet)
 urlpatterns = [
     path('api/', include(router.urls)),
     path('api/stats/', StatsView.as_view()),
+    path('api/rules/', RuleFormView.as_view())
 ]
