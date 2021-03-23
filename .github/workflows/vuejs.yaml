@@ -12,9 +12,11 @@ jobs:
     - name: Install dependencies
       run: |
         npm install @nuxtjs/eslint-module
+        npm install @nuxtjs/eslint-config
     - name: Install eslint
       run: |
-        sudo npm i -g eslint
+        npm i -D eslint
+        npm i -D babel-eslint
     - name: Analysing the code with eslint
       run: |
         find . -type f -name "*.vue" | xargs eslint --fix
