@@ -38,7 +38,7 @@ export default {
 
   devModules:[
     '@nuxtjs/eslint-module'
-  ]
+  ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
