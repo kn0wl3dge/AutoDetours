@@ -13,7 +13,7 @@ jobs:
         persist-credentials: false
     - name: Install dependencies
       run: |
-        npm install nuxt@nuxtjs/eslint-module
+        sudo npm install nuxt@nuxtjs/eslint-module
         npm install eslint
     - name: Install eslint
       run: |
