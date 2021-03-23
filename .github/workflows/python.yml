@@ -23,7 +23,10 @@ jobs:
         if [ -f backend/requirements.txt ]; then pip install -r backend/requirements.txt; fi
         pip install pylint
         npm install vue@next
-        npm install eslint --save-dev
+        npm install eslint --global
+    - name: Init eslint
+      run: |
+        npx eslint --init
     # - name: Analysing the code with pylint
     #   run: |
     #     find . -type f -name "*.py" | xargs pylint
