@@ -58,7 +58,7 @@ export default {
           href: '/malwares/add',
           icon: 'plus-square'
         },
-        { key: 5, name: 'Settings', href: '/settings', icon: 'gear' }
+        { key: 5, name: 'Rules', href: '/settings', icon: 'gear' }
       ]
     }
   },
