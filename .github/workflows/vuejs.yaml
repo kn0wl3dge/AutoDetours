@@ -12,7 +12,7 @@ jobs:
     - name: Install dependencies
       run: |
         yarn add eslint --dev
-        npm install babel-eslint
+        npm install @babel/eslint-parser
         npm install @nuxtjs/eslint-module
         npm install @nuxtjs/eslint-config
     - name: Analysing the code with eslint
