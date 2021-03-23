@@ -21,10 +21,10 @@ def worker_delete(ip):
 def workers_timeout():
     for worker in Worker.objects.filter(state=WorkerState.TASKED):
         delta = timezone.now() - worker.analysis_start_date
-        limit = worker.malware.time * 10
-        if limit > 600: # 10minutes max of timeout after analysis
-            limit = 600
-        if delta.seconds > worker.malware.time * 10:
+        limit = worker.malware.time * 20
+        if limit > 3 * 10 * 60: # 30minutes max of timeout after analysis
+            limit = 3 * 10 * 60
+        if delta.seconds > limit:
             print("Worker %s timed out !" % worker.id)
             worker.malware.end_analysis(None)
             worker.malware.save()
