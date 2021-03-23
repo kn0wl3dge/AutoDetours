@@ -3,11 +3,9 @@ from rest_framework.decorators import action
 from rest_framework.exceptions import ValidationError
 from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
-
 from workers.models import Worker, WorkerState
 from workers.serializers import WorkerSerializer
 from workers.tasks import worker_delete
-
 from tags.tags import set_tags
 
 class WorkerViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
@@ -32,7 +30,10 @@ class WorkerViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
                 worker.save()
             except:
                 return Response({"error": "No task available"})
-            return Response({"malware": worker.malware.sha256, "time": worker.malware.time, "isDll": worker.malware.is_dll, "exportName": worker.malware.export_dll})
+            return Response({"malware": worker.malware.sha256,
+                            "time": worker.malware.time,
+                            "isDll": worker.malware.is_dll,
+                            "exportName": worker.malware.export_dll})
         else:
             return Response({"error": "Worker is busy"})
 
