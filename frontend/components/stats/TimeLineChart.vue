@@ -28,7 +28,7 @@ export default {
               },
               scaleLabel: {
                 display: true,
-                labelString: 'Date of import'
+                labelString: 'Datetime'
               }
             }
           ],
@@ -40,7 +40,7 @@ export default {
               },
               scaleLabel: {
                 display: true,
-                labelString: 'Number of new imported samples'
+                labelString: 'Number of finished analysis'
               }
             }
           ]
@@ -58,7 +58,7 @@ export default {
     this.chartdata = {
       datasets: [
         {
-          label: 'Malwares',
+          label: 'Analysis',
           data: this.stats,
           fill: true,
           borderColor: '#f39c12',
