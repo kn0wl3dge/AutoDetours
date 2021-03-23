@@ -9,8 +9,9 @@ module.exports = {
     sourceType: 'module'
   },
   extends: [
-    '@nuxtjs/eslint-plugin-nuxt',
-    'plugin:nuxt/recommended'
+    '@nuxtjs',
+    'plugin:nuxt/recommended',
+    'plugin:eslint-plugin-nuxt'
   ],
   plugins: [],
   // add your custom rules here
