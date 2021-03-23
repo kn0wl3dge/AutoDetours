@@ -11,10 +11,10 @@ jobs:
     - uses: actions/checkout@v2
     - name: Install dependencies
       run: |
-        sudo npm install -g eslint
-        npm install babel-eslint
-        npm install @nuxtjs/eslint-module
-        npm install @nuxtjs/eslint-config
+        sudo yarn install eslint
+        yarn install babel-eslint
+        yarn install @nuxtjs/eslint-module
+        yarn install @nuxtjs/eslint-config
     - name: Analysing the code with eslint
       run: |
         find . -type f -name "*.vue" | xargs eslint --fix
