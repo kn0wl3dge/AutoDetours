@@ -32,4 +32,4 @@ jobs:
     #     find . -type f -name "*.py" | xargs pylint
     - name: Analysing the code with eslint
       run: |
-        find . -type f -name "*.vue" | npm eslint
+        find . -type f -name "*.vue" | xargs npm eslint
