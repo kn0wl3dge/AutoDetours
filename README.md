@@ -13,7 +13,7 @@ AutoDetours is an application allowing to trace syscalls from multiple samples a
 
 The goal is to be able to generate a large dataset of Windows API calls by malwares.
 This dataset could then be used in machine learning to try to classify samples by families.
-To provide this solution we are using `Detours` project from Microsoft.
+To provide this solution we are using [Detours](https://github.com/microsoft/Detours) project from Microsoft.
 
 ## Architecture
 <p align="center">
