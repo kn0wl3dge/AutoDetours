@@ -1,7 +1,8 @@
 import yaml
 from os import listdir, path
 from os.path import isfile, join
-# install pyyaml
+import yaml
+import re
 
 
 class Rule(object):
@@ -26,9 +27,7 @@ class Rule(object):
 
 
 def from_yaml(node):
-    return Rule(name = node['name'],
-    patterns = node['features'],
-    tag = node['tag'])
+    return Rule(name=node['name'], patterns=node['features'], tag=node['tag'])
 
 
 def get_db_rules(directory):
@@ -44,6 +43,10 @@ def get_db_rules(directory):
     return rules
 
 
+<<<<<<< HEAD
+def valid_filename(name):
+    return bool(re.match("[0-9a-zA-Z-_]+", name))
+=======
 def check_type(dict_tags, reference):
     for k in dict_tags:
         for key in reference:
@@ -69,3 +72,4 @@ def check_family(dict_tags):
         return "RAT/Trojan"
     
     return "Unknown"
+>>>>>>> origin/main
