@@ -5,7 +5,7 @@
       <b-row class="mb-4" />
     </b-container>
 
-      <b-button size="lg" class="mb-2 mt-4" @click="toggle_form">
+      <b-button size="lg" class="mb-4 mt-4" @click="toggle_form">
         Add a new rule
       </b-button>
 
@@ -42,7 +42,7 @@
         <b-btn
           v-if="update_rule"
           size="lg"
-          block class="mb-2 mt-4"
+          block class="mb-4 mt-4"
           :disabled="disabled_button"
           @click="uploadRule"
         >
@@ -52,7 +52,7 @@
         <b-btn
           v-else
           size="lg"
-          block class="mb-2 mt-4"
+          block class="mb-4 mt-4"
           :disabled="disabled_button"
           @click="uploadRule"
         >
@@ -73,7 +73,7 @@
         id="rule-table"
       >
         <template #cell(name)="data">
-          {{ data.item.name }}
+          {{ data.item.rule }}
         </template>
 
         <template #cell(tag)="data">
@@ -95,7 +95,7 @@
             size="sm"
             block class="mr-2 ml-2"
             variant="danger"
-            @click="delete_rule(data.item.name)"
+            @click="delete_rule(data.item.rule)"
           >
             Delete Rule
           </b-btn>
@@ -132,7 +132,7 @@ export default {
       rules_list : [],
       fields: [
         {
-          key: 'name',
+          key: 'rule',
           label: 'Name',
           sortable: true
         },
@@ -171,12 +171,25 @@ export default {
     methods: {
       async uploadRule () {
         console.log(this.rules_list)
-        await this.$axios.$post('/rules/', this.form)
+        this.$axios.$post('/rules/', this.form).then((resp) => {
+            this.notification(
+              'Success',
+  `The rule has been uploaded`,
+  'success'
+            ).catch((e) => {
+            this.notification(
+              'An error occured',
+  `The following error occured when trying to upload the rule ${e}`,
+  'danger'
+            )
+          })
+        })
+        //this.rules_list = await this.$axios.$get('/rules/')
         this.rules_list.push(this.form)
       },
       async modify(rule) {
-        console.log(rule.name)
-        this.form.rule = rule.name
+        console.log(rule.rule)
+        this.form.rule = rule.rule
         this.form.functions = rule.functions
         this.form.tag = rule.tag
         this.exist = true
@@ -192,8 +205,29 @@ export default {
         this.update_rule = false
       },
       async delete_rule(name) {
-        await this.$axios.$delete('/rules/?rule='+name)
-        this.rules_list.splice(this.rules_list.findIndex((el) => el.name === name), 1)
+        this.$axios.$delete('/rules/?rule='+name)
+        .then((resp) => {
+        this.notification(
+              'Success',
+  `The rule has been deleted`,
+  'success'
+            ).catch((e) => {
+            this.notification(
+              'An error occured',
+  `The following error occured when trying to delete the rule ${e}`,
+  'danger'
+            )
+          })
+        })
+        //this.rules_list = await this.$axios.$get('/rules/')
+        this.rules_list.splice(this.rules_list.findIndex((el) => el.rule === name), 1)
+      },
+      notification (title, msg, variant) {
+        this.$root.$bvToast.toast(msg, {
+          title,
+          variant,
+          autoHideDelay: 10000
+        })
       }
     }
   }

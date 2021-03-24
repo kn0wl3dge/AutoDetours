@@ -70,7 +70,7 @@ class RuleFormView(APIView):
             for func in functions:
                 f.write("   - %s\n" % func)
             f.write("tag: %s" % tag)
-        return Response({"success": "OK"})
+        return Response({"success": "Rule has been uploaded"})
 
     def get(self, request):
         rules_list = []
@@ -89,7 +89,7 @@ class RuleFormView(APIView):
                         is_pattern = True
                     elif is_pattern:
                         new_rule.patterns.append(line.split("- ")[1].rstrip())
-                json_format = {"name": new_rule.name, "functions": new_rule.patterns, "tag": new_rule.tag}
+                json_format = {"rule": new_rule.name, "functions": new_rule.patterns, "tag": new_rule.tag}
                 rules_list.append(json_format)
         return Response(rules_list)
 
@@ -100,7 +100,7 @@ class RuleFormView(APIView):
             print(path)
             if os.path.exists(path):
                 os.remove(path)
-            return Response({"success": "nickel"})
+            return Response({"success": "Rule as been deleted"})
         else:
             return Response({"error": "file is not valid"})
 
