@@ -74,4 +74,9 @@ features:
     - WSAStringToAddressW
     - WSAUnhookBlockingHook
     - WSAWaitForMultipleEvents
+    - WSASocket
+    - Socket
+    - bind
+    - WSAIoctl
+    - ioctlsocket
 tag: Socket
