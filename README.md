@@ -34,6 +34,8 @@ To provide this solution we are using `Detours` project from Microsoft.
 - Convert the VMDK into a qcow2 image using `qemu-img convert -O qcow2 input.vmdk output.qcow2`
 - Run the VM using qemu : `qemu-system-i386 -monitor stdio -show-cursor -m 1024 -enable-kvm -hda output.qcow2`
 - Copy files from the folder hooking into the directory C:/Temp of the Win7 VM (using qemu)
+- Install the .Net Framwork Runtime 4.7.2
+- Disable the Windows Firewall and the Windows AntiVirus
 - Start a cmd.exe with admin privileges
 - Create a Windows Service (`sc create "Agent Detours" start= auto binPath= "C:\Temp\agent\AutoDetoursAgent.exe"`
 - Launch the service (`sc start "Agent Detours"`)
