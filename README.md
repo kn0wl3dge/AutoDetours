@@ -7,7 +7,7 @@
 
 ## Introduction
 
-AutoDetours is an application allowing to trace syscall from multiple samples at the same time.
+AutoDetours is an application allowing to trace syscalls from multiple samples at the same time.
 
 The goal is to be able to generate a large dataset of Windows API calls by malwares.
 This dataset could then be used in machine learning to try to classify samples by families.
