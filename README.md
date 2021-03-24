@@ -5,6 +5,8 @@
 
 # AutoDetours
 
+/!\ This project isn't ready for production usage. The sandbox doesn't isolate the network so any malware executed in this environment may communicate with the private network or with internet!
+
 ## Introduction
 
 AutoDetours is an application allowing to trace syscalls from multiple samples at the same time.
