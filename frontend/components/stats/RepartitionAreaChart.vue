@@ -1,11 +1,11 @@
 <template>
-  <doughnut-chart v-if="loaded" :chartdata="chartdata" :options="options" />
+  <polar-area-chart v-if="loaded" :chartdata="chartdata" :options="options" />
 </template>
 <script>
-import DoughnutChart from './BaseCharts/DoughnutChart'
+import PolarAreaChart from './BaseCharts/PolarAreaChart'
 export default {
-  name: 'RepartitionChart',
-  components: { DoughnutChart },
+  name: 'RepartitionAreaChart',
+  components: { PolarAreaChart },
   props: {
     stats: {
       type: Object,

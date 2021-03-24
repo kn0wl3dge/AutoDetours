@@ -1,0 +1,7 @@
+name: Obfuscation_Usage
+features:
+  - WriteProcessMemory
+  - VirtualAlloc
+  - VirtualAllocEx
+  - VirtualProtect
+tag: Obfuscation

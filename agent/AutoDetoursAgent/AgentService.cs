@@ -148,9 +148,8 @@ namespace AutoDetoursAgent
                     // Deserialize the JSON to get a Worker obejct
                     workerTask = JsonConvert.DeserializeObject<WorkerTask>(resp);
                     worker.malware = workerTask.malware;
-                    eventLog.WriteEntry("Agent is now tasked with sample : " + worker.malware);
 
-                    eventLog.WriteEntry("Tracing duration set to : " + workerTask.time + "s");
+                    eventLog.WriteEntry("Agent is now tasked with sample : " + worker.malware);
                     return true;
                 }
             }
@@ -169,13 +168,19 @@ namespace AutoDetoursAgent
 
             eventLog.WriteEntry("Downloading file at " + url.ToString());
 
+            String filename = null;
+            if (workerTask.isDll == false)
+                filename = "C:\\Temp\\sample.exe";
+            else
+                filename = "C:\\Temp\\sample.dll";
+
             // Download and save sample to C:/Temp/sample.exe
             WebClient downloader = new WebClient();
             try
             {
-                downloader.DownloadFile(url.ToString(), "C:\\Temp\\sample.exe");
+                downloader.DownloadFile(url.ToString(), filename);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -191,9 +196,16 @@ namespace AutoDetoursAgent
             syelogd.StartInfo.Arguments = "/o C:\\Temp\\traces.txt";
             syelogd.Start();
 
-            // We inject Traceapi DLL into the malware process using withdll.exe
             withdll.StartInfo.FileName = "C:\\Temp\\withdll.exe";
-            withdll.StartInfo.Arguments = "/d:C:\\Temp\\trcapi32.dll C:\\Temp\\sample.exe";
+
+            // We inject Traceapi DLL into the malware process using withdll.exe
+            if (workerTask.isDll == false)
+                withdll.StartInfo.Arguments = "/d:C:\\Temp\\trcapi32.dll C:\\Temp\\sample.exe";
+
+            // In case of a DLL we use RunDLL32 to launch the DLL
+            else 
+                withdll.StartInfo.Arguments = "/d:C:\\Temp\\trcapi32.dll rundll32.exe C:\\Temp\\sample.dll," + workerTask.exportName;
+
             withdll.Start();
 
             eventLog.WriteEntry("Tracing started...");
@@ -214,8 +226,7 @@ namespace AutoDetoursAgent
         {
             // Convert the traces.txt to json format
             string inputFilename = "C:\\Temp\\traces.txt";
-            string outputFilename = "C:\\Temp\\logs.json";
-            string logs = Parser.ParseLogs(inputFilename, outputFilename);
+            string logs = Parser.ParseLogs(inputFilename);
             eventLog.WriteEntry("Json output has been generated.");
             return logs;
         }
@@ -229,7 +240,7 @@ namespace AutoDetoursAgent
             {
                 response = await client.PostAsync(url, new StringContent(jsonLogs, Encoding.UTF8, "application/json"));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -251,7 +262,7 @@ namespace AutoDetoursAgent
             {
                 response = await client.DeleteAsync(url);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -271,7 +282,7 @@ namespace AutoDetoursAgent
             {
                 response = await client.GetAsync("");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -379,5 +390,8 @@ namespace AutoDetoursAgent
     {
         public String malware { get; set; }
         public int time { get; set; }
+        public bool isDll { get; set; }
+        public string exportName { get; set; }
     }
 }
+
