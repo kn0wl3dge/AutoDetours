@@ -42,11 +42,9 @@ def get_db_rules(directory):
                 print(exc)
     return rules
 
-
-<<<<<<< HEAD
 def valid_filename(name):
     return bool(re.match("[0-9a-zA-Z-_]+", name))
-=======
+
 def check_type(dict_tags, reference):
     for k in dict_tags:
         for key in reference:
@@ -72,4 +70,3 @@ def check_family(dict_tags):
         return "RAT/Trojan"
     
     return "Unknown"
->>>>>>> origin/main
