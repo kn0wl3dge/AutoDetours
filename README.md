@@ -5,7 +5,9 @@
 
 # AutoDetours
 
-/!\ This project isn't ready for production usage. The sandbox doesn't isolate the network so any malware executed in this environment may communicate with the private network or with internet!
+/!\ This project isn't ready for production:
+* The sandbox doesn't isolate the network so any malware executed in this environment may communicate with the private network or with internet!
+* The API code needs some refacto and vulnerability fix (unlimited dataset generation without cleanup, killing any container from a fake worker and more)
 
 ## Introduction
 
