@@ -30,7 +30,7 @@ jobs:
           pip install -r backend/requirements.txt
   
       - name: Check coding style
-        uses: lgeiger/black-action@v1.0.1
+        uses: psf/black@stable
         with:
           args: "backend/ --check"
 
