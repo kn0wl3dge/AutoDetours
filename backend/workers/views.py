@@ -89,7 +89,13 @@ class RuleFormView(APIView):
 
     def get(self, request):
         rules_list = []
-        files = [join(d, f) for d in RULES_PATHS if exists(d) for f in listdir(d) if isfile(join(d, f))]
+        files = [
+            join(d, f)
+            for d in RULES_PATHS
+            if exists(d)
+            for f in listdir(d)
+            if isfile(join(d, f))
+        ]
         for filename in files:
             with open(filename, "r") as f:
                 content = f.readlines()

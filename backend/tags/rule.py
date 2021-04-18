@@ -32,7 +32,9 @@ def from_yaml(node):
 
 def get_db_rules(directories):
     rules = []
-    files = [f for d in directories if exists(d) for f in listdir(d) if isfile(join(d, f))]
+    files = [
+        f for d in directories if exists(d) for f in listdir(d) if isfile(join(d, f))
+    ]
     for f in files:
         with open(path.join(directory, f), "r") as rule:
             try:
