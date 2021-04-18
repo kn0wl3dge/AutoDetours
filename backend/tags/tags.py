@@ -3,10 +3,10 @@ import tags.extract as extract
 
 from malwaredb.models import Malware
 from celery import shared_task
-from  tags.rule import check_family
+from tags.rule import check_family
 
 
-rules = rule.get_db_rules('tags/db_rules')
+rules = rule.get_db_rules("tags/db_rules")
 
 
 @shared_task
