@@ -15,9 +15,14 @@ from tags.tags import set_tags
 from tags.rule import Rule
 from tags.rule import valid_filename
 
-class WorkerViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
-                    mixins.RetrieveModelMixin, mixins.DestroyModelMixin,
-                    viewsets.GenericViewSet):
+
+class WorkerViewSet(
+    mixins.CreateModelMixin,
+    mixins.ListModelMixin,
+    mixins.RetrieveModelMixin,
+    mixins.DestroyModelMixin,
+    viewsets.GenericViewSet,
+):
     queryset = Worker.objects.all()
     serializer_class = WorkerSerializer
 
@@ -28,7 +33,7 @@ class WorkerViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
         instance.delete()
         worker_delete.delay(ip)
 
-    @action(detail=True, methods=['GET'])
+    @action(detail=True, methods=["GET"])
     def get_task(self, request, pk=None):
         worker = get_object_or_404(Worker, pk=pk)
         if worker.state == WorkerState.REGISTERED:
@@ -37,11 +42,18 @@ class WorkerViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
                 worker.save()
             except:
                 return Response({"error": "No task available"})
-            return Response({"malware": worker.malware.sha256, "time": worker.malware.time, "isDll": worker.malware.is_dll, "exportName": worker.malware.export_dll})
+            return Response(
+                {
+                    "malware": worker.malware.sha256,
+                    "time": worker.malware.time,
+                    "isDll": worker.malware.is_dll,
+                    "exportName": worker.malware.export_dll,
+                }
+            )
         else:
             return Response({"error": "Worker is busy"})
 
-    @action(detail=True, methods=['POST'])
+    @action(detail=True, methods=["POST"])
     def submit_task(self, request, pk=None):
         worker = get_object_or_404(Worker, pk=pk)
         if worker.state == WorkerState.TASKED:
@@ -57,13 +69,14 @@ class WorkerViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
                 return Response({"error": "Can't find 'results' param"})
         return Response({"error": "Worker is in an incorrect state"})
 
+
 class RuleFormView(APIView):
     def post(self, request):
-        rule = request.data['rule']
+        rule = request.data["rule"]
         if not valid_filename(rule):
             return Response({"error": "name format is incorrect"})
-        functions = request.data['functions']
-        tag = request.data['tag']
+        functions = request.data["functions"]
+        tag = request.data["tag"]
         with open("tags/db_rules/" + rule.lower() + ".yml", "w") as f:
             f.write("name: %s\n" % rule)
             f.write("features:\n")
@@ -75,9 +88,9 @@ class RuleFormView(APIView):
     def get(self, request):
         rules_list = []
         for filename in os.listdir("tags/db_rules"):
-            with open(os.path.join("tags/db_rules", filename), 'r') as f:
+            with open(os.path.join("tags/db_rules", filename), "r") as f:
                 content = f.readlines()
-                new_rule = Rule(name="", patterns = [], tag="")
+                new_rule = Rule(name="", patterns=[], tag="")
                 is_pattern = False
                 for line in content:
                     if "tag: " in line:
@@ -89,12 +102,16 @@ class RuleFormView(APIView):
                         is_pattern = True
                     elif is_pattern:
                         new_rule.patterns.append(line.split("- ")[1].rstrip())
-                json_format = {"rule": new_rule.name, "functions": new_rule.patterns, "tag": new_rule.tag}
+                json_format = {
+                    "rule": new_rule.name,
+                    "functions": new_rule.patterns,
+                    "tag": new_rule.tag,
+                }
                 rules_list.append(json_format)
         return Response(rules_list)
 
     def delete(self, request):
-        name = request.query_params['rule']
+        name = request.query_params["rule"]
         if valid_filename(name):
             path = "tags/db_rules/" + name + ".yml"
             print(path)
@@ -103,5 +120,3 @@ class RuleFormView(APIView):
             return Response({"success": "Rule as been deleted"})
         else:
             return Response({"error": "file is not valid"})
-
-
