@@ -2,7 +2,7 @@
   <img width="200" height="200" src="doc/logoyellow.png">
 </p>
 
-
+[![BackendCI](https://github.com/Kn0wl3dge/AutoDetours/actions/workflows/backend.yml/badge.svg)](https://github.com/Kn0wl3dge/AutoDetours/actions/workflows/backend.yml)
 # AutoDetours
 
 /!\ This project isn't ready for production:
