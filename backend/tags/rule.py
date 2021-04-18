@@ -1,6 +1,6 @@
 import yaml
 from os import listdir, path
-from os.path import isfile, join
+from os.path import isfile, join, exists
 import yaml
 import re
 
@@ -30,9 +30,9 @@ def from_yaml(node):
     return Rule(name=node["name"], patterns=node["features"], tag=node["tag"])
 
 
-def get_db_rules(directory):
+def get_db_rules(directories):
     rules = []
-    files = [f for f in listdir(directory) if isfile(join(directory, f))]
+    files = [f for d in directories if exists(d) for f in listdir(d) if isfile(join(d, f))]
     for f in files:
         with open(path.join(directory, f), "r") as rule:
             try:
