@@ -5,7 +5,8 @@ from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-import os
+from os import listdir
+from os.path import isfile, join, exists
 
 from workers.models import Worker, WorkerState
 from workers.serializers import WorkerSerializer
@@ -14,6 +15,8 @@ from workers.tasks import worker_delete
 from tags.tags import set_tags
 from tags.rule import Rule
 from tags.rule import valid_filename
+
+RULES_PATHS = ["tags/db_rules", "/data/db_rules"]
 
 
 class WorkerViewSet(
@@ -71,8 +74,6 @@ class WorkerViewSet(
 
 
 class RuleFormView(APIView):
-    RULES_PATHS = ["tags/db_rules", "/data/db_rules"]
-
     def post(self, request):
         rule = request.data["rule"]
         if not valid_filename(rule):

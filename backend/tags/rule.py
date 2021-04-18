@@ -33,10 +33,14 @@ def from_yaml(node):
 def get_db_rules(directories):
     rules = []
     files = [
-        f for d in directories if exists(d) for f in listdir(d) if isfile(join(d, f))
+        path.join(d, f)
+        for d in directories
+        if exists(d)
+        for f in listdir(d)
+        if isfile(join(d, f))
     ]
     for f in files:
-        with open(path.join(directory, f), "r") as rule:
+        with open(f, "r") as rule:
             try:
                 yaml_rule = yaml.safe_load(rule)
                 rules.append(from_yaml(yaml_rule))

@@ -8,6 +8,12 @@ done
 
 echo "PostgreSQL started"
 
+echo "Creating /data dirs"
+[ ! -d "/data/datasets" ] && mkdir /data/datasets
+[ ! -d "/data/db_rules" ] && mkdir /data/db_rules
+[ ! -d "/data/malwares" ] && mkdir /data/malwares
+
+echo "Starting Django"
 python manage.py flush --no-input
 python manage.py makemigrations malwaredb
 python manage.py makemigrations workers
