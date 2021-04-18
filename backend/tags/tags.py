@@ -5,8 +5,9 @@ from malwaredb.models import Malware
 from celery import shared_task
 from tags.rule import check_family
 
+RULES_PATHS = ["tags/db_rules", "/data/db_rules"]
 
-rules = rule.get_db_rules("tags/db_rules")
+RULES = rule.get_db_rules(RULES_PATHS)
 
 
 @shared_task
@@ -16,7 +17,7 @@ def set_tags(mal_sha256):
     api_calls = extract.extract_funcname_list(json_string)
     tags = []
     tags2 = {}
-    for rule in rules:
+    for rule in RULES:
         for pattern in rule.patterns:
             if pattern in api_calls:
                 tags.append(rule.tag)

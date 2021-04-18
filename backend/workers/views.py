@@ -5,7 +5,8 @@ from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-import os
+from os import listdir
+from os.path import isfile, join, exists
 
 from workers.models import Worker, WorkerState
 from workers.serializers import WorkerSerializer
@@ -14,6 +15,8 @@ from workers.tasks import worker_delete
 from tags.tags import set_tags
 from tags.rule import Rule
 from tags.rule import valid_filename
+
+RULES_PATHS = ["tags/db_rules", "/data/db_rules"]
 
 
 class WorkerViewSet(
@@ -74,10 +77,10 @@ class RuleFormView(APIView):
     def post(self, request):
         rule = request.data["rule"]
         if not valid_filename(rule):
-            return Response({"error": "name format is incorrect"})
+            return Response({"error": "Name format is incorrect"})
         functions = request.data["functions"]
         tag = request.data["tag"]
-        with open("tags/db_rules/" + rule.lower() + ".yml", "w") as f:
+        with open("/data/db_rules/" + rule.lower() + ".yml", "w") as f:
             f.write("name: %s\n" % rule)
             f.write("features:\n")
             for func in functions:
@@ -87,8 +90,15 @@ class RuleFormView(APIView):
 
     def get(self, request):
         rules_list = []
-        for filename in os.listdir("tags/db_rules"):
-            with open(os.path.join("tags/db_rules", filename), "r") as f:
+        files = [
+            join(d, f)
+            for d in RULES_PATHS
+            if exists(d)
+            for f in listdir(d)
+            if isfile(join(d, f))
+        ]
+        for filename in files:
+            with open(filename, "r") as f:
                 content = f.readlines()
                 new_rule = Rule(name="", patterns=[], tag="")
                 is_pattern = False
@@ -113,10 +123,9 @@ class RuleFormView(APIView):
     def delete(self, request):
         name = request.query_params["rule"]
         if valid_filename(name):
-            path = "tags/db_rules/" + name + ".yml"
-            print(path)
+            path = "/data/db_rules/" + name + ".yml"
             if os.path.exists(path):
                 os.remove(path)
             return Response({"success": "Rule as been deleted"})
         else:
-            return Response({"error": "file is not valid"})
+            return Response({"error": "File is not valid"})
