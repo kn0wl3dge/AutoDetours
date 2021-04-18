@@ -132,6 +132,8 @@ USE_TZ = True
 
 STATIC_URL = "/api/static/"
 
+# Media Files
+MEDIA_ROOT = "/data"
 
 # Celery
 CELERY_BROKER_URL = "redis://redis:6379"
