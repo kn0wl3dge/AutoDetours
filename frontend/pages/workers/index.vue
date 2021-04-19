@@ -1,8 +1,6 @@
 <template>
   <b-container fluid>
-    <b-row class="mb-2">
-      <h3>Workers</h3>
-    </b-row>
+    <h3>Workers</h3>
     <b-row>
       <worker-card
         v-for="w in workers"
