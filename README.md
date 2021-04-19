@@ -6,7 +6,6 @@
 # AutoDetours
 
 /!\ This project isn't ready for production:
-* The sandbox doesn't isolate the network so any malware executed in this environment may communicate with the private network or with internet!
 * The API code needs some refacto and vulnerability fix (unlimited dataset generation without cleanup, killing any container from a fake worker and more)
 
 ## Introduction
@@ -60,10 +59,4 @@ docker-compose up
 
 ## Usage
 You can now launch the app on your favorite Browser and upload your samples. Once the treatment is done you can download the results list (in a JSON format) on your computer.
-The application should be available at http://localhost:80
-
-## Main Contributors
-- [Radion94200](https://github.com/Radion94200)
-- [Prolintos](https://github.com/Prolintos)
-- [Deacllock](https://github.com/Deacllock)
-- [Kn0wl3dge](https://github.com/Kn0wl3dge)
+The application should be available at http://172.20.0.10/

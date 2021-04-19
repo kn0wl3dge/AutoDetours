@@ -85,8 +85,6 @@ services:
     build:
       context: ./nginx
       dockerfile: Dockerfile
-    ports:
-      - "80:80"
     networks:
       autodetours_lan:
         ipv4_address: 172.20.0.10
@@ -103,6 +101,7 @@ volumes:
 networks:
   autodetours_lan:
     driver: bridge
+    internal: true
     ipam:
      config:
        - subnet: 172.20.0.0/24
