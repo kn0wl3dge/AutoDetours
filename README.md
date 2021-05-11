@@ -41,6 +41,7 @@ To provide this solution we are using [Detours](https://github.com/microsoft/Det
 - Create a Windows Service (`sc create "Agent Detours" start= auto binPath= "C:\Temp\agent\AutoDetoursAgent.exe"`
 - Launch the service (`sc start "Agent Detours"`)
 - Take a snapshot of the running VM using `savevm agent` (in qemu)
+- Build the `qemu` image by running the following command in the `qemu/` directory : `docker build -t qemu .`
 
 ### Running the projet
 Now rename your image `win7-0.qcow2`. If you want multiple workers (so you can have multiple analysis at the same time), copy/paste the qemu image.
