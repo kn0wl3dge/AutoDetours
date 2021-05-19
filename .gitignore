@@ -209,3 +209,6 @@ sw.*
 
 agent/AutoDetoursAgent/obj
 agent/AutoDetoursAgent/bin
+
+# qemu images
+workers/
