@@ -7,4 +7,4 @@ RUN apt-get update && apt-get -y upgrade && \
 
 RUN mkdir /image
 
-ENTRYPOINT ["qemu-system-i386", "-nographic", "-m", "1024","-loadvm", "agent", "-enable-kvm"]
+ENTRYPOINT ["qemu-system-i386", "-nographic", "-m", "1024","-loadvm", "agent"]
