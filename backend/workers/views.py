@@ -43,6 +43,7 @@ class WorkerViewSet(
                     "time": worker.malware.time,
                     "isDll": worker.malware.is_dll,
                     "exportName": worker.malware.export_dll,
+                    "isUnpacking": worker.malware.is_unpacking
                 }
             )
         else:
