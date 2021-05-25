@@ -54,7 +54,7 @@ namespace AutoDetoursAgent
             timer_agent.Interval = 10000;
             timer_agent.Elapsed += new ElapsedEventHandler(OnTimerCheckAgent);
             timer_agent.Start();
-            
+
             // Easier to edit a txt file than rebuild all the agent
             string path = @"C:\Temp\agent\api.txt";
             if (File.Exists(path))

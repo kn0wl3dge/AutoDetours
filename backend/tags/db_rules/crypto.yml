@@ -121,7 +121,7 @@ features:
     - CertVerifyRevocation
     - CertVerifySubjectCertificateContext
     - CertVerifyTimeValidity
-    - CertVerifyValidityNesting 
+    - CertVerifyValidityNesting
     - CryptAcquireCertificatePrivateKey
     - CryptAcquireContextA
     - CryptAcquireContextW
