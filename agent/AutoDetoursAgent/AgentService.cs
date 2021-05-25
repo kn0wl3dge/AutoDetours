@@ -29,7 +29,10 @@ namespace AutoDetoursAgent
         private Process syelogd = new Process();
         private Process withdll = new Process();
 
+        private Process malunpack = new Process();
+        private Process tar = new Process();
         private String apiBaseURL;
+        private String defaultPathZip = "C:\\Temp\\unpacked.zip";
 
         public AgentService()
         {
@@ -111,7 +114,7 @@ namespace AutoDetoursAgent
             {
 
             }
-            
+
             // If everything is okay
             if (response != null && response.IsSuccessStatusCode)
             {
@@ -203,7 +206,7 @@ namespace AutoDetoursAgent
                 withdll.StartInfo.Arguments = "/d:C:\\Temp\\trcapi32.dll C:\\Temp\\sample.exe";
 
             // In case of a DLL we use RunDLL32 to launch the DLL
-            else 
+            else
                 withdll.StartInfo.Arguments = "/d:C:\\Temp\\trcapi32.dll rundll32.exe C:\\Temp\\sample.dll," + workerTask.exportName;
 
             withdll.Start();
@@ -220,6 +223,34 @@ namespace AutoDetoursAgent
                 syelogd.Kill();
 
             eventLog.WriteEntry("Tracing stopped...");
+        }
+
+        private void StartUnpacking()
+        {
+            // Run Syelog Deamon to extract logs from traceapi32
+            malunpack.StartInfo.FileName = "C:\\Temp\\mal_unpack.exe";
+            malunpack.StartInfo.Arguments = "/exe C:\\Temp\\sample.exe /timeout " + (worker.time * 1000);
+            malunpack.Start();
+
+            eventLog.WriteEntry("Unpacking started...");
+        }
+
+        private void StopUnpacking()
+        {
+            // Stop both processes
+            if (!malunpack.HasExited)
+                malunpack.Kill();
+
+            eventLog.WriteEntry("Unpacking stopped...");
+        }
+
+        private void CompressResults()
+        {
+            tar.StartInfo.FileName = "C:\\Temp\\tar.exe";
+            tar.StartInfo.Arguments = "-a -c -f " + defaultPathZip + " sample.exe.out log";
+            tar.Start();
+
+            eventLog.WriteEntry("Results compressed.");
         }
 
         private string ParseResults()
@@ -248,6 +279,29 @@ namespace AutoDetoursAgent
             if (response != null && response.IsSuccessStatusCode)
             {
                 eventLog.WriteEntry("Task successfully submitted.");
+                return true;
+            }
+            return false;
+        }
+
+        private async Task<bool> SubmitZip(string path)
+        {
+            // Submit ZIP results to the API
+            string url = "workers/" + worker.id + "/submit_task/";
+            HttpResponseMessage response = null;
+            try
+            {
+                // Here send zip
+                response = await client.PostAsync(url, new StringContent(jsonLogs, Encoding.UTF8, "application/json"));
+            }
+            catch (Exception)
+            {
+
+            }
+
+            if (response != null && response.IsSuccessStatusCode)
+            {
+                eventLog.WriteEntry("ZIP successfully submitted.");
                 return true;
             }
             return false;
@@ -326,19 +380,30 @@ namespace AutoDetoursAgent
                     case AgentState.DOWNLOAD_SAMPLE:
                         if (DownloadMalware())
                         {
-                            state = AgentState.TRACING;
-                            goto case AgentState.TRACING;
+                            state = AgentState.JOB;
+                            goto case AgentState.JOB;
                         }
                         break;
-                    case AgentState.TRACING:
-                        StartTracing();
+                    case AgentState.JOB:
+                        if (worker.isUnpacking == false)
+                            StartTracing();
+                        else
+                            StartUnpacking();
                         st.Thread.Sleep(workerTask.time * 1000);
-                        StopTracing();
+
+                        if (worker.isUnpacking == false)
+                            StopTracing();
+                        else
+                            StopUnpacking();
                         state = AgentState.SEND_RESULTS;
                         goto case AgentState.SEND_RESULTS;
                     case AgentState.SEND_RESULTS:
-                        string logs = ParseResults();
-                        if (await SubmitTask(logs))
+                        string logs;
+                        if (worker.isUnpacking == false)
+                            logs = ParseResults();
+
+                        if ((!worker.isUnpacking && await SubmitTask(logs))
+                            || (worker.isUnpacking && await SubmitZip(defaultPathZip)))
                         {
                             state = AgentState.CLEANUP;
                             goto case AgentState.CLEANUP;
@@ -374,7 +439,7 @@ namespace AutoDetoursAgent
         REGISTER,
         GET_TASK,
         DOWNLOAD_SAMPLE,
-        TRACING,
+        JOB,
         SEND_RESULTS,
         CLEANUP,
         DONE
@@ -391,6 +456,7 @@ namespace AutoDetoursAgent
         public String malware { get; set; }
         public int time { get; set; }
         public bool isDll { get; set; }
+        public bool isUnpacking { get; set; }
         public string exportName { get; set; }
     }
 }
