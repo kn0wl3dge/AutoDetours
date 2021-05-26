@@ -269,7 +269,8 @@ namespace AutoDetoursAgent
             HttpResponseMessage response = null;
             try
             {
-                response = await client.PostAsync(url, new StringContent(jsonLogs, Encoding.UTF8, "application/json"));
+                response = await client.PostAsync(url,
+                        new StringContent(jsonLogs, Encoding.UTF8, "application/json"));
             }
             catch (Exception)
             {
@@ -291,8 +292,9 @@ namespace AutoDetoursAgent
             HttpResponseMessage response = null;
             try
             {
-                // Here send zip
-                response = await client.PostAsync(url, new StringContent(jsonLogs, Encoding.UTF8, "application/json"));
+                // TODO : Here send zip (modify app type + update endpoint)
+                response = await client.PostAsync(url,
+                        new StringContent(jsonLogs, Encoding.UTF8, "application/json"));
             }
             catch (Exception)
             {
@@ -363,6 +365,7 @@ namespace AutoDetoursAgent
                             goto case AgentState.REGISTER;
                         }
                         break;
+
                     case AgentState.REGISTER:
                         if (await RegisterWorker())
                         {
@@ -370,6 +373,7 @@ namespace AutoDetoursAgent
                             goto case AgentState.GET_TASK;
                         }
                         break;
+
                     case AgentState.GET_TASK:
                         if (await GetTask())
                         {
@@ -377,6 +381,7 @@ namespace AutoDetoursAgent
                             goto case AgentState.DOWNLOAD_SAMPLE;
                         }
                         break;
+
                     case AgentState.DOWNLOAD_SAMPLE:
                         if (DownloadMalware())
                         {
@@ -384,31 +389,36 @@ namespace AutoDetoursAgent
                             goto case AgentState.JOB;
                         }
                         break;
+
                     case AgentState.JOB:
-                        if (worker.isUnpacking == false)
+                        if (worker.jobType == TRACING)
                             StartTracing();
                         else
                             StartUnpacking();
                         st.Thread.Sleep(workerTask.time * 1000);
 
-                        if (worker.isUnpacking == false)
+                        if (worker.jobType == TRACING)
                             StopTracing();
                         else
                             StopUnpacking();
                         state = AgentState.SEND_RESULTS;
                         goto case AgentState.SEND_RESULTS;
+
                     case AgentState.SEND_RESULTS:
                         string logs;
-                        if (worker.isUnpacking == false)
+                        if (worker.jobType == TRACING)
                             logs = ParseResults();
 
-                        if ((!worker.isUnpacking && await SubmitTask(logs))
-                            || (worker.isUnpacking && await SubmitZip(defaultPathZip)))
+                        if ((worker.jobType == TRACING
+                                    && await SubmitTask(logs)) ||
+                            (worker.jobType == UNPACKING
+                                    && await SubmitZip(defaultPathZip)))
                         {
                             state = AgentState.CLEANUP;
                             goto case AgentState.CLEANUP;
                         }
                         break;
+
                     case AgentState.CLEANUP:
                         if (await Cleanup())
                         {
@@ -416,6 +426,7 @@ namespace AutoDetoursAgent
                             goto case AgentState.DONE;
                         }
                         break;
+
                     case AgentState.DONE:
                         if (isVM)
                         {
@@ -445,6 +456,18 @@ namespace AutoDetoursAgent
         DONE
     }
 
+    enum MalwareType
+    {
+        EXE,
+        DLL
+    }
+
+    enum JobType
+    {
+        TRACING,
+        UNPACKING
+    }
+
     public class Worker
     {
         public String id { get; set; }
@@ -455,8 +478,8 @@ namespace AutoDetoursAgent
     {
         public String malware { get; set; }
         public int time { get; set; }
-        public bool isDll { get; set; }
-        public bool isUnpacking { get; set; }
+        public MalwareType malwareType { get; set; }
+        public JobType jobType { get; set; }
         public string exportName { get; set; }
     }
 }
