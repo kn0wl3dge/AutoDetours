@@ -48,6 +48,11 @@ namespace AutoDetoursAgent
             eventLog.Log = "AutoDetoursLog";
         }
 
+        public void OnDebug()
+        {
+            OnStart(null);
+        }
+
         protected override void OnStart(string[] args)
         {
             // Set up a timer
@@ -229,7 +234,7 @@ namespace AutoDetoursAgent
         {
             // Run Syelog Deamon to extract logs from traceapi32
             malunpack.StartInfo.FileName = "C:\\Temp\\mal_unpack.exe";
-            malunpack.StartInfo.Arguments = "/exe C:\\Temp\\sample.exe /timeout " + (worker.time * 1000);
+            malunpack.StartInfo.Arguments = "/exe C:\\Temp\\sample.exe /dir C:\\Temp\\unpacked /timeout " + (workerTask.time * 1000);
             malunpack.Start();
 
             eventLog.WriteEntry("Unpacking started...");
@@ -247,10 +252,12 @@ namespace AutoDetoursAgent
         private void CompressResults()
         {
             tar.StartInfo.FileName = "C:\\Temp\\tar.exe";
-            tar.StartInfo.Arguments = "-a -c -f " + defaultPathZip + " sample.exe.out log";
+            tar.StartInfo.Arguments = "-a -c -f " + defaultPathZip + " C:\\Temp\\unpacked";
             tar.Start();
 
+            st.Thread.Sleep(3000);
             eventLog.WriteEntry("Results compressed.");
+            System.Console.WriteLine("Results compressed.");
         }
 
         private string ParseResults()
@@ -290,11 +297,14 @@ namespace AutoDetoursAgent
             // Submit ZIP results to the API
             string url = "workers/" + worker.id + "/submit_task/";
             HttpResponseMessage response = null;
+            var byteArray = File.ReadAllBytes(path);
+            var form = new MultipartFormDataContent();
+            form.Add(new ByteArrayContent(byteArray, 0, byteArray.Length), "results", "unpacked.zip");
             try
             {
                 // TODO : Here send zip (modify app type + update endpoint)
-                response = await client.PostAsync(url,
-                        new StringContent(jsonLogs, Encoding.UTF8, "application/json"));
+                System.Console.WriteLine("Submitting zip.");
+                response = await client.PostAsync(url, form);
             }
             catch (Exception)
             {
@@ -304,6 +314,7 @@ namespace AutoDetoursAgent
             if (response != null && response.IsSuccessStatusCode)
             {
                 eventLog.WriteEntry("ZIP successfully submitted.");
+                System.Console.WriteLine("ZIP succesfully submitted.");
                 return true;
             }
             return false;
@@ -391,13 +402,13 @@ namespace AutoDetoursAgent
                         break;
 
                     case AgentState.JOB:
-                        if (!worker.isUnpacking)
+                        if (!workerTask.isUnpacking)
                             StartTracing();
                         else
                             StartUnpacking();
                         st.Thread.Sleep(workerTask.time * 1000);
 
-                        if (!worker.isUnpacking)
+                        if (!workerTask.isUnpacking)
                             StopTracing();
                         else
                             StopUnpacking();
@@ -406,11 +417,15 @@ namespace AutoDetoursAgent
 
                     case AgentState.SEND_RESULTS:
                         string logs;
-                        if (!worker.isUnpacking)
+                        if (!workerTask.isUnpacking)
                             logs = ParseResults();
-
-                        if ((!worker.isUnpacking && await SubmitTask(logs)) ||
-                            (worker.isUnpacking && await SubmitZip(defaultPathZip)))
+                        else
+                        {
+                            CompressResults();
+                            logs = defaultPathZip;
+                        }
+                        if ((!workerTask.isUnpacking && await SubmitTask(logs)) ||
+                            (workerTask.isUnpacking && await SubmitZip(defaultPathZip)))
                         {
                             state = AgentState.CLEANUP;
                             goto case AgentState.CLEANUP;
