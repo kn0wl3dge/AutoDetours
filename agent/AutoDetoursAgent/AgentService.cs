@@ -391,13 +391,13 @@ namespace AutoDetoursAgent
                         break;
 
                     case AgentState.JOB:
-                        if (worker.jobType == TRACING)
+                        if (!worker.isUnpacking)
                             StartTracing();
                         else
                             StartUnpacking();
                         st.Thread.Sleep(workerTask.time * 1000);
 
-                        if (worker.jobType == TRACING)
+                        if (!worker.isUnpacking)
                             StopTracing();
                         else
                             StopUnpacking();
@@ -406,13 +406,11 @@ namespace AutoDetoursAgent
 
                     case AgentState.SEND_RESULTS:
                         string logs;
-                        if (worker.jobType == TRACING)
+                        if (!worker.isUnpacking)
                             logs = ParseResults();
 
-                        if ((worker.jobType == TRACING
-                                    && await SubmitTask(logs)) ||
-                            (worker.jobType == UNPACKING
-                                    && await SubmitZip(defaultPathZip)))
+                        if ((!worker.isUnpacking && await SubmitTask(logs)) ||
+                            (worker.isUnpacking && await SubmitZip(defaultPathZip)))
                         {
                             state = AgentState.CLEANUP;
                             goto case AgentState.CLEANUP;
@@ -456,18 +454,6 @@ namespace AutoDetoursAgent
         DONE
     }
 
-    enum MalwareType
-    {
-        EXE,
-        DLL
-    }
-
-    enum JobType
-    {
-        TRACING,
-        UNPACKING
-    }
-
     public class Worker
     {
         public String id { get; set; }
@@ -478,8 +464,8 @@ namespace AutoDetoursAgent
     {
         public String malware { get; set; }
         public int time { get; set; }
-        public MalwareType malwareType { get; set; }
-        public JobType jobType { get; set; }
+        public bool isDll { get; set; }
+        public bool isUnpacking { get; set; }
         public string exportName { get; set; }
     }
 }
