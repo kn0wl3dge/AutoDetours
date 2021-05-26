@@ -251,8 +251,8 @@ namespace AutoDetoursAgent
 
         private void CompressResults()
         {
-            tar.StartInfo.FileName = "C:\\Temp\\tar.exe";
-            tar.StartInfo.Arguments = "-a -c -f " + defaultPathZip + " C:\\Temp\\unpacked";
+            tar.StartInfo.FileName = "C:\\Program Files\\7-Zip\\7z.exe";
+            tar.StartInfo.Arguments = "a " + defaultPathZip + " C:\\Temp\\unpacked";
             tar.Start();
 
             st.Thread.Sleep(3000);
