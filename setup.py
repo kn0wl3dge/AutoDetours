@@ -33,7 +33,7 @@ def download_win7():
 def snapshot_generation():
     p = Popen(
         [
-            "qemu-system-x86_64",
+            "qemu-system-i386",
             "-hda", "workers/output.qcow2",
             "-m", "1024",
             "--enable-kvm",
