@@ -63,10 +63,12 @@ public class Tracer : Job
         // Submit JSON results to the API
         string url = "workers/" + workerId + "/submit_task/";
         HttpResponseMessage response = null;
+        var form = new MultipartFormDataContent();
+        var byteArray = Encoding.UTF8.GetBytes(logs);
+        form.Add(new ByteArrayContent(byteArray, 0, byteArray.Length), "results", "traces.json");
         try
         {
-            response = await client.PostAsync(url,
-                    new StringContent(logs, Encoding.UTF8, "application/json"));
+            response = await client.PostAsync(url, form);
         }
         catch (Exception)
         {
