@@ -1,25 +1,26 @@
-﻿using AutoDetoursAgent;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-public abstract class Job
+namespace AutoDetoursAgent
 {
-
-	protected EventLog eventLog;
-	protected WorkerTask workerTask;
-	public Job(EventLog _eventLog, WorkerTask wt)
+	public abstract class Job
 	{
-		eventLog = _eventLog;
-		workerTask = wt;
+		protected Logger logger;
+		protected WorkerTask workerTask;
+		public Job(Logger _logger, WorkerTask _workerTask)
+		{
+			logger = _logger;
+			workerTask = _workerTask;
+		}
+
+		public abstract void StartJob();
+		public abstract void StopJob();
+
+		public abstract void TreatResults();
+
+		// Must be async when implementing this method
+		public abstract Task<bool> SubmitResults(String workerId, HttpClient client);
 	}
-
-	public abstract void StartJob();
-	public abstract void StopJob();
-
-	public abstract void TreatResults();
-
-	// Must be async when implementing this method
-	public abstract Task<bool> SubmitResults(String workerId, HttpClient client);
 }

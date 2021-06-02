@@ -30,6 +30,8 @@ namespace AutoDetoursAgent
 
         private Job job;
 
+        private Logger logger;
+
         public AgentService()
         {
             InitializeComponent();
@@ -42,6 +44,7 @@ namespace AutoDetoursAgent
             }
             eventLog.Source = "AutoDetoursSource";
             eventLog.Log = "AutoDetoursLog";
+            logger = new Logger(eventLog);
         }
 
         public void OnDebug()
@@ -70,7 +73,7 @@ namespace AutoDetoursAgent
             {
                 apiBaseURL = "http://172.20.0.10/api/"; // Don't change me! Check out api.txt
             }
-            eventLog.WriteEntry("AutoDetours API is located at : " + apiBaseURL);
+            logger.Log("AutoDetours API is located at : " + apiBaseURL);
 
             // Check if it's a VM
             if (File.Exists(@"C:\Temp\agent\vm.txt"))
@@ -89,18 +92,18 @@ namespace AutoDetoursAgent
             worker.malware = "";
 
             // Logging
-            eventLog.WriteEntry("AutoDetours service started.");
+            logger.Log("AutoDetours service started.");
         }
 
         protected override void OnStop()
         {
             // Logging
-            eventLog.WriteEntry("AutoDetours service stopped.");
+            logger.Log("AutoDetours service stopped.");
         }
 
         private async Task<bool> RegisterWorker()
         {
-            eventLog.WriteEntry("Trying to register");
+            logger.Log("Trying to register");
             String uuid = Guid.NewGuid().ToString();
             HttpResponseMessage response = null;
             // Make post request to /workers/
@@ -120,16 +123,16 @@ namespace AutoDetoursAgent
             if (response != null && response.IsSuccessStatusCode)
             {
                 worker.id = uuid;
-                eventLog.WriteEntry("Successfully registered as worker : " + worker.id);
+                logger.Log("Successfully registered as worker : " + worker.id);
                 return true;
             }
-            eventLog.WriteEntry("Wasn't able to register worker");
+            logger.Log("Wasn't able to register worker");
             return false;
         }
 
         private async Task<bool> GetTask()
         {
-            eventLog.WriteEntry("Trying to get task");
+            logger.Log("Trying to get task");
             HttpResponseMessage response = null;
             // Make get request to /workers/{id}
             try
@@ -155,15 +158,15 @@ namespace AutoDetoursAgent
 
                     // Set Job according to task
                     if (workerTask.isUnpacking)
-                        job = new Unpacker(eventLog, workerTask);
+                        job = new Unpacker(logger, workerTask);
                     else
-                        job = new Tracer(eventLog, workerTask);
+                        job = new Tracer(logger, workerTask);
 
-                    eventLog.WriteEntry("Agent is now tasked with sample : " + worker.malware);
+                    logger.Log("Agent is now tasked with sample : " + worker.malware);
                     return true;
                 }
             }
-            eventLog.WriteEntry("No task available");
+            logger.Log("No task available");
             return false;
         }
 
@@ -176,7 +179,7 @@ namespace AutoDetoursAgent
             url.Append(worker.malware);
             url.Append("/download/");
 
-            eventLog.WriteEntry("Downloading file at " + url.ToString());
+            logger.Log("Downloading file at " + url.ToString());
 
             String filename = null;
             if (workerTask.isDll == false)
@@ -195,7 +198,7 @@ namespace AutoDetoursAgent
                 return false;
             }
 
-            eventLog.WriteEntry("Sample " + worker.malware + "has been downloaded.");
+            logger.Log("Sample " + worker.malware + "has been downloaded.");
             return true;
         }
 
@@ -215,7 +218,7 @@ namespace AutoDetoursAgent
 
             if (response != null && response.IsSuccessStatusCode)
             {
-                eventLog.WriteEntry("Worker cleaned up!");
+                logger.Log("Worker cleaned up!");
                 return true;
             }
             return false;
@@ -235,7 +238,7 @@ namespace AutoDetoursAgent
 
             if (response != null && response.StatusCode == HttpStatusCode.OK)
             {
-                eventLog.WriteEntry("The API is available!");
+                logger.Log("The API is available!");
                 return true;
             }
             return false;

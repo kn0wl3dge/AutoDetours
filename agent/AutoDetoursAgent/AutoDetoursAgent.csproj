@@ -76,6 +76,7 @@
     <Compile Include="AgentService.Designer.cs">
       <DependentUpon>AgentService.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logger.cs" />
     <Compile Include="Job.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="Program.cs" />
