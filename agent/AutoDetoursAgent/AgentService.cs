@@ -26,13 +26,9 @@ namespace AutoDetoursAgent
         private bool customMutex = true;
         private bool isVM;
 
-        private Process syelogd = new Process();
-        private Process withdll = new Process();
-
-        private Process malunpack = new Process();
-        private Process tar = new Process();
         private String apiBaseURL;
-        private String defaultPathZip = "C:\\Temp\\unpacked.zip";
+
+        private Job job;
 
         public AgentService()
         {
@@ -157,6 +153,12 @@ namespace AutoDetoursAgent
                     workerTask = JsonConvert.DeserializeObject<WorkerTask>(resp);
                     worker.malware = workerTask.malware;
 
+                    // Set Job according to task
+                    if (workerTask.isUnpacking)
+                        job = new Unpacker(eventLog, workerTask);
+                    else
+                        job = new Tracer(eventLog, workerTask);
+
                     eventLog.WriteEntry("Agent is now tasked with sample : " + worker.malware);
                     return true;
                 }
@@ -195,129 +197,6 @@ namespace AutoDetoursAgent
 
             eventLog.WriteEntry("Sample " + worker.malware + "has been downloaded.");
             return true;
-        }
-
-        private void StartTracing()
-        {
-            // Run Syelog Deamon to extract logs from traceapi32
-            syelogd.StartInfo.FileName = "C:\\Temp\\syelogd.exe";
-            syelogd.StartInfo.Arguments = "/o C:\\Temp\\traces.txt";
-            syelogd.Start();
-
-            withdll.StartInfo.FileName = "C:\\Temp\\withdll.exe";
-
-            // We inject Traceapi DLL into the malware process using withdll.exe
-            if (workerTask.isDll == false)
-                withdll.StartInfo.Arguments = "/d:C:\\Temp\\trcapi32.dll C:\\Temp\\sample.exe";
-
-            // In case of a DLL we use RunDLL32 to launch the DLL
-            else
-                withdll.StartInfo.Arguments = "/d:C:\\Temp\\trcapi32.dll rundll32.exe C:\\Temp\\sample.dll," + workerTask.exportName;
-
-            withdll.Start();
-
-            eventLog.WriteEntry("Tracing started...");
-        }
-
-        private void StopTracing()
-        {
-            // Stop both processes
-            if (!withdll.HasExited)
-                withdll.Kill();
-            if (!syelogd.HasExited)
-                syelogd.Kill();
-
-            eventLog.WriteEntry("Tracing stopped...");
-        }
-
-        private void StartUnpacking()
-        {
-            // Run Syelog Deamon to extract logs from traceapi32
-            malunpack.StartInfo.FileName = "C:\\Temp\\mal_unpack.exe";
-            malunpack.StartInfo.Arguments = "/exe C:\\Temp\\sample.exe /dir C:\\Temp\\unpacked /timeout " + (workerTask.time * 1000);
-            malunpack.Start();
-
-            eventLog.WriteEntry("Unpacking started...");
-        }
-
-        private void StopUnpacking()
-        {
-            // Stop both processes
-            if (!malunpack.HasExited)
-                malunpack.Kill();
-
-            eventLog.WriteEntry("Unpacking stopped...");
-        }
-
-        private void CompressResults()
-        {
-            tar.StartInfo.FileName = "C:\\Program Files\\7-Zip\\7z.exe";
-            tar.StartInfo.Arguments = "a " + defaultPathZip + " C:\\Temp\\unpacked";
-            tar.Start();
-
-            st.Thread.Sleep(3000);
-            eventLog.WriteEntry("Results compressed.");
-            System.Console.WriteLine("Results compressed.");
-        }
-
-        private string ParseResults()
-        {
-            // Convert the traces.txt to json format
-            string inputFilename = "C:\\Temp\\traces.txt";
-            string logs = Parser.ParseLogs(inputFilename);
-            eventLog.WriteEntry("Json output has been generated.");
-            return logs;
-        }
-
-        private async Task<bool> SubmitTask(string jsonLogs)
-        {
-            // Submit JSON results to the API
-            string url = "workers/" + worker.id + "/submit_task/";
-            HttpResponseMessage response = null;
-            try
-            {
-                response = await client.PostAsync(url,
-                        new StringContent(jsonLogs, Encoding.UTF8, "application/json"));
-            }
-            catch (Exception)
-            {
-
-            }
-
-            if (response != null && response.IsSuccessStatusCode)
-            {
-                eventLog.WriteEntry("Task successfully submitted.");
-                return true;
-            }
-            return false;
-        }
-
-        private async Task<bool> SubmitZip(string path)
-        {
-            // Submit ZIP results to the API
-            string url = "workers/" + worker.id + "/submit_task/";
-            HttpResponseMessage response = null;
-            var byteArray = File.ReadAllBytes(path);
-            var form = new MultipartFormDataContent();
-            form.Add(new ByteArrayContent(byteArray, 0, byteArray.Length), "results", "unpacked.zip");
-            try
-            {
-                // TODO : Here send zip (modify app type + update endpoint)
-                System.Console.WriteLine("Submitting zip.");
-                response = await client.PostAsync(url, form);
-            }
-            catch (Exception)
-            {
-
-            }
-
-            if (response != null && response.IsSuccessStatusCode)
-            {
-                eventLog.WriteEntry("ZIP successfully submitted.");
-                System.Console.WriteLine("ZIP succesfully submitted.");
-                return true;
-            }
-            return false;
         }
 
         private async Task<bool> Cleanup()
@@ -402,30 +281,17 @@ namespace AutoDetoursAgent
                         break;
 
                     case AgentState.JOB:
-                        if (!workerTask.isUnpacking)
-                            StartTracing();
-                        else
-                            StartUnpacking();
+                        job.StartJob();
                         st.Thread.Sleep(workerTask.time * 1000);
 
-                        if (!workerTask.isUnpacking)
-                            StopTracing();
-                        else
-                            StopUnpacking();
+                        job.StopJob();
                         state = AgentState.SEND_RESULTS;
                         goto case AgentState.SEND_RESULTS;
 
                     case AgentState.SEND_RESULTS:
-                        string logs;
-                        if (!workerTask.isUnpacking)
-                            logs = ParseResults();
-                        else
-                        {
-                            CompressResults();
-                            logs = defaultPathZip;
-                        }
-                        if ((!workerTask.isUnpacking && await SubmitTask(logs)) ||
-                            (workerTask.isUnpacking && await SubmitZip(defaultPathZip)))
+
+                        job.TreatResults();
+                        if (await job.SubmitResults(worker.id, client))
                         {
                             state = AgentState.CLEANUP;
                             goto case AgentState.CLEANUP;
