@@ -307,6 +307,10 @@ namespace AutoDetoursAgent
                         break;
 
                     case AgentState.DONE:
+                        // Quitting properly when debugging in VS
+                        #if DEBUG
+                            System.Environment.Exit(0);
+                        #endif
                         if (isVM)
                         {
                             Process.Start("shutdown", "/s /t 0");
