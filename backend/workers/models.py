@@ -32,10 +32,10 @@ class Worker(models.Model):
 
     @transition(field=state, source=WorkerState.REGISTERED, target=WorkerState.TASKED)
     def find_task(self):
-        potential_tasks = Malware.objects.filter(state=MalwareState.NOT_ANALYZED)
+        potential_tasks = Malware.objects.filter(state=MalwareState.NOT_STARTED)
         if potential_tasks.exists():
             malware = potential_tasks.earliest("creation_date")
-            malware.analyze()
+            malware.starting_qemu()
             malware.save()
             self.malware = malware
             self.analysis_start_date = timezone.now()

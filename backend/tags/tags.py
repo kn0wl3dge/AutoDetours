@@ -13,7 +13,7 @@ RULES = rule.get_db_rules(RULES_PATHS)
 @shared_task
 def set_tags(mal_sha256):
     malware = Malware.objects.filter(sha256=mal_sha256).get()
-    json_string = malware.hooks_result
+    json_string = malware.agent_result
     api_calls = extract.extract_funcname_list(json_string)
     tags = []
     tags2 = {}
