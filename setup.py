@@ -63,13 +63,13 @@ def download_win7():
     wget.download(WIN7_URL, out=WORKERS_DIR)
 
     logger.info("Extracting zipfile...")
-    with zipfile.ZipFile(f"{WORKERS_DIR}/{WIN7_URL.split('/')[-1]}", 'r') as zip_ref:
+    with zipfile.ZipFile(f"{WORKERS_DIR}/{WIN7_URL.split('/')[-1]}", "r") as zip_ref:
         zip_ref.extractall(WORKERS_DIR)
-    
+
     logger.info("Extracting tarfile...")
     with tarfile.open(f"{WORKERS_DIR}/{ova}") as tar_ref:
         tar_ref.extract(vmdk, WORKERS_DIR)
-    
+
     logger.info("Converting vmdk disk to qcow2 image...")
     os.system(f'qemu-img convert -O qcow2 "{WORKERS_DIR}/{vmdk}" "{BASE_QCOW2}"')
 
@@ -80,6 +80,7 @@ def download_win7():
         os.remove(f"{WORKERS_DIR}/{WIN7_URL.split('/')[-1]}")
     except:
         logger.error("Could not delete files.")
+
 
 def ssh_connect(ssh):
     logger.info("Trying to connect to Windows OpenSSH server...")
@@ -159,7 +160,7 @@ def install_dependencies(ssh):
     send_ssh_cmd(
         ssh,
         f'cd {WINDOWS_PATH} && cmd.exe /c "start /wait dotnetframeworkinstaller.exe /q"',
-        readline=False
+        readline=False,
     )
 
 
@@ -356,7 +357,7 @@ if __name__ == "__main__":
 AutoDetours is an application allowing to trace syscalls from multiple samples at the same time.
 The goal is to be able to generate a large dataset of Windows API calls by malwares.
 This dataset could then be used in machine learning to try to classify samples by families.
-To provide this solution we are using Detours project from Microsoft."""
+To provide this solution we are using Detours project from Microsoft.""",
     )
     parser.add_argument(
         "-d", "--debug", help="Run installation in debug mode", action="store_true"
