@@ -30,13 +30,14 @@ To provide this solution we are using [Detours](https://github.com/microsoft/Det
 - [X] docker-compose
 - [X] Python3 for the setup script
 
-Just run `python3 setup.py -w <nbr_workers>` to install the project.  
-This script will download, decompress and convert a Windows7 Vm to a qcow2 image.  
-Then, it will run the VM in a container and configure the VM, install the agent and its dependencies.  
+### Procedure
+Just run `pip3 install -r requirements.txt` and `python3 setup.py -w <nbr_workers>` to install the project.  
+This script will download, decompress and convert a Windows7 VM to a qcow2 image.  
+Then, it will run the VM inside a container and configure the VM then install the agent and its dependencies.  
 It will make a snapshot of the VM and setup the number of workers you want.  
 Do not worry, it's going to take some time to finish...
 
-### Running the projet
+## Running the projet
 To run the project, just use the following command:
 ```
 docker-compose up -d
