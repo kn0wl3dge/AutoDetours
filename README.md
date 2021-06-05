@@ -26,36 +26,20 @@ To provide this solution we are using [Detours](https://github.com/microsoft/Det
 
 ### Prerequisites
 
-- [X] Docker installed
-- [X] Agent installed in a qcow2 Win7 image (+ .Net Framework 4.7.2)
+- [X] Docker installed and running
+- [X] docker-compose
+- [X] Python3 for the setup script
 
-### Creating the VM with the Agent
-- Download a Windows IE9 VirtualBox VM (https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/)
-- Unzip the VM and the untart the ova file
-- Convert the VMDK into a qcow2 image using `qemu-img convert -O qcow2 input.vmdk output.qcow2`
-- Run the VM using qemu : `qemu-system-i386 -monitor stdio -show-cursor -m 1024 -enable-kvm -hda output.qcow2`
-- Copy files from the folder hooking into the directory C:/Temp of the Win7 VM (using qemu)
-- Install the .Net Framwork Runtime 4.7.2
-- Disable the Windows Firewall and the Windows AntiVirus
-- Start a cmd.exe with admin privileges
-- Create a Windows Service (`sc create "Agent Detours" start= auto binPath= "C:\Temp\agent\AutoDetoursAgent.exe"`
-- Launch the service (`sc start "Agent Detours"`)
-- Take a snapshot of the running VM using `savevm agent` (in qemu)
-- Build the `qemu` image by running the following command in the `qemu/` directory : `docker build -t qemu .`
+Just run `python3 setup.py -w <nbr_workers>` to install the project.  
+This script will download, decompress and convert a Windows7 Vm to a qcow2 image.  
+Then, it will run the VM in a container and configure the VM, install the agent and its dependencies.  
+It will make a snapshot of the VM and setup the number of workers you want.  
+Do not worry, it's going to take some time to finish...
 
 ### Running the projet
-Now rename your image `win7-0.qcow2`. If you want multiple workers (so you can have multiple analysis at the same time), copy/paste the qemu image.
-For example, if you need 3 workers, you'll have in you directory:
-- win7-0.qcow2
-- win7-1.qcow2
-- win7-2.qcow2
-
-Then, update the `.env.dev` file to you need. You should at least specify the number of workers you have and the associated directory.
-
-To run the project you must use the `docker-compose.yml` in the root folder
-of the project with the command:
+To run the project, just use the following command:
 ```
-docker-compose up
+docker-compose up -d
 ```
 
 ## Usage
