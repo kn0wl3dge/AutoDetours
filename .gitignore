@@ -209,3 +209,5 @@ sw.*
 
 agent/AutoDetoursAgent/obj
 agent/AutoDetoursAgent/bin
+
+*.qcow2
