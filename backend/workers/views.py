@@ -41,9 +41,9 @@ class WorkerViewSet(
                 {
                     "malware": worker.malware.sha256,
                     "time": worker.malware.time,
-                    "isDll": worker.malware.is_dll,
-                    "exportName": worker.malware.export_dll,
-                    "isUnpacking": worker.malware.is_unpacking
+                    "task": worker.malware.task,
+                    "format": worker.malware.format,
+                    "exportName": worker.malware.export_dll
                 }
             )
         else:
