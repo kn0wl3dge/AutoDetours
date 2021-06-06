@@ -27,7 +27,7 @@ public class Tracer : Job
         withdll.StartInfo.FileName = "C:\\Temp\\withdll.exe";
 
         // We inject Traceapi DLL into the malware process using withdll.exe
-        if (workerTask.isDll == false)
+        if (workerTask.format == "dll")
             withdll.StartInfo.Arguments = "/d:C:\\Temp\\trcapi32.dll C:\\Temp\\sample.exe";
 
         // In case of a DLL we use RunDLL32 to launch the DLL
