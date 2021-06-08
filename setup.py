@@ -29,6 +29,7 @@ SSH_PASSWORD = "Passw0rd!"
 WINDOWS_PATH = "/cygdrive/c/Temp"
 QEMU_IMAGE = "autodetours_qemu"
 WIN7_URL = "https://az792536.vo.msecnd.net/vms/VMBuild_20150916/VirtualBox/IE9/IE9.Win7.VirtualBox.zip"
+EXECUTABLES = './executables/'
 
 logger = logging.getLogger()
 
@@ -120,7 +121,7 @@ def copy_files_to_vm(ssh):
     logger.info("Copying files into the Windows VM...")
     try:
         scp = SCPClient(ssh.get_transport())
-        scp.put("./binaries/", recursive=True, remote_path=WINDOWS_PATH)
+        scp.put(EXECUTABLES, recursive=True, remote_path=WINDOWS_PATH)
         scp.close()
     except:
         logger.error("Could not copy files to the VM!")
