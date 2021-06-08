@@ -279,7 +279,7 @@ def clean(complete_clean):
         rmtree(WORKERS_DIR, onerror=remove_readonly)
     else:
         logger.info("Removing previous images (win7-xx.qcow2)...")
-        os.system(f"rm {WORKERS_DIR}/win7*")
+        os.system(f"rm -v {WORKERS_DIR}/win7* 2>/dev/null")
 
 
 def generate_workers(nbr_workers):
