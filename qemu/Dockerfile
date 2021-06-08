@@ -1,8 +1,10 @@
-FROM archlinux:latest
+FROM debian:bullseye-slim
 
-RUN pacman -Syyu --noconfirm && \
-    pacman -S qemu-arch-extra qemu --noconfirm
+RUN apt-get update && apt-get -y upgrade && \
+    apt-get --no-install-recommends -y install \
+        qemu-system-x86 \
+    && apt-get clean
 
 RUN mkdir /image
 
-ENTRYPOINT ["qemu-system-i386", "-nographic", "-m", "1024", "-loadvm", "agent", "-enable-kvm"]
+ENTRYPOINT ["qemu-system-i386"]
