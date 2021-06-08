@@ -58,10 +58,10 @@ class WorkerViewSet(
                     worker.finish_task(request.data["results"])
                     worker.save()
                     # Prevents JSON deserialization from zip file
-                    if not worker.malware.is_unpacking:
+                    if worker.malware.task == 'analyse':
                         set_tags.delay(worker.malware.sha256)
                 except Exception as e:
-                    print(e, worker.malware.is_unpacking)
+                    print(e, worker.malware.task)
                     return Response({"error": "Results can't be parsed"})
                 return Response({"success": "Results successfully stored"})
             else:
