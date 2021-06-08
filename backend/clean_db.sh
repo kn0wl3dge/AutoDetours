@@ -1,5 +1,11 @@
 #!/bin/sh
 
 rm -vf celerybeat-schedule
-rm -vf malwaredb/migrations/0001_initial.py
-rm -vf workers/migrations/0001_initial.py
+rm -vrf malwaredb/migrations/
+rm -vrf workers/migrations/
+
+mkdir malwaredb/migrations/
+mkdir workers/migrations/
+
+touch malwaredb/migrations/__init__.py
+touch workers/migrations/__init__.py
