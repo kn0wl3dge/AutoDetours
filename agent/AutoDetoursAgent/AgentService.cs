@@ -179,7 +179,7 @@ namespace AutoDetoursAgent
             eventLog.WriteEntry("Downloading file at " + url.ToString());
 
             String filename = null;
-            if (workerTask.format == "dll")
+            if (workerTask.format == "exe")
                 filename = "C:\\Temp\\sample.exe";
             else
                 filename = "C:\\Temp\\sample.dll";
