@@ -154,7 +154,7 @@ namespace AutoDetoursAgent
                     worker.malware = workerTask.malware;
 
                     // Set Job according to task
-                    if (workerTask.format == "unpacking")
+                    if (workerTask.task == "unpack")
                         job = new Unpacker(eventLog, workerTask);
                     else
                         job = new Tracer(eventLog, workerTask);
