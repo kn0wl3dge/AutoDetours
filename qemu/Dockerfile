@@ -1,9 +1,7 @@
-FROM debian:bullseye-slim
+FROM archlinux:latest
 
-RUN apt-get update && apt-get -y upgrade && \
-    apt-get --no-install-recommends -y install \
-        qemu-system-x86 \
-    && apt-get clean
+RUN pacman -Syyu --noconfirm && \
+    pacman -S qemu-arch-extra qemu --noconfirm
 
 RUN mkdir /image
 
