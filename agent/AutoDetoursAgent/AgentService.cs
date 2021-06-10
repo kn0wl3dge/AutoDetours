@@ -157,8 +157,8 @@ namespace AutoDetoursAgent
                     worker.malware = workerTask.malware;
 
                     // Set Job according to task
-                    if (workerTask.isUnpacking)
-                        job = new Unpacker(logger, workerTask);
+                    if (workerTask.task == "unpack")
+                        job = new Unpacker(eventLog, workerTask);
                     else
                         job = new Tracer(logger, workerTask);
 
@@ -182,7 +182,7 @@ namespace AutoDetoursAgent
             logger.Log("Downloading file at " + url.ToString());
 
             String filename = null;
-            if (workerTask.isDll == false)
+            if (workerTask.format == "exe")
                 filename = "C:\\Temp\\sample.exe";
             else
                 filename = "C:\\Temp\\sample.dll";
@@ -352,8 +352,8 @@ namespace AutoDetoursAgent
     {
         public String malware { get; set; }
         public int time { get; set; }
-        public bool isDll { get; set; }
-        public bool isUnpacking { get; set; }
+        public string format { get; set; }
+        public string task { get; set; }
         public string exportName { get; set; }
     }
 }

@@ -15,6 +15,10 @@ namespace AutoDetoursAgent
         // Stores logs after parsing
         private string logs;
 
+        // We inject Traceapi DLL into the malware process using withdll.exe
+        if (workerTask.format == "dll")
+            withdll.StartInfo.Arguments = "/d:C:\\Temp\\trcapi32.dll C:\\Temp\\sample.exe";
+
         public Tracer(Logger logger, WorkerTask wt) : base(logger, wt)
         {
         }

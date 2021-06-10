@@ -51,8 +51,8 @@ def workers_automation():
         except docker.errors.NotFound:
             print("Runnning worker %s" % worker)
             client.containers.run(
-                "qemu",
-                command=f"-hda {output_dir}{image}",
+                "autodetours_qemu",
+                command=f"-nographic -m 1024 -loadvm agent -enable-kvm -hda {output_dir}{image}",
                 network=network,
                 devices=["/dev/kvm"],
                 volumes={input_dir: {"bind": output_dir, "mode": "rw"}},
