@@ -29,7 +29,7 @@ SSH_PASSWORD = "Passw0rd!"
 WINDOWS_PATH = "/cygdrive/c/Temp"
 QEMU_IMAGE = "autodetours_qemu"
 WIN7_URL = "https://az792536.vo.msecnd.net/vms/VMBuild_20150916/VirtualBox/IE9/IE9.Win7.VirtualBox.zip"
-BINARIES = './binaries/'
+BINARIES = "./binaries/"
 
 logger = logging.getLogger()
 
