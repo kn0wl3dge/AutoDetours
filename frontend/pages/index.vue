@@ -59,7 +59,7 @@ export default {
       stats: {
         malware: {
           stateanalyze: resp.malwares_repartition,
-          labels: ['Not Analyzed', 'Analyzing', 'Analyzed', 'Timed Out'],
+          labels: ['Not Started', 'Running', 'Done', 'Timed Out'],
           borderColors: ['##fff', '##fff', '##fff', '##fff'],
           colors: ['#e74c3c', '#fd7e14', '#00bc8c', '#375a7f']
         },

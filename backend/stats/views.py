@@ -42,7 +42,7 @@ class StatsView(APIView):
             "count": {
                 "total_malwares": Malware.objects.count(),
                 "total_malwares_analyzed": Malware.objects.filter(
-                    state=MalwareState.TASK_OVER
+                    state=MalwareState.DONE
                 ).count(),
                 "distinct_labels_number": Malware.objects.distinct("label").count(),
                 "workers_number": Worker.objects.count(),
