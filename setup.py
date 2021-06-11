@@ -292,9 +292,9 @@ def generate_workers(nbr_workers):
             )
 
 
-def create_env_file():
-    logger.info(f"Creating {ENV_FILE} configuration file...")
-    text = """DEBUG=True
+def update_env_file(nbr_workers):
+    logger.info(f"Updating {ENV_FILE} configuration file...")
+    text = f"""DEBUG=True
 SECRET_KEY='_ejix(@eon@nv6r8rc!^+#*pi(^a2b5c$*bdnhjkeo#fn@vv8c'
 
 POSTGRES_ENGINE=django.db.backends.postgresql
@@ -306,26 +306,11 @@ POSTGRES_PORT=5432
 
 CELERY_TASKS_SCHEDULE=10.0
 
-NB_WIN7_WORKERS=
-WIN7_IMAGES_DIR=
+NB_WIN7_WORKERS={nbr_workers}
+WIN7_IMAGES_DIR={WORKERS_DIR}
 """
     with open(ENV_FILE, "w") as fd:
         fd.write(text)
-
-
-def update_env_file(nbr_workers):
-    if not os.path.exists(ENV_FILE):
-        create_env_file()
-    logger.info(f"Updating {ENV_FILE} configuration file...")
-    with open(ENV_FILE, "r") as fd:
-        lines = fd.readlines()
-    for i in range(len(lines)):
-        if "NB_WIN7_WORKERS" in lines[i]:
-            lines[i] = f"NB_WIN7_WORKERS={nbr_workers}\n"
-        elif "WIN7_IMAGES_DIR" in lines[i]:
-            lines[i] = f"WIN7_IMAGES_DIR={WORKERS_DIR}\n"
-    with open(ENV_FILE, "w") as fd:
-        fd.writelines(lines)
 
 
 def main(args):
