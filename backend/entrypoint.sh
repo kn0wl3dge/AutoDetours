@@ -15,7 +15,7 @@ echo "Creating /data dirs"
 
 echo "Starting Django"
 python manage.py flush --no-input
-python manage.py makemigrations malwaredb
+python manage.py makemigrations malware
 python manage.py makemigrations workers
 python manage.py migrate
 

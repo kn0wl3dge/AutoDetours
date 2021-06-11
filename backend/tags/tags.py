@@ -1,7 +1,7 @@
 import tags.rule as rule
 import tags.extract as extract
 
-from malwaredb.models import Malware
+from malware.models import Malware
 from celery import shared_task
 from tags.rule import check_family
 

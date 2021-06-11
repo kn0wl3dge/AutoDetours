@@ -4,7 +4,7 @@ from django.utils import timezone
 from django.db import models
 from django_fsm import FSMField, transition
 
-from malwaredb.models import Malware, MalwareState
+from malware.models import Malware, MalwareState
 
 
 class NoTaskAvailable(Exception):

@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 from django.db.models import Count
 
 from workers.models import Worker, WorkerState
-from malwaredb.models import Malware, MalwareState
+from malware.models import Malware, MalwareState
 
 
 def getStateRepartition(model, enum):
