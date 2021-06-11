@@ -292,8 +292,31 @@ def generate_workers(nbr_workers):
             )
 
 
+def create_env_file():
+    logger.info(f"Creating {ENV_FILE} configuration file...")
+    text = """DEBUG=True
+SECRET_KEY='_ejix(@eon@nv6r8rc!^+#*pi(^a2b5c$*bdnhjkeo#fn@vv8c'
+
+POSTGRES_ENGINE=django.db.backends.postgresql
+POSTGRES_DB=postgres
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres
+POSTGRES_HOST=db
+POSTGRES_PORT=5432
+
+CELERY_TASKS_SCHEDULE=10.0
+
+NB_WIN7_WORKERS=
+WIN7_IMAGES_DIR=
+"""
+    with open(ENV_FILE, "w") as fd:
+        fd.write(text)
+
+
 def update_env_file(nbr_workers):
-    logger.info("Updating .env.dev configuration file...")
+    if not os.path.exists(ENV_FILE):
+        create_env_file()
+    logger.info(f"Updating {ENV_FILE} configuration file...")
     with open(ENV_FILE, "r") as fd:
         lines = fd.readlines()
     for i in range(len(lines)):

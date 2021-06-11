@@ -81,12 +81,14 @@ celerybeat-schedule
 
 # dotenv
 .env
+.env.dev
 
 # virtualenv
 .venv
 venv/
 ENV/
 .vscode
+
 # Spyder project settings
 .spyderproject
 .spyproject
@@ -110,9 +112,6 @@ media/
 **/migrations/**
 !**/migrations
 !**/migrations/__init__.py
-
-malwares/
-
 
 # Created by .ignore support plugin (hsz.mobi)
 ### Node template
