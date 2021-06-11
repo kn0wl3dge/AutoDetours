@@ -1,7 +1,7 @@
 from django.urls import path, include
 from rest_framework import routers
 
-from malware.views import (
+from malwares.views import (
     MalwareViewSet,
     DatasetGenerationView,
     DatasetDownloadView,

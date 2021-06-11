@@ -41,10 +41,11 @@ INSTALLED_APPS = [
     "corsheaders",
     "rest_framework",
     "django_fsm",
-    "malware",
+    "malwares",
     "workers",
     "stats",
     "jobs",
+    "tags",
 ]
 
 MIDDLEWARE = [
