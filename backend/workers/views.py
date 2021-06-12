@@ -10,7 +10,7 @@ from workers.tasks import worker_delete
 
 from jobs.models import Job, JobType, JobState
 
-from tags.tags import set_tags
+from tags.tasks import set_tags
 
 
 class WorkerViewSet(
@@ -63,11 +63,10 @@ class WorkerViewSet(
             if "results" in request.data.keys():
                 worker.job.end(request.data["results"])
                 worker.job.save()
-                worker.save()
 
                 # Prevents JSON deserialization from zip file
-                if worker.job.job_type == JobType.PESIEVE:
-                    set_tags.delay(worker.job.malware.sha256)
+                if worker.job.job_type == JobType.DETOURS:
+                    set_tags.delay(worker.job.id)
                 return Response({"success": "Results successfully stored"})
             else:
                 return Response({"error": "Can't find 'results' param"})

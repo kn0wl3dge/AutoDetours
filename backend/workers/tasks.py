@@ -23,15 +23,15 @@ def worker_delete(ip):
 @shared_task
 def workers_timeout():
     # TODO FIX ME
-    for worker in Worker.objects.filter(state=JobState.TASKED):
+    for worker in Worker.objects.filter(job__state=JobState.RUNNING):
         delta = timezone.now() - worker.job.start_time
-        limit = worker.malware.time * 20
+        limit = worker.job.time * 20
         if limit > 3 * 10 * 60:  # 30minutes max of timeout after analysis
             limit = 3 * 10 * 60
         if delta.seconds > limit:
             print("Worker %s timed out !" % worker.id)
-            worker.malware.end_analysis(None)
-            worker.malware.save()
+            worker.job.end(None)
+            worker.job.save()
             worker_delete.delay(worker.ip)
             worker.delete()
 
