@@ -1,16 +1,15 @@
 from rest_framework import viewsets, mixins, renderers
 
+from jobs.serializers import JobSerializer
+from jobs.models import Job
 
-class JobSubClassFieldsMixin(object):
-    def get_queryset(self):
-        return Job.objects.select_subclasses()
 
-class RetrievePersonAPIView(
-    JobSubClassFieldsMixin,
+class JobViewSet(
     mixins.CreateModelMixin,
     mixins.ListModelMixin,
     mixins.RetrieveModelMixin,
     mixins.DestroyModelMixin,
     viewsets.GenericViewSet,
 ):
-    serializer_class = JobListSerializer
+    queryset = Job.objects.all()
+    serializer_class = JobSerializer

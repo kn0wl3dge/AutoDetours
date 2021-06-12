@@ -10,10 +10,12 @@ from malwares.views import (
 from workers.views import WorkerViewSet
 from stats.views import StatsView
 from tags.views import RuleFormView
+from jobs.views import JobViewSet
 
 router = routers.DefaultRouter()
 router.register(r"malwares", MalwareViewSet)
 router.register(r"workers", WorkerViewSet)
+router.register(r"jobs", JobViewSet)
 
 urlpatterns = [
     path("api/", include(router.urls)),
