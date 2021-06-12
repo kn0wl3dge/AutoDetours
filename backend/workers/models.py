@@ -13,12 +13,6 @@ class NoTaskAvailable(Exception):
     pass
 
 
-class WorkerState(object):
-    REGISTERED = "REGISTERED"
-    TASKED = "TASKED"
-    FINISHED = "FINISHED"
-
-
 class Worker(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     ip = models.GenericIPAddressField(editable=False)

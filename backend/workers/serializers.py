@@ -8,6 +8,7 @@ class WorkerSerializer(serializers.ModelSerializer):
         model = Worker
         fields = "__all__"
         read_only_fields = ("ip", "registration_time")
+        depth = 1
 
     def create(self, validated_data):
         validated_data["ip"] = self.context.get("request").headers["X-Forwarded-For"]

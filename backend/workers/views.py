@@ -8,7 +8,7 @@ from workers.models import Worker
 from workers.serializers import WorkerSerializer
 from workers.tasks import worker_delete
 
-from jobs.models import JobType, JobState
+from jobs.models import Job, JobType, JobState
 
 from tags.tags import set_tags
 
@@ -24,7 +24,7 @@ class WorkerViewSet(
     serializer_class = WorkerSerializer
 
     def perform_destroy(self, instance):
-        if instance.job and instance.job.state != JobState.FINISHED:
+        if instance.job and instance.job.state != JobState.DONE:
             raise ValidationError("You can't delete a worker in this state")
         ip = instance.ip
         instance.delete()
@@ -33,7 +33,7 @@ class WorkerViewSet(
     @action(detail=True, methods=["GET"])
     def get_task(self, request, pk=None):
         worker = get_object_or_404(Worker, pk=pk)
-        if not instance.job:
+        if not worker.job:
             available_jobs = Job.objects.filter(state=JobState.NOT_STARTED)
             if available_jobs.exists():
                 job = available_jobs.earliest("creation_time")
@@ -59,7 +59,7 @@ class WorkerViewSet(
     @action(detail=True, methods=["POST"])
     def submit_task(self, request, pk=None):
         worker = get_object_or_404(Worker, pk=pk)
-        if instance.job and instance.job.state != JobState.FINISHED:
+        if worker.job and worker.job.state != JobState.DONE:
             if "results" in request.data.keys():
                 worker.job.end(request.data["results"])
                 worker.job.save()

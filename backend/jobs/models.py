@@ -15,8 +15,8 @@ def get_upload_filename(instance, filename):
     return f"{RESULTS_DIR}/{'/'.join(dirs[:5])}/{instance.malware.sha256}_{instance.job_type}.{ext}"
 
 
-class JobType(object):
-    PESIEVE = 'PESieve'
+class JobType(object): # TODO change this in the agent....
+    PESIEVE = 'unpack'
     DETOURS = 'Detours'
 
 
@@ -34,7 +34,7 @@ class Job(models.Model):
     job_time = models.IntegerField(default=30)
 
     state = FSMField(default=JobState.NOT_STARTED, editable=False, protected=True)
-    malware = models.ForeignKey(Malware, on_delete=models.CASCADE)
+    malware = models.ForeignKey(Malware, related_name='jobs', on_delete=models.CASCADE)
 
     results = models.FileField(upload_to=get_upload_filename, editable=False)
     extras_results = models.JSONField(default=dict, editable=False)
