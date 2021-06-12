@@ -1,7 +1,8 @@
 from os import remove
 from json import dumps
 from django.http import FileResponse
-from rest_framework import viewsets, mixins
+from rest_framework import viewsets, mixins, throttling
+from rest_framework.exceptions import Throttled
 from rest_framework.decorators import action
 from rest_framework.exceptions import ValidationError
 from rest_framework.generics import get_object_or_404
@@ -13,6 +14,20 @@ from datasets.serializers import DatasetSerializer
 from utils.renderers import PassRenderer
 
 
+class DatasetRateThrottle(throttling.BaseThrottle):
+    """
+    The goal of this throttle is to avoid DoS using 
+    dataset feature.
+    This throttle won't allow multiples dataset being
+    generated simultaneously.
+    """
+    def allow_request(self, request, view):
+        if view.action == 'create':
+            q = Dataset.objects.filter(status=DatasetStatus.GENERATING)
+            return not q.exists()
+        return True
+
+
 class DatasetViewSet(
     mixins.CreateModelMixin,
     mixins.ListModelMixin,
@@ -22,6 +37,15 @@ class DatasetViewSet(
 ):
     queryset = Dataset.objects.all()
     serializer_class = DatasetSerializer
+    throttle_classes = (DatasetRateThrottle,)
+
+    def throttled(self, request, wait):
+        raise Throttled(
+            detail={
+                "error":"A dataset is already being generated...",
+            }
+        )
+
 
     def perform_create(self, serializer):
         dataset = serializer.save()
