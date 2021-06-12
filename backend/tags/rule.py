@@ -60,24 +60,3 @@ def check_type(dict_tags, reference):
                 return True
 
     return False
-
-
-def check_family(dict_tags):
-    ransomware_tags = {
-        "Write File/Directory": 15,
-        "Read File/Directory": 15,
-        "Crypto": 10,
-    }
-    keylogger_tags = {"Keyboard": 1}
-    spyware_tags = {"Camera": 1}
-    c2_tags = {"Http Request": 1}
-    if check_type(dict_tags, ransomware_tags) != False:
-        return "Ransomware"
-    elif check_type(dict_tags, keylogger_tags) != False:
-        return "Keylogger"
-    elif check_type(dict_tags, spyware_tags) != False:
-        return "Spyware"
-    elif check_type(dict_tags, c2_tags) != False:
-        return "RAT/Trojan"
-
-    return "Unknown"
