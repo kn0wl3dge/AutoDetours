@@ -21,6 +21,7 @@ def worker_delete(ip):
 
 @shared_task
 def workers_timeout():
+    # TODO FIX ME
     for worker in Worker.objects.filter(state=WorkerState.TASKED):
         delta = timezone.now() - worker.analysis_start_date
         limit = worker.malware.time * 20

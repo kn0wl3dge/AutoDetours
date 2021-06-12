@@ -32,15 +32,15 @@ class Job(models.Model):
     results = models.FileField(upload_to=get_upload_filename, editable=False)
     extras_results = models.JSONField(default=dict, editable=False)
 
-    date_start = models.DateTimeField(auto_now_add=True, editable=False)
-    date_end = models.DateTimeField(default=None, null=True, editable=False)
+    start_time = models.DateTimeField(auto_now_add=True, editable=False)
+    end_time = models.DateTimeField(default=None, null=True, editable=False)
 
     @transition(
         field=state,
         source=MalwareState.NOT_STARTED,
         target=MalwareState.RUNNING,
     )
-    def job_start(self):
+    def start(self):
         pass
 
     @transition(
@@ -48,6 +48,6 @@ class Job(models.Model):
         source=MalwareState.RUNNING,
         target=MalwareState.DONE,
     )
-    def job_end(self, agent_results):
+    def end(self, agent_results):
         self.date_end = timezone.now()
         self.results = agent_results
