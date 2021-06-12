@@ -59,3 +59,11 @@ class Job(models.Model):
     def end(self, agent_results):
         self.end_time = timezone.now()
         self.results = agent_results
+    
+    @transition(
+        field=state,
+        source=JobState.RUNNING,
+        target=JobState.TIMED_OUT,
+    )
+    def timeout(self):
+        self.end_time = timezone.now()
