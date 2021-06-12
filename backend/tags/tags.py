@@ -3,7 +3,6 @@ import tags.extract as extract
 
 from malwares.models import Malware
 from celery import shared_task
-from tags.rule import check_family
 
 RULES_PATHS = ["tags/db_rules", "/data/db_rules"]
 
@@ -25,6 +24,5 @@ def set_tags(mal_sha256):
                     tags2[rule.tag] += 1
                 else:
                     tags2[rule.tag] = 1
-    malware.family = check_family(tags2)
     malware.tags = list(tags2)
     malware.save()

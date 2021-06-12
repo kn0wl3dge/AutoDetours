@@ -4,7 +4,8 @@ import os
 from celery import shared_task
 from django.utils import timezone
 
-from workers.models import Worker, WorkerState
+from workers.models import Worker
+from jobs.models import JobState
 
 
 @shared_task
@@ -22,8 +23,8 @@ def worker_delete(ip):
 @shared_task
 def workers_timeout():
     # TODO FIX ME
-    for worker in Worker.objects.filter(state=WorkerState.TASKED):
-        delta = timezone.now() - worker.analysis_start_date
+    for worker in Worker.objects.filter(state=JobState.TASKED):
+        delta = timezone.now() - worker.job.start_time
         limit = worker.malware.time * 20
         if limit > 3 * 10 * 60:  # 30minutes max of timeout after analysis
             limit = 3 * 10 * 60

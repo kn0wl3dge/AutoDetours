@@ -5,7 +5,7 @@ from django.utils import timezone
 from django.db import models
 from django_fsm import FSMField, transition, RETURN_VALUE
 
-from malwares.models import Malware, MalwareFormat, MalwareState
+from malwares.models import Malware, MalwareFormat
 
 RESULTS_DIR = "/data/results"
 
@@ -20,34 +20,42 @@ class JobType(object):
     DETOURS = 'Detours'
 
 
+class JobState(object):
+    NOT_STARTED = "NOT_STARTED"
+    RUNNING = "RUNNING"
+    DONE = "DONE"
+    TIMED_OUT = "TIMED_OUT"
+
+
 class Job(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 
     job_type = models.CharField(max_length=16)
     job_time = models.IntegerField(default=30)
 
-    state = FSMField(default=MalwareState.NOT_STARTED, editable=False, protected=True)
+    state = FSMField(default=JobState.NOT_STARTED, editable=False, protected=True)
     malware = models.ForeignKey(Malware, on_delete=models.CASCADE)
 
     results = models.FileField(upload_to=get_upload_filename, editable=False)
     extras_results = models.JSONField(default=dict, editable=False)
 
-    start_time = models.DateTimeField(auto_now_add=True, editable=False)
+    creation_time = models.DateTimeField(auto_now_add=True, editable=False)
+    start_time = models.DateTimeField(default=None, null=True, editable=False)
     end_time = models.DateTimeField(default=None, null=True, editable=False)
 
     @transition(
         field=state,
-        source=MalwareState.NOT_STARTED,
-        target=MalwareState.RUNNING,
+        source=JobState.NOT_STARTED,
+        target=JobState.RUNNING,
     )
     def start(self):
-        pass
+        self.start_time = timezone.now()
 
     @transition(
         field=state,
-        source=MalwareState.RUNNING,
-        target=MalwareState.DONE,
+        source=JobState.RUNNING,
+        target=JobState.DONE,
     )
     def end(self, agent_results):
-        self.date_end = timezone.now()
+        self.end_time = timezone.now()
         self.results = agent_results
