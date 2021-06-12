@@ -1,3 +1,16 @@
-from django.shortcuts import render
+from rest_framework import viewsets, mixins, renderers
 
-# Create your views here.
+
+class JobSubClassFieldsMixin(object):
+    def get_queryset(self):
+        return Job.objects.select_subclasses()
+
+class RetrievePersonAPIView(
+    JobSubClassFieldsMixin,
+    mixins.CreateModelMixin,
+    mixins.ListModelMixin,
+    mixins.RetrieveModelMixin,
+    mixins.DestroyModelMixin,
+    viewsets.GenericViewSet,
+):
+    serializer_class = JobListSerializer
