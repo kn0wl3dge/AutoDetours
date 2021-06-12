@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     "django_fsm",
     "malwares",
     "workers",
-    "stats",
+#    "stats",
     "jobs",
     "tags",
 ]

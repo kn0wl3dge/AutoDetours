@@ -7,8 +7,9 @@ from celery import shared_task
 from textwrap import wrap
 from rest_framework.renderers import JSONRenderer
 
-from malwares.models import Malware, MalwareState
+from malwares.models import Malware
 from malwares.serializers import MalwareSerializer
+from jobs.models import JobState
 
 
 def zipdir(path, ziph):
