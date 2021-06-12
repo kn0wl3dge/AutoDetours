@@ -6,10 +6,13 @@ from shutil import rmtree
 from celery import shared_task
 from textwrap import wrap
 from rest_framework.renderers import JSONRenderer
+from django.utils import timezone, dateformat
+from celery import shared_task
 
 from malwares.models import Malware
 from malwares.serializers import MalwareSerializer
-from jobs.models import JobState
+from jobs.models import JobState, RESULTS_DIR
+from datasets.models import Dataset, DatasetStatus, DATASET_DIR
 
 
 def zipdir(path, ziph):
@@ -20,44 +23,14 @@ def zipdir(path, ziph):
                 os.path.relpath(os.path.join(root, file), os.path.join(path, "..")),
             )
 
-
-@shared_task(bind=True)
-def generate_dataset(self):
-    # Here we use the task id so we can download the file asynchronously
-    task_id = self.request.id.__str__()
-    dataset_dir = "/data/datasets/" + task_id
-    # Create the working directory
-    try:
-        os.mkdir(dataset_dir)
-    except OSError:
-        print("Creation of the directory %s failed" % dataset_dir)
-    else:
-        print("Successfully created the directory %s " % dataset_dir)
-
-    # Create the dataset directory that contains the db object serialized
-    for malware in Malware.objects.filter(state=MalwareState.DONE):
-        dirs = wrap(malware.sha256, 2)
-        malware_export = JSONRenderer().render(MalwareSerializer(malware).data)
-
-        path = dataset_dir + "/" + "/".join(dirs[:5]) + "/" + malware.sha256 + ".json"
-        if not os.path.exists(os.path.dirname(path)):
-            try:
-                os.makedirs(os.path.dirname(path))
-            except OSError as exc:
-                if exc.errno != errno.EEXIST:
-                    raise
-        try:
-            with open(path, "wb") as fd:
-                fd.write(malware_export)
-        except:
-            pass
-
-    # Create a zip file from the previous dataset
-    zipf = zipfile.ZipFile(
-        "/data/datasets/" + task_id + ".zip", "w", zipfile.ZIP_DEFLATED
-    )
-    zipdir(dataset_dir, zipf)
+@shared_task
+def generate_dataset(dataset):
+    zip_path = f"{DATASET_DIR}/{dateformat.format(timezone.now(), 'Y-m-d_H-i-s')}.zip"
+    zipf = zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED)
+    zipdir(RESULTS_DIR, zipf)
     zipf.close()
 
-    # Remove the dataset creation directory and keep the zip file
-    rmtree(dataset_dir)
+    dataset = Dataset.objects.filter(pk=dataset).get()
+    dataset.file = zip_path
+    dataset.status = DatasetStatus.GENERATED
+    dataset.save()

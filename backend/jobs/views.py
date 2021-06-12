@@ -1,23 +1,11 @@
-from rest_framework import viewsets, mixins, renderers
+from rest_framework import viewsets, mixins
 from rest_framework.decorators import action
 from rest_framework.exceptions import ValidationError
 from rest_framework.generics import get_object_or_404
 
 from jobs.serializers import JobSerializer
 from jobs.models import Job
-
-
-class PassRenderer(renderers.BaseRenderer):
-    """
-    Return data as-is. View should supply a Response.
-    """
-
-    media_type = ""
-    format = ""
-
-    def render(self, data, accepted_media_type=None, renderer_context=None):
-        return data
-
+from utils.renderers import PassRenderer
 
 class JobViewSet(
     mixins.CreateModelMixin,

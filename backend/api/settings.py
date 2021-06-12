@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 #    "stats",
     "jobs",
     "tags",
+    "datasets",
     'django_cleanup.apps.CleanupConfig', # Should be placed last
 ]
 
