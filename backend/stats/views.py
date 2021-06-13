@@ -4,10 +4,10 @@ from django.db.models import Count, F
 
 from workers.models import Worker
 from malwares.models import Malware
-from jobs.models import Job, JobState
+from jobs.models import Job, JobState, JobType
 
 
-def getStateRepartition(qs, enum):
+def get_state_repartition(qs, enum):
     return [
         qs.filter(state=v).count()
         for v, m in vars(enum).items()
@@ -15,7 +15,7 @@ def getStateRepartition(qs, enum):
     ]
 
 
-def getTimeLineChart(model, field):
+def get_timeline_chart(model, field):
     dates = (
         model.objects.datetimes(field, "minute")
         .values("datetimefield")
@@ -24,22 +24,37 @@ def getTimeLineChart(model, field):
     return [{"t": str(d["datetimefield"]), "y": d["count_by_date"]} for d in dates]
 
 
+def get_tags_area_repartition():
+    results = Job.objects.filter(job_type=JobType.DETOURS).values("extras_results")
+    tags = {}
+    for result in results:
+        if "tags" in result["extras_results"].keys():
+            res_tags = result["extras_results"]["tags"]
+            for tag in res_tags:
+                if tag in tags.keys():
+                    tags[tag] += 1
+                else:
+                    tags[tag] = 1
+
+    tags = sorted(tags.items(), key=lambda x:x[1])[::-1]
+    if len(tags) > 10:
+        tags = tags[:10]
+    return {"labels": [x[0] for x in tags], "count": [x[1] for x in tags]}
+
+
 class StatsView(APIView):
     def get(self, request, pk=None):
         all_data = {
             "count": {
                 "total_malwares": Malware.objects.count(),
-                "totoal_jobs": Job.objects.count(),
-                "total_jobs_done": Job.objects.filter(
-                    state=JobState.DONE
-                ).count(),
+                "total_jobs": Job.objects.count(),
+                "total_jobs_done": Job.objects.filter(state=JobState.DONE).count(),
                 "distinct_labels_number": Malware.objects.distinct("label").count(),
                 "workers_number": Worker.objects.count(),
             },
-            "job_repartition": getStateRepartition(Job.objects.all(), JobState),
-            "workers_repartition": getStateRepartition(Worker.objects.annotate(state=F("job__state")), JobState),
-            "jobs_timeline": getTimeLineChart(
-                Job, "end_time"
-            )
+            "jobs_repartition": get_state_repartition(Job.objects.all(), JobState),
+            "workers_repartition": get_state_repartition(Worker.objects.annotate(state=F("job__state")), JobState),
+            "jobs_timeline": get_timeline_chart(Job, "end_time"),
+            "tags_area_repartition": get_tags_area_repartition(),
         }
         return Response(all_data)

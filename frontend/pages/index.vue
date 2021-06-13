@@ -4,11 +4,14 @@
     <b-row class="mb-4">
       <b-col>
         <b-card-group deck>
-          <b-card header="Total Malwares" class="text-center">
+          <b-card header="Malwares" class="text-center">
             <animated-number class="number" :value="stats.count.total_malwares" round="1" />
           </b-card>
-          <b-card header="Analyzed Malwares" class="text-center">
-            <animated-number class="number" :value="stats.count.total_malwares_analyzed" round="1" />
+          <b-card header="Jobs" class="text-center">
+            <animated-number class="number" :value="stats.count.total_jobs" round="1" />
+          </b-card>
+          <b-card header="Jobs Done" class="text-center">
+            <animated-number class="number" :value="stats.count.total_jobs_done" round="1" />
           </b-card>
           <b-card header="Labels Number" class="text-center">
             <animated-number class="number" :value="stats.count.distinct_labels_number" round="1" />
@@ -21,25 +24,25 @@
     </b-row>
     <b-row class="mb-4">
       <b-col sm="4">
-        <b-card header="Malwares States" class="text-center">
-          <repartition-chart :stats="stats.malware" />
+        <b-card header="Job States" class="text-center">
+          <repartition-chart :stats="stats.jobs" />
         </b-card>
       </b-col>
       <b-col sm="4">
-        <b-card header="Malwares Type" class="text-center">
-          <repartition-area-chart :stats="stats.malwares_family" />
+        <b-card header="Malwares Tags" class="text-center">
+          <repartition-area-chart :stats="stats.tags" />
         </b-card>
       </b-col>
       <b-col sm="4">
         <b-card header="Workers States" class="text-center">
-          <repartition-chart :stats="stats.worker" />
+          <repartition-chart :stats="stats.workers" />
         </b-card>
       </b-col>
     </b-row>
     <b-row class="mb-4">
       <b-col>
         <b-card header="Analysis Load" class="text-center">
-          <time-line-chart :stats="stats.malwares_analysis_timeline" />
+          <time-line-chart :stats="stats.jobs_timeline" />
         </b-card>
       </b-col>
     </b-row>
@@ -51,27 +54,28 @@ import AnimatedNumber from 'animated-number-vue'
 import RepartitionChart from '../components/stats/RepartitionChart'
 import TimeLineChart from '../components/stats/TimeLineChart.vue'
 import RepartitionAreaChart from '../components/stats/RepartitionAreaChart.vue'
+
 export default {
   components: { RepartitionChart, TimeLineChart, AnimatedNumber, RepartitionAreaChart },
   async asyncData ({ app }) {
     const resp = await app.$axios.$get('/stats/')
     return {
       stats: {
-        malware: {
-          stateanalyze: resp.malwares_repartition,
+        jobs: {
+          stateanalyze: resp.jobs_repartition,
           labels: ['Not Started', 'Running', 'Done', 'Timed Out'],
           borderColors: ['##fff', '##fff', '##fff', '##fff'],
           colors: ['#e74c3c', '#fd7e14', '#00bc8c', '#375a7f']
         },
-        worker: {
+        workers: {
           stateanalyze: resp.workers_repartition,
-          labels: ['Registered', 'Tasked', 'Finished'],
+          labels: ['Ready', 'Running'],
           borderColors: ['##fff', '##fff', '##fff'],
           colors: ['#00bc8c', '#fd7e14', '#e74c3c']
         },
-        malwares_family: {
-          stateanalyze: resp.malwares_family.count,
-          labels: resp.malwares_family.labels,
+        tags: {
+          stateanalyze: resp.tags_area_repartition.count,
+          labels: resp.tags_area_repartition.labels,
           borderColors: ['##fff', '##fff', '##fff', '##fff', '##fff', '##fff'],
           colors: ['#e74c3c', '#fd7e14', '#00bc8c', '#375a7f', '#6f42c1', '#3498db']
         },
