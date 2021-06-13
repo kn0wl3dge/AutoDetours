@@ -1,14 +1,15 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from django.db.models import Count
+from django.db.models import Count, F
 
 from workers.models import Worker
 from malwares.models import Malware
+from jobs.models import Job, JobState
 
 
-def getStateRepartition(model, enum):
+def getStateRepartition(qs, enum):
     return [
-        model.objects.filter(state=v).count()
+        qs.filter(state=v).count()
         for v, m in vars(enum).items()
         if not (v.startswith("_") or callable(m))
     ]
@@ -18,19 +19,9 @@ def getTimeLineChart(model, field):
     dates = (
         model.objects.datetimes(field, "minute")
         .values("datetimefield")
-        .annotate(count_by_date=Count("name"))
+        .annotate(count_by_date=Count("id"))
     )
     return [{"t": str(d["datetimefield"]), "y": d["count_by_date"]} for d in dates]
-
-
-def getMalwaresFamily():
-    res = (
-        Malware.objects.values("family")
-        .annotate(nbr=Count("sha256"))
-        .order_by("-nbr")
-        .values("family", "nbr")
-    )
-    return {"labels": [x["family"] for x in res], "count": [x["nbr"] for x in res]}
 
 
 class StatsView(APIView):
@@ -38,17 +29,17 @@ class StatsView(APIView):
         all_data = {
             "count": {
                 "total_malwares": Malware.objects.count(),
-                "total_malwares_analyzed": Malware.objects.filter(
-                    state=MalwareState.DONE
+                "totoal_jobs": Job.objects.count(),
+                "total_jobs_done": Job.objects.filter(
+                    state=JobState.DONE
                 ).count(),
                 "distinct_labels_number": Malware.objects.distinct("label").count(),
                 "workers_number": Worker.objects.count(),
             },
-            "malwares_repartition": getStateRepartition(Malware, MalwareState),
-            "workers_repartition": getStateRepartition(Worker, WorkerState),
-            "malwares_analysis_timeline": getTimeLineChart(
-                Malware, "analysis_ended_at"
-            ),
-            "malwares_family": getMalwaresFamily(),
+            "job_repartition": getStateRepartition(Job.objects.all(), JobState),
+            "workers_repartition": getStateRepartition(Worker.objects.annotate(state=F("job__state")), JobState),
+            "jobs_timeline": getTimeLineChart(
+                Job, "end_time"
+            )
         }
         return Response(all_data)
