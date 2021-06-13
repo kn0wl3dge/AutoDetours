@@ -1,12 +1,9 @@
-from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import authentication, permissions
-from django.contrib.auth.models import User
 from django.db.models import Count
 
-from workers.models import Worker, WorkerState
-from malwares.models import Malware, MalwareState
+from workers.models import Worker
+from malwares.models import Malware
 
 
 def getStateRepartition(model, enum):

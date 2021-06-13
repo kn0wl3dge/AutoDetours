@@ -1,8 +1,8 @@
 import yaml
+import re
+
 from os import listdir, path
 from os.path import isfile, join, exists
-import yaml
-import re
 
 
 RULES_PATHS = ["tags/db_rules", "/data/db_rules"]

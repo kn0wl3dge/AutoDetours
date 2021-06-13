@@ -1,17 +1,10 @@
-import errno
-import os
 import zipfile
 
-from shutil import rmtree
-from celery import shared_task
-from textwrap import wrap
-from rest_framework.renderers import JSONRenderer
+from os import path as ospath, walk
 from django.utils import timezone, dateformat
 from celery import shared_task
 
-from malwares.models import Malware
-from malwares.serializers import MalwareSerializer
-from jobs.models import JobState, RESULTS_DIR
+from jobs.models import RESULTS_DIR
 from datasets.models import Dataset, DatasetStatus, DATASET_DIR
 
 
@@ -22,11 +15,11 @@ def zipdir(path, ziph):
         path (String): Path to the directory being ziped
         ziph (ZipFile): ZipFile object representing the zipfile
     """
-    for root, dirs, files in os.walk(path):
+    for root, dirs, files in walk(path):
         for file in files:
             ziph.write(
-                os.path.join(root, file),
-                os.path.relpath(os.path.join(root, file), os.path.join(path, "..")),
+                ospath.join(root, file),
+                ospath.relpath(ospath.join(root, file), ospath.join(path, "..")),
             )
 
 

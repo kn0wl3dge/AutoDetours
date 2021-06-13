@@ -1,12 +1,10 @@
 from os import remove
-from json import dumps
 from django.http import FileResponse
 from rest_framework import viewsets, mixins, throttling
 from rest_framework.exceptions import Throttled
 from rest_framework.decorators import action
 from rest_framework.exceptions import ValidationError
 from rest_framework.generics import get_object_or_404
-from rest_framework.response import Response
 
 from datasets.tasks import generate_dataset
 from datasets.models import Dataset, DatasetStatus

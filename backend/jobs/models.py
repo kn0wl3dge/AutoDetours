@@ -3,9 +3,9 @@ import uuid
 from textwrap import wrap
 from django.utils import timezone
 from django.db import models
-from django_fsm import FSMField, transition, RETURN_VALUE
+from django_fsm import FSMField, transition
 
-from malwares.models import Malware, MalwareFormat
+from malwares.models import Malware
 
 RESULTS_DIR = "/data/results"
 

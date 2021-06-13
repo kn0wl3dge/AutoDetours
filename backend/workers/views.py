@@ -1,4 +1,4 @@
-from rest_framework import mixins, viewsets, status
+from rest_framework import mixins, viewsets
 from rest_framework.decorators import action
 from rest_framework.exceptions import ValidationError
 from rest_framework.generics import get_object_or_404

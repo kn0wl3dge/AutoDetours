@@ -1,10 +1,9 @@
 import uuid
 
 from django.db import models
-from django_fsm import FSMField, transition
 
 from malwares.models import Malware
-from jobs.models import Job, JobState
+from jobs.models import Job
 
 
 class Worker(models.Model):
