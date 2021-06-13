@@ -25,9 +25,11 @@ def get_upload_filename(instance, filename):
     return f"{RESULTS_DIR}/{'/'.join(dirs[:5])}/{instance.malware.sha256}_{instance.job_type}.{ext}"
 
 
-class JobType(object):  # TODO change this in the agent and make a validation in the view (job creation)
+class JobType(
+    object
+):  # TODO change this in the agent and make a validation in the view (job creation)
     """List all possibles jobs that can be passed to an agent.
-    
+
     PESIEVE : Tool used to unpack PE malwares.
     DETOURS : Microsoft tool used to hook windows system calls.
     """
@@ -38,12 +40,13 @@ class JobType(object):  # TODO change this in the agent and make a validation in
 
 class JobState(object):
     """List all possibles states of a Job.
-    
+
     NOT_STARTED : Job is scheduled but not associated to any worker.
     RUNNING : Job is currently being executed by a worker.
     DONE : Job is done and results are stored in the backend.
     TIMED_OUT : Job could not finish in time or just crashed.
     """
+
     NOT_STARTED = "NOT_STARTED"
     RUNNING = "RUNNING"
     DONE = "DONE"
@@ -55,8 +58,9 @@ class Job(models.Model):
     They are sended to windows workers represented by the Worker model.
 
     extra_results can be used afterwards to store new results based
-    on computation on the results file. 
+    on computation on the results file.
     """
+
     # ID
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 

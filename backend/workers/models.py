@@ -12,6 +12,7 @@ class Worker(models.Model):
     a windows VM running in QEMU. Workers are executing jobs associated
     to malwares.
     """
+
     # ID
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     ip = models.GenericIPAddressField(editable=False)

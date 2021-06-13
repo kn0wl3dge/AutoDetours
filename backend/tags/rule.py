@@ -12,6 +12,7 @@ class Rule(object):
     """Represent a Rule used to find specific function call in
     JSON traces and return associated tags.
     """
+
     YAMLTag = "Rule"
 
     def __init__(self, name, patterns, tag):
@@ -47,7 +48,7 @@ def get_rules(directories):
                     Rule(
                         name=yaml_rule["name"],
                         patterns=yaml_rule["features"],
-                        tag=yaml_rule["tag"]
+                        tag=yaml_rule["tag"],
                     )
                 )
             except yaml.YAMLError as exc:

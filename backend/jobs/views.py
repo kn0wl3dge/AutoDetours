@@ -18,6 +18,7 @@ class JobViewSet(
     """ViewSet used to render Job objects to user.
     It does not allow modification of existing objects.
     """
+
     queryset = Job.objects.all()
     serializer_class = JobSerializer
 

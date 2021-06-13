@@ -49,6 +49,7 @@ class DatasetViewSet(
     """ViewSet used to render Dataset objects to user.
     It does not allow modification of existing objects.
     """
+
     queryset = Dataset.objects.all()
     serializer_class = DatasetSerializer
     throttle_classes = (DatasetRateThrottle,)
@@ -83,7 +84,9 @@ class DatasetViewSet(
             dataset = serializer.save()
             generate_dataset.delay(dataset.pk)
         else:
-            raise ValidationError("Can't generate an empty dataset. You need finished jobs to do that.")
+            raise ValidationError(
+                "Can't generate an empty dataset. You need finished jobs to do that."
+            )
 
     def perform_destroy(self, instance):
         """Hook Dataset deletion to very that the dataset has been generated
@@ -97,7 +100,7 @@ class DatasetViewSet(
         """
         if instance.status == DatasetStatus.GENERATING:
             raise ValidationError("Dataset generation isn't finished yet.")
-        
+
         zip_path = instance.file
         super().perform_destroy(instance)
 

@@ -23,6 +23,7 @@ class WorkerViewSet(
     """ViewSet used to render Worker objects to user.
     It does not allow modification of existing objects.
     """
+
     queryset = Worker.objects.all()
     serializer_class = WorkerSerializer
 
@@ -103,7 +104,7 @@ class WorkerViewSet(
                 # Prevents JSON deserialization from zip file
                 if worker.job.job_type == JobType.DETOURS:
                     set_tags.delay(worker.job.id)
-                
+
                 return Response({"success": "Results successfully stored"})
             else:
                 return Response({"error": "Can't find 'results' param"})

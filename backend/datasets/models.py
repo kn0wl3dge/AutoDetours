@@ -6,7 +6,7 @@ DATASET_DIR = "/data/datasets"
 
 class DatasetStatus(object):
     """This class is used to represent a state of a Dataset entry.
-    
+
     GENERATING : Dataset zipfile is being generated.
     GENERATED : Dataset zipfile generation is done.
     """
@@ -20,6 +20,7 @@ class Dataset(models.Model):
     the jobs results organized in multiples directories depending on the hash
     of the sample.
     """
+
     # File
     file = models.FilePathField(DATASET_DIR, editable=False)
 
