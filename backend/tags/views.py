@@ -4,11 +4,7 @@ from os.path import isfile, join, exists
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from tags.rule import Rule
-from tags.rule import valid_filename
-
-
-RULES_PATHS = ["tags/db_rules", "/data/db_rules"]
+from tags.rule import Rule, RULES_PATHS, valid_filename
 
 
 class RuleFormView(APIView):
