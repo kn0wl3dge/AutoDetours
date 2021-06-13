@@ -1,6 +1,7 @@
 from rest_framework import viewsets, mixins
 from rest_framework.decorators import action
 from rest_framework.generics import get_object_or_404
+from django.http import FileResponse
 
 from jobs.serializers import JobSerializer
 from jobs.models import Job

@@ -20,6 +20,7 @@ def get_worker_repartition():
     c2 = Worker.objects.filter(job=None).count()
     return [c2, c - c2]
 
+
 def get_timeline_chart(model, field):
     dates = (
         model.objects.datetimes(field, "minute")
