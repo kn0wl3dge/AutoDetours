@@ -4,7 +4,8 @@ from jobs.models import Job
 
 
 class JobSerializer(serializers.ModelSerializer):
-    # Don't render filepath to users
+    """Serializer of a Job object without rendering file path to users."""
+
     results = serializers.FileField(write_only=True, required=False)
 
     class Meta:

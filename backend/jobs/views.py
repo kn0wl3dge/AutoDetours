@@ -15,11 +15,24 @@ class JobViewSet(
     mixins.DestroyModelMixin,
     viewsets.GenericViewSet,
 ):
+    """ViewSet used to render Job objects to user.
+    It does not allow modification of existing objects.
+    """
     queryset = Job.objects.all()
     serializer_class = JobSerializer
 
     @action(detail=True, methods=["GET"], renderer_classes=(PassRenderer,))
     def download_results(self, request, pk=None):
+        """Extra endpoint to download the results associated to a Job.
+
+        Args:
+            request (request): Request made by user.
+            pk (UUID, optional): Primary key of the Job.
+                Defaults to None.
+
+        Returns:
+            FileResponse: Reponse containing the job results.
+        """
         job = get_object_or_404(Job, pk=pk)
 
         output = job.results

@@ -4,7 +4,8 @@ from datasets.models import Dataset
 
 
 class DatasetSerializer(serializers.ModelSerializer):
-    # Don't render filepath to users
+    """Serializer of a Dataset object without rendering file path to users."""
+    
     file = serializers.FileField(write_only=True, required=False)
 
     class Meta:

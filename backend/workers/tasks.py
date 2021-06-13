@@ -10,6 +10,13 @@ from jobs.models import JobState
 
 @shared_task
 def worker_delete(ip):
+    """Celery task used to remove a qemu container. This task
+    is called whenever a worker has done its job to cleanup and
+    restore its initial state.
+
+    Args:
+        ip (String): IP address of the container associated to the worker.
+    """
     client = docker.DockerClient(base_url="unix://var/run/docker.sock")
     print("Looking up container using ip %s for deletion" % ip)
     for c in client.containers.list():
@@ -22,6 +29,10 @@ def worker_delete(ip):
 
 @shared_task
 def workers_timeout():
+    """Celery task to check if a worker has been running a job for too long.
+    This mean that the job is taking too much time or simply that something
+    crashed.
+    """
     for worker in Worker.objects.filter(job__state=JobState.RUNNING):
         delta = timezone.now() - worker.job.start_time
         limit = worker.job.job_time * 5
@@ -36,6 +47,10 @@ def workers_timeout():
 
 @shared_task
 def workers_automation():
+    """Celery task to schedule worker creation and maintain the number
+    of worker defined in the installation step.
+    Its job is just to create container used to executes jobs.
+    """
     input_dir = os.environ.get("WIN7_IMAGES_DIR")
     output_dir = "/image/"
     network = "autodetours_autodetours_lan"
