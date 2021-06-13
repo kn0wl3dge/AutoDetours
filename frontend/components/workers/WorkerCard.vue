@@ -9,16 +9,7 @@
           State:
         </b-col>
         <b-col>
-          {{ worker.state }}
-          <worker-state class="ml-3" :state="worker.state" />
-        </b-col>
-      </b-row>
-      <b-row v-if="worker.malware !== null">
-        <b-col sm="4">
-          Analysis Started:
-        </b-col>
-        <b-col>
-          {{ $moment(worker.analysis_start_date).format('LLL') }}
+          <worker-state class="ml-3" :job="worker.job" />
         </b-col>
       </b-row>
       <b-row>
@@ -33,16 +24,41 @@
         <b-col sm="4">
           Malware:
         </b-col>
-        <b-col v-if="worker.malware !== null">
-          {{ worker.malware }}
+        <b-col v-if="worker.job !== null">
+          {{ worker.job.malware }}
         </b-col>
         <b-col v-else>
-          Waiting for a malware not yet analyzed...
+          Waiting for job...
         </b-col>
       </b-row>
+      <b-row v-if="worker.job !== null">
+        <b-col sm="4">
+          Analysis Started:
+        </b-col>
+        <b-col>
+          {{ $moment(worker.job.start_time).format('LLL') }}
+        </b-col>
+      </b-row>
+      <b-row v-if="worker.job !== null">
+        <b-col sm="4">
+          Job Type:
+        </b-col>
+        <b-col>
+          {{ worker.job.job_type }}
+        </b-col>
+      </b-row>
+      <b-row v-if="worker.job !== null">
+        <b-col sm="4">
+          Job Time:
+        </b-col>
+        <b-col>
+          {{ worker.job.job_time }}
+        </b-col>
+      </b-row>
+
     </b-card-text>
     <template #footer>
-      <small class="text-muted">Registered {{ $moment(worker.date).format('LLL') }}</small>
+      <small class="text-muted">Registered {{ $moment(worker.registration_time).format('LLL') }}</small>
     </template>
   </b-card>
 </template>

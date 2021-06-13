@@ -1,35 +1,39 @@
 <template>
-  <b-icon
-    :variant="mapping[state].color"
-    font-scale="1.5"
-    :animation="state === 'TASKED' ? 'spin' : ''"
-    :icon="mapping[state].icon"
-    class="mr-3 align-middle"
-  />
+  <span>
+    {{ state }}
+    <b-icon
+      :variant="mapping[state].color"
+      font-scale="1.5"
+      :animation="state === 'Running' ? 'spin' : ''"
+      :icon="mapping[state].icon"
+      class="mr-3 ml-2 align-middle"
+    />
+  </span>
 </template>
 
 <script>
 export default {
   name: 'WorkerState',
   props: {
-    state: { type: String, default: '' }
+    job: { type: String, default: null }
   },
   data () {
     return {
       mapping: {
-        REGISTERED: {
+        Registered: {
           color: 'success',
           icon: 'check'
         },
-        TASKED: {
+        Running: {
           color: 'warning',
           icon: 'gear'
-        },
-        FINISHED: {
-          color: 'danger',
-          icon: 'exclamation-circle'
         }
       }
+    }
+  },
+  computed: {
+    state () {
+      return this.job === null ? 'Registered' : 'Running'
     }
   }
 }
