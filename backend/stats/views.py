@@ -36,7 +36,7 @@ def get_tags_area_repartition():
                 else:
                     tags[tag] = 1
 
-    tags = sorted(tags.items(), key=lambda x:x[1])[::-1]
+    tags = sorted(tags.items(), key=lambda x: x[1])[::-1]
     if len(tags) > 10:
         tags = tags[:10]
     return {"labels": [x[0] for x in tags], "count": [x[1] for x in tags]}
@@ -53,7 +53,9 @@ class StatsView(APIView):
                 "workers_number": Worker.objects.count(),
             },
             "jobs_repartition": get_state_repartition(Job.objects.all(), JobState),
-            "workers_repartition": get_state_repartition(Worker.objects.annotate(state=F("job__state")), JobState),
+            "workers_repartition": get_state_repartition(
+                Worker.objects.annotate(state=F("job__state")), JobState
+            ),
             "jobs_timeline": get_timeline_chart(Job, "end_time"),
             "tags_area_repartition": get_tags_area_repartition(),
         }
