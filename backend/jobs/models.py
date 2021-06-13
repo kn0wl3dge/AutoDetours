@@ -9,15 +9,16 @@ from malwares.models import Malware, MalwareFormat
 
 RESULTS_DIR = "/data/results"
 
+
 def get_upload_filename(instance, filename):
     dirs = wrap(instance.malware.sha256, 2)
-    ext = filename.split('.')[-1]
+    ext = filename.split(".")[-1]
     return f"{RESULTS_DIR}/{'/'.join(dirs[:5])}/{instance.malware.sha256}_{instance.job_type}.{ext}"
 
 
-class JobType(object): # TODO change this in the agent....
-    PESIEVE = 'unpack'
-    DETOURS = 'Detours'
+class JobType(object):  # TODO change this in the agent....
+    PESIEVE = "unpack"
+    DETOURS = "Detours"
 
 
 class JobState(object):
@@ -34,7 +35,7 @@ class Job(models.Model):
     job_time = models.IntegerField(default=30)
 
     state = FSMField(default=JobState.NOT_STARTED, editable=False, protected=True)
-    malware = models.ForeignKey(Malware, related_name='jobs', on_delete=models.CASCADE)
+    malware = models.ForeignKey(Malware, related_name="jobs", on_delete=models.CASCADE)
 
     results = models.FileField(upload_to=get_upload_filename, editable=False)
     extras_results = models.JSONField(default=dict, editable=False)
@@ -59,7 +60,7 @@ class Job(models.Model):
     def end(self, agent_results):
         self.end_time = timezone.now()
         self.results = agent_results
-    
+
     @transition(
         field=state,
         source=JobState.RUNNING,

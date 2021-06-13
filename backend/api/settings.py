@@ -43,11 +43,11 @@ INSTALLED_APPS = [
     "django_fsm",
     "malwares",
     "workers",
-#    "stats",
+    #    "stats",
     "jobs",
     "tags",
     "datasets",
-    'django_cleanup.apps.CleanupConfig', # Should be placed last
+    "django_cleanup.apps.CleanupConfig",  # Should be placed last
 ]
 
 MIDDLEWARE = [

@@ -7,6 +7,7 @@ from jobs.serializers import JobSerializer
 from jobs.models import Job
 from utils.renderers import PassRenderer
 
+
 class JobViewSet(
     mixins.CreateModelMixin,
     mixins.ListModelMixin,
@@ -22,7 +23,7 @@ class JobViewSet(
         job = get_object_or_404(Job, pk=pk)
 
         output = job.results
-        extension = output.path.split('.')[-1]
+        extension = output.path.split(".")[-1]
 
         response = FileResponse(output, content_type="application/" + extension)
         response["Content-Length"] = len(output)

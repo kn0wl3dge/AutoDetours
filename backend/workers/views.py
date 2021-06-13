@@ -48,7 +48,7 @@ class WorkerViewSet(
                         "time": worker.job.job_time,
                         "task": worker.job.job_type,
                         "format": worker.job.malware.format,
-                        "exportName": worker.job.malware.export_dll
+                        "exportName": worker.job.malware.export_dll,
                     }
                 )
             else:

@@ -21,6 +21,6 @@ def set_tags(job):
         for pattern in rule.patterns:
             if pattern in api_calls:
                 tags.add(rule.tag)
-    
+
     job.extras_results["tags"] = list(tags)
     job.save()

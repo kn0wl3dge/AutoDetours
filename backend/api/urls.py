@@ -4,6 +4,7 @@ from rest_framework import routers
 from datasets.views import DatasetViewSet
 from malwares.views import MalwareViewSet
 from workers.views import WorkerViewSet
+
 # from stats.views import StatsView
 from tags.views import RuleFormView
 from jobs.views import JobViewSet

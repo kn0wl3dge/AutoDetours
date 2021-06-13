@@ -210,5 +210,4 @@ agent/AutoDetoursAgent/obj
 agent/AutoDetoursAgent/bin
 
 # images
-workers/
 *.qcow2

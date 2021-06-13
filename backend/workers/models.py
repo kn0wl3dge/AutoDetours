@@ -17,8 +17,6 @@ class Worker(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     ip = models.GenericIPAddressField(editable=False)
 
-    job = models.ForeignKey(
-        Job, on_delete=models.CASCADE, null=True, editable=False
-    )
+    job = models.ForeignKey(Job, on_delete=models.CASCADE, null=True, editable=False)
 
     registration_time = models.DateTimeField(auto_now_add=True, editable=False)

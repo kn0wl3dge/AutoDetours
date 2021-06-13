@@ -23,6 +23,7 @@ def zipdir(path, ziph):
                 os.path.relpath(os.path.join(root, file), os.path.join(path, "..")),
             )
 
+
 @shared_task
 def generate_dataset(dataset):
     zip_path = f"{DATASET_DIR}/{dateformat.format(timezone.now(), 'Y-m-d_H-i-s')}.zip"
