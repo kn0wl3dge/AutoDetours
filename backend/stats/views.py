@@ -15,6 +15,11 @@ def get_state_repartition(qs, enum):
     ]
 
 
+def get_worker_repartition():
+    c = Worker.objects.count()
+    c2 = Worker.objects.filter(job=None).count()
+    return [c2, c - c2]
+
 def get_timeline_chart(model, field):
     dates = (
         model.objects.datetimes(field, "minute")
@@ -53,9 +58,7 @@ class StatsView(APIView):
                 "workers_number": Worker.objects.count(),
             },
             "jobs_repartition": get_state_repartition(Job.objects.all(), JobState),
-            "workers_repartition": get_state_repartition(
-                Worker.objects.annotate(state=F("job__state")), JobState
-            ),
+            "workers_repartition": get_worker_repartition(),
             "jobs_timeline": get_timeline_chart(Job, "end_time"),
             "tags_area_repartition": get_tags_area_repartition(),
         }

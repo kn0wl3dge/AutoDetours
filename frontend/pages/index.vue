@@ -13,10 +13,10 @@
           <b-card header="Jobs Done" class="text-center">
             <animated-number class="number" :value="stats.count.total_jobs_done" round="1" />
           </b-card>
-          <b-card header="Labels Number" class="text-center">
+          <b-card header="Labels" class="text-center">
             <animated-number class="number" :value="stats.count.distinct_labels_number" round="1" />
           </b-card>
-          <b-card header="Workers Number" class="text-center">
+          <b-card header="Workers" class="text-center">
             <animated-number class="number" :value="stats.count.workers_number" round="1" />
           </b-card>
         </b-card-group>
@@ -79,7 +79,7 @@ export default {
           borderColors: ['##fff', '##fff', '##fff', '##fff', '##fff', '##fff'],
           colors: ['#e74c3c', '#fd7e14', '#00bc8c', '#375a7f', '#6f42c1', '#3498db']
         },
-        malwares_analysis_timeline: resp.malwares_analysis_timeline,
+        jobs_timeline: resp.jobs_timeline,
         count: resp.count
       }
     }
