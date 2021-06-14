@@ -93,6 +93,7 @@ def ssh_connect(ssh):
                 port=SSH_PORT,
                 username=SSH_USERNAME,
                 password=SSH_PASSWORD,
+                banner_timeout=30,
             )
             logger.info("Successfully connected!")
             return True
