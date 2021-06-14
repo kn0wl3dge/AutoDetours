@@ -158,7 +158,7 @@ namespace AutoDetoursAgent
 
                     // Set Job according to task
                     if (workerTask.task == "unpack")
-                        job = new Unpacker(eventLog, workerTask);
+                        job = new Unpacker(logger, workerTask);
                     else
                         job = new Tracer(logger, workerTask);
 

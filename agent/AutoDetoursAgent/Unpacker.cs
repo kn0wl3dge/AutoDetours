@@ -35,6 +35,8 @@ namespace AutoDetoursAgent
             // Stop both processes
             if (!malunpack.HasExited)
                 malunpack.Kill();
+
+            malunpack.WaitForExit();
             logger.Log("Unpacking stopped.");
         }
 
