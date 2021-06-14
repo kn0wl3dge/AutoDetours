@@ -18,7 +18,7 @@ namespace AutoDetoursAgent
         {
         }
 
-        public override void StartJob()
+        public override void ExecuteJob()
         {
             logger.Log("Starting unpacking...");
 
@@ -27,16 +27,8 @@ namespace AutoDetoursAgent
             malunpack.StartInfo.Arguments = "/exe C:\\Temp\\sample.exe /dir C:\\Temp\\unpacked /timeout " + (workerTask.time * 1000);
             malunpack.Start();
             logger.Log("Unpacking started.");
-        }
 
-        public override void StopJob()
-        {
-            logger.Log("Stopping unpacking...");
-            // Stop both processes
-            if (!malunpack.HasExited)
-                malunpack.Kill();
-
-            malunpack.WaitForExit();
+            malunpack.WaitForExit(workerTask.time * 1000);
             logger.Log("Unpacking stopped.");
         }
 
@@ -48,7 +40,7 @@ namespace AutoDetoursAgent
             tar.StartInfo.Arguments = "a " + defaultPathZip + " C:\\Temp\\unpacked";
             tar.Start();
 
-            st.Thread.Sleep(3000);
+            tar.WaitForExit();
             logger.Log("Results compressed.");
         }
 

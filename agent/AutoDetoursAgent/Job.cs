@@ -15,9 +15,10 @@ namespace AutoDetoursAgent
 			workerTask = _workerTask;
 		}
 
-		public abstract void StartJob();
-		public abstract void StopJob();
+		// Consider using a timeout in your job execution methode
+		public abstract void ExecuteJob();
 
+		// Treat results of your executed job
 		public abstract void TreatResults();
 
 		// Must be async when implementing this method

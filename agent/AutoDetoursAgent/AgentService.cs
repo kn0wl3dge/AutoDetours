@@ -284,10 +284,8 @@ namespace AutoDetoursAgent
                         break;
 
                     case AgentState.JOB:
-                        job.StartJob();
-                        st.Thread.Sleep(workerTask.time * 1000);
-
-                        job.StopJob();
+                        job.ExecuteJob();
+                        
                         state = AgentState.SEND_RESULTS;
                         goto case AgentState.SEND_RESULTS;
 

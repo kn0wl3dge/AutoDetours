@@ -19,7 +19,7 @@ namespace AutoDetoursAgent
         {
         }
 
-        public override void StartJob()
+        public override void ExecuteJob()
         {
             logger.Log("Starting Tracing...");
             // Run Syelog Deamon to extract logs from traceapi32
@@ -40,19 +40,15 @@ namespace AutoDetoursAgent
             withdll.Start();
 
             logger.Log("Tracing started.");
-        }
-
-        public override void StopJob()
-        {
-            logger.Log("Stopping tracing...");
-            // Stop both processes
-            if (!withdll.HasExited)
-                withdll.Kill();
-            if (!syelogd.HasExited)
+            
+            withdll.WaitForExit(workerTask.time * 1000);
+            // We can kill syelogd once withdll is done.
+            if (syelogd.HasExited == false)
+            {
                 syelogd.Kill();
-
-            withdll.WaitForExit();
-            syelogd.WaitForExit();
+                syelogd.WaitForExit();
+            }
+                
             logger.Log("Tracing stopped");
         }
 
