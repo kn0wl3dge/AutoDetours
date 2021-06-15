@@ -51,14 +51,15 @@ export default {
       items: [
         { key: 1, name: 'Dashboard', href: '/', icon: 'graph-up' },
         { key: 2, name: 'Malwares', href: '/malwares', icon: 'bug' },
-        { key: 3, name: 'Workers', href: '/workers', icon: 'box' },
+        { key: 3, name: 'Datasets', href: '/datasets', icon: 'folder2-open' },
+        { key: 4, name: 'Workers', href: '/workers', icon: 'box' },
         {
-          key: 4,
+          key: 5,
           name: 'Add a Malware',
           href: '/malwares/add',
           icon: 'plus-square'
         },
-        { key: 5, name: 'Rules', href: '/rules', icon: 'gear' }
+        { key: 6, name: 'Rules', href: '/rules', icon: 'gear' }
       ]
     }
   },
