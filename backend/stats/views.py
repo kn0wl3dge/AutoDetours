@@ -43,8 +43,8 @@ def get_tags_area_repartition():
                     tags[tag] = 1
 
     tags = sorted(tags.items(), key=lambda x: x[1])[::-1]
-    if len(tags) > 10:
-        tags = tags[:10]
+    if len(tags) > 8:
+        tags = tags[:8]
     return {"labels": [x[0] for x in tags], "count": [x[1] for x in tags]}
 
 

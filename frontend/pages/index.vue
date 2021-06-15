@@ -76,8 +76,8 @@ export default {
         tags: {
           stateanalyze: resp.tags_area_repartition.count,
           labels: resp.tags_area_repartition.labels,
-          borderColors: ['##fff', '##fff', '##fff', '##fff', '##fff', '##fff'],
-          colors: ['#e74c3c', '#fd7e14', '#00bc8c', '#375a7f', '#6f42c1', '#3498db']
+          borderColors: ['##fff', '##fff', '##fff', '##fff', '##fff', '##fff', '##fff', '##fff'],
+          colors: ['#e74c3c', '#fd7e14', '#375a7f', '#6f42c1', '#e83e8c', '#f39c12', '#20c997', '#3498db']
         },
         jobs_timeline: resp.jobs_timeline,
         count: resp.count
