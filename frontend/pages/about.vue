@@ -9,20 +9,20 @@
     <br>
     <pre>This project has been developed by:</pre>
     <b-row class="mb-4">
-    <ul>
-      <li>
-        <a href=mailto:baptistin.boilot@epita.fr>Kn0wl3dge</a>
-      </li>
-      <li>
-        <a href=mailto:didier.zanello@epita.fr>Radion</a>
-      </li>
-      <li>
-        <a href=mailto:thomas.castelot@epita.fr>Prolintos</a>
-      </li>
-      <li>
-        <a href=mailto:victoria.krajcovicova@epita.fr>Deacllock</a>
-      </li>
-    </ul>
+      <ul>
+        <li>
+          <a href="mailto:baptistin.boilot@epita.fr">Kn0wl3dge</a>
+        </li>
+        <li>
+          <a href="mailto:didier.zanello@epita.fr">Radion</a>
+        </li>
+        <li>
+          <a href="mailto:thomas.castelot@epita.fr">Prolintos</a>
+        </li>
+        <li>
+          <a href="mailto:victoria.krajcovicova@epita.fr">Deacllock</a>
+        </li>
+      </ul>
     </b-row>
     <pre>Special thanks to Sebdraven who supervised us</pre>
   </b-container>

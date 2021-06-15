@@ -55,7 +55,6 @@
           {{ worker.job.job_time }}
         </b-col>
       </b-row>
-
     </b-card-text>
     <template #footer>
       <small class="text-muted">Registered {{ $moment(worker.registration_time).format('LLL') }}</small>
