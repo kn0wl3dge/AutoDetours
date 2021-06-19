@@ -4,16 +4,19 @@
 [![BackendCI](https://github.com/Kn0wl3dge/AutoDetours/actions/workflows/backend.yml/badge.svg)](https://github.com/Kn0wl3dge/AutoDetours/actions/workflows/backend.yml)
 # AutoDetours
 
-/!\ This project isn't ready for production:
-* The API code needs some refacto and vulnerability fix (unlimited dataset generation without cleanup, killing any container from a fake worker and more)
+*/!\ This project isn't ready for production /!\ *
 
 ## Introduction
 
-AutoDetours is an application allowing to trace syscalls from multiple samples at the same time.
+AutoDetours is an application allowing the usage of multiples windows toolkit to analyse malware.
+For the moment only PESieve and Detours are integrated.
 
-The goal is to be able to generate a large dataset of Windows API calls by malwares.
+[PESieve](https://github.com/hasherezade/pe-sieve) job goal is to unpack a Windows PE malware.  
+[Detours](https://github.com/microsoft/Detours) job goal is to unpack a Windows PE malware. 
+
+In one hand, this application could be used as an analysis pipeline for windows malware.  
+In other hand, it could be used to generate a large dataset which can contains results from differents tools.
 This dataset could then be used in machine learning to try to classify samples by families.
-To provide this solution we are using [Detours](https://github.com/microsoft/Detours) project from Microsoft.
 
 ## Architecture
 <p align="center">
