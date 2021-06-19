@@ -11,8 +11,8 @@ class DatasetStatus(object):
     GENERATED : Dataset zipfile generation is done.
     """
 
-    GENERATING = "Generating"
-    GENERATED = "Generated"
+    GENERATING = "GENERATING"
+    GENERATED = "GENERATED"
 
 
 class Dataset(models.Model):
