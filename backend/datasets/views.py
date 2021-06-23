@@ -87,7 +87,7 @@ class DatasetViewSet(
             )
 
     def perform_destroy(self, instance):
-        """Hook Dataset deletion to very that the dataset has been generated
+        """Hook Dataset deletion to verify that the dataset has been generated
         and remove the associated zipfile.
 
         Args:
