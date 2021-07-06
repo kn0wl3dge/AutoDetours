@@ -29,6 +29,7 @@ SSH_PASSWORD = "Passw0rd!"
 WINDOWS_PATH = "/cygdrive/c/Temp"
 QEMU_IMAGE = "autodetours_qemu"
 WIN7_URL = "https://az792536.vo.msecnd.net/vms/VMBuild_20150916/VirtualBox/IE9/IE9.Win7.VirtualBox.zip"
+BINARIES = "./binaries/"
 
 logger = logging.getLogger()
 
@@ -121,7 +122,7 @@ def copy_files_to_vm(ssh):
     logger.info("Copying files into the Windows VM...")
     try:
         scp = SCPClient(ssh.get_transport())
-        scp.put("./binaries/", recursive=True, remote_path=WINDOWS_PATH)
+        scp.put(BINARIES, recursive=True, remote_path=WINDOWS_PATH)
         scp.close()
     except:
         logger.error("Could not copy files to the VM!")
@@ -279,7 +280,7 @@ def clean(complete_clean):
         rmtree(WORKERS_DIR, onerror=remove_readonly)
     else:
         logger.info("Removing previous images (win7-xx.qcow2)...")
-        os.system(f"rm {WORKERS_DIR}/win7*")
+        os.system(f"rm -v {WORKERS_DIR}/win7* 2>/dev/null")
 
 
 def generate_workers(nbr_workers):
@@ -293,16 +294,24 @@ def generate_workers(nbr_workers):
 
 
 def update_env_file(nbr_workers):
-    logger.info("Updating .env.dev configuration file...")
-    with open(ENV_FILE, "r") as fd:
-        lines = fd.readlines()
-    for i in range(len(lines)):
-        if "NB_WIN7_WORKERS" in lines[i]:
-            lines[i] = f"NB_WIN7_WORKERS={nbr_workers}\n"
-        elif "WIN7_IMAGES_DIR" in lines[i]:
-            lines[i] = f"WIN7_IMAGES_DIR={WORKERS_DIR}\n"
+    logger.info(f"Updating {ENV_FILE} configuration file...")
+    text = f"""DEBUG=True
+SECRET_KEY='_ejix(@eon@nv6r8rc!^+#*pi(^a2b5c$*bdnhjkeo#fn@vv8c'
+
+POSTGRES_ENGINE=django.db.backends.postgresql
+POSTGRES_DB=postgres
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres
+POSTGRES_HOST=db
+POSTGRES_PORT=5432
+
+CELERY_TASKS_SCHEDULE=10.0
+
+NB_WIN7_WORKERS={nbr_workers}
+WIN7_IMAGES_DIR={WORKERS_DIR}
+"""
     with open(ENV_FILE, "w") as fd:
-        fd.writelines(lines)
+        fd.write(text)
 
 
 def main(args):
@@ -347,7 +356,6 @@ if __name__ == "__main__":
   / /| |/ / / / __/ __ \/ / / / _ \/ __/ __ \/ / / / ___/ ___/
  / ___ / /_/ / /_/ /_/ / /_/ /  __/ /_/ /_/ / /_/ / /  (__  )
 /_/  |_\__,_/\__/\____/_____/\___/\__/\____/\__,_/_/  /____/
-
 ==============================================================
 
 """

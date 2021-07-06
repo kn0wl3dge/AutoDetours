@@ -26,10 +26,11 @@ namespace AutoDetoursAgent
         private bool customMutex = true;
         private bool isVM;
 
-        private Process syelogd = new Process();
-        private Process withdll = new Process();
-
         private String apiBaseURL;
+
+        private Job job;
+
+        private Logger logger;
 
         public AgentService()
         {
@@ -43,6 +44,12 @@ namespace AutoDetoursAgent
             }
             eventLog.Source = "AutoDetoursSource";
             eventLog.Log = "AutoDetoursLog";
+            logger = new Logger(eventLog);
+        }
+
+        public void OnDebug()
+        {
+            OnStart(null);
         }
 
         protected override void OnStart(string[] args)
@@ -51,7 +58,7 @@ namespace AutoDetoursAgent
             timer_agent.Interval = 10000;
             timer_agent.Elapsed += new ElapsedEventHandler(OnTimerCheckAgent);
             timer_agent.Start();
-            
+
             // Easier to edit a txt file than rebuild all the agent
             string path = @"C:\Temp\agent\api.txt";
             if (File.Exists(path))
@@ -66,7 +73,7 @@ namespace AutoDetoursAgent
             {
                 apiBaseURL = "http://172.20.0.10/api/"; // Don't change me! Check out api.txt
             }
-            eventLog.WriteEntry("AutoDetours API is located at : " + apiBaseURL);
+            logger.Log("AutoDetours API is located at : " + apiBaseURL);
 
             // Check if it's a VM
             if (File.Exists(@"C:\Temp\agent\vm.txt"))
@@ -85,18 +92,18 @@ namespace AutoDetoursAgent
             worker.malware = "";
 
             // Logging
-            eventLog.WriteEntry("AutoDetours service started.");
+            logger.Log("AutoDetours service started.");
         }
 
         protected override void OnStop()
         {
             // Logging
-            eventLog.WriteEntry("AutoDetours service stopped.");
+            logger.Log("AutoDetours service stopped.");
         }
 
         private async Task<bool> RegisterWorker()
         {
-            eventLog.WriteEntry("Trying to register");
+            logger.Log("Trying to register");
             String uuid = Guid.NewGuid().ToString();
             HttpResponseMessage response = null;
             // Make post request to /workers/
@@ -111,21 +118,21 @@ namespace AutoDetoursAgent
             {
 
             }
-            
+
             // If everything is okay
             if (response != null && response.IsSuccessStatusCode)
             {
                 worker.id = uuid;
-                eventLog.WriteEntry("Successfully registered as worker : " + worker.id);
+                logger.Log("Successfully registered as worker : " + worker.id);
                 return true;
             }
-            eventLog.WriteEntry("Wasn't able to register worker");
+            logger.Log("Wasn't able to register worker");
             return false;
         }
 
         private async Task<bool> GetTask()
         {
-            eventLog.WriteEntry("Trying to get task");
+            logger.Log("Trying to get task");
             HttpResponseMessage response = null;
             // Make get request to /workers/{id}
             try
@@ -149,11 +156,17 @@ namespace AutoDetoursAgent
                     workerTask = JsonConvert.DeserializeObject<WorkerTask>(resp);
                     worker.malware = workerTask.malware;
 
-                    eventLog.WriteEntry("Agent is now tasked with sample : " + worker.malware);
+                    // Set Job according to task
+                    if (workerTask.task == "unpack")
+                        job = new Unpacker(logger, workerTask);
+                    else
+                        job = new Tracer(logger, workerTask);
+
+                    logger.Log("Agent is now tasked with sample : " + worker.malware);
                     return true;
                 }
             }
-            eventLog.WriteEntry("No task available");
+            logger.Log("No task available");
             return false;
         }
 
@@ -166,10 +179,10 @@ namespace AutoDetoursAgent
             url.Append(worker.malware);
             url.Append("/download/");
 
-            eventLog.WriteEntry("Downloading file at " + url.ToString());
+            logger.Log("Downloading file at " + url.ToString());
 
             String filename = null;
-            if (workerTask.isDll == false)
+            if (workerTask.format == "exe")
                 filename = "C:\\Temp\\sample.exe";
             else
                 filename = "C:\\Temp\\sample.dll";
@@ -185,72 +198,8 @@ namespace AutoDetoursAgent
                 return false;
             }
 
-            eventLog.WriteEntry("Sample " + worker.malware + "has been downloaded.");
+            logger.Log("Sample " + worker.malware + "has been downloaded.");
             return true;
-        }
-
-        private void StartTracing()
-        {
-            // Run Syelog Deamon to extract logs from traceapi32
-            syelogd.StartInfo.FileName = "C:\\Temp\\syelogd.exe";
-            syelogd.StartInfo.Arguments = "/o C:\\Temp\\traces.txt";
-            syelogd.Start();
-
-            withdll.StartInfo.FileName = "C:\\Temp\\withdll.exe";
-
-            // We inject Traceapi DLL into the malware process using withdll.exe
-            if (workerTask.isDll == false)
-                withdll.StartInfo.Arguments = "/d:C:\\Temp\\trcapi32.dll C:\\Temp\\sample.exe";
-
-            // In case of a DLL we use RunDLL32 to launch the DLL
-            else 
-                withdll.StartInfo.Arguments = "/d:C:\\Temp\\trcapi32.dll rundll32.exe C:\\Temp\\sample.dll," + workerTask.exportName;
-
-            withdll.Start();
-
-            eventLog.WriteEntry("Tracing started...");
-        }
-
-        private void StopTracing()
-        {
-            // Stop both processes
-            if (!withdll.HasExited)
-                withdll.Kill();
-            if (!syelogd.HasExited)
-                syelogd.Kill();
-
-            eventLog.WriteEntry("Tracing stopped...");
-        }
-
-        private string ParseResults()
-        {
-            // Convert the traces.txt to json format
-            string inputFilename = "C:\\Temp\\traces.txt";
-            string logs = Parser.ParseLogs(inputFilename);
-            eventLog.WriteEntry("Json output has been generated.");
-            return logs;
-        }
-
-        private async Task<bool> SubmitTask(string jsonLogs)
-        {
-            // Submit JSON results to the API
-            string url = "workers/" + worker.id + "/submit_task/";
-            HttpResponseMessage response = null;
-            try
-            {
-                response = await client.PostAsync(url, new StringContent(jsonLogs, Encoding.UTF8, "application/json"));
-            }
-            catch (Exception)
-            {
-
-            }
-
-            if (response != null && response.IsSuccessStatusCode)
-            {
-                eventLog.WriteEntry("Task successfully submitted.");
-                return true;
-            }
-            return false;
         }
 
         private async Task<bool> Cleanup()
@@ -269,7 +218,7 @@ namespace AutoDetoursAgent
 
             if (response != null && response.IsSuccessStatusCode)
             {
-                eventLog.WriteEntry("Worker cleaned up!");
+                logger.Log("Worker cleaned up!");
                 return true;
             }
             return false;
@@ -289,7 +238,7 @@ namespace AutoDetoursAgent
 
             if (response != null && response.StatusCode == HttpStatusCode.OK)
             {
-                eventLog.WriteEntry("The API is available!");
+                logger.Log("The API is available!");
                 return true;
             }
             return false;
@@ -309,6 +258,7 @@ namespace AutoDetoursAgent
                             goto case AgentState.REGISTER;
                         }
                         break;
+
                     case AgentState.REGISTER:
                         if (await RegisterWorker())
                         {
@@ -316,6 +266,7 @@ namespace AutoDetoursAgent
                             goto case AgentState.GET_TASK;
                         }
                         break;
+
                     case AgentState.GET_TASK:
                         if (await GetTask())
                         {
@@ -323,27 +274,31 @@ namespace AutoDetoursAgent
                             goto case AgentState.DOWNLOAD_SAMPLE;
                         }
                         break;
+
                     case AgentState.DOWNLOAD_SAMPLE:
                         if (DownloadMalware())
                         {
-                            state = AgentState.TRACING;
-                            goto case AgentState.TRACING;
+                            state = AgentState.JOB;
+                            goto case AgentState.JOB;
                         }
                         break;
-                    case AgentState.TRACING:
-                        StartTracing();
-                        st.Thread.Sleep(workerTask.time * 1000);
-                        StopTracing();
+
+                    case AgentState.JOB:
+                        job.ExecuteJob();
+                        
                         state = AgentState.SEND_RESULTS;
                         goto case AgentState.SEND_RESULTS;
+
                     case AgentState.SEND_RESULTS:
-                        string logs = ParseResults();
-                        if (await SubmitTask(logs))
+
+                        job.TreatResults();
+                        if (await job.SubmitResults(worker.id, client))
                         {
                             state = AgentState.CLEANUP;
                             goto case AgentState.CLEANUP;
                         }
                         break;
+
                     case AgentState.CLEANUP:
                         if (await Cleanup())
                         {
@@ -351,7 +306,12 @@ namespace AutoDetoursAgent
                             goto case AgentState.DONE;
                         }
                         break;
+
                     case AgentState.DONE:
+                        // Quitting properly when debugging in VS
+                        #if DEBUG
+                            System.Environment.Exit(0);
+                        #endif
                         if (isVM)
                         {
                             Process.Start("shutdown", "/s /t 0");
@@ -374,7 +334,7 @@ namespace AutoDetoursAgent
         REGISTER,
         GET_TASK,
         DOWNLOAD_SAMPLE,
-        TRACING,
+        JOB,
         SEND_RESULTS,
         CLEANUP,
         DONE
@@ -390,7 +350,8 @@ namespace AutoDetoursAgent
     {
         public String malware { get; set; }
         public int time { get; set; }
-        public bool isDll { get; set; }
+        public string format { get; set; }
+        public string task { get; set; }
         public string exportName { get; set; }
     }
 }

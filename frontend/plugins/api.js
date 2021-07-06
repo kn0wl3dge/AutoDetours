@@ -4,9 +4,11 @@ export default (ctx, inject) => {
   const repositoryWithAxios = createRepository(ctx.$axios)
 
   const repositories = {
-    malware: repositoryWithAxios('malwares'),
-    workers: repositoryWithAxios('workers'),
-    settings: repositoryWithAxios('settings')
+    datasets: repositoryWithAxios('datasets'),
+    jobs: repositoryWithAxios('jobs'),
+    malwares: repositoryWithAxios('malwares'),
+    settings: repositoryWithAxios('settings'),
+    workers: repositoryWithAxios('workers')
   }
 
   inject('api', repositories)

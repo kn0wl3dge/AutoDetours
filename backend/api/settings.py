@@ -41,9 +41,13 @@ INSTALLED_APPS = [
     "corsheaders",
     "rest_framework",
     "django_fsm",
-    "malwaredb",
+    "malwares",
     "workers",
-    "stats",
+    #    "stats",
+    "jobs",
+    "tags",
+    "datasets",
+    "django_cleanup.apps.CleanupConfig",  # Should be placed last
 ]
 
 MIDDLEWARE = [

@@ -14,12 +14,19 @@ namespace AutoDetoursAgent
         /// </summary>
         static void Main()
         {
+#if DEBUG
+            AgentService agentService = new AgentService();
+            agentService.OnDebug();
+            System.Threading.Thread.Sleep(System.Threading.Timeout.Infinite);
+#else
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]
             {
                 new AgentService()
             };
             ServiceBase.Run(ServicesToRun);
+#endif
         }
     }
+
 }

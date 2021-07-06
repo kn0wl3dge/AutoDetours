@@ -36,7 +36,9 @@ export default {
             {
               type: 'linear',
               ticks: {
-                maxTicksLimit: 11
+                maxTicksLimit: 11,
+                min: 0,
+                beginAtZero: true
               },
               scaleLabel: {
                 display: true,
