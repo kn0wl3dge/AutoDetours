@@ -8,13 +8,13 @@
 
 ## Introduction
 
-AutoDetours is an application allowing the usage of multiples windows toolkit to analyse malware.
+AutoDetours is a scalable application for Windows malware analysis.
 For the moment only PESieve and Detours are integrated.
 
 [PESieve](https://github.com/hasherezade/pe-sieve) job goal is to unpack a Windows PE malware.  
-[Detours](https://github.com/microsoft/Detours) job goal is to trace a Windows PE malware. 
+[Detours](https://github.com/microsoft/Detours) job goal is to hook syscalls called by a Windows PE malware. 
 
-In one hand, this application could be used as an analysis pipeline for windows malware.  
+In one hand, this application could be used as an analysis pipeline for Windows malware.  
 In other hand, it could be used to generate a large dataset which can contains results from differents tools.
 This dataset could then be used in machine learning to try to classify samples by families.
 
@@ -33,6 +33,7 @@ This dataset could then be used in machine learning to try to classify samples b
 
 ### Procedure
 Just run `pip3 install -r requirements.txt` and `python3 setup.py -w <nbr_workers>` to install the project.  
+
 This script will download, decompress and convert a Windows7 VM to a qcow2 image.  
 Then, it will run the VM inside a container and configure the VM then install the agent and its dependencies.  
 It will make a snapshot of the VM and setup the number of workers you want.  
