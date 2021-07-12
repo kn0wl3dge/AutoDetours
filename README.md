@@ -14,8 +14,8 @@ For the moment only PESieve and Detours are integrated.
 [PESieve](https://github.com/hasherezade/pe-sieve) job goal is to unpack a Windows PE malware.  
 [Detours](https://github.com/microsoft/Detours) job goal is to hook syscalls called by a Windows PE malware. 
 
-In one hand, this application could be used as an analysis pipeline for Windows malware.  
-In other hand, it could be used to generate a large dataset which can contains results from differents tools.
+On the one hand, this application could be used as an analysis pipeline for Windows malware.  
+On the other hand, it could be used to generate a large dataset which can contains results from differents tools.
 This dataset could then be used in machine learning to try to classify samples by families.
 
 ## Architecture
