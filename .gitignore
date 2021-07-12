@@ -206,8 +206,11 @@ sw.*
 
 .vs
 
-agent/AutoDetoursAgent/obj
-agent/AutoDetoursAgent/bin
-
+agent/service/AutoDetoursAgent/obj
+agent/service/AutoDetoursAgent/bin
+agent/hooking/traceapi/obj.X86
+agent/hooking/traceapi/bin.X86
+agent/hooking/traceapi/obj.X64
+agent/hooking/traceapi/bin.X64
 # images
 *.qcow2
