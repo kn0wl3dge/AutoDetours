@@ -1,0 +1,3 @@
+[submodule "agent/hooking/Detours"]
+	path = agent/hooking/Detours
+	url = https://github.com/microsoft/Detours.git
