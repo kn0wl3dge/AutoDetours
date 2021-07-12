@@ -1,11 +1,6 @@
 name: AgentBuild
 
-env:
-  # Turn on msvc analysis during build, enable once warnings are clean.
-  DETOURS_ANALYZE: true
 
-  # Compile in parallel where possible.
-  CL: /MP
 
 # Triggers the workflow on push or pull request events for the master branch.
 on:
@@ -15,8 +10,56 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
-    runs-on: windows-latest
+  build-agent:
+    env:
+      SOLUTION_FILE_PATH: .
+      BUILD_CONFIGURATION: Release
+      AGENT_DIR: agent/service
+      
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest]
+        arch: [x86]
+        conf: [Release]
+        
+    steps:
+      - name: Clone Repository
+        uses: actions/checkout@v2
+        with:
+          submodules: 'recursive'
+
+      - name: Add MSBuild to PATH
+        uses: microsoft/setup-msbuild@v1.0.2
+
+      - name: Restore NuGet packages
+        working-directory: ${{env.AGENT_DIR}}
+        run: nuget restore ${{env.SOLUTION_FILE_PATH}}
+
+      - name: Build the Agent
+        working-directory: ${{env.AGENT_DIR}}
+        # Add additional options to the MSBuild command line here (like platform or verbosity level).
+        # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
+        run: msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} ${{env.SOLUTION_FILE_PATH}}
+        
+      - name: Upload agent artifacts for ${{ matrix.arch }} on ${{ matrix.os }} 
+        uses: actions/upload-artifact@v2
+        with:
+          name: artifacts-agent-${{ matrix.os }}
+          path: |
+            agent/service/AutoDetoursAgent/bin/x86/Release/AutoDetoursAgent.exe
+            agent/service/AutoDetoursAgent/bin/x86/Release/Newtonsoft.Json.dll
+    
+      
+  build-detours:
+    env:
+    # Turn on msvc analysis during build, enable once warnings are clean.
+      DETOURS_ANALYZE: true
+      # Compile in parallel where possible.
+      CL: /MP
+      
+    runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
@@ -44,7 +87,7 @@ jobs:
         working-directory: ./agent/hooking
         run: nmake
 
-      - name: Upload artifacts for ${{ matrix.arch }} on ${{ matrix.os }} 
+      - name: Upload Detours artifacts for ${{ matrix.arch }} on ${{ matrix.os }} 
         uses: actions/upload-artifact@v2
         with:
           name: artifacts-detours-${{ matrix.os }}
