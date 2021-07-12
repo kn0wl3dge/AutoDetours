@@ -1,0 +1,53 @@
+name: AgentBuild
+
+env:
+  # Turn on msvc analysis during build, enable once warnings are clean.
+  DETOURS_ANALYZE: true
+
+  # Compile in parallel where possible.
+  CL: /MP
+
+# Triggers the workflow on push or pull request events for the master branch.
+on:
+  push:
+    branches: [ feature_return_addr ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest]
+        arch: [x86]
+        conf: [Release]
+
+    steps:
+      - name: Clone Repository
+        uses: actions/checkout@v2
+        with:
+          submodules: 'recursive'
+
+      # Setup build environment variables using vcvarsall.bat.
+      - name: Configure MSCV Compiler for ${{ matrix.arch }}
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: ${{ matrix.arch }}
+
+      - name: Build Detours for ${{ matrix.arch }} on ${{ matrix.os }} 
+        env:
+          # Tell detours what process to target
+          DETOURS_TARGET_PROCESSOR: ${{ env.VSCMD_ARG_TGT_ARCH }}
+          DETOURS_CONFIG: ${{ matrix.conf }}
+        run: nmake
+
+      - name: Upload artifacts for ${{ matrix.arch }} on ${{ matrix.os }} 
+        uses: actions/upload-artifact@v2
+        with:
+          name: artifacts-detours-${{ matrix.os }}
+          path: |
+            agent/hooking/Detours/bin.*/withdll.exe
+            agent/hooking/Detours/bin.*/syelogd.exe
+            agent/hooking/traceapi/bin.*/*.dll
