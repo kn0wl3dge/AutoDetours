@@ -36,11 +36,12 @@ jobs:
         with:
           arch: ${{ matrix.arch }}
 
-      - name: Build Detours for ${{ matrix.arch }} on ${{ matrix.os }} 
+      - name: Build Detours and TraceApi for ${{ matrix.arch }} on ${{ matrix.os }} 
         env:
           # Tell detours what process to target
           DETOURS_TARGET_PROCESSOR: ${{ env.VSCMD_ARG_TGT_ARCH }}
           DETOURS_CONFIG: ${{ matrix.conf }}
+        working-directory: ./agent/hooking
         run: nmake
 
       - name: Upload artifacts for ${{ matrix.arch }} on ${{ matrix.os }} 
