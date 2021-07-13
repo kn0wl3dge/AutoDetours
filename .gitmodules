@@ -1,3 +1,6 @@
 [submodule "agent/hooking/Detours"]
 	path = agent/hooking/Detours
 	url = https://github.com/microsoft/Detours.git
+[submodule "agent/unpacking/mal_unpack"]
+	path = agent/unpacking/mal_unpack
+	url = https://github.com/hasherezade/mal_unpack.git
