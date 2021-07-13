@@ -98,7 +98,7 @@ jobs:
 
   build-unpacker:
     env:
-      UNPACKER_DIR: agent/unpacker/mal_unpack
+      UNPACKER_DIR: agent/unpacking/mal_unpack
       # Compile in parallel where possible.
       CL: /MP
       
