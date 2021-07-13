@@ -1,7 +1,6 @@
 name: AgentBuild
 
 
-
 # Triggers the workflow on push or pull request events for the master branch.
 on:
   push:
@@ -54,8 +53,9 @@ jobs:
       
   build-detours:
     env:
-    # Turn on msvc analysis during build, enable once warnings are clean.
+      # Turn on msvc analysis during build, enable once warnings are clean.
       DETOURS_ANALYZE: true
+      DETOURS_DIR: agent/hooking
       # Compile in parallel where possible.
       CL: /MP
       
@@ -84,7 +84,7 @@ jobs:
           # Tell detours what process to target
           DETOURS_TARGET_PROCESSOR: ${{ env.VSCMD_ARG_TGT_ARCH }}
           DETOURS_CONFIG: ${{ matrix.conf }}
-        working-directory: ./agent/hooking
+        working-directory: ${{ env.DETOURS_DIR }}
         run: nmake
 
       - name: Upload Detours artifacts for ${{ matrix.arch }} on ${{ matrix.os }} 
@@ -95,3 +95,44 @@ jobs:
             agent/hooking/Detours/bin.*/withdll.exe
             agent/hooking/Detours/bin.*/syelogd.exe
             agent/hooking/traceapi/bin.*/*.dll
+
+  build-unpacker:
+    env:
+      UNPACKER_DIR: agent/unpacker/mal_unpack
+      # Compile in parallel where possible.
+      CL: /MP
+      
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest]
+        arch: [x86]
+        conf: [Release]
+
+    steps:
+      - name: Clone Repository
+        uses: actions/checkout@v2
+        with:
+          submodules: 'recursive'
+
+      - name: Add MSBuild to PATH
+        uses: microsoft/setup-msbuild@v1.0.2
+
+      - name: Configure mal_unpack build
+        working-directory: ${{ env.UNPACKER_DIR }}
+        run: |
+          mkdir build
+          cd build
+          cmake .. -A Win32 -T host=${{ matrix.arch }}
+
+      - name: Build the unpacker
+        working-directory: ${{ env.UNPACKER_DIR }}
+        run: cmake --build ./build --config ${{ matrix.conf }}
+
+      - name: Upload unpacker artifacts for ${{ matrix.arch }} on ${{ matrix.os }} 
+        uses: actions/upload-artifact@v2
+        with:
+          name: artifacts-unpacker-${{ matrix.os }}
+          path: |
+            agent/unpacking/mal_unpack/build/Release/mal_unpack.exe
