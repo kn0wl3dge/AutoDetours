@@ -70,10 +70,9 @@ static CHAR s_szDllPath[MAX_PATH];
 BOOL ProcessEnumerate();
 BOOL InstanceEnumerate(HINSTANCE hInst);
 
-VOID _PrintEnter(const CHAR *psz, ...);
-VOID _PrintExit(const CHAR *psz, ...);
-VOID _Print(const CHAR *psz, ...);
-VOID _VPrint(PCSTR msg, va_list args, PCHAR pszBuf, LONG cbBuf);
+CHAR *escapeStr(LPCSTR input);
+CHAR* escapeStr(LPCWSTR input);
+VOID _PrintHook(const CHAR *psz, ...);
 
 VOID AssertMessage(CONST PCHAR pszMsg, CONST PCHAR pszFile, ULONG nLine);
 
@@ -119,119 +118,175 @@ static LONG s_nTlsIndent = -1;
 static LONG s_nTlsThread = -1;
 static LONG s_nThreadCnt = 0;
 
-VOID _PrintEnter(const CHAR *psz, ...)
-{
-    DWORD dwErr = GetLastError();
+size_t to_narrow(const wchar_t* src, LPSTR dest, size_t dest_len) {
+    size_t i;
+    wchar_t code;
 
-    LONG nIndent = 0;
-    LONG nThread = 0;
-    if (s_nTlsIndent >= 0) {
-        nIndent = (LONG)(LONG_PTR)TlsGetValue(s_nTlsIndent);
-        TlsSetValue(s_nTlsIndent, (PVOID)(LONG_PTR)(nIndent + 1));
-    }
-    if (s_nTlsThread >= 0) {
-        nThread = (LONG)(LONG_PTR)TlsGetValue(s_nTlsThread);
-    }
+    i = 0;
 
-    if (s_bLog && psz) {
-        CHAR szBuf[1024];
-        PCHAR pszBuf = szBuf;
-        PCHAR pszEnd = szBuf + ARRAYSIZE(szBuf) - 1;
-        LONG nLen = (nIndent > 0) ? (nIndent < 35 ? nIndent * 2 : 70) : 0;
-        *pszBuf++ = (CHAR)('0' + ((nThread / 100) % 10));
-        *pszBuf++ = (CHAR)('0' + ((nThread / 10) % 10));
-        *pszBuf++ = (CHAR)('0' + ((nThread / 1) % 10));
-        *pszBuf++ = ' ';
-        while (nLen-- > 0) {
-            *pszBuf++ = ' ';
+    while (src[i] != '\0' && i < (dest_len - 1)) {
+        code = src[i];
+        if (code < 128)
+            dest[i] = char(code);
+        else {
+            dest[i] = '?';
+            if (code >= 0xD800 && code <= 0xD8FF)
+                // lead surrogate, skip the next code unit, which is the trail
+                i++;
         }
-        *pszBuf++ = '+';
-        *pszBuf = '\0';
-
-        va_list  args;
-        va_start(args, psz);
-
-        while ((*pszBuf++ = *psz++) != 0 && pszBuf < pszEnd) {
-            // Copy characters.
-        }
-        *pszEnd = '\0';
-        SyelogV(SYELOG_SEVERITY_INFORMATION, szBuf, args);
-
-        va_end(args);
+        i++;
     }
-    SetLastError(dwErr);
+
+    dest[i] = '\0';
+
+    return i - 1;
+
 }
 
-VOID _PrintExit(const CHAR *psz, ...)
+/* Adapted from https://github.com/DaveGamble/cJSON/blob/master/cJSON.c */
+CHAR* escapeStr(LPCWSTR input)
 {
-    DWORD dwErr = GetLastError();
-
-    LONG nIndent = 0;
-    LONG nThread = 0;
-    if (s_nTlsIndent >= 0) {
-        nIndent = (LONG)(LONG_PTR)TlsGetValue(s_nTlsIndent) - 1;
-        ASSERT_ALWAYS(nIndent >= 0);
-        TlsSetValue(s_nTlsIndent, (PVOID)(LONG_PTR)nIndent);
-    }
-    if (s_nTlsThread >= 0) {
-        nThread = (LONG)(LONG_PTR)TlsGetValue(s_nTlsThread);
-    }
-
-    if (s_bLog && psz) {
-        CHAR szBuf[1024];
-        PCHAR pszEnd = szBuf + ARRAYSIZE(szBuf) - 1;
-        PCHAR pszBuf = szBuf;
-        LONG nLen = (nIndent > 0) ? (nIndent < 35 ? nIndent * 2 : 70) : 0;
-        *pszBuf++ = (CHAR)('0' + ((nThread / 100) % 10));
-        *pszBuf++ = (CHAR)('0' + ((nThread / 10) % 10));
-        *pszBuf++ = (CHAR)('0' + ((nThread / 1) % 10));
-        *pszBuf++ = ' ';
-        while (nLen-- > 0) {
-            *pszBuf++ = ' ';
-        }
-        *pszBuf++ = '-';
-        *pszBuf = '\0';
-
-        va_list  args;
-        va_start(args, psz);
-
-        while ((*pszBuf++ = *psz++) != 0 && pszBuf < pszEnd) {
-            // Copy characters.
-        }
-        *pszEnd = '\0';
-        SyelogV(SYELOG_SEVERITY_INFORMATION, szBuf, args);
-
-        va_end(args);
-    }
-    SetLastError(dwErr);
+    size_t len = wcslen(input) + 1;
+    LPSTR dest = (LPSTR)malloc(len);
+    to_narrow(input, dest, len);
+    CHAR *r = escapeStr(dest);
+    free(dest);
+    return r;
 }
 
-VOID _Print(const CHAR *psz, ...)
+/* Adapted from https://github.com/DaveGamble/cJSON/blob/master/cJSON.c */
+CHAR *escapeStr(LPCSTR input)
+{
+    const char* input_pointer = NULL;
+    char* output = NULL;
+    char* output_pointer = NULL;
+    size_t output_length = 0;
+    /* numbers of additional characters needed for escaping */
+    size_t escape_characters = 0;
+
+    CHAR* output_buffer = (char*)malloc(1024);
+
+    if (output_buffer == NULL)
+    {
+        return NULL;
+    }
+
+    /* empty string */
+    if (input == NULL)
+    {
+        strcpy((char*)output_buffer, "\0");
+        return output_buffer;
+    }
+
+    /* set "flag" to 1 if something needs to be escaped */
+    for (input_pointer = input; *input_pointer; input_pointer++)
+    {
+        switch (*input_pointer)
+        {
+        case '\"':
+        case '\\':
+        case '\b':
+        case '\f':
+        case '\n':
+        case '\r':
+        case '\t':
+            /* one character escape sequence */
+            escape_characters++;
+            break;
+        default:
+            if (*input_pointer < 32)
+            {
+                /* UTF-16 escape sequence uXXXX */
+                escape_characters += 5;
+            }
+            break;
+        }
+    }
+    output_length = (size_t)(input_pointer - input) + escape_characters;
+
+    output = (char*)realloc(output_buffer, output_length + 1);
+    if (output == NULL)
+    {
+        return NULL;
+    }
+
+    /* no characters have to be escaped */
+    if (escape_characters == 0)
+    {
+        memcpy(output, input, output_length);
+        output[output_length] = '\0';
+        return output;
+    }
+
+    output_pointer = output;
+    /* copy the string */
+    for (input_pointer = input; *input_pointer != '\0'; (void)input_pointer++, output_pointer++)
+    {
+        if ((*input_pointer > 31) && (*input_pointer != '\"') && (*input_pointer != '\\'))
+        {
+            /* normal character, copy */
+            *output_pointer = *input_pointer;
+        }
+        else
+        {
+            /* character needs to be escaped */
+            *output_pointer++ = '\\';
+            switch (*input_pointer)
+            {
+            case '\\':
+                *output_pointer = '\\';
+                break;
+            case '\"':
+                *output_pointer = '\"';
+                break;
+            case '\b':
+                *output_pointer = 'b';
+                break;
+            case '\f':
+                *output_pointer = 'f';
+                break;
+            case '\n':
+                *output_pointer = 'n';
+                break;
+            case '\r':
+                *output_pointer = 'r';
+                break;
+            case '\t':
+                *output_pointer = 't';
+                break;
+            default:
+                /* escape and print as unicode codepoint */
+                sprintf((char*)output_pointer, "u%04x", *input_pointer);
+                output_pointer += 4;
+                break;
+            }
+        }
+    }
+    output[output_length + 1] = '\0';
+
+    return output;
+}
+
+VOID _PrintHook(const CHAR* psz, ...)
 {
     DWORD dwErr = GetLastError();
 
-    LONG nIndent = 0;
     LONG nThread = 0;
-    if (s_nTlsIndent >= 0) {
-        nIndent = (LONG)(LONG_PTR)TlsGetValue(s_nTlsIndent);
-    }
     if (s_nTlsThread >= 0) {
         nThread = (LONG)(LONG_PTR)TlsGetValue(s_nTlsThread);
     }
 
     if (s_bLog && psz) {
-        CHAR szBuf[1024];
+        SYSTEMTIME st;
+        Real_GetSystemTime(&st);
+
+        CHAR szBuf[2048] = { 0 };
+        CHAR fmt_s[] = "{\"timestamp\": %ld, \"thread\": %ld, ";
+        sprintf(szBuf, fmt_s, st.wMilliseconds, nThread);
+
+
         PCHAR pszEnd = szBuf + ARRAYSIZE(szBuf) - 1;
-        PCHAR pszBuf = szBuf;
-        LONG nLen = (nIndent > 0) ? (nIndent < 35 ? nIndent * 2 : 70) : 0;
-        *pszBuf++ = (CHAR)('0' + ((nThread / 100) % 10));
-        *pszBuf++ = (CHAR)('0' + ((nThread / 10) % 10));
-        *pszBuf++ = (CHAR)('0' + ((nThread / 1) % 10));
-        *pszBuf++ = ' ';
-        while (nLen-- > 0) {
-            *pszBuf++ = ' ';
-        }
-        *pszBuf = '\0';
+        PCHAR pszBuf = szBuf + strlen(szBuf);
 
         va_list  args;
         va_start(args, psz);
@@ -240,9 +295,13 @@ VOID _Print(const CHAR *psz, ...)
             // Copy characters.
         }
         *pszEnd = '\0';
-        SyelogV(SYELOG_SEVERITY_INFORMATION, szBuf, args);
+        //SyelogV(SYELOG_SEVERITY_INFORMATION, szBuf, args);
+        CHAR finalBuf[2048] = { 0 };
+        vsprintf(finalBuf, szBuf, args);
 
         va_end(args);
+
+        printf(finalBuf);
     }
     SetLastError(dwErr);
 }
