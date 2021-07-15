@@ -293,7 +293,7 @@ VOID _PrintHook(const CHAR* psz, ...)
         timestamp /= 10000; /* From 100 nano seconds (10^-7) to 1 millisecond (10^-3) intervals */
 
         CHAR szBuf[2048] = { 0 };
-        CHAR fmt_s[] = "{\"timestamp\": %lld, \"thread\": %ld, ";
+        CHAR fmt_s[] = "{\"type\": \"hook\", \"timestamp\": %lld, \"thread\": %ld, ";
         sprintf(szBuf, fmt_s, timestamp, nThread);
 
 
@@ -374,8 +374,7 @@ BOOL InstanceEnumerate(HINSTANCE hInst)
 
 BOOL ProcessEnumerate()
 {
-    Syelog(SYELOG_SEVERITY_INFORMATION,
-           "######################################################### Binaries\n");
+    DWORD dwBytesWritten = 0;
 
     PBYTE pbNext;
     for (PBYTE pbRegion = (PBYTE)0x10000;; pbRegion = pbNext) {
@@ -415,23 +414,29 @@ BOOL ProcessEnumerate()
         WCHAR wzDllName[MAX_PATH];
         PIMAGE_NT_HEADERS pinh = NtHeadersForInstance((HINSTANCE)pbRegion);
 
+        CHAR szBuf[2048] = { 0 };
+
         if (pinh &&
             Real_GetModuleFileNameW((HINSTANCE)pbRegion,wzDllName,ARRAYSIZE(wzDllName))) {
 
-            Syelog(SYELOG_SEVERITY_INFORMATION,
-                   "### %p..%p: %ls\n", pbRegion, pbNext, wzDllName);
+            CHAR* filename = escapeStr(wzDllName);
+            sprintf(szBuf,
+                   "{\"type\": \"memory_map\", \"begin_addr\":\"%p\", \"end_addr\": \"%p\", \"filename\": \"%hs\", \"state\": \"%04lx\", \"protect\": \"%08lx\"}\n", pbRegion, pbNext, filename, mbi.State, mbi.Protect);
+            free(filename);
         }
         else {
-            Syelog(SYELOG_SEVERITY_INFORMATION,
-                   "### %p..%p: State=%04x, Protect=%08x\n",
+            sprintf(szBuf,
+                   "{\"type\": \"memory_map\", \"begin_addr\":\"%p\", \"end_addr\": \"%p\", \"filename\": \"\", \"state\": \"%04lx\", \"protect\": \"%08lx\"}\n",
                    pbRegion, pbNext, mbi.State, mbi.Protect);
         }
-    }
-    Syelog(SYELOG_SEVERITY_INFORMATION, "###\n");
 
-    LPVOID lpvEnv = Real_GetEnvironmentStrings();
-    Syelog(SYELOG_SEVERITY_INFORMATION, "### Env= %08x [%08x %08x]\n",
-           lpvEnv, ((PVOID*)lpvEnv)[0], ((PVOID*)lpvEnv)[1]);
+        Real_WriteFile(
+            logFileHandle,           // open file handle
+            szBuf,      // start of data to write
+            strlen(szBuf),  // number of bytes to write
+            &dwBytesWritten, // number of bytes that were written
+            NULL);            // no overlapped structure
+    }
 
     return TRUE;
 }
