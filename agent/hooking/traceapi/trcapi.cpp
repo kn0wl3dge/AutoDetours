@@ -118,6 +118,8 @@ static LONG s_nTlsIndent = -1;
 static LONG s_nTlsThread = -1;
 static LONG s_nThreadCnt = 0;
 
+static HANDLE logFileHandle = NULL;
+
 size_t to_narrow(const wchar_t* src, LPSTR dest, size_t dest_len) {
     size_t i;
     wchar_t code;
@@ -262,7 +264,7 @@ CHAR *escapeStr(LPCSTR input)
             }
         }
     }
-    output[output_length + 1] = '\0';
+    output[output_length] = '\0';
 
     return output;
 }
@@ -277,12 +279,22 @@ VOID _PrintHook(const CHAR* psz, ...)
     }
 
     if (s_bLog && psz) {
-        SYSTEMTIME st;
-        Real_GetSystemTime(&st);
+        FILETIME ft;
+        LARGE_INTEGER li;
+
+        /* Get the amount of 100 nano seconds intervals elapsed since January 1, 1601 (UTC) and copy it
+         * to a LARGE_INTEGER structure. */
+        Real_GetSystemTimeAsFileTime(&ft);
+        li.LowPart = ft.dwLowDateTime;
+        li.HighPart = ft.dwHighDateTime;
+
+        UINT64 timestamp = li.QuadPart;
+        timestamp -= 116444736000000000LL; /* Convert from file time to UNIX epoch time. */
+        timestamp /= 10000; /* From 100 nano seconds (10^-7) to 1 millisecond (10^-3) intervals */
 
         CHAR szBuf[2048] = { 0 };
-        CHAR fmt_s[] = "{\"timestamp\": %ld, \"thread\": %ld, ";
-        sprintf(szBuf, fmt_s, st.wMilliseconds, nThread);
+        CHAR fmt_s[] = "{\"timestamp\": %lld, \"thread\": %ld, ";
+        sprintf(szBuf, fmt_s, timestamp, nThread);
 
 
         PCHAR pszEnd = szBuf + ARRAYSIZE(szBuf) - 1;
@@ -301,7 +313,14 @@ VOID _PrintHook(const CHAR* psz, ...)
 
         va_end(args);
 
-        printf(finalBuf);
+        DWORD dwBytesWritten = 0;
+
+        Real_WriteFile(
+            logFileHandle,           // open file handle
+            finalBuf,      // start of data to write
+            strlen(finalBuf),  // number of bytes to write
+            &dwBytesWritten, // number of bytes that were written
+            NULL);            // no overlapped structure
     }
     SetLastError(dwErr);
 }
@@ -501,6 +520,14 @@ BOOL APIENTRY DllMain(HINSTANCE hModule, DWORD dwReason, PVOID lpReserved)
     (void)hModule;
     (void)lpReserved;
     BOOL ret;
+
+    logFileHandle = Real_CreateFileW(L"traces.json", // name of the write
+        GENERIC_WRITE,          // open for writing
+        0,                      // do not share
+        NULL,                   // default security
+        CREATE_ALWAYS,          // create new file only
+        FILE_ATTRIBUTE_NORMAL,  // normal file
+        NULL);                  // no attr. template
 
     if (DetourIsHelperProcess()) {
         return TRUE;
