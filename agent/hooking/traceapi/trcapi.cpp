@@ -530,7 +530,7 @@ BOOL APIENTRY DllMain(HINSTANCE hModule, DWORD dwReason, PVOID lpReserved)
         GENERIC_WRITE,          // open for writing
         0,                      // do not share
         NULL,                   // default security
-        CREATE_ALWAYS,          // create new file only
+        CREATE_ALWAYS,          // create always
         FILE_ATTRIBUTE_NORMAL,  // normal file
         NULL);                  // no attr. template
 
