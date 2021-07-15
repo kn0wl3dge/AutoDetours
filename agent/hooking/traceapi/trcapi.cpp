@@ -26,7 +26,6 @@
 #include <strsafe.h>
 #pragma warning(pop)
 #include "detours.h"
-#include "syelog.h"
 
 #if (_MSC_VER < 1299)
 #define LONG_PTR    LONG
@@ -71,7 +70,7 @@ BOOL ProcessEnumerate();
 BOOL InstanceEnumerate(HINSTANCE hInst);
 
 CHAR *escapeStr(LPCSTR input);
-CHAR* escapeStr(LPCWSTR input);
+CHAR *escapeStr(LPCWSTR input);
 VOID _PrintHook(const CHAR *psz, ...);
 
 VOID AssertMessage(CONST PCHAR pszMsg, CONST PCHAR pszFile, ULONG nLine);
@@ -81,8 +80,6 @@ VOID AssertMessage(CONST PCHAR pszMsg, CONST PCHAR pszFile, ULONG nLine);
 // Trampolines
 //
 extern "C" {
-    //  Trampolines for SYELOG library.
-    //
     extern HANDLE (WINAPI *Real_CreateFileW)(LPCWSTR a0, DWORD a1, DWORD a2,
                                              LPSECURITY_ATTRIBUTES a3, DWORD a4, DWORD a5,
                                              HANDLE a6);
@@ -91,13 +88,6 @@ extern "C" {
                                          DWORD nNumberOfBytesToWrite,
                                          LPDWORD lpNumberOfBytesWritten,
                                          LPOVERLAPPED lpOverlapped);
-    extern BOOL (WINAPI *Real_FlushFileBuffers)(HANDLE hFile);
-    extern BOOL (WINAPI *Real_CloseHandle)(HANDLE hObject);
-    extern BOOL (WINAPI *Real_WaitNamedPipeW)(LPCWSTR lpNamedPipeName, DWORD nTimeOut);
-    extern BOOL (WINAPI *Real_SetNamedPipeHandleState)(HANDLE hNamedPipe,
-                                                       LPDWORD lpMode,
-                                                       LPDWORD lpMaxCollectionCount,
-                                                       LPDWORD lpCollectDataTimeout);
     extern DWORD (WINAPI *Real_GetCurrentProcessId)(VOID);
     extern VOID (WINAPI *Real_GetSystemTimeAsFileTime)(LPFILETIME lpSystemTimeAsFileTime);
 
@@ -307,7 +297,6 @@ VOID _PrintHook(const CHAR* psz, ...)
             // Copy characters.
         }
         *pszEnd = '\0';
-        //SyelogV(SYELOG_SEVERITY_INFORMATION, szBuf, args);
         CHAR finalBuf[2048] = { 0 };
         vsprintf(finalBuf, szBuf, args);
 
@@ -316,19 +305,18 @@ VOID _PrintHook(const CHAR* psz, ...)
         DWORD dwBytesWritten = 0;
 
         Real_WriteFile(
-            logFileHandle,           // open file handle
-            finalBuf,      // start of data to write
-            strlen(finalBuf),  // number of bytes to write
-            &dwBytesWritten, // number of bytes that were written
-            NULL);            // no overlapped structure
+            logFileHandle,
+            finalBuf,
+            strlen(finalBuf),
+            &dwBytesWritten,
+            NULL);
     }
     SetLastError(dwErr);
 }
 
 VOID AssertMessage(CONST PCHAR pszMsg, CONST PCHAR pszFile, ULONG nLine)
 {
-    Syelog(SYELOG_SEVERITY_FATAL,
-           "ASSERT(%s) failed in %s, line %d.\n", pszMsg, pszFile, nLine);
+    printf("ERROR: ASSERT(%s) failed in %s, line %ld.\n", pszMsg, pszFile, nLine);
 }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -366,7 +354,7 @@ BOOL InstanceEnumerate(HINSTANCE hInst)
 
     PIMAGE_NT_HEADERS pinh = NtHeadersForInstance(hInst);
     if (pinh && Real_GetModuleFileNameW(hInst, wzDllName, ARRAYSIZE(wzDllName))) {
-        Syelog(SYELOG_SEVERITY_INFORMATION, "### %p: %ls\n", hInst, wzDllName);
+        printf("INFO: %p: %ls\n", hInst, wzDllName);
         return TRUE;
     }
     return FALSE;
@@ -431,11 +419,11 @@ BOOL ProcessEnumerate()
         }
 
         Real_WriteFile(
-            logFileHandle,           // open file handle
-            szBuf,      // start of data to write
-            strlen(szBuf),  // number of bytes to write
-            &dwBytesWritten, // number of bytes that were written
-            NULL);            // no overlapped structure
+            logFileHandle,
+            szBuf,
+            strlen(szBuf),
+            &dwBytesWritten,
+            NULL);
     }
 
     return TRUE;
@@ -486,12 +474,11 @@ BOOL ProcessAttach(HMODULE hDll)
     Real_GetModuleFileNameW(NULL, wzExeName, ARRAYSIZE(wzExeName));
     StringCchPrintfA(s_szDllPath, ARRAYSIZE(s_szDllPath), "%ls", s_wzDllPath);
 
-    SyelogOpen("trcapi" DETOURS_STRINGIFY(DETOURS_BITS), SYELOG_FACILITY_APPLICATION);
     ProcessEnumerate();
 
     LONG error = AttachDetours();
     if (error != NO_ERROR) {
-        Syelog(SYELOG_SEVERITY_FATAL, "### Error attaching detours: %d\n", error);
+        printf("Error: Error attaching detours: %ld\n", error);
     }
 
     s_bLog = TRUE;
@@ -505,11 +492,10 @@ BOOL ProcessDetach(HMODULE hDll)
 
     LONG error = DetachDetours();
     if (error != NO_ERROR) {
-        Syelog(SYELOG_SEVERITY_FATAL, "### Error detaching detours: %d\n", error);
+        printf("Error: Error detaching detours: %ld\n", error);
     }
 
-    Syelog(SYELOG_SEVERITY_NOTICE, "### Closing.\n");
-    SyelogClose(FALSE);
+    printf("INFO: Closing.\n");
 
     if (s_nTlsIndent >= 0) {
         TlsFree(s_nTlsIndent);
@@ -526,13 +512,13 @@ BOOL APIENTRY DllMain(HINSTANCE hModule, DWORD dwReason, PVOID lpReserved)
     (void)lpReserved;
     BOOL ret;
 
-    logFileHandle = Real_CreateFileW(L"traces.json", // name of the write
-        GENERIC_WRITE,          // open for writing
-        0,                      // do not share
-        NULL,                   // default security
-        CREATE_ALWAYS,          // create always
-        FILE_ATTRIBUTE_NORMAL,  // normal file
-        NULL);                  // no attr. template
+    logFileHandle = Real_CreateFileW(L"traces.json",
+        GENERIC_WRITE,
+        0,
+        NULL,
+        CREATE_ALWAYS,
+        FILE_ATTRIBUTE_NORMAL,
+        NULL);
 
     if (DetourIsHelperProcess()) {
         return TRUE;
