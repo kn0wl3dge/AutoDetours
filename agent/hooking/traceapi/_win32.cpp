@@ -8618,7 +8618,7 @@ int __stdcall Mine_AbortDoc(HDC a0)
         rv = Real_AbortDoc(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"AbortDoc\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"AbortDoc\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -8631,7 +8631,7 @@ BOOL __stdcall Mine_AbortPath(HDC a0)
         rv = Real_AbortPath(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"AbortPath\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"AbortPath\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -8645,7 +8645,7 @@ HKL __stdcall Mine_ActivateKeyboardLayout(HKL a0,
         rv = Real_ActivateKeyboardLayout(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ActivateKeyboardLayout\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ActivateKeyboardLayout\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -8658,7 +8658,7 @@ ATOM __stdcall Mine_AddAtomA(LPCSTR a0)
         rv = Real_AddAtomA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"AddAtomA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"AddAtomA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -8671,7 +8671,7 @@ ATOM __stdcall Mine_AddAtomW(LPCWSTR a0)
         rv = Real_AddAtomW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"AddAtomW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"AddAtomW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -8684,7 +8684,7 @@ int __stdcall Mine_AddFontResourceA(LPCSTR a0)
         rv = Real_AddFontResourceA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"AddFontResourceA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"AddFontResourceA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -8697,7 +8697,7 @@ int __stdcall Mine_AddFontResourceW(LPCWSTR a0)
         rv = Real_AddFontResourceW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"AddFontResourceW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"AddFontResourceW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -8712,7 +8712,7 @@ BOOL __stdcall Mine_AdjustWindowRect(LPRECT a0,
         rv = Real_AdjustWindowRect(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"AdjustWindowRect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"AdjustWindowRect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -8728,7 +8728,7 @@ BOOL __stdcall Mine_AdjustWindowRectEx(LPRECT a0,
         rv = Real_AdjustWindowRectEx(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"AdjustWindowRectEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"AdjustWindowRectEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -8741,7 +8741,7 @@ BOOL __stdcall Mine_AllocConsole(void)
         rv = Real_AllocConsole();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"AllocConsole\", \"fnc_args\": [], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"AllocConsole\", \"fnc_args\": [], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -8759,7 +8759,7 @@ BOOL __stdcall Mine_AngleArc(HDC a0,
         rv = Real_AngleArc(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"AngleArc\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"AngleArc\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -8775,7 +8775,7 @@ BOOL __stdcall Mine_AnimatePalette(HPALETTE a0,
         rv = Real_AnimatePalette(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"AnimatePalette\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"AnimatePalette\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -8788,7 +8788,7 @@ BOOL __stdcall Mine_AnyPopup(void)
         rv = Real_AnyPopup();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"AnyPopup\", \"fnc_args\": [], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"AnyPopup\", \"fnc_args\": [], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -8804,7 +8804,7 @@ BOOL __stdcall Mine_AppendMenuA(HMENU a0,
         rv = Real_AppendMenuA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"AppendMenuA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, escapeStr(a3), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"AppendMenuA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, escapeStr(a3), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -8820,7 +8820,7 @@ BOOL __stdcall Mine_AppendMenuW(HMENU a0,
         rv = Real_AppendMenuW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"AppendMenuW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, escapeStr(a3), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"AppendMenuW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, escapeStr(a3), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -8841,7 +8841,7 @@ BOOL __stdcall Mine_Arc(HDC a0,
         rv = Real_Arc(a0, a1, a2, a3, a4, a5, a6, a7, a8);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"Arc\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"Arc\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -8862,7 +8862,7 @@ BOOL __stdcall Mine_ArcTo(HDC a0,
         rv = Real_ArcTo(a0, a1, a2, a3, a4, a5, a6, a7, a8);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ArcTo\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ArcTo\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -8875,7 +8875,7 @@ BOOL __stdcall Mine_AreFileApisANSI(void)
         rv = Real_AreFileApisANSI();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"AreFileApisANSI\", \"fnc_args\": [], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"AreFileApisANSI\", \"fnc_args\": [], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -8888,7 +8888,7 @@ UINT __stdcall Mine_ArrangeIconicWindows(HWND a0)
         rv = Real_ArrangeIconicWindows(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ArrangeIconicWindows\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ArrangeIconicWindows\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -8903,7 +8903,7 @@ BOOL __stdcall Mine_AttachThreadInput(DWORD a0,
         rv = Real_AttachThreadInput(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"AttachThreadInput\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"AttachThreadInput\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -8922,7 +8922,7 @@ BOOL __stdcall Mine_BackupRead(HANDLE a0,
         rv = Real_BackupRead(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"BackupRead\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"BackupRead\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -8940,7 +8940,7 @@ BOOL __stdcall Mine_BackupSeek(HANDLE a0,
         rv = Real_BackupSeek(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"BackupSeek\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"BackupSeek\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -8959,7 +8959,7 @@ BOOL __stdcall Mine_BackupWrite(HANDLE a0,
         rv = Real_BackupWrite(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"BackupWrite\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"BackupWrite\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -8973,7 +8973,7 @@ BOOL __stdcall Mine_Beep(DWORD a0,
         rv = Real_Beep(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"Beep\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"Beep\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -8986,7 +8986,7 @@ HDWP __stdcall Mine_BeginDeferWindowPos(int a0)
         rv = Real_BeginDeferWindowPos(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"BeginDeferWindowPos\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"BeginDeferWindowPos\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9000,7 +9000,7 @@ HDC __stdcall Mine_BeginPaint(HWND a0,
         rv = Real_BeginPaint(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"BeginPaint\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"BeginPaint\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9013,7 +9013,7 @@ BOOL __stdcall Mine_BeginPath(HDC a0)
         rv = Real_BeginPath(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"BeginPath\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"BeginPath\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9027,7 +9027,7 @@ HANDLE __stdcall Mine_BeginUpdateResourceA(LPCSTR a0,
         rv = Real_BeginUpdateResourceA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"BeginUpdateResourceA\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"BeginUpdateResourceA\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9041,7 +9041,7 @@ HANDLE __stdcall Mine_BeginUpdateResourceW(LPCWSTR a0,
         rv = Real_BeginUpdateResourceW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"BeginUpdateResourceW\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"BeginUpdateResourceW\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9057,7 +9057,7 @@ HRESULT __stdcall Mine_BindMoniker(IMoniker* a0,
         rv = Real_BindMoniker(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"BindMoniker\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"BindMoniker\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9078,7 +9078,7 @@ BOOL __stdcall Mine_BitBlt(HDC a0,
         rv = Real_BitBlt(a0, a1, a2, a3, a4, a5, a6, a7, a8);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"BitBlt\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"BitBlt\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9091,7 +9091,7 @@ BOOL __stdcall Mine_BringWindowToTop(HWND a0)
         rv = Real_BringWindowToTop(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"BringWindowToTop\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"BringWindowToTop\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9108,7 +9108,7 @@ long __stdcall Mine_BroadcastSystemMessageA(DWORD a0,
         rv = Real_BroadcastSystemMessageA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"BroadcastSystemMessageA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"BroadcastSystemMessageA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9125,7 +9125,7 @@ long __stdcall Mine_BroadcastSystemMessageW(DWORD a0,
         rv = Real_BroadcastSystemMessageW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"BroadcastSystemMessageW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"BroadcastSystemMessageW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9139,7 +9139,7 @@ BOOL __stdcall Mine_BuildCommDCBA(LPCSTR a0,
         rv = Real_BuildCommDCBA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"BuildCommDCBA\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"BuildCommDCBA\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9154,7 +9154,7 @@ BOOL __stdcall Mine_BuildCommDCBAndTimeoutsA(LPCSTR a0,
         rv = Real_BuildCommDCBAndTimeoutsA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"BuildCommDCBAndTimeoutsA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"BuildCommDCBAndTimeoutsA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9169,7 +9169,7 @@ BOOL __stdcall Mine_BuildCommDCBAndTimeoutsW(LPCWSTR a0,
         rv = Real_BuildCommDCBAndTimeoutsW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"BuildCommDCBAndTimeoutsW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"BuildCommDCBAndTimeoutsW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9183,7 +9183,7 @@ BOOL __stdcall Mine_BuildCommDCBW(LPCWSTR a0,
         rv = Real_BuildCommDCBW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"BuildCommDCBW\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"BuildCommDCBW\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9197,7 +9197,7 @@ HRESULT __stdcall Mine_CLSIDFromProgID(LPCOLESTR a0,
         rv = Real_CLSIDFromProgID(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CLSIDFromProgID\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CLSIDFromProgID\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9211,7 +9211,7 @@ HRESULT __stdcall Mine_CLSIDFromString(LPOLESTR a0,
         rv = Real_CLSIDFromString(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CLSIDFromString\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CLSIDFromString\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9225,7 +9225,7 @@ BOOL __stdcall Mine_CallMsgFilterA(LPMSG a0,
         rv = Real_CallMsgFilterA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CallMsgFilterA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CallMsgFilterA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9239,7 +9239,7 @@ BOOL __stdcall Mine_CallMsgFilterW(LPMSG a0,
         rv = Real_CallMsgFilterW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CallMsgFilterW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CallMsgFilterW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9258,7 +9258,7 @@ BOOL __stdcall Mine_CallNamedPipeA(LPCSTR a0,
         rv = Real_CallNamedPipeA(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CallNamedPipeA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CallNamedPipeA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9277,7 +9277,7 @@ BOOL __stdcall Mine_CallNamedPipeW(LPCWSTR a0,
         rv = Real_CallNamedPipeW(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CallNamedPipeW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CallNamedPipeW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9293,7 +9293,7 @@ LRESULT __stdcall Mine_CallNextHookEx(HHOOK a0,
         rv = Real_CallNextHookEx(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CallNextHookEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CallNextHookEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9310,7 +9310,7 @@ LRESULT __stdcall Mine_CallWindowProcA(WNDPROC a0,
         rv = Real_CallWindowProcA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CallWindowProcA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CallWindowProcA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9327,7 +9327,7 @@ LRESULT __stdcall Mine_CallWindowProcW(WNDPROC a0,
         rv = Real_CallWindowProcW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CallWindowProcW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CallWindowProcW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9340,7 +9340,7 @@ BOOL __stdcall Mine_CancelDC(HDC a0)
         rv = Real_CancelDC(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CancelDC\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CancelDC\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9353,7 +9353,7 @@ BOOL __stdcall Mine_CancelIo(HANDLE a0)
         rv = Real_CancelIo(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CancelIo\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CancelIo\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9366,7 +9366,7 @@ BOOL __stdcall Mine_CancelWaitableTimer(HANDLE a0)
         rv = Real_CancelWaitableTimer(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CancelWaitableTimer\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CancelWaitableTimer\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9383,7 +9383,7 @@ WORD __stdcall Mine_CascadeWindows(HWND a0,
         rv = Real_CascadeWindows(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CascadeWindows\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CascadeWindows\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9397,7 +9397,7 @@ BOOL __stdcall Mine_ChangeClipboardChain(HWND a0,
         rv = Real_ChangeClipboardChain(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ChangeClipboardChain\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ChangeClipboardChain\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9411,7 +9411,7 @@ LONG __stdcall Mine_ChangeDisplaySettingsA(LPDEVMODEA a0,
         rv = Real_ChangeDisplaySettingsA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ChangeDisplaySettingsA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ChangeDisplaySettingsA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9428,7 +9428,7 @@ LONG __stdcall Mine_ChangeDisplaySettingsExA(LPCSTR a0,
         rv = Real_ChangeDisplaySettingsExA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ChangeDisplaySettingsExA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ChangeDisplaySettingsExA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9445,7 +9445,7 @@ LONG __stdcall Mine_ChangeDisplaySettingsExW(LPCWSTR a0,
         rv = Real_ChangeDisplaySettingsExW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ChangeDisplaySettingsExW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ChangeDisplaySettingsExW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9459,7 +9459,7 @@ LONG __stdcall Mine_ChangeDisplaySettingsW(LPDEVMODEW a0,
         rv = Real_ChangeDisplaySettingsW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ChangeDisplaySettingsW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ChangeDisplaySettingsW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9476,7 +9476,7 @@ BOOL __stdcall Mine_ChangeMenuA(HMENU a0,
         rv = Real_ChangeMenuA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ChangeMenuA\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, escapeStr(a2), a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ChangeMenuA\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, escapeStr(a2), a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9493,7 +9493,7 @@ BOOL __stdcall Mine_ChangeMenuW(HMENU a0,
         rv = Real_ChangeMenuW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ChangeMenuW\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, escapeStr(a2), a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ChangeMenuW\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, escapeStr(a2), a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9506,7 +9506,7 @@ LPSTR __stdcall Mine_CharLowerA(LPSTR a0)
         rv = Real_CharLowerA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CharLowerA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%hs\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(rv), _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CharLowerA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%hs\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(rv), _ReturnAddress());
     };
     return rv;
 }
@@ -9520,7 +9520,7 @@ DWORD __stdcall Mine_CharLowerBuffA(LPSTR a0,
         rv = Real_CharLowerBuffA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CharLowerBuffA\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CharLowerBuffA\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9534,7 +9534,7 @@ DWORD __stdcall Mine_CharLowerBuffW(LPWSTR a0,
         rv = Real_CharLowerBuffW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CharLowerBuffW\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CharLowerBuffW\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9547,7 +9547,7 @@ LPWSTR __stdcall Mine_CharLowerW(LPWSTR a0)
         rv = Real_CharLowerW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CharLowerW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%hs\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(rv), _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CharLowerW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%hs\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(rv), _ReturnAddress());
     };
     return rv;
 }
@@ -9560,7 +9560,7 @@ LPSTR __stdcall Mine_CharNextA(LPCSTR a0)
         rv = Real_CharNextA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CharNextA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%hs\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(rv), _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CharNextA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%hs\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(rv), _ReturnAddress());
     };
     return rv;
 }
@@ -9575,7 +9575,7 @@ LPSTR __stdcall Mine_CharNextExA(WORD a0,
         rv = Real_CharNextExA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CharNextExA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\"], \"fnc_ret\": \"%hs\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, escapeStr(rv), _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CharNextExA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\"], \"fnc_ret\": \"%hs\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, escapeStr(rv), _ReturnAddress());
     };
     return rv;
 }
@@ -9588,7 +9588,7 @@ LPWSTR __stdcall Mine_CharNextW(LPCWSTR a0)
         rv = Real_CharNextW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CharNextW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%hs\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(rv), _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CharNextW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%hs\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(rv), _ReturnAddress());
     };
     return rv;
 }
@@ -9602,7 +9602,7 @@ LPSTR __stdcall Mine_CharPrevA(LPCSTR a0,
         rv = Real_CharPrevA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CharPrevA\", \"fnc_args\": [\"%hs\", \"%hs\"], \"fnc_ret\": \"%hs\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), escapeStr(rv), _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CharPrevA\", \"fnc_args\": [\"%hs\", \"%hs\"], \"fnc_ret\": \"%hs\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), escapeStr(rv), _ReturnAddress());
     };
     return rv;
 }
@@ -9618,7 +9618,7 @@ LPSTR __stdcall Mine_CharPrevExA(WORD a0,
         rv = Real_CharPrevExA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CharPrevExA\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\", \"%p\"], \"fnc_ret\": \"%hs\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), escapeStr(a2), a3, escapeStr(rv), _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CharPrevExA\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\", \"%p\"], \"fnc_ret\": \"%hs\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), escapeStr(a2), a3, escapeStr(rv), _ReturnAddress());
     };
     return rv;
 }
@@ -9632,7 +9632,7 @@ LPWSTR __stdcall Mine_CharPrevW(LPCWSTR a0,
         rv = Real_CharPrevW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CharPrevW\", \"fnc_args\": [\"%hs\", \"%hs\"], \"fnc_ret\": \"%hs\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), escapeStr(rv), _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CharPrevW\", \"fnc_args\": [\"%hs\", \"%hs\"], \"fnc_ret\": \"%hs\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), escapeStr(rv), _ReturnAddress());
     };
     return rv;
 }
@@ -9646,7 +9646,7 @@ BOOL __stdcall Mine_CharToOemA(LPCSTR a0,
         rv = Real_CharToOemA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CharToOemA\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CharToOemA\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9661,7 +9661,7 @@ BOOL __stdcall Mine_CharToOemBuffA(LPCSTR a0,
         rv = Real_CharToOemBuffA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CharToOemBuffA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CharToOemBuffA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9676,7 +9676,7 @@ BOOL __stdcall Mine_CharToOemBuffW(LPCWSTR a0,
         rv = Real_CharToOemBuffW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CharToOemBuffW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CharToOemBuffW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9690,7 +9690,7 @@ BOOL __stdcall Mine_CharToOemW(LPCWSTR a0,
         rv = Real_CharToOemW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CharToOemW\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CharToOemW\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9703,7 +9703,7 @@ LPSTR __stdcall Mine_CharUpperA(LPSTR a0)
         rv = Real_CharUpperA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CharUpperA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%hs\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(rv), _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CharUpperA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%hs\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(rv), _ReturnAddress());
     };
     return rv;
 }
@@ -9717,7 +9717,7 @@ DWORD __stdcall Mine_CharUpperBuffA(LPSTR a0,
         rv = Real_CharUpperBuffA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CharUpperBuffA\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CharUpperBuffA\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9731,7 +9731,7 @@ DWORD __stdcall Mine_CharUpperBuffW(LPWSTR a0,
         rv = Real_CharUpperBuffW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CharUpperBuffW\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CharUpperBuffW\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9744,7 +9744,7 @@ LPWSTR __stdcall Mine_CharUpperW(LPWSTR a0)
         rv = Real_CharUpperW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CharUpperW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%hs\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(rv), _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CharUpperW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%hs\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(rv), _ReturnAddress());
     };
     return rv;
 }
@@ -9766,7 +9766,7 @@ BOOL __stdcall Mine_CheckColorsInGamut(
         rv = Real_CheckColorsInGamut(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CheckColorsInGamut\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CheckColorsInGamut\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9781,7 +9781,7 @@ BOOL __stdcall Mine_CheckDlgButton(HWND a0,
         rv = Real_CheckDlgButton(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CheckDlgButton\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CheckDlgButton\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9796,7 +9796,7 @@ DWORD __stdcall Mine_CheckMenuItem(HMENU a0,
         rv = Real_CheckMenuItem(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CheckMenuItem\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CheckMenuItem\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9813,7 +9813,7 @@ BOOL __stdcall Mine_CheckMenuRadioItem(HMENU a0,
         rv = Real_CheckMenuRadioItem(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CheckMenuRadioItem\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CheckMenuRadioItem\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9829,7 +9829,7 @@ BOOL __stdcall Mine_CheckRadioButton(HWND a0,
         rv = Real_CheckRadioButton(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CheckRadioButton\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CheckRadioButton\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9843,7 +9843,7 @@ HWND __stdcall Mine_ChildWindowFromPoint(HWND a0,
         rv = Real_ChildWindowFromPoint(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ChildWindowFromPoint\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ChildWindowFromPoint\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9858,7 +9858,7 @@ HWND __stdcall Mine_ChildWindowFromPointEx(HWND a0,
         rv = Real_ChildWindowFromPointEx(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ChildWindowFromPointEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ChildWindowFromPointEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9872,7 +9872,7 @@ int __stdcall Mine_ChoosePixelFormat(HDC a0,
         rv = Real_ChoosePixelFormat(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ChoosePixelFormat\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ChoosePixelFormat\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9893,7 +9893,7 @@ BOOL __stdcall Mine_Chord(HDC a0,
         rv = Real_Chord(a0, a1, a2, a3, a4, a5, a6, a7, a8);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"Chord\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"Chord\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9906,7 +9906,7 @@ BOOL __stdcall Mine_ClearCommBreak(HANDLE a0)
         rv = Real_ClearCommBreak(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ClearCommBreak\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ClearCommBreak\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9921,7 +9921,7 @@ BOOL __stdcall Mine_ClearCommError(HANDLE a0,
         rv = Real_ClearCommError(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ClearCommError\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ClearCommError\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9935,7 +9935,7 @@ BOOL __stdcall Mine_ClientToScreen(HWND a0,
         rv = Real_ClientToScreen(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ClientToScreen\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ClientToScreen\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9948,7 +9948,7 @@ BOOL __stdcall Mine_ClipCursor(RECT* a0)
         rv = Real_ClipCursor(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ClipCursor\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ClipCursor\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9961,7 +9961,7 @@ BOOL __stdcall Mine_CloseClipboard(void)
         rv = Real_CloseClipboard();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CloseClipboard\", \"fnc_args\": [], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CloseClipboard\", \"fnc_args\": [], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9974,7 +9974,7 @@ BOOL __stdcall Mine_CloseDesktop(HDESK a0)
         rv = Real_CloseDesktop(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CloseDesktop\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CloseDesktop\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -9987,7 +9987,7 @@ HENHMETAFILE __stdcall Mine_CloseEnhMetaFile(HDC a0)
         rv = Real_CloseEnhMetaFile(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CloseEnhMetaFile\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CloseEnhMetaFile\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10000,7 +10000,7 @@ BOOL __stdcall Mine_CloseFigure(HDC a0)
         rv = Real_CloseFigure(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CloseFigure\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CloseFigure\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10013,7 +10013,7 @@ BOOL __stdcall Mine_CloseHandle(HANDLE a0)
         rv = Real_CloseHandle(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CloseHandle\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CloseHandle\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10026,7 +10026,7 @@ HMETAFILE __stdcall Mine_CloseMetaFile(HDC a0)
         rv = Real_CloseMetaFile(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CloseMetaFile\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CloseMetaFile\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10039,7 +10039,7 @@ BOOL __stdcall Mine_CloseWindow(HWND a0)
         rv = Real_CloseWindow(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CloseWindow\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CloseWindow\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10052,7 +10052,7 @@ BOOL __stdcall Mine_CloseWindowStation(HWINSTA a0)
         rv = Real_CloseWindowStation(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CloseWindowStation\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CloseWindowStation\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10065,7 +10065,7 @@ ULONG __stdcall Mine_CoAddRefServerProcess(void)
         rv = Real_CoAddRefServerProcess();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoAddRefServerProcess\", \"fnc_args\": [], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoAddRefServerProcess\", \"fnc_args\": [], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10078,7 +10078,7 @@ DWORD __stdcall Mine_CoBuildVersion(void)
         rv = Real_CoBuildVersion();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoBuildVersion\", \"fnc_args\": [], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoBuildVersion\", \"fnc_args\": [], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10092,7 +10092,7 @@ HRESULT __stdcall Mine_CoCopyProxy(IUnknown* a0,
         rv = Real_CoCopyProxy(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoCopyProxy\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoCopyProxy\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10106,7 +10106,7 @@ HRESULT __stdcall Mine_CoCreateFreeThreadedMarshaler(LPUNKNOWN a0,
         rv = Real_CoCreateFreeThreadedMarshaler(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoCreateFreeThreadedMarshaler\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoCreateFreeThreadedMarshaler\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10119,7 +10119,7 @@ HRESULT __stdcall Mine_CoCreateGuid(GUID* a0)
         rv = Real_CoCreateGuid(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoCreateGuid\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoCreateGuid\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10136,7 +10136,7 @@ HRESULT __stdcall Mine_CoCreateInstance(CONST IID& a0,
         rv = Real_CoCreateInstance(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoCreateInstance\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoCreateInstance\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10154,7 +10154,7 @@ HRESULT __stdcall Mine_CoCreateInstanceEx(CONST IID& a0,
         rv = Real_CoCreateInstanceEx(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoCreateInstanceEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoCreateInstanceEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10168,7 +10168,7 @@ HRESULT __stdcall Mine_CoDisconnectObject(LPUNKNOWN a0,
         rv = Real_CoDisconnectObject(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoDisconnectObject\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoDisconnectObject\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10183,7 +10183,7 @@ BOOL __stdcall Mine_CoDosDateTimeToFileTime(WORD a0,
         rv = Real_CoDosDateTimeToFileTime(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoDosDateTimeToFileTime\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoDosDateTimeToFileTime\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10196,7 +10196,7 @@ HRESULT __stdcall Mine_CoFileTimeNow(FILETIME* a0)
         rv = Real_CoFileTimeNow(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoFileTimeNow\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoFileTimeNow\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10211,7 +10211,7 @@ BOOL __stdcall Mine_CoFileTimeToDosDateTime(FILETIME* a0,
         rv = Real_CoFileTimeToDosDateTime(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoFileTimeToDosDateTime\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoFileTimeToDosDateTime\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10223,7 +10223,7 @@ void __stdcall Mine_CoFreeAllLibraries(void)
         Real_CoFreeAllLibraries();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoFreeAllLibraries\", \"fnc_args\": [], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"},\n", _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoFreeAllLibraries\", \"fnc_args\": [], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"}\n", _ReturnAddress());
     };
 }
 
@@ -10234,7 +10234,7 @@ void __stdcall Mine_CoFreeLibrary(HINSTANCE a0)
         Real_CoFreeLibrary(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoFreeLibrary\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"},\n", a0, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoFreeLibrary\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"}\n", a0, _ReturnAddress());
     };
 }
 
@@ -10245,7 +10245,7 @@ void __stdcall Mine_CoFreeUnusedLibraries(void)
         Real_CoFreeUnusedLibraries();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoFreeUnusedLibraries\", \"fnc_args\": [], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"},\n", _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoFreeUnusedLibraries\", \"fnc_args\": [], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"}\n", _ReturnAddress());
     };
 }
 
@@ -10258,7 +10258,7 @@ HRESULT __stdcall Mine_CoGetCallContext(CONST IID& a0,
         rv = Real_CoGetCallContext(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoGetCallContext\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoGetCallContext\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10275,7 +10275,7 @@ HRESULT __stdcall Mine_CoGetClassObject(CONST IID& a0,
         rv = Real_CoGetClassObject(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoGetClassObject\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoGetClassObject\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10288,7 +10288,7 @@ DWORD __stdcall Mine_CoGetCurrentProcess(void)
         rv = Real_CoGetCurrentProcess();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoGetCurrentProcess\", \"fnc_args\": [], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoGetCurrentProcess\", \"fnc_args\": [], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10308,7 +10308,7 @@ HRESULT __stdcall Mine_CoGetInstanceFromFile(COSERVERINFO* a0,
         rv = Real_CoGetInstanceFromFile(a0, a1, a2, a3, a4, a5, a6, a7);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoGetInstanceFromFile\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoGetInstanceFromFile\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10327,7 +10327,7 @@ HRESULT __stdcall Mine_CoGetInstanceFromIStorage(COSERVERINFO* a0,
         rv = Real_CoGetInstanceFromIStorage(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoGetInstanceFromIStorage\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoGetInstanceFromIStorage\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10342,7 +10342,7 @@ HRESULT __stdcall Mine_CoGetInterfaceAndReleaseStream(LPSTREAM a0,
         rv = Real_CoGetInterfaceAndReleaseStream(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoGetInterfaceAndReleaseStream\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoGetInterfaceAndReleaseStream\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10356,7 +10356,7 @@ HRESULT __stdcall Mine_CoGetMalloc(DWORD a0,
         rv = Real_CoGetMalloc(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoGetMalloc\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoGetMalloc\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10374,7 +10374,7 @@ HRESULT __stdcall Mine_CoGetMarshalSizeMax(ULONG* a0,
         rv = Real_CoGetMarshalSizeMax(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoGetMarshalSizeMax\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoGetMarshalSizeMax\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10390,7 +10390,7 @@ HRESULT __stdcall Mine_CoGetObject(LPCWSTR a0,
         rv = Real_CoGetObject(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoGetObject\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoGetObject\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10404,7 +10404,7 @@ HRESULT __stdcall Mine_CoGetPSClsid(CONST IID& a0,
         rv = Real_CoGetPSClsid(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoGetPSClsid\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoGetPSClsid\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10422,7 +10422,7 @@ HRESULT __stdcall Mine_CoGetStandardMarshal(CONST IID& a0,
         rv = Real_CoGetStandardMarshal(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoGetStandardMarshal\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoGetStandardMarshal\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10437,7 +10437,7 @@ HRESULT __stdcall Mine_CoGetStdMarshalEx(LPUNKNOWN a0,
         rv = Real_CoGetStdMarshalEx(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoGetStdMarshalEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoGetStdMarshalEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10451,7 +10451,7 @@ HRESULT __stdcall Mine_CoGetTreatAsClass(CONST IID& a0,
         rv = Real_CoGetTreatAsClass(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoGetTreatAsClass\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoGetTreatAsClass\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10464,7 +10464,7 @@ HRESULT __stdcall Mine_CoImpersonateClient(void)
         rv = Real_CoImpersonateClient();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoImpersonateClient\", \"fnc_args\": [], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoImpersonateClient\", \"fnc_args\": [], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10477,7 +10477,7 @@ HRESULT __stdcall Mine_CoInitialize(LPVOID a0)
         rv = Real_CoInitialize(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoInitialize\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoInitialize\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10491,7 +10491,7 @@ HRESULT __stdcall Mine_CoInitializeEx(LPVOID a0,
         rv = Real_CoInitializeEx(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoInitializeEx\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoInitializeEx\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10512,7 +10512,7 @@ HRESULT __stdcall Mine_CoInitializeSecurity(PSECURITY_DESCRIPTOR a0,
         rv = Real_CoInitializeSecurity(a0, a1, a2, a3, a4, a5, a6, a7, a8);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoInitializeSecurity\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoInitializeSecurity\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10525,7 +10525,7 @@ BOOL __stdcall Mine_CoIsHandlerConnected(LPUNKNOWN a0)
         rv = Real_CoIsHandlerConnected(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoIsHandlerConnected\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoIsHandlerConnected\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10538,7 +10538,7 @@ BOOL __stdcall Mine_CoIsOle1Class(CONST IID& a0)
         rv = Real_CoIsOle1Class(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoIsOle1Class\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoIsOle1Class\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10552,7 +10552,7 @@ HINSTANCE __stdcall Mine_CoLoadLibrary(LPOLESTR a0,
         rv = Real_CoLoadLibrary(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoLoadLibrary\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoLoadLibrary\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10567,7 +10567,7 @@ HRESULT __stdcall Mine_CoLockObjectExternal(LPUNKNOWN a0,
         rv = Real_CoLockObjectExternal(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoLockObjectExternal\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoLockObjectExternal\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10581,7 +10581,7 @@ HRESULT __stdcall Mine_CoMarshalHresult(LPSTREAM a0,
         rv = Real_CoMarshalHresult(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoMarshalHresult\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoMarshalHresult\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10596,7 +10596,7 @@ HRESULT __stdcall Mine_CoMarshalInterThreadInterfaceInStream(CONST IID& a0,
         rv = Real_CoMarshalInterThreadInterfaceInStream(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoMarshalInterThreadInterfaceInStream\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoMarshalInterThreadInterfaceInStream\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10614,7 +10614,7 @@ HRESULT __stdcall Mine_CoMarshalInterface(LPSTREAM a0,
         rv = Real_CoMarshalInterface(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoMarshalInterface\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoMarshalInterface\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10628,7 +10628,7 @@ HRESULT __stdcall Mine_CoQueryAuthenticationServices(DWORD* a0,
         rv = Real_CoQueryAuthenticationServices(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoQueryAuthenticationServices\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoQueryAuthenticationServices\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10647,7 +10647,7 @@ HRESULT __stdcall Mine_CoQueryClientBlanket(DWORD* a0,
         rv = Real_CoQueryClientBlanket(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoQueryClientBlanket\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoQueryClientBlanket\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10667,7 +10667,7 @@ HRESULT __stdcall Mine_CoQueryProxyBlanket(IUnknown* a0,
         rv = Real_CoQueryProxyBlanket(a0, a1, a2, a3, a4, a5, a6, a7);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoQueryProxyBlanket\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoQueryProxyBlanket\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10681,7 +10681,7 @@ HRESULT __stdcall Mine_CoRegisterChannelHook(CONST GUID& a0,
         rv = Real_CoRegisterChannelHook(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoRegisterChannelHook\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoRegisterChannelHook\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10698,7 +10698,7 @@ HRESULT __stdcall Mine_CoRegisterClassObject(CONST IID& a0,
         rv = Real_CoRegisterClassObject(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoRegisterClassObject\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoRegisterClassObject\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10711,7 +10711,7 @@ HRESULT __stdcall Mine_CoRegisterMallocSpy(IMallocSpy* a0)
         rv = Real_CoRegisterMallocSpy(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoRegisterMallocSpy\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoRegisterMallocSpy\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10725,7 +10725,7 @@ HRESULT __stdcall Mine_CoRegisterMessageFilter(LPMESSAGEFILTER a0,
         rv = Real_CoRegisterMessageFilter(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoRegisterMessageFilter\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoRegisterMessageFilter\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10739,7 +10739,7 @@ HRESULT __stdcall Mine_CoRegisterPSClsid(CONST IID& a0,
         rv = Real_CoRegisterPSClsid(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoRegisterPSClsid\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoRegisterPSClsid\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10752,7 +10752,7 @@ HRESULT __stdcall Mine_CoRegisterSurrogate(LPSURROGATE a0)
         rv = Real_CoRegisterSurrogate(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoRegisterSurrogate\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoRegisterSurrogate\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10765,7 +10765,7 @@ HRESULT __stdcall Mine_CoReleaseMarshalData(LPSTREAM a0)
         rv = Real_CoReleaseMarshalData(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoReleaseMarshalData\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoReleaseMarshalData\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10778,7 +10778,7 @@ ULONG __stdcall Mine_CoReleaseServerProcess(void)
         rv = Real_CoReleaseServerProcess();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoReleaseServerProcess\", \"fnc_args\": [], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoReleaseServerProcess\", \"fnc_args\": [], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10791,7 +10791,7 @@ HRESULT __stdcall Mine_CoResumeClassObjects(void)
         rv = Real_CoResumeClassObjects();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoResumeClassObjects\", \"fnc_args\": [], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoResumeClassObjects\", \"fnc_args\": [], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10804,7 +10804,7 @@ HRESULT __stdcall Mine_CoRevertToSelf(void)
         rv = Real_CoRevertToSelf();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoRevertToSelf\", \"fnc_args\": [], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoRevertToSelf\", \"fnc_args\": [], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10817,7 +10817,7 @@ HRESULT __stdcall Mine_CoRevokeClassObject(DWORD a0)
         rv = Real_CoRevokeClassObject(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoRevokeClassObject\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoRevokeClassObject\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10830,7 +10830,7 @@ HRESULT __stdcall Mine_CoRevokeMallocSpy(void)
         rv = Real_CoRevokeMallocSpy();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoRevokeMallocSpy\", \"fnc_args\": [], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoRevokeMallocSpy\", \"fnc_args\": [], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10850,7 +10850,7 @@ HRESULT __stdcall Mine_CoSetProxyBlanket(IUnknown* a0,
         rv = Real_CoSetProxyBlanket(a0, a1, a2, a3, a4, a5, a6, a7);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoSetProxyBlanket\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoSetProxyBlanket\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10863,7 +10863,7 @@ HRESULT __stdcall Mine_CoSuspendClassObjects(void)
         rv = Real_CoSuspendClassObjects();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoSuspendClassObjects\", \"fnc_args\": [], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoSuspendClassObjects\", \"fnc_args\": [], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10877,7 +10877,7 @@ HRESULT __stdcall Mine_CoSwitchCallContext(IUnknown* a0,
         rv = Real_CoSwitchCallContext(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoSwitchCallContext\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoSwitchCallContext\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10890,7 +10890,7 @@ LPVOID __stdcall Mine_CoTaskMemAlloc(SIZE_T a0)
         rv = Real_CoTaskMemAlloc(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoTaskMemAlloc\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoTaskMemAlloc\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10902,7 +10902,7 @@ void __stdcall Mine_CoTaskMemFree(LPVOID a0)
         Real_CoTaskMemFree(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoTaskMemFree\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"},\n", a0, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoTaskMemFree\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"}\n", a0, _ReturnAddress());
     };
 }
 
@@ -10915,7 +10915,7 @@ LPVOID __stdcall Mine_CoTaskMemRealloc(LPVOID a0,
         rv = Real_CoTaskMemRealloc(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoTaskMemRealloc\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoTaskMemRealloc\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10929,7 +10929,7 @@ HRESULT __stdcall Mine_CoTreatAsClass(CONST IID& a0,
         rv = Real_CoTreatAsClass(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoTreatAsClass\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoTreatAsClass\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10941,7 +10941,7 @@ void __stdcall Mine_CoUninitialize(void)
         Real_CoUninitialize();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoUninitialize\", \"fnc_args\": [], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"},\n", _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoUninitialize\", \"fnc_args\": [], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"}\n", _ReturnAddress());
     };
 }
 
@@ -10954,7 +10954,7 @@ HRESULT __stdcall Mine_CoUnmarshalHresult(LPSTREAM a0,
         rv = Real_CoUnmarshalHresult(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoUnmarshalHresult\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoUnmarshalHresult\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10969,7 +10969,7 @@ HRESULT __stdcall Mine_CoUnmarshalInterface(LPSTREAM a0,
         rv = Real_CoUnmarshalInterface(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CoUnmarshalInterface\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CoUnmarshalInterface\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -10984,7 +10984,7 @@ BOOL __stdcall Mine_ColorMatchToTarget(HDC a0,
         rv = Real_ColorMatchToTarget(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ColorMatchToTarget\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ColorMatchToTarget\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11000,7 +11000,7 @@ int __stdcall Mine_CombineRgn(HRGN a0,
         rv = Real_CombineRgn(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CombineRgn\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CombineRgn\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11015,7 +11015,7 @@ BOOL __stdcall Mine_CombineTransform(XFORM* a0,
         rv = Real_CombineTransform(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CombineTransform\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CombineTransform\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11030,7 +11030,7 @@ BOOL __stdcall Mine_CommConfigDialogA(LPCSTR a0,
         rv = Real_CommConfigDialogA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CommConfigDialogA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CommConfigDialogA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11045,7 +11045,7 @@ BOOL __stdcall Mine_CommConfigDialogW(LPCWSTR a0,
         rv = Real_CommConfigDialogW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CommConfigDialogW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CommConfigDialogW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11059,7 +11059,7 @@ LONG __stdcall Mine_CompareFileTime(FILETIME* a0,
         rv = Real_CompareFileTime(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CompareFileTime\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CompareFileTime\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11077,7 +11077,7 @@ int __stdcall Mine_CompareStringA(LCID a0,
         rv = Real_CompareStringA(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CompareStringA\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\", \"%p\", \"%hs\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, escapeStr(a2), a3, escapeStr(a4), a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CompareStringA\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\", \"%p\", \"%hs\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, escapeStr(a2), a3, escapeStr(a4), a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11095,7 +11095,7 @@ int __stdcall Mine_CompareStringW(LCID a0,
         rv = Real_CompareStringW(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CompareStringW\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\", \"%p\", \"%hs\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, escapeStr(a2), a3, escapeStr(a4), a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CompareStringW\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\", \"%p\", \"%hs\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, escapeStr(a2), a3, escapeStr(a4), a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11109,7 +11109,7 @@ BOOL __stdcall Mine_ConnectNamedPipe(HANDLE a0,
         rv = Real_ConnectNamedPipe(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ConnectNamedPipe\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ConnectNamedPipe\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11125,7 +11125,7 @@ BOOL __stdcall Mine_ContinueDebugEvent(DWORD a0,
         rv = Real_ContinueDebugEvent(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ContinueDebugEvent\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ContinueDebugEvent\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11139,7 +11139,7 @@ LCID __stdcall Mine_ConvertDefaultLocale(LCID a0)
         rv = Real_ConvertDefaultLocale(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ConvertDefaultLocale\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ConvertDefaultLocale\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11152,7 +11152,7 @@ LPVOID __stdcall Mine_ConvertThreadToFiber(LPVOID a0)
         rv = Real_ConvertThreadToFiber(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ConvertThreadToFiber\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ConvertThreadToFiber\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11167,7 +11167,7 @@ int __stdcall Mine_CopyAcceleratorTableA(HACCEL a0,
         rv = Real_CopyAcceleratorTableA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CopyAcceleratorTableA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CopyAcceleratorTableA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11182,7 +11182,7 @@ int __stdcall Mine_CopyAcceleratorTableW(HACCEL a0,
         rv = Real_CopyAcceleratorTableW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CopyAcceleratorTableW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CopyAcceleratorTableW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11196,7 +11196,7 @@ HENHMETAFILE __stdcall Mine_CopyEnhMetaFileA(HENHMETAFILE a0,
         rv = Real_CopyEnhMetaFileA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CopyEnhMetaFileA\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CopyEnhMetaFileA\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11210,7 +11210,7 @@ HENHMETAFILE __stdcall Mine_CopyEnhMetaFileW(HENHMETAFILE a0,
         rv = Real_CopyEnhMetaFileW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CopyEnhMetaFileW\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CopyEnhMetaFileW\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11225,7 +11225,7 @@ BOOL __stdcall Mine_CopyFileA(LPCSTR a0,
         rv = Real_CopyFileA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CopyFileA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CopyFileA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11243,7 +11243,7 @@ BOOL __stdcall Mine_CopyFileExA(LPCSTR a0,
         rv = Real_CopyFileExA(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CopyFileExA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CopyFileExA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11261,7 +11261,7 @@ BOOL __stdcall Mine_CopyFileExW(LPCWSTR a0,
         rv = Real_CopyFileExW(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CopyFileExW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CopyFileExW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11276,7 +11276,7 @@ BOOL __stdcall Mine_CopyFileW(LPCWSTR a0,
         rv = Real_CopyFileW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CopyFileW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CopyFileW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11289,7 +11289,7 @@ HICON __stdcall Mine_CopyIcon(HICON a0)
         rv = Real_CopyIcon(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CopyIcon\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CopyIcon\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11306,7 +11306,7 @@ HANDLE __stdcall Mine_CopyImage(HANDLE a0,
         rv = Real_CopyImage(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CopyImage\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CopyImage\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11320,7 +11320,7 @@ HMETAFILE __stdcall Mine_CopyMetaFileA(HMETAFILE a0,
         rv = Real_CopyMetaFileA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CopyMetaFileA\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CopyMetaFileA\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11334,7 +11334,7 @@ HMETAFILE __stdcall Mine_CopyMetaFileW(HMETAFILE a0,
         rv = Real_CopyMetaFileW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CopyMetaFileW\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CopyMetaFileW\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11348,7 +11348,7 @@ BOOL __stdcall Mine_CopyRect(LPRECT a0,
         rv = Real_CopyRect(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CopyRect\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CopyRect\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11361,7 +11361,7 @@ int __stdcall Mine_CountClipboardFormats(void)
         rv = Real_CountClipboardFormats();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CountClipboardFormats\", \"fnc_args\": [], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CountClipboardFormats\", \"fnc_args\": [], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11375,7 +11375,7 @@ HACCEL __stdcall Mine_CreateAcceleratorTableA(ACCEL* a0,
         rv = Real_CreateAcceleratorTableA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateAcceleratorTableA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateAcceleratorTableA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11389,7 +11389,7 @@ HACCEL __stdcall Mine_CreateAcceleratorTableW(ACCEL* a0,
         rv = Real_CreateAcceleratorTableW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateAcceleratorTableW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateAcceleratorTableW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11402,7 +11402,7 @@ HRESULT __stdcall Mine_CreateAntiMoniker(IMoniker** a0)
         rv = Real_CreateAntiMoniker(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateAntiMoniker\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateAntiMoniker\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11416,7 +11416,7 @@ HRESULT __stdcall Mine_CreateBindCtx(DWORD a0,
         rv = Real_CreateBindCtx(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateBindCtx\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateBindCtx\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11433,7 +11433,7 @@ HBITMAP __stdcall Mine_CreateBitmap(int a0,
         rv = Real_CreateBitmap(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateBitmap\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateBitmap\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11446,7 +11446,7 @@ HBITMAP __stdcall Mine_CreateBitmapIndirect(BITMAP* a0)
         rv = Real_CreateBitmapIndirect(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateBitmapIndirect\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateBitmapIndirect\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11459,7 +11459,7 @@ HBRUSH __stdcall Mine_CreateBrushIndirect(LOGBRUSH* a0)
         rv = Real_CreateBrushIndirect(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateBrushIndirect\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateBrushIndirect\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11475,7 +11475,7 @@ BOOL __stdcall Mine_CreateCaret(HWND a0,
         rv = Real_CreateCaret(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateCaret\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateCaret\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11489,7 +11489,7 @@ HRESULT __stdcall Mine_CreateClassMoniker(CONST IID& a0,
         rv = Real_CreateClassMoniker(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateClassMoniker\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateClassMoniker\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11502,7 +11502,7 @@ HCOLORSPACE __stdcall Mine_CreateColorSpaceA(LOGCOLORSPACEA* a0)
         rv = Real_CreateColorSpaceA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateColorSpaceA\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateColorSpaceA\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11515,7 +11515,7 @@ HCOLORSPACE __stdcall Mine_CreateColorSpaceW(LOGCOLORSPACEW* a0)
         rv = Real_CreateColorSpaceW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateColorSpaceW\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateColorSpaceW\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11530,7 +11530,7 @@ HBITMAP __stdcall Mine_CreateCompatibleBitmap(HDC a0,
         rv = Real_CreateCompatibleBitmap(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateCompatibleBitmap\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateCompatibleBitmap\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11543,7 +11543,7 @@ HDC __stdcall Mine_CreateCompatibleDC(HDC a0)
         rv = Real_CreateCompatibleDC(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateCompatibleDC\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateCompatibleDC\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11560,7 +11560,7 @@ HANDLE __stdcall Mine_CreateConsoleScreenBuffer(DWORD a0,
         rv = Real_CreateConsoleScreenBuffer(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateConsoleScreenBuffer\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateConsoleScreenBuffer\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11579,7 +11579,7 @@ HCURSOR __stdcall Mine_CreateCursor(HINSTANCE a0,
         rv = Real_CreateCursor(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateCursor\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateCursor\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11595,7 +11595,7 @@ HDC __stdcall Mine_CreateDCA(LPCSTR a0,
         rv = Real_CreateDCA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateDCA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), escapeStr(a2), a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateDCA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), escapeStr(a2), a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11611,7 +11611,7 @@ HDC __stdcall Mine_CreateDCW(LPCWSTR a0,
         rv = Real_CreateDCW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateDCW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), escapeStr(a2), a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateDCW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), escapeStr(a2), a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11625,7 +11625,7 @@ HBRUSH __stdcall Mine_CreateDIBPatternBrush(HGLOBAL a0,
         rv = Real_CreateDIBPatternBrush(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateDIBPatternBrush\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateDIBPatternBrush\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11639,7 +11639,7 @@ HBRUSH __stdcall Mine_CreateDIBPatternBrushPt(void* a0,
         rv = Real_CreateDIBPatternBrushPt(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateDIBPatternBrushPt\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateDIBPatternBrushPt\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11657,7 +11657,7 @@ HBITMAP __stdcall Mine_CreateDIBSection(HDC a0,
         rv = Real_CreateDIBSection(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateDIBSection\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateDIBSection\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11675,7 +11675,7 @@ HBITMAP __stdcall Mine_CreateDIBitmap(HDC a0,
         rv = Real_CreateDIBitmap(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateDIBitmap\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateDIBitmap\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11688,7 +11688,7 @@ HRESULT __stdcall Mine_CreateDataAdviseHolder(LPDATAADVISEHOLDER* a0)
         rv = Real_CreateDataAdviseHolder(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateDataAdviseHolder\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateDataAdviseHolder\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11704,7 +11704,7 @@ HRESULT __stdcall Mine_CreateDataCache(LPUNKNOWN a0,
         rv = Real_CreateDataCache(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateDataCache\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateDataCache\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11731,7 +11731,7 @@ HDESK __stdcall Mine_CreateDesktopA(LPCSTR a0,
         rv = Real_CreateDesktopA(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateDesktopA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateDesktopA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11758,7 +11758,7 @@ HDESK __stdcall Mine_CreateDesktopW(LPCWSTR a0, // Windows 2000 and newer; NT4?
         rv = Real_CreateDesktopW(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateDesktopW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateDesktopW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11775,7 +11775,7 @@ HWND __stdcall Mine_CreateDialogIndirectParamA(HINSTANCE a0,
         rv = Real_CreateDialogIndirectParamA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateDialogIndirectParamA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateDialogIndirectParamA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11792,7 +11792,7 @@ HWND __stdcall Mine_CreateDialogIndirectParamW(HINSTANCE a0,
         rv = Real_CreateDialogIndirectParamW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateDialogIndirectParamW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateDialogIndirectParamW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11809,7 +11809,7 @@ HWND __stdcall Mine_CreateDialogParamA(HINSTANCE a0,
         rv = Real_CreateDialogParamA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateDialogParamA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateDialogParamA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11826,7 +11826,7 @@ HWND __stdcall Mine_CreateDialogParamW(HINSTANCE a0,
         rv = Real_CreateDialogParamW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateDialogParamW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateDialogParamW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11840,7 +11840,7 @@ BOOL __stdcall Mine_CreateDirectoryA(LPCSTR a0,
         rv = Real_CreateDirectoryA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateDirectoryA\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateDirectoryA\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11855,7 +11855,7 @@ BOOL __stdcall Mine_CreateDirectoryExA(LPCSTR a0,
         rv = Real_CreateDirectoryExA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateDirectoryExA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateDirectoryExA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11870,7 +11870,7 @@ BOOL __stdcall Mine_CreateDirectoryExW(LPCWSTR a0,
         rv = Real_CreateDirectoryExW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateDirectoryExW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateDirectoryExW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11884,7 +11884,7 @@ BOOL __stdcall Mine_CreateDirectoryW(LPCWSTR a0,
         rv = Real_CreateDirectoryW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateDirectoryW\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateDirectoryW\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11899,7 +11899,7 @@ HBITMAP __stdcall Mine_CreateDiscardableBitmap(HDC a0,
         rv = Real_CreateDiscardableBitmap(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateDiscardableBitmap\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateDiscardableBitmap\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11915,7 +11915,7 @@ HRGN __stdcall Mine_CreateEllipticRgn(int a0,
         rv = Real_CreateEllipticRgn(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateEllipticRgn\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateEllipticRgn\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11928,7 +11928,7 @@ HRGN __stdcall Mine_CreateEllipticRgnIndirect(RECT* a0)
         rv = Real_CreateEllipticRgnIndirect(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateEllipticRgnIndirect\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateEllipticRgnIndirect\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11944,7 +11944,7 @@ HDC __stdcall Mine_CreateEnhMetaFileA(HDC a0,
         rv = Real_CreateEnhMetaFileA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateEnhMetaFileA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, escapeStr(a3), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateEnhMetaFileA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, escapeStr(a3), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11960,7 +11960,7 @@ HDC __stdcall Mine_CreateEnhMetaFileW(HDC a0,
         rv = Real_CreateEnhMetaFileW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateEnhMetaFileW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, escapeStr(a3), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateEnhMetaFileW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, escapeStr(a3), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11976,7 +11976,7 @@ HANDLE __stdcall Mine_CreateEventA(LPSECURITY_ATTRIBUTES a0,
         rv = Real_CreateEventA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateEventA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, escapeStr(a3), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateEventA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, escapeStr(a3), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -11992,7 +11992,7 @@ HANDLE __stdcall Mine_CreateEventW(LPSECURITY_ATTRIBUTES a0,
         rv = Real_CreateEventW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateEventW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, escapeStr(a3), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateEventW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, escapeStr(a3), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12007,7 +12007,7 @@ LPVOID __stdcall Mine_CreateFiber(ULONG_PTR a0,
         rv = Real_CreateFiber(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateFiber\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateFiber\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12026,7 +12026,7 @@ HANDLE __stdcall Mine_CreateFileA(LPCSTR a0,
         rv = Real_CreateFileA(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateFileA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateFileA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12044,7 +12044,7 @@ HANDLE __stdcall Mine_CreateFileMappingA(HANDLE a0,
         rv = Real_CreateFileMappingA(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateFileMappingA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, escapeStr(a5), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateFileMappingA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, escapeStr(a5), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12062,7 +12062,7 @@ HANDLE __stdcall Mine_CreateFileMappingW(HANDLE a0,
         rv = Real_CreateFileMappingW(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateFileMappingW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, escapeStr(a5), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateFileMappingW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, escapeStr(a5), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12076,7 +12076,7 @@ HRESULT __stdcall Mine_CreateFileMoniker(LPCOLESTR a0,
         rv = Real_CreateFileMoniker(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateFileMoniker\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateFileMoniker\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12095,7 +12095,7 @@ HANDLE __stdcall Mine_CreateFileW(LPCWSTR a0,
         rv = Real_CreateFileW(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateFileW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateFileW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12121,7 +12121,7 @@ HFONT __stdcall Mine_CreateFontA(int a0,
         rv = Real_CreateFontA(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateFontA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, escapeStr(a13), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateFontA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, escapeStr(a13), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12134,7 +12134,7 @@ HFONT __stdcall Mine_CreateFontIndirectA(LOGFONTA* a0)
         rv = Real_CreateFontIndirectA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateFontIndirectA\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateFontIndirectA\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12147,7 +12147,7 @@ HFONT __stdcall Mine_CreateFontIndirectW(LOGFONTW* a0)
         rv = Real_CreateFontIndirectW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateFontIndirectW\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateFontIndirectW\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12173,7 +12173,7 @@ HFONT __stdcall Mine_CreateFontW(int a0,
         rv = Real_CreateFontW(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateFontW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, escapeStr(a13), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateFontW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, escapeStr(a13), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12188,7 +12188,7 @@ HRESULT __stdcall Mine_CreateGenericComposite(IMoniker* a0,
         rv = Real_CreateGenericComposite(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateGenericComposite\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateGenericComposite\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12201,7 +12201,7 @@ HPALETTE __stdcall Mine_CreateHalftonePalette(HDC a0)
         rv = Real_CreateHalftonePalette(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateHalftonePalette\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateHalftonePalette\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12215,7 +12215,7 @@ HBRUSH __stdcall Mine_CreateHatchBrush(int a0,
         rv = Real_CreateHatchBrush(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateHatchBrush\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateHatchBrush\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12231,7 +12231,7 @@ HDC __stdcall Mine_CreateICA(LPCSTR a0,
         rv = Real_CreateICA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateICA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), escapeStr(a2), a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateICA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), escapeStr(a2), a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12247,7 +12247,7 @@ HDC __stdcall Mine_CreateICW(LPCWSTR a0,
         rv = Real_CreateICW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateICW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), escapeStr(a2), a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateICW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), escapeStr(a2), a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12262,7 +12262,7 @@ HRESULT __stdcall Mine_CreateILockBytesOnHGlobal(HGLOBAL a0,
         rv = Real_CreateILockBytesOnHGlobal(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateILockBytesOnHGlobal\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateILockBytesOnHGlobal\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12281,7 +12281,7 @@ HICON __stdcall Mine_CreateIcon(HINSTANCE a0,
         rv = Real_CreateIcon(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateIcon\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateIcon\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12297,7 +12297,7 @@ HICON __stdcall Mine_CreateIconFromResource(PBYTE a0,
         rv = Real_CreateIconFromResource(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateIconFromResource\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateIconFromResource\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12316,7 +12316,7 @@ HICON __stdcall Mine_CreateIconFromResourceEx(PBYTE a0,
         rv = Real_CreateIconFromResourceEx(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateIconFromResourceEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateIconFromResourceEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12329,7 +12329,7 @@ HICON __stdcall Mine_CreateIconIndirect(PICONINFO a0)
         rv = Real_CreateIconIndirect(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateIconIndirect\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateIconIndirect\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12345,7 +12345,7 @@ HANDLE __stdcall Mine_CreateIoCompletionPort(HANDLE a0,
         rv = Real_CreateIoCompletionPort(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateIoCompletionPort\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateIoCompletionPort\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12360,7 +12360,7 @@ HRESULT __stdcall Mine_CreateItemMoniker(LPCOLESTR a0,
         rv = Real_CreateItemMoniker(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateItemMoniker\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateItemMoniker\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12395,7 +12395,7 @@ HWND __stdcall Mine_CreateMDIWindowA(LPCSTR a0, // Windows 2000 and newer; NT4?
         rv = Real_CreateMDIWindowA(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateMDIWindowA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), a2, a3, a4, a5, a6, a7, a8, a9, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateMDIWindowA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), a2, a3, a4, a5, a6, a7, a8, a9, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12430,7 +12430,7 @@ HWND __stdcall Mine_CreateMDIWindowW(LPCWSTR a0,
         rv = Real_CreateMDIWindowW(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateMDIWindowW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), a2, a3, a4, a5, a6, a7, a8, a9, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateMDIWindowW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), a2, a3, a4, a5, a6, a7, a8, a9, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12446,7 +12446,7 @@ HANDLE __stdcall Mine_CreateMailslotA(LPCSTR a0,
         rv = Real_CreateMailslotA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateMailslotA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateMailslotA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12462,7 +12462,7 @@ HANDLE __stdcall Mine_CreateMailslotW(LPCWSTR a0,
         rv = Real_CreateMailslotW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateMailslotW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateMailslotW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12475,7 +12475,7 @@ HMENU __stdcall Mine_CreateMenu(void)
         rv = Real_CreateMenu();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateMenu\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateMenu\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12488,7 +12488,7 @@ HDC __stdcall Mine_CreateMetaFileA(LPCSTR a0)
         rv = Real_CreateMetaFileA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateMetaFileA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateMetaFileA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12501,7 +12501,7 @@ HDC __stdcall Mine_CreateMetaFileW(LPCWSTR a0)
         rv = Real_CreateMetaFileW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateMetaFileW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateMetaFileW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12516,7 +12516,7 @@ HANDLE __stdcall Mine_CreateMutexA(LPSECURITY_ATTRIBUTES a0,
         rv = Real_CreateMutexA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateMutexA\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateMutexA\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12531,7 +12531,7 @@ HANDLE __stdcall Mine_CreateMutexW(LPSECURITY_ATTRIBUTES a0,
         rv = Real_CreateMutexW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateMutexW\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateMutexW\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12551,7 +12551,7 @@ HANDLE __stdcall Mine_CreateNamedPipeA(LPCSTR a0,
         rv = Real_CreateNamedPipeA(a0, a1, a2, a3, a4, a5, a6, a7);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateNamedPipeA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, a3, a4, a5, a6, a7, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateNamedPipeA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, a3, a4, a5, a6, a7, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12571,7 +12571,7 @@ HANDLE __stdcall Mine_CreateNamedPipeW(LPCWSTR a0,
         rv = Real_CreateNamedPipeW(a0, a1, a2, a3, a4, a5, a6, a7);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateNamedPipeW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, a3, a4, a5, a6, a7, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateNamedPipeW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, a3, a4, a5, a6, a7, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12584,7 +12584,7 @@ HRESULT __stdcall Mine_CreateOleAdviseHolder(LPOLEADVISEHOLDER* a0)
         rv = Real_CreateOleAdviseHolder(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateOleAdviseHolder\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateOleAdviseHolder\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12597,7 +12597,7 @@ HPALETTE __stdcall Mine_CreatePalette(LOGPALETTE* a0)
         rv = Real_CreatePalette(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreatePalette\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreatePalette\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12610,7 +12610,7 @@ HBRUSH __stdcall Mine_CreatePatternBrush(HBITMAP a0)
         rv = Real_CreatePatternBrush(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreatePatternBrush\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreatePatternBrush\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12625,7 +12625,7 @@ HPEN __stdcall Mine_CreatePen(int a0,
         rv = Real_CreatePen(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreatePen\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreatePen\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12638,7 +12638,7 @@ HPEN __stdcall Mine_CreatePenIndirect(LOGPEN* a0)
         rv = Real_CreatePenIndirect(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreatePenIndirect\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreatePenIndirect\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12654,7 +12654,7 @@ BOOL __stdcall Mine_CreatePipe(PHANDLE a0,
         rv = Real_CreatePipe(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreatePipe\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreatePipe\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12668,7 +12668,7 @@ HRESULT __stdcall Mine_CreatePointerMoniker(LPUNKNOWN a0,
         rv = Real_CreatePointerMoniker(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreatePointerMoniker\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreatePointerMoniker\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12684,7 +12684,7 @@ HRGN __stdcall Mine_CreatePolyPolygonRgn(POINT* a0,
         rv = Real_CreatePolyPolygonRgn(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreatePolyPolygonRgn\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreatePolyPolygonRgn\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12699,7 +12699,7 @@ HRGN __stdcall Mine_CreatePolygonRgn(POINT* a0,
         rv = Real_CreatePolygonRgn(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreatePolygonRgn\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreatePolygonRgn\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12712,7 +12712,7 @@ HMENU __stdcall Mine_CreatePopupMenu(void)
         rv = Real_CreatePopupMenu();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreatePopupMenu\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreatePopupMenu\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12751,7 +12751,7 @@ BOOL __stdcall Mine_CreateProcessA(LPCSTR lpApplicationName,
             Real_CreateProcessA);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateProcessA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(lpApplicationName), escapeStr(lpCommandLine), lpProcessAttributes, lpThreadAttributes, bInheritHandles, dwCreationFlags, lpEnvironment, escapeStr(lpCurrentDirectory), lpStartupInfo, lpProcessInformation, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateProcessA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(lpApplicationName), escapeStr(lpCommandLine), lpProcessAttributes, lpThreadAttributes, bInheritHandles, dwCreationFlags, lpEnvironment, escapeStr(lpCurrentDirectory), lpStartupInfo, lpProcessInformation, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12790,7 +12790,7 @@ BOOL __stdcall Mine_CreateProcessW(LPCWSTR lpApplicationName,
             Real_CreateProcessW);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateProcessW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(lpApplicationName), escapeStr(lpCommandLine), lpProcessAttributes, lpThreadAttributes, bInheritHandles, dwCreationFlags, lpEnvironment, escapeStr(lpCurrentDirectory), lpStartupInfo, lpProcessInformation, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateProcessW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(lpApplicationName), escapeStr(lpCommandLine), lpProcessAttributes, lpThreadAttributes, bInheritHandles, dwCreationFlags, lpEnvironment, escapeStr(lpCurrentDirectory), lpStartupInfo, lpProcessInformation, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12831,7 +12831,7 @@ BOOL __stdcall Mine_CreateProcessAsUserA(
             lpProcessInformation);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateProcessAsUserA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(lpApplicationName), escapeStr(lpCommandLine), lpProcessAttributes, lpThreadAttributes, bInheritHandles, dwCreationFlags, lpEnvironment, escapeStr(lpCurrentDirectory), lpStartupInfo, lpProcessInformation, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateProcessAsUserA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(lpApplicationName), escapeStr(lpCommandLine), lpProcessAttributes, lpThreadAttributes, bInheritHandles, dwCreationFlags, lpEnvironment, escapeStr(lpCurrentDirectory), lpStartupInfo, lpProcessInformation, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12872,7 +12872,7 @@ BOOL __stdcall Mine_CreateProcessAsUserW(
             lpProcessInformation);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateProcessAsUserW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(lpApplicationName), escapeStr(lpCommandLine), lpProcessAttributes, lpThreadAttributes, bInheritHandles, dwCreationFlags, lpEnvironment, escapeStr(lpCurrentDirectory), lpStartupInfo, lpProcessInformation, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateProcessAsUserW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(lpApplicationName), escapeStr(lpCommandLine), lpProcessAttributes, lpThreadAttributes, bInheritHandles, dwCreationFlags, lpEnvironment, escapeStr(lpCurrentDirectory), lpStartupInfo, lpProcessInformation, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12915,7 +12915,7 @@ BOOL WINAPI Mine_CreateProcessWithLogonW(
             lpProcessInfo);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateProcessWithLogonW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%hs\", \"%d\", \"%hs\", \"%hs\", \"%p\", \"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(lpUsername), escapeStr(lpDomain), escapeStr(lpPassword), dwLogonFlags, escapeStr(lpApplicationName), escapeStr(lpCommandLine), dwCreationFlags, lpEnvironment, escapeStr(lpCurrentDirectory), lpStartupInfo, lpProcessInfo, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateProcessWithLogonW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%hs\", \"%d\", \"%hs\", \"%hs\", \"%p\", \"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(lpUsername), escapeStr(lpDomain), escapeStr(lpPassword), dwLogonFlags, escapeStr(lpApplicationName), escapeStr(lpCommandLine), dwCreationFlags, lpEnvironment, escapeStr(lpCurrentDirectory), lpStartupInfo, lpProcessInfo, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12952,7 +12952,7 @@ BOOL WINAPI Mine_CreateProcessWithTokenW(
             lpProcessInfo);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateProcessWithTokenW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", escapeStr(lpApplicationName), escapeStr(lpCommandLine), dwCreationFlags, lpEnvironment, escapeStr(lpCurrentDirectory), lpStartupInfo, lpProcessInfo, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateProcessWithTokenW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", escapeStr(lpApplicationName), escapeStr(lpCommandLine), dwCreationFlags, lpEnvironment, escapeStr(lpCurrentDirectory), lpStartupInfo, lpProcessInfo, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12969,7 +12969,7 @@ HRGN __stdcall Mine_CreateRectRgn(int a0,
         rv = Real_CreateRectRgn(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateRectRgn\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateRectRgn\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -12982,7 +12982,7 @@ HRGN __stdcall Mine_CreateRectRgnIndirect(RECT* a0)
         rv = Real_CreateRectRgnIndirect(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateRectRgnIndirect\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateRectRgnIndirect\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13001,7 +13001,7 @@ HANDLE __stdcall Mine_CreateRemoteThread(HANDLE a0,
         rv = Real_CreateRemoteThread(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateRemoteThread\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateRemoteThread\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13019,7 +13019,7 @@ HRGN __stdcall Mine_CreateRoundRectRgn(int a0,
         rv = Real_CreateRoundRectRgn(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateRoundRectRgn\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateRoundRectRgn\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13035,7 +13035,7 @@ BOOL __stdcall Mine_CreateScalableFontResourceA(DWORD a0,
         rv = Real_CreateScalableFontResourceA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateScalableFontResourceA\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\", \"%hs\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), escapeStr(a2), escapeStr(a3), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateScalableFontResourceA\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\", \"%hs\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), escapeStr(a2), escapeStr(a3), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13051,7 +13051,7 @@ BOOL __stdcall Mine_CreateScalableFontResourceW(DWORD a0,
         rv = Real_CreateScalableFontResourceW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateScalableFontResourceW\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\", \"%hs\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), escapeStr(a2), escapeStr(a3), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateScalableFontResourceW\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\", \"%hs\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), escapeStr(a2), escapeStr(a3), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13067,7 +13067,7 @@ HANDLE __stdcall Mine_CreateSemaphoreA(LPSECURITY_ATTRIBUTES a0,
         rv = Real_CreateSemaphoreA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateSemaphoreA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, escapeStr(a3), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateSemaphoreA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, escapeStr(a3), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13083,7 +13083,7 @@ HANDLE __stdcall Mine_CreateSemaphoreW(LPSECURITY_ATTRIBUTES a0,
         rv = Real_CreateSemaphoreW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateSemaphoreW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, escapeStr(a3), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateSemaphoreW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, escapeStr(a3), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13096,7 +13096,7 @@ HBRUSH __stdcall Mine_CreateSolidBrush(COLORREF a0)
         rv = Real_CreateSolidBrush(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateSolidBrush\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateSolidBrush\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13112,7 +13112,7 @@ HRESULT __stdcall Mine_CreateStdProgressIndicator(HWND a0,
         rv = Real_CreateStdProgressIndicator(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateStdProgressIndicator\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateStdProgressIndicator\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13127,7 +13127,7 @@ HRESULT __stdcall Mine_CreateStreamOnHGlobal(HGLOBAL a0,
         rv = Real_CreateStreamOnHGlobal(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateStreamOnHGlobal\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateStreamOnHGlobal\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13143,7 +13143,7 @@ DWORD __stdcall Mine_CreateTapePartition(HANDLE a0,
         rv = Real_CreateTapePartition(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateTapePartition\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateTapePartition\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13161,7 +13161,7 @@ HANDLE __stdcall Mine_CreateThread(LPSECURITY_ATTRIBUTES a0,
         rv = Real_CreateThread(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateThread\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateThread\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13176,7 +13176,7 @@ HANDLE __stdcall Mine_CreateWaitableTimerA(LPSECURITY_ATTRIBUTES a0,
         rv = Real_CreateWaitableTimerA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateWaitableTimerA\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateWaitableTimerA\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13191,7 +13191,7 @@ HANDLE __stdcall Mine_CreateWaitableTimerW(LPSECURITY_ATTRIBUTES a0,
         rv = Real_CreateWaitableTimerW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateWaitableTimerW\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateWaitableTimerW\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13215,7 +13215,7 @@ HWND __stdcall Mine_CreateWindowExA(DWORD a0,
         rv = Real_CreateWindowExA(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateWindowExA\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), escapeStr(a2), a3, a4, a5, a6, a7, a8, a9, a10, a11, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateWindowExA\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), escapeStr(a2), a3, a4, a5, a6, a7, a8, a9, a10, a11, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13239,7 +13239,7 @@ HWND __stdcall Mine_CreateWindowExW(DWORD a0,
         rv = Real_CreateWindowExW(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateWindowExW\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), escapeStr(a2), a3, a4, a5, a6, a7, a8, a9, a10, a11, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateWindowExW\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), escapeStr(a2), a3, a4, a5, a6, a7, a8, a9, a10, a11, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13262,7 +13262,7 @@ HWINSTA __stdcall Mine_CreateWindowStationA(LPCSTR a0,
         rv = Real_CreateWindowStationA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateWindowStationA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateWindowStationA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13285,7 +13285,7 @@ HWINSTA __stdcall Mine_CreateWindowStationW(LPCWSTR a0,
         rv = Real_CreateWindowStationW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"CreateWindowStationW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"CreateWindowStationW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13300,7 +13300,7 @@ BOOL __stdcall Mine_DPtoLP(HDC a0,
         rv = Real_DPtoLP(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DPtoLP\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DPtoLP\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13315,7 +13315,7 @@ BOOL __stdcall Mine_DdeAbandonTransaction(DWORD a0,
         rv = Real_DdeAbandonTransaction(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DdeAbandonTransaction\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DdeAbandonTransaction\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13329,7 +13329,7 @@ LPBYTE __stdcall Mine_DdeAccessData(HDDEDATA a0,
         rv = Real_DdeAccessData(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DdeAccessData\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DdeAccessData\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13345,7 +13345,7 @@ HDDEDATA __stdcall Mine_DdeAddData(HDDEDATA a0,
         rv = Real_DdeAddData(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DdeAddData\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DdeAddData\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13365,7 +13365,7 @@ HDDEDATA __stdcall Mine_DdeClientTransaction(LPBYTE a0,
         rv = Real_DdeClientTransaction(a0, a1, a2, a3, a4, a5, a6, a7);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DdeClientTransaction\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DdeClientTransaction\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13379,7 +13379,7 @@ int __stdcall Mine_DdeCmpStringHandles(HSZ a0,
         rv = Real_DdeCmpStringHandles(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DdeCmpStringHandles\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DdeCmpStringHandles\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%x\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13395,7 +13395,7 @@ HCONV __stdcall Mine_DdeConnect(DWORD a0,
         rv = Real_DdeConnect(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DdeConnect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DdeConnect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13412,7 +13412,7 @@ HCONVLIST __stdcall Mine_DdeConnectList(DWORD a0,
         rv = Real_DdeConnectList(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DdeConnectList\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DdeConnectList\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13431,7 +13431,7 @@ HDDEDATA __stdcall Mine_DdeCreateDataHandle(DWORD a0,
         rv = Real_DdeCreateDataHandle(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DdeCreateDataHandle\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DdeCreateDataHandle\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13446,7 +13446,7 @@ HSZ __stdcall Mine_DdeCreateStringHandleA(DWORD a0,
         rv = Real_DdeCreateStringHandleA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DdeCreateStringHandleA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DdeCreateStringHandleA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13461,7 +13461,7 @@ HSZ __stdcall Mine_DdeCreateStringHandleW(DWORD a0,
         rv = Real_DdeCreateStringHandleW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DdeCreateStringHandleW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DdeCreateStringHandleW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13474,7 +13474,7 @@ BOOL __stdcall Mine_DdeDisconnect(HCONV a0)
         rv = Real_DdeDisconnect(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DdeDisconnect\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DdeDisconnect\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13487,7 +13487,7 @@ BOOL __stdcall Mine_DdeDisconnectList(HCONVLIST a0)
         rv = Real_DdeDisconnectList(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DdeDisconnectList\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DdeDisconnectList\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13502,7 +13502,7 @@ BOOL __stdcall Mine_DdeEnableCallback(DWORD a0,
         rv = Real_DdeEnableCallback(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DdeEnableCallback\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DdeEnableCallback\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13515,7 +13515,7 @@ BOOL __stdcall Mine_DdeFreeDataHandle(HDDEDATA a0)
         rv = Real_DdeFreeDataHandle(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DdeFreeDataHandle\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DdeFreeDataHandle\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13529,7 +13529,7 @@ BOOL __stdcall Mine_DdeFreeStringHandle(DWORD a0,
         rv = Real_DdeFreeStringHandle(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DdeFreeStringHandle\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DdeFreeStringHandle\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13545,7 +13545,7 @@ DWORD __stdcall Mine_DdeGetData(HDDEDATA a0,
         rv = Real_DdeGetData(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DdeGetData\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DdeGetData\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13558,7 +13558,7 @@ UINT __stdcall Mine_DdeGetLastError(DWORD a0)
         rv = Real_DdeGetLastError(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DdeGetLastError\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DdeGetLastError\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13571,7 +13571,7 @@ BOOL __stdcall Mine_DdeImpersonateClient(HCONV a0)
         rv = Real_DdeImpersonateClient(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DdeImpersonateClient\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DdeImpersonateClient\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13585,7 +13585,7 @@ BOOL __stdcall Mine_DdeKeepStringHandle(DWORD a0,
         rv = Real_DdeKeepStringHandle(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DdeKeepStringHandle\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DdeKeepStringHandle\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13601,7 +13601,7 @@ HDDEDATA __stdcall Mine_DdeNameService(DWORD a0,
         rv = Real_DdeNameService(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DdeNameService\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DdeNameService\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13616,7 +13616,7 @@ BOOL __stdcall Mine_DdePostAdvise(DWORD a0,
         rv = Real_DdePostAdvise(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DdePostAdvise\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DdePostAdvise\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13631,7 +13631,7 @@ UINT __stdcall Mine_DdeQueryConvInfo(HCONV a0,
         rv = Real_DdeQueryConvInfo(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DdeQueryConvInfo\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DdeQueryConvInfo\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13645,7 +13645,7 @@ HCONV __stdcall Mine_DdeQueryNextServer(HCONVLIST a0,
         rv = Real_DdeQueryNextServer(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DdeQueryNextServer\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DdeQueryNextServer\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13662,7 +13662,7 @@ DWORD __stdcall Mine_DdeQueryStringA(DWORD a0,
         rv = Real_DdeQueryStringA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DdeQueryStringA\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, escapeStr(a2), a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DdeQueryStringA\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, escapeStr(a2), a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13679,7 +13679,7 @@ DWORD __stdcall Mine_DdeQueryStringW(DWORD a0,
         rv = Real_DdeQueryStringW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DdeQueryStringW\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, escapeStr(a2), a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DdeQueryStringW\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, escapeStr(a2), a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13692,7 +13692,7 @@ HCONV __stdcall Mine_DdeReconnect(HCONV a0)
         rv = Real_DdeReconnect(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DdeReconnect\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DdeReconnect\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13707,7 +13707,7 @@ BOOL __stdcall Mine_DdeSetQualityOfService(HWND a0,
         rv = Real_DdeSetQualityOfService(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DdeSetQualityOfService\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DdeSetQualityOfService\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13722,7 +13722,7 @@ BOOL __stdcall Mine_DdeSetUserHandle(HCONV a0,
         rv = Real_DdeSetUserHandle(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DdeSetUserHandle\", \"fnc_args\": [\"%p\", \"%x\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DdeSetUserHandle\", \"fnc_args\": [\"%p\", \"%x\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13735,7 +13735,7 @@ BOOL __stdcall Mine_DdeUnaccessData(HDDEDATA a0)
         rv = Real_DdeUnaccessData(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DdeUnaccessData\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DdeUnaccessData\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13748,7 +13748,7 @@ BOOL __stdcall Mine_DdeUninitialize(DWORD a0)
         rv = Real_DdeUninitialize(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DdeUninitialize\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DdeUninitialize\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13761,7 +13761,7 @@ BOOL __stdcall Mine_DebugActiveProcess(DWORD a0)
         rv = Real_DebugActiveProcess(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DebugActiveProcess\", \"fnc_args\": [\"%d\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DebugActiveProcess\", \"fnc_args\": [\"%d\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13774,7 +13774,7 @@ BOOL __stdcall Mine_DebugActiveProcessStop(DWORD a0)
         rv = Real_DebugActiveProcess(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DebugActiveProcessStop\", \"fnc_args\": [\"%d\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DebugActiveProcessStop\", \"fnc_args\": [\"%d\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13786,7 +13786,7 @@ void __stdcall Mine_DebugBreak(void)
         Real_DebugBreak();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DebugBreak\", \"fnc_args\": [], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"},\n", _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DebugBreak\", \"fnc_args\": [], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"}\n", _ReturnAddress());
     };
 }
 
@@ -13801,7 +13801,7 @@ LRESULT __stdcall Mine_DefDlgProcA(HWND a0,
         rv = Real_DefDlgProcA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DefDlgProcA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DefDlgProcA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13817,7 +13817,7 @@ LRESULT __stdcall Mine_DefDlgProcW(HWND a0,
         rv = Real_DefDlgProcW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DefDlgProcW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DefDlgProcW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13834,7 +13834,7 @@ LRESULT __stdcall Mine_DefFrameProcA(HWND a0,
         rv = Real_DefFrameProcA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DefFrameProcA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DefFrameProcA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13851,7 +13851,7 @@ LRESULT __stdcall Mine_DefFrameProcW(HWND a0,
         rv = Real_DefFrameProcW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DefFrameProcW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DefFrameProcW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13867,7 +13867,7 @@ LRESULT __stdcall Mine_DefMDIChildProcA(HWND a0,
         rv = Real_DefMDIChildProcA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DefMDIChildProcA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DefMDIChildProcA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13883,7 +13883,7 @@ LRESULT __stdcall Mine_DefMDIChildProcW(HWND a0,
         rv = Real_DefMDIChildProcW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DefMDIChildProcW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DefMDIChildProcW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13899,7 +13899,7 @@ LRESULT __stdcall Mine_DefWindowProcA(HWND a0,
         rv = Real_DefWindowProcA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DefWindowProcA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DefWindowProcA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13915,7 +13915,7 @@ LRESULT __stdcall Mine_DefWindowProcW(HWND a0,
         rv = Real_DefWindowProcW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DefWindowProcW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DefWindowProcW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13935,7 +13935,7 @@ HDWP __stdcall Mine_DeferWindowPos(HDWP a0,
         rv = Real_DeferWindowPos(a0, a1, a2, a3, a4, a5, a6, a7);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DeferWindowPos\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DeferWindowPos\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13950,7 +13950,7 @@ BOOL __stdcall Mine_DefineDosDeviceA(DWORD a0,
         rv = Real_DefineDosDeviceA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DefineDosDeviceA\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), escapeStr(a2), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DefineDosDeviceA\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), escapeStr(a2), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13965,7 +13965,7 @@ BOOL __stdcall Mine_DefineDosDeviceW(DWORD a0,
         rv = Real_DefineDosDeviceW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DefineDosDeviceW\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), escapeStr(a2), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DefineDosDeviceW\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), escapeStr(a2), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13978,7 +13978,7 @@ ATOM __stdcall Mine_DeleteAtom(ATOM a0)
         rv = Real_DeleteAtom(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DeleteAtom\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DeleteAtom\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -13991,7 +13991,7 @@ BOOL __stdcall Mine_DeleteColorSpace(HCOLORSPACE a0)
         rv = Real_DeleteColorSpace(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DeleteColorSpace\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DeleteColorSpace\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14004,7 +14004,7 @@ BOOL __stdcall Mine_DeleteDC(HDC a0)
         rv = Real_DeleteDC(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DeleteDC\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DeleteDC\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14017,7 +14017,7 @@ BOOL __stdcall Mine_DeleteEnhMetaFile(HENHMETAFILE a0)
         rv = Real_DeleteEnhMetaFile(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DeleteEnhMetaFile\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DeleteEnhMetaFile\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14029,7 +14029,7 @@ void __stdcall Mine_DeleteFiber(LPVOID a0)
         Real_DeleteFiber(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DeleteFiber\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"},\n", a0, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DeleteFiber\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"}\n", a0, _ReturnAddress());
     };
 }
 
@@ -14041,7 +14041,7 @@ BOOL __stdcall Mine_DeleteFileA(LPCSTR a0)
         rv = Real_DeleteFileA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DeleteFileA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DeleteFileA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14054,7 +14054,7 @@ BOOL __stdcall Mine_DeleteFileW(LPCWSTR a0)
         rv = Real_DeleteFileW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DeleteFileW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DeleteFileW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14069,7 +14069,7 @@ BOOL __stdcall Mine_DeleteMenu(HMENU a0,
         rv = Real_DeleteMenu(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DeleteMenu\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DeleteMenu\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14082,7 +14082,7 @@ BOOL __stdcall Mine_DeleteMetaFile(HMETAFILE a0)
         rv = Real_DeleteMetaFile(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DeleteMetaFile\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DeleteMetaFile\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14095,7 +14095,7 @@ BOOL __stdcall Mine_DeleteObject(HGDIOBJ a0)
         rv = Real_DeleteObject(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DeleteObject\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DeleteObject\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14111,7 +14111,7 @@ int __stdcall Mine_DescribePixelFormat(HDC a0,
         rv = Real_DescribePixelFormat(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DescribePixelFormat\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DescribePixelFormat\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14124,7 +14124,7 @@ BOOL __stdcall Mine_DestroyAcceleratorTable(HACCEL a0)
         rv = Real_DestroyAcceleratorTable(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DestroyAcceleratorTable\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DestroyAcceleratorTable\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14137,7 +14137,7 @@ BOOL __stdcall Mine_DestroyCaret(void)
         rv = Real_DestroyCaret();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DestroyCaret\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DestroyCaret\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14150,7 +14150,7 @@ BOOL __stdcall Mine_DestroyCursor(HCURSOR a0)
         rv = Real_DestroyCursor(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DestroyCursor\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DestroyCursor\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14163,7 +14163,7 @@ BOOL __stdcall Mine_DestroyIcon(HICON a0)
         rv = Real_DestroyIcon(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DestroyIcon\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DestroyIcon\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14176,7 +14176,7 @@ BOOL __stdcall Mine_DestroyMenu(HMENU a0)
         rv = Real_DestroyMenu(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DestroyMenu\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DestroyMenu\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14189,7 +14189,7 @@ BOOL __stdcall Mine_DestroyWindow(HWND a0)
         rv = Real_DestroyWindow(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DestroyWindow\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DestroyWindow\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14209,7 +14209,7 @@ BOOL __stdcall Mine_DeviceIoControl(HANDLE a0,
         rv = Real_DeviceIoControl(a0, a1, a2, a3, a4, a5, a6, a7);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DeviceIoControl\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DeviceIoControl\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14226,7 +14226,7 @@ INT_PTR __stdcall Mine_DialogBoxIndirectParamA(HINSTANCE a0,
         rv = Real_DialogBoxIndirectParamA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DialogBoxIndirectParamA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DialogBoxIndirectParamA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14243,7 +14243,7 @@ INT_PTR __stdcall Mine_DialogBoxIndirectParamW(HINSTANCE a0,
         rv = Real_DialogBoxIndirectParamW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DialogBoxIndirectParamW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DialogBoxIndirectParamW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14260,7 +14260,7 @@ INT_PTR __stdcall Mine_DialogBoxParamA(HINSTANCE a0,
         rv = Real_DialogBoxParamA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DialogBoxParamA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DialogBoxParamA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14277,7 +14277,7 @@ INT_PTR __stdcall Mine_DialogBoxParamW(HINSTANCE a0,
         rv = Real_DialogBoxParamW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DialogBoxParamW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DialogBoxParamW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14290,7 +14290,7 @@ BOOL __stdcall Mine_DisableThreadLibraryCalls(HMODULE a0)
         rv = Real_DisableThreadLibraryCalls(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DisableThreadLibraryCalls\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DisableThreadLibraryCalls\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14303,7 +14303,7 @@ BOOL __stdcall Mine_DisconnectNamedPipe(HANDLE a0)
         rv = Real_DisconnectNamedPipe(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DisconnectNamedPipe\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DisconnectNamedPipe\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14316,7 +14316,7 @@ LRESULT __stdcall Mine_DispatchMessageA(MSG* a0)
         rv = Real_DispatchMessageA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DispatchMessageA\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DispatchMessageA\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14329,7 +14329,7 @@ LRESULT __stdcall Mine_DispatchMessageW(MSG* a0)
         rv = Real_DispatchMessageW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DispatchMessageW\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DispatchMessageW\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14346,7 +14346,7 @@ int __stdcall Mine_DlgDirListA(HWND a0,
         rv = Real_DlgDirListA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DlgDirListA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DlgDirListA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14363,7 +14363,7 @@ int __stdcall Mine_DlgDirListComboBoxA(HWND a0,
         rv = Real_DlgDirListComboBoxA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DlgDirListComboBoxA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DlgDirListComboBoxA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14380,7 +14380,7 @@ int __stdcall Mine_DlgDirListComboBoxW(HWND a0,
         rv = Real_DlgDirListComboBoxW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DlgDirListComboBoxW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DlgDirListComboBoxW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14397,7 +14397,7 @@ int __stdcall Mine_DlgDirListW(HWND a0,
         rv = Real_DlgDirListW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DlgDirListW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DlgDirListW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14413,7 +14413,7 @@ BOOL __stdcall Mine_DlgDirSelectComboBoxExA(HWND a0,
         rv = Real_DlgDirSelectComboBoxExA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DlgDirSelectComboBoxExA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DlgDirSelectComboBoxExA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14429,7 +14429,7 @@ BOOL __stdcall Mine_DlgDirSelectComboBoxExW(HWND a0,
         rv = Real_DlgDirSelectComboBoxExW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DlgDirSelectComboBoxExW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DlgDirSelectComboBoxExW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14445,7 +14445,7 @@ BOOL __stdcall Mine_DlgDirSelectExA(HWND a0,
         rv = Real_DlgDirSelectExA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DlgDirSelectExA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DlgDirSelectExA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14461,7 +14461,7 @@ BOOL __stdcall Mine_DlgDirSelectExW(HWND a0,
         rv = Real_DlgDirSelectExW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DlgDirSelectExW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DlgDirSelectExW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14477,7 +14477,7 @@ HRESULT __stdcall Mine_DoDragDrop(IDataObject* a0,
         rv = Real_DoDragDrop(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DoDragDrop\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DoDragDrop\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14492,7 +14492,7 @@ BOOL __stdcall Mine_DosDateTimeToFileTime(WORD a0,
         rv = Real_DosDateTimeToFileTime(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DosDateTimeToFileTime\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DosDateTimeToFileTime\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14506,7 +14506,7 @@ BOOL __stdcall Mine_DragDetect(HWND a0,
         rv = Real_DragDetect(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DragDetect\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DragDetect\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14523,7 +14523,7 @@ DWORD __stdcall Mine_DragObject(HWND a0,
         rv = Real_DragObject(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DragObject\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DragObject\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14539,7 +14539,7 @@ BOOL __stdcall Mine_DrawAnimatedRects(HWND a0,
         rv = Real_DrawAnimatedRects(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DrawAnimatedRects\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DrawAnimatedRects\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14555,7 +14555,7 @@ BOOL __stdcall Mine_DrawCaption(HWND a0,
         rv = Real_DrawCaption(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DrawCaption\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DrawCaption\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14571,7 +14571,7 @@ BOOL __stdcall Mine_DrawEdge(HDC a0,
         rv = Real_DrawEdge(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DrawEdge\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DrawEdge\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14587,7 +14587,7 @@ int __stdcall Mine_DrawEscape(HDC a0,
         rv = Real_DrawEscape(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DrawEscape\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, escapeStr(a3), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DrawEscape\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, escapeStr(a3), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14601,7 +14601,7 @@ BOOL __stdcall Mine_DrawFocusRect(HDC a0,
         rv = Real_DrawFocusRect(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DrawFocusRect\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DrawFocusRect\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14617,7 +14617,7 @@ BOOL __stdcall Mine_DrawFrameControl(HDC a0,
         rv = Real_DrawFrameControl(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DrawFrameControl\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DrawFrameControl\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14633,7 +14633,7 @@ BOOL __stdcall Mine_DrawIcon(HDC a0,
         rv = Real_DrawIcon(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DrawIcon\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DrawIcon\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14654,7 +14654,7 @@ BOOL __stdcall Mine_DrawIconEx(HDC a0,
         rv = Real_DrawIconEx(a0, a1, a2, a3, a4, a5, a6, a7, a8);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DrawIconEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DrawIconEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14667,7 +14667,7 @@ BOOL __stdcall Mine_DrawMenuBar(HWND a0)
         rv = Real_DrawMenuBar(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DrawMenuBar\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DrawMenuBar\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14689,7 +14689,7 @@ BOOL __stdcall Mine_DrawStateA(HDC a0,
         rv = Real_DrawStateA(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DrawStateA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DrawStateA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14711,7 +14711,7 @@ BOOL __stdcall Mine_DrawStateW(HDC a0,
         rv = Real_DrawStateW(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DrawStateW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DrawStateW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14728,7 +14728,7 @@ int __stdcall Mine_DrawTextA(HDC a0,
         rv = Real_DrawTextA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DrawTextA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DrawTextA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14746,7 +14746,7 @@ int __stdcall Mine_DrawTextExA(HDC a0,
         rv = Real_DrawTextExA(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DrawTextExA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DrawTextExA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14764,7 +14764,7 @@ int __stdcall Mine_DrawTextExW(HDC a0,
         rv = Real_DrawTextExW(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DrawTextExW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DrawTextExW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14781,7 +14781,7 @@ int __stdcall Mine_DrawTextW(HDC a0,
         rv = Real_DrawTextW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DrawTextW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DrawTextW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14800,7 +14800,7 @@ BOOL __stdcall Mine_DuplicateHandle(HANDLE a0,
         rv = Real_DuplicateHandle(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"DuplicateHandle\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"DuplicateHandle\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14817,7 +14817,7 @@ BOOL __stdcall Mine_Ellipse(HDC a0,
         rv = Real_Ellipse(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"Ellipse\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"Ellipse\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14830,7 +14830,7 @@ BOOL __stdcall Mine_EmptyClipboard(void)
         rv = Real_EmptyClipboard();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EmptyClipboard\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EmptyClipboard\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14845,7 +14845,7 @@ BOOL __stdcall Mine_EnableMenuItem(HMENU a0,
         rv = Real_EnableMenuItem(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnableMenuItem\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnableMenuItem\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14860,7 +14860,7 @@ BOOL __stdcall Mine_EnableScrollBar(HWND a0,
         rv = Real_EnableScrollBar(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnableScrollBar\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnableScrollBar\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14874,7 +14874,7 @@ BOOL __stdcall Mine_EnableWindow(HWND a0,
         rv = Real_EnableWindow(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnableWindow\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnableWindow\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14887,7 +14887,7 @@ BOOL __stdcall Mine_EndDeferWindowPos(HDWP a0)
         rv = Real_EndDeferWindowPos(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EndDeferWindowPos\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EndDeferWindowPos\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14901,7 +14901,7 @@ BOOL __stdcall Mine_EndDialog(HWND a0,
         rv = Real_EndDialog(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EndDialog\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EndDialog\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14914,7 +14914,7 @@ int __stdcall Mine_EndDoc(HDC a0)
         rv = Real_EndDoc(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EndDoc\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EndDoc\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14927,7 +14927,7 @@ int __stdcall Mine_EndPage(HDC a0)
         rv = Real_EndPage(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EndPage\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EndPage\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14941,7 +14941,7 @@ BOOL __stdcall Mine_EndPaint(HWND a0,
         rv = Real_EndPaint(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EndPaint\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EndPaint\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14954,7 +14954,7 @@ BOOL __stdcall Mine_EndPath(HDC a0)
         rv = Real_EndPath(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EndPath\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EndPath\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14968,7 +14968,7 @@ BOOL __stdcall Mine_EndUpdateResourceA(HANDLE a0,
         rv = Real_EndUpdateResourceA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EndUpdateResourceA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EndUpdateResourceA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14982,7 +14982,7 @@ BOOL __stdcall Mine_EndUpdateResourceW(HANDLE a0,
         rv = Real_EndUpdateResourceW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EndUpdateResourceW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EndUpdateResourceW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -14998,7 +14998,7 @@ BOOL __stdcall Mine_EnumCalendarInfoA(CALINFO_ENUMPROCA a0,
         rv = Real_EnumCalendarInfoA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumCalendarInfoA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumCalendarInfoA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15014,7 +15014,7 @@ BOOL __stdcall Mine_EnumCalendarInfoW(CALINFO_ENUMPROCW a0,
         rv = Real_EnumCalendarInfoW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumCalendarInfoW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumCalendarInfoW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15029,7 +15029,7 @@ BOOL __stdcall Mine_EnumChildWindows(HWND a0,
         rv = Real_EnumChildWindows(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumChildWindows\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumChildWindows\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15042,7 +15042,7 @@ UINT __stdcall Mine_EnumClipboardFormats(UINT a0)
         rv = Real_EnumClipboardFormats(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumClipboardFormats\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumClipboardFormats\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15057,7 +15057,7 @@ BOOL __stdcall Mine_EnumDateFormatsA(DATEFMT_ENUMPROCA a0,
         rv = Real_EnumDateFormatsA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumDateFormatsA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumDateFormatsA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15072,7 +15072,7 @@ BOOL __stdcall Mine_EnumDateFormatsW(DATEFMT_ENUMPROCW a0,
         rv = Real_EnumDateFormatsW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumDateFormatsW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumDateFormatsW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15087,7 +15087,7 @@ BOOL __stdcall Mine_EnumDesktopWindows(HDESK a0,
         rv = Real_EnumDesktopWindows(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumDesktopWindows\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumDesktopWindows\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15102,7 +15102,7 @@ BOOL __stdcall Mine_EnumDesktopsA(HWINSTA a0,
         rv = Real_EnumDesktopsA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumDesktopsA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumDesktopsA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15117,7 +15117,7 @@ BOOL __stdcall Mine_EnumDesktopsW(HWINSTA a0,
         rv = Real_EnumDesktopsW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumDesktopsW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumDesktopsW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15132,7 +15132,7 @@ BOOL __stdcall Mine_EnumDisplaySettingsA(LPCSTR a0,
         rv = Real_EnumDisplaySettingsA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumDisplaySettingsA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumDisplaySettingsA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15147,7 +15147,7 @@ BOOL __stdcall Mine_EnumDisplaySettingsW(LPCWSTR a0,
         rv = Real_EnumDisplaySettingsW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumDisplaySettingsW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumDisplaySettingsW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15164,7 +15164,7 @@ BOOL __stdcall Mine_EnumEnhMetaFile(HDC a0,
         rv = Real_EnumEnhMetaFile(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumEnhMetaFile\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumEnhMetaFile\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15180,7 +15180,7 @@ int __stdcall Mine_EnumFontFamiliesA(HDC a0,
         rv = Real_EnumFontFamiliesA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumFontFamiliesA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumFontFamiliesA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15197,7 +15197,7 @@ int __stdcall Mine_EnumFontFamiliesExA(HDC a0,
         rv = Real_EnumFontFamiliesExA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumFontFamiliesExA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumFontFamiliesExA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15214,7 +15214,7 @@ int __stdcall Mine_EnumFontFamiliesExW(HDC a0,
         rv = Real_EnumFontFamiliesExW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumFontFamiliesExW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumFontFamiliesExW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15230,7 +15230,7 @@ int __stdcall Mine_EnumFontFamiliesW(HDC a0,
         rv = Real_EnumFontFamiliesW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumFontFamiliesW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumFontFamiliesW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15246,7 +15246,7 @@ int __stdcall Mine_EnumFontsA(HDC a0,
         rv = Real_EnumFontsA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumFontsA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumFontsA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15262,7 +15262,7 @@ int __stdcall Mine_EnumFontsW(HDC a0,
         rv = Real_EnumFontsW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumFontsW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumFontsW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15277,7 +15277,7 @@ int __stdcall Mine_EnumICMProfilesA(HDC a0,
         rv = Real_EnumICMProfilesA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumICMProfilesA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumICMProfilesA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15292,7 +15292,7 @@ int __stdcall Mine_EnumICMProfilesW(HDC a0,
         rv = Real_EnumICMProfilesW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumICMProfilesW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumICMProfilesW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15308,7 +15308,7 @@ BOOL __stdcall Mine_EnumMetaFile(HDC a0,
         rv = Real_EnumMetaFile(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumMetaFile\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumMetaFile\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15324,7 +15324,7 @@ int __stdcall Mine_EnumObjects(HDC a0,
         rv = Real_EnumObjects(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumObjects\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumObjects\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15338,7 +15338,7 @@ int __stdcall Mine_EnumPropsA(HWND a0,
         rv = Real_EnumPropsA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumPropsA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumPropsA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15353,7 +15353,7 @@ int __stdcall Mine_EnumPropsExA(HWND a0,
         rv = Real_EnumPropsExA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumPropsExA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumPropsExA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15368,7 +15368,7 @@ int __stdcall Mine_EnumPropsExW(HWND a0,
         rv = Real_EnumPropsExW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumPropsExW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumPropsExW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15382,7 +15382,7 @@ int __stdcall Mine_EnumPropsW(HWND a0,
         rv = Real_EnumPropsW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumPropsW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumPropsW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15407,7 +15407,7 @@ BOOL __stdcall Mine_EnumResourceLanguagesA(HMODULE a0,
         rv = Real_EnumResourceLanguagesA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumResourceLanguagesA\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), escapeStr(a2), a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumResourceLanguagesA\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), escapeStr(a2), a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15432,7 +15432,7 @@ BOOL __stdcall Mine_EnumResourceLanguagesW(HMODULE a0,
         rv = Real_EnumResourceLanguagesW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumResourceLanguagesW\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), escapeStr(a2), a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumResourceLanguagesW\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), escapeStr(a2), a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15455,7 +15455,7 @@ BOOL __stdcall Mine_EnumResourceNamesA(HMODULE a0,
         rv = Real_EnumResourceNamesA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumResourceNamesA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumResourceNamesA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15478,7 +15478,7 @@ BOOL __stdcall Mine_EnumResourceNamesW(HMODULE a0,
         rv = Real_EnumResourceNamesW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumResourceNamesW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumResourceNamesW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15499,7 +15499,7 @@ BOOL __stdcall Mine_EnumResourceTypesA(HMODULE a0,
         rv = Real_EnumResourceTypesA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumResourceTypesA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumResourceTypesA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15520,7 +15520,7 @@ BOOL __stdcall Mine_EnumResourceTypesW(HMODULE a0,
         rv = Real_EnumResourceTypesW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumResourceTypesW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumResourceTypesW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15534,7 +15534,7 @@ BOOL __stdcall Mine_EnumSystemCodePagesA(CODEPAGE_ENUMPROCA a0,
         rv = Real_EnumSystemCodePagesA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumSystemCodePagesA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumSystemCodePagesA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15548,7 +15548,7 @@ BOOL __stdcall Mine_EnumSystemCodePagesW(CODEPAGE_ENUMPROCW a0,
         rv = Real_EnumSystemCodePagesW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumSystemCodePagesW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumSystemCodePagesW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15563,7 +15563,7 @@ BOOL __stdcall Mine_EnumSystemLocalesA(LOCALE_ENUMPROCA a0,
         rv = Real_EnumSystemLocalesA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumSystemLocalesA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumSystemLocalesA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15577,7 +15577,7 @@ BOOL __stdcall Mine_EnumSystemLocalesW(LOCALE_ENUMPROCW a0,
         rv = Real_EnumSystemLocalesW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumSystemLocalesW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumSystemLocalesW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15593,7 +15593,7 @@ BOOL __stdcall Mine_EnumThreadWindows(DWORD a0,
         rv = Real_EnumThreadWindows(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumThreadWindows\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumThreadWindows\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15608,7 +15608,7 @@ BOOL __stdcall Mine_EnumTimeFormatsA(TIMEFMT_ENUMPROCA a0,
         rv = Real_EnumTimeFormatsA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumTimeFormatsA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumTimeFormatsA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15623,7 +15623,7 @@ BOOL __stdcall Mine_EnumTimeFormatsW(TIMEFMT_ENUMPROCW a0,
         rv = Real_EnumTimeFormatsW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumTimeFormatsW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumTimeFormatsW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15637,7 +15637,7 @@ BOOL __stdcall Mine_EnumWindowStationsA(WINSTAENUMPROCA a0,
         rv = Real_EnumWindowStationsA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumWindowStationsA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumWindowStationsA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15651,7 +15651,7 @@ BOOL __stdcall Mine_EnumWindowStationsW(WINSTAENUMPROCW a0,
         rv = Real_EnumWindowStationsW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumWindowStationsW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumWindowStationsW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15665,7 +15665,7 @@ BOOL __stdcall Mine_EnumWindows(WNDENUMPROC a0,
         rv = Real_EnumWindows(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EnumWindows\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EnumWindows\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15679,7 +15679,7 @@ BOOL __stdcall Mine_EqualRect(RECT* a0,
         rv = Real_EqualRect(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EqualRect\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EqualRect\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15693,7 +15693,7 @@ BOOL __stdcall Mine_EqualRgn(HRGN a0,
         rv = Real_EqualRgn(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EqualRgn\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EqualRgn\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15708,7 +15708,7 @@ DWORD __stdcall Mine_EraseTape(HANDLE a0,
         rv = Real_EraseTape(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EraseTape\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EraseTape\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15725,7 +15725,7 @@ int __stdcall Mine_Escape(HDC a0,
         rv = Real_Escape(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"Escape\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, escapeStr(a3), a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"Escape\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, escapeStr(a3), a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15739,7 +15739,7 @@ BOOL __stdcall Mine_EscapeCommFunction(HANDLE a0,
         rv = Real_EscapeCommFunction(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"EscapeCommFunction\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"EscapeCommFunction\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15756,7 +15756,7 @@ int __stdcall Mine_ExcludeClipRect(HDC a0,
         rv = Real_ExcludeClipRect(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ExcludeClipRect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ExcludeClipRect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15770,7 +15770,7 @@ int __stdcall Mine_ExcludeUpdateRgn(HDC a0,
         rv = Real_ExcludeUpdateRgn(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ExcludeUpdateRgn\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ExcludeUpdateRgn\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15782,7 +15782,7 @@ void __stdcall Mine_ExitProcess(UINT a0)
         Real_ExitProcess(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ExitProcess\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"},\n", a0, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ExitProcess\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"}\n", a0, _ReturnAddress());
     };
 }
 
@@ -15793,7 +15793,7 @@ void __stdcall Mine_ExitThread(DWORD a0)
         Real_ExitThread(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ExitThread\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"},\n", a0, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ExitThread\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"}\n", a0, _ReturnAddress());
     };
 }
 
@@ -15806,7 +15806,7 @@ BOOL __stdcall Mine_ExitWindowsEx(UINT a0,
         rv = Real_ExitWindowsEx(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ExitWindowsEx\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ExitWindowsEx\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15821,7 +15821,7 @@ DWORD __stdcall Mine_ExpandEnvironmentStringsA(LPCSTR a0,
         rv = Real_ExpandEnvironmentStringsA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ExpandEnvironmentStringsA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ExpandEnvironmentStringsA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15836,7 +15836,7 @@ DWORD __stdcall Mine_ExpandEnvironmentStringsW(LPCWSTR a0,
         rv = Real_ExpandEnvironmentStringsW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ExpandEnvironmentStringsW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ExpandEnvironmentStringsW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15853,7 +15853,7 @@ HPEN __stdcall Mine_ExtCreatePen(DWORD a0,
         rv = Real_ExtCreatePen(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ExtCreatePen\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ExtCreatePen\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15868,7 +15868,7 @@ HRGN __stdcall Mine_ExtCreateRegion(XFORM* a0,
         rv = Real_ExtCreateRegion(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ExtCreateRegion\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ExtCreateRegion\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15886,7 +15886,7 @@ int __stdcall Mine_ExtEscape(HDC a0,
         rv = Real_ExtEscape(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ExtEscape\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, escapeStr(a3), a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ExtEscape\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, escapeStr(a3), a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15903,7 +15903,7 @@ BOOL __stdcall Mine_ExtFloodFill(HDC a0,
         rv = Real_ExtFloodFill(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ExtFloodFill\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ExtFloodFill\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15918,7 +15918,7 @@ int __stdcall Mine_ExtSelectClipRgn(HDC a0,
         rv = Real_ExtSelectClipRgn(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ExtSelectClipRgn\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ExtSelectClipRgn\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15938,7 +15938,7 @@ BOOL __stdcall Mine_ExtTextOutA(HDC a0,
         rv = Real_ExtTextOutA(a0, a1, a2, a3, a4, a5, a6, a7);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ExtTextOutA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, escapeStr(a5), a6, a7, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ExtTextOutA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, escapeStr(a5), a6, a7, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15958,7 +15958,7 @@ BOOL __stdcall Mine_ExtTextOutW(HDC a0,
         rv = Real_ExtTextOutW(a0, a1, a2, a3, a4, a5, a6, a7);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ExtTextOutW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, escapeStr(a5), a6, a7, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ExtTextOutW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, escapeStr(a5), a6, a7, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -15971,7 +15971,7 @@ void __stdcall Mine_FatalAppExitA(UINT a0,
         Real_FatalAppExitA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FatalAppExitA\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FatalAppExitA\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), _ReturnAddress());
     };
 }
 
@@ -15983,7 +15983,7 @@ void __stdcall Mine_FatalAppExitW(UINT a0,
         Real_FatalAppExitW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FatalAppExitW\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FatalAppExitW\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), _ReturnAddress());
     };
 }
 
@@ -15994,7 +15994,7 @@ void __stdcall Mine_FatalExit(int a0)
         Real_FatalExit(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FatalExit\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"},\n", a0, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FatalExit\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"}\n", a0, _ReturnAddress());
     };
 }
 
@@ -16008,7 +16008,7 @@ BOOL __stdcall Mine_FileTimeToDosDateTime(FILETIME* a0,
         rv = Real_FileTimeToDosDateTime(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FileTimeToDosDateTime\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FileTimeToDosDateTime\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16022,7 +16022,7 @@ BOOL __stdcall Mine_FileTimeToLocalFileTime(FILETIME* a0,
         rv = Real_FileTimeToLocalFileTime(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FileTimeToLocalFileTime\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FileTimeToLocalFileTime\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16036,7 +16036,7 @@ BOOL __stdcall Mine_FileTimeToSystemTime(FILETIME* a0,
         rv = Real_FileTimeToSystemTime(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FileTimeToSystemTime\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FileTimeToSystemTime\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16053,7 +16053,7 @@ BOOL __stdcall Mine_FillConsoleOutputAttribute(HANDLE a0,
         rv = Real_FillConsoleOutputAttribute(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FillConsoleOutputAttribute\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FillConsoleOutputAttribute\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16070,7 +16070,7 @@ BOOL __stdcall Mine_FillConsoleOutputCharacterA(HANDLE a0,
         rv = Real_FillConsoleOutputCharacterA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FillConsoleOutputCharacterA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FillConsoleOutputCharacterA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16087,7 +16087,7 @@ BOOL __stdcall Mine_FillConsoleOutputCharacterW(HANDLE a0,
         rv = Real_FillConsoleOutputCharacterW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FillConsoleOutputCharacterW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FillConsoleOutputCharacterW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16100,7 +16100,7 @@ BOOL __stdcall Mine_FillPath(HDC a0)
         rv = Real_FillPath(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FillPath\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FillPath\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16115,7 +16115,7 @@ int __stdcall Mine_FillRect(HDC a0,
         rv = Real_FillRect(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FillRect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FillRect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16130,7 +16130,7 @@ BOOL __stdcall Mine_FillRgn(HDC a0,
         rv = Real_FillRgn(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FillRgn\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FillRgn\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16143,7 +16143,7 @@ ATOM __stdcall Mine_FindAtomA(LPCSTR a0)
         rv = Real_FindAtomA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FindAtomA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FindAtomA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16156,7 +16156,7 @@ ATOM __stdcall Mine_FindAtomW(LPCWSTR a0)
         rv = Real_FindAtomW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FindAtomW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FindAtomW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16169,7 +16169,7 @@ BOOL __stdcall Mine_FindClose(HANDLE a0)
         rv = Real_FindClose(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FindClose\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FindClose\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16182,7 +16182,7 @@ BOOL __stdcall Mine_FindCloseChangeNotification(HANDLE a0)
         rv = Real_FindCloseChangeNotification(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FindCloseChangeNotification\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FindCloseChangeNotification\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16197,7 +16197,7 @@ HANDLE __stdcall Mine_FindFirstChangeNotificationA(LPCSTR a0,
         rv = Real_FindFirstChangeNotificationA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FindFirstChangeNotificationA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FindFirstChangeNotificationA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16212,7 +16212,7 @@ HANDLE __stdcall Mine_FindFirstChangeNotificationW(LPCWSTR a0,
         rv = Real_FindFirstChangeNotificationW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FindFirstChangeNotificationW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FindFirstChangeNotificationW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16226,7 +16226,7 @@ HANDLE __stdcall Mine_FindFirstFileA(LPCSTR a0,
         rv = Real_FindFirstFileA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FindFirstFileA\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FindFirstFileA\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16244,7 +16244,7 @@ HANDLE __stdcall Mine_FindFirstFileExA(LPCSTR a0,
         rv = Real_FindFirstFileExA(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FindFirstFileExA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FindFirstFileExA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16262,7 +16262,7 @@ HANDLE __stdcall Mine_FindFirstFileExW(LPCWSTR a0,
         rv = Real_FindFirstFileExW(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FindFirstFileExW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FindFirstFileExW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16276,7 +16276,7 @@ HANDLE __stdcall Mine_FindFirstFileW(LPCWSTR a0,
         rv = Real_FindFirstFileW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FindFirstFileW\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FindFirstFileW\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16289,7 +16289,7 @@ BOOL __stdcall Mine_FindNextChangeNotification(HANDLE a0)
         rv = Real_FindNextChangeNotification(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FindNextChangeNotification\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FindNextChangeNotification\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16303,7 +16303,7 @@ BOOL __stdcall Mine_FindNextFileA(HANDLE a0,
         rv = Real_FindNextFileA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FindNextFileA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FindNextFileA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16317,7 +16317,7 @@ BOOL __stdcall Mine_FindNextFileW(HANDLE a0,
         rv = Real_FindNextFileW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FindNextFileW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FindNextFileW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16332,7 +16332,7 @@ HRSRC __stdcall Mine_FindResourceA(HMODULE a0,
         rv = Real_FindResourceA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FindResourceA\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), escapeStr(a2), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FindResourceA\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), escapeStr(a2), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16348,7 +16348,7 @@ HRSRC __stdcall Mine_FindResourceExA(HMODULE a0,
         rv = Real_FindResourceExA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FindResourceExA\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), escapeStr(a2), a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FindResourceExA\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), escapeStr(a2), a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16364,7 +16364,7 @@ HRSRC __stdcall Mine_FindResourceExW(HMODULE a0,
         rv = Real_FindResourceExW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FindResourceExW\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), escapeStr(a2), a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FindResourceExW\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), escapeStr(a2), a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16379,7 +16379,7 @@ HRSRC __stdcall Mine_FindResourceW(HMODULE a0,
         rv = Real_FindResourceW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FindResourceW\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), escapeStr(a2), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FindResourceW\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), escapeStr(a2), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16393,7 +16393,7 @@ HWND __stdcall Mine_FindWindowA(LPCSTR a0,
         rv = Real_FindWindowA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FindWindowA\", \"fnc_args\": [\"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FindWindowA\", \"fnc_args\": [\"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16409,7 +16409,7 @@ HWND __stdcall Mine_FindWindowExA(HWND a0,
         rv = Real_FindWindowExA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FindWindowExA\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, escapeStr(a2), escapeStr(a3), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FindWindowExA\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, escapeStr(a2), escapeStr(a3), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16425,7 +16425,7 @@ HWND __stdcall Mine_FindWindowExW(HWND a0,
         rv = Real_FindWindowExW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FindWindowExW\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, escapeStr(a2), escapeStr(a3), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FindWindowExW\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, escapeStr(a2), escapeStr(a3), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16439,7 +16439,7 @@ HWND __stdcall Mine_FindWindowW(LPCWSTR a0,
         rv = Real_FindWindowW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FindWindowW\", \"fnc_args\": [\"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FindWindowW\", \"fnc_args\": [\"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16455,7 +16455,7 @@ BOOL __stdcall Mine_FixBrushOrgEx(HDC a0,
         rv = Real_FixBrushOrgEx(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FixBrushOrgEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FixBrushOrgEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16469,7 +16469,7 @@ BOOL __stdcall Mine_FlashWindow(HWND a0,
         rv = Real_FlashWindow(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FlashWindow\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FlashWindow\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16482,7 +16482,7 @@ BOOL __stdcall Mine_FlattenPath(HDC a0)
         rv = Real_FlattenPath(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FlattenPath\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FlattenPath\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16498,7 +16498,7 @@ BOOL __stdcall Mine_FloodFill(HDC a0,
         rv = Real_FloodFill(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FloodFill\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FloodFill\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16511,7 +16511,7 @@ BOOL __stdcall Mine_FlushConsoleInputBuffer(HANDLE a0)
         rv = Real_FlushConsoleInputBuffer(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FlushConsoleInputBuffer\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FlushConsoleInputBuffer\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16524,7 +16524,7 @@ BOOL __stdcall Mine_FlushFileBuffers(HANDLE a0)
         rv = Real_FlushFileBuffers(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FlushFileBuffers\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FlushFileBuffers\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16538,7 +16538,7 @@ BOOL __stdcall Mine_FlushViewOfFile(LPCVOID a0,
         rv = Real_FlushViewOfFile(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FlushViewOfFile\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FlushViewOfFile\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16552,7 +16552,7 @@ HRESULT __stdcall Mine_FmtIdToPropStgName(FMTID* a0,
         rv = Real_FmtIdToPropStgName(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FmtIdToPropStgName\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FmtIdToPropStgName\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16569,7 +16569,7 @@ int __stdcall Mine_FoldStringA(DWORD a0,
         rv = Real_FoldStringA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FoldStringA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FoldStringA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16586,7 +16586,7 @@ int __stdcall Mine_FoldStringW(DWORD a0,
         rv = Real_FoldStringW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FoldStringW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FoldStringW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16605,7 +16605,7 @@ DWORD __stdcall Mine_FormatMessageA(DWORD a0,
         rv = Real_FormatMessageA(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FormatMessageA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FormatMessageA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16624,7 +16624,7 @@ DWORD __stdcall Mine_FormatMessageW(DWORD a0,
         rv = Real_FormatMessageW(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FormatMessageW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FormatMessageW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16639,7 +16639,7 @@ int __stdcall Mine_FrameRect(HDC a0,
         rv = Real_FrameRect(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FrameRect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FrameRect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16656,7 +16656,7 @@ BOOL __stdcall Mine_FrameRgn(HDC a0,
         rv = Real_FrameRgn(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FrameRgn\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FrameRgn\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16669,7 +16669,7 @@ BOOL __stdcall Mine_FreeConsole(void)
         rv = Real_FreeConsole();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FreeConsole\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FreeConsole\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16683,7 +16683,7 @@ BOOL __stdcall Mine_FreeDDElParam(UINT a0,
         rv = Real_FreeDDElParam(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FreeDDElParam\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FreeDDElParam\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16696,7 +16696,7 @@ BOOL __stdcall Mine_FreeEnvironmentStringsA(LPSTR a0)
         rv = Real_FreeEnvironmentStringsA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FreeEnvironmentStringsA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FreeEnvironmentStringsA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16709,7 +16709,7 @@ BOOL __stdcall Mine_FreeEnvironmentStringsW(LPWSTR a0)
         rv = Real_FreeEnvironmentStringsW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FreeEnvironmentStringsW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FreeEnvironmentStringsW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16722,7 +16722,7 @@ BOOL __stdcall Mine_FreeLibrary(HMODULE a0)
         rv = Real_FreeLibrary(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FreeLibrary\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FreeLibrary\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16735,7 +16735,7 @@ void __stdcall Mine_FreeLibraryAndExitThread(HMODULE a0,
         Real_FreeLibraryAndExitThread(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FreeLibraryAndExitThread\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"},\n", a0, a1, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FreeLibraryAndExitThread\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"}\n", a0, a1, _ReturnAddress());
     };
 }
 
@@ -16748,7 +16748,7 @@ HRESULT __stdcall Mine_FreePropVariantArray(ULONG a0,
         rv = Real_FreePropVariantArray(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FreePropVariantArray\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FreePropVariantArray\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16761,7 +16761,7 @@ BOOL __stdcall Mine_FreeResource(HGLOBAL a0)
         rv = Real_FreeResource(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"FreeResource\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"FreeResource\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16776,7 +16776,7 @@ BOOL __stdcall Mine_GdiComment(HDC a0,
         rv = Real_GdiComment(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GdiComment\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GdiComment\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16789,7 +16789,7 @@ BOOL __stdcall Mine_GdiFlush(void)
         rv = Real_GdiFlush();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GdiFlush\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GdiFlush\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16802,7 +16802,7 @@ DWORD __stdcall Mine_GdiGetBatchLimit(void)
         rv = Real_GdiGetBatchLimit();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GdiGetBatchLimit\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GdiGetBatchLimit\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16815,7 +16815,7 @@ DWORD __stdcall Mine_GdiSetBatchLimit(DWORD a0)
         rv = Real_GdiSetBatchLimit(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GdiSetBatchLimit\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GdiSetBatchLimit\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16829,7 +16829,7 @@ BOOL __stdcall Mine_GenerateConsoleCtrlEvent(DWORD a0,
         rv = Real_GenerateConsoleCtrlEvent(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GenerateConsoleCtrlEvent\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GenerateConsoleCtrlEvent\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16842,7 +16842,7 @@ UINT __stdcall Mine_GetACP(void)
         rv = Real_GetACP();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetACP\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetACP\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16855,7 +16855,7 @@ HWND __stdcall Mine_GetActiveWindow(void)
         rv = Real_GetActiveWindow();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetActiveWindow\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetActiveWindow\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16868,7 +16868,7 @@ int __stdcall Mine_GetArcDirection(HDC a0)
         rv = Real_GetArcDirection(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetArcDirection\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetArcDirection\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16882,7 +16882,7 @@ BOOL __stdcall Mine_GetAspectRatioFilterEx(HDC a0,
         rv = Real_GetAspectRatioFilterEx(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetAspectRatioFilterEx\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetAspectRatioFilterEx\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16895,7 +16895,7 @@ SHORT __stdcall Mine_GetAsyncKeyState(int a0)
         rv = Real_GetAsyncKeyState(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetAsyncKeyState\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetAsyncKeyState\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16910,7 +16910,7 @@ UINT __stdcall Mine_GetAtomNameA(ATOM a0,
         rv = Real_GetAtomNameA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetAtomNameA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetAtomNameA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16925,7 +16925,7 @@ UINT __stdcall Mine_GetAtomNameW(ATOM a0,
         rv = Real_GetAtomNameW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetAtomNameW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetAtomNameW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16939,7 +16939,7 @@ BOOL __stdcall Mine_GetBinaryTypeA(LPCSTR a0,
         rv = Real_GetBinaryTypeA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetBinaryTypeA\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetBinaryTypeA\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16953,7 +16953,7 @@ BOOL __stdcall Mine_GetBinaryTypeW(LPCWSTR a0,
         rv = Real_GetBinaryTypeW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetBinaryTypeW\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetBinaryTypeW\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16968,7 +16968,7 @@ LONG __stdcall Mine_GetBitmapBits(HBITMAP a0,
         rv = Real_GetBitmapBits(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetBitmapBits\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetBitmapBits\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16982,7 +16982,7 @@ BOOL __stdcall Mine_GetBitmapDimensionEx(HBITMAP a0,
         rv = Real_GetBitmapDimensionEx(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetBitmapDimensionEx\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetBitmapDimensionEx\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -16995,7 +16995,7 @@ COLORREF __stdcall Mine_GetBkColor(HDC a0)
         rv = Real_GetBkColor(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetBkColor\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetBkColor\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17008,7 +17008,7 @@ int __stdcall Mine_GetBkMode(HDC a0)
         rv = Real_GetBkMode(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetBkMode\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetBkMode\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17023,7 +17023,7 @@ UINT __stdcall Mine_GetBoundsRect(HDC a0,
         rv = Real_GetBoundsRect(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetBoundsRect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetBoundsRect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17037,7 +17037,7 @@ BOOL __stdcall Mine_GetBrushOrgEx(HDC a0,
         rv = Real_GetBrushOrgEx(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetBrushOrgEx\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetBrushOrgEx\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17051,7 +17051,7 @@ BOOL __stdcall Mine_GetCPInfo(UINT a0,
         rv = Real_GetCPInfo(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetCPInfo\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetCPInfo\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17064,7 +17064,7 @@ HWND __stdcall Mine_GetCapture(void)
         rv = Real_GetCapture();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetCapture\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetCapture\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17077,7 +17077,7 @@ UINT __stdcall Mine_GetCaretBlinkTime(void)
         rv = Real_GetCaretBlinkTime();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetCaretBlinkTime\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetCaretBlinkTime\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17090,7 +17090,7 @@ BOOL __stdcall Mine_GetCaretPos(POINT* a0)
         rv = Real_GetCaretPos(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetCaretPos\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetCaretPos\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17106,7 +17106,7 @@ BOOL __stdcall Mine_GetCharABCWidthsA(HDC a0,
         rv = Real_GetCharABCWidthsA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetCharABCWidthsA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetCharABCWidthsA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17122,7 +17122,7 @@ BOOL __stdcall Mine_GetCharABCWidthsFloatA(HDC a0,
         rv = Real_GetCharABCWidthsFloatA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetCharABCWidthsFloatA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetCharABCWidthsFloatA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17138,7 +17138,7 @@ BOOL __stdcall Mine_GetCharABCWidthsFloatW(HDC a0,
         rv = Real_GetCharABCWidthsFloatW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetCharABCWidthsFloatW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetCharABCWidthsFloatW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17154,7 +17154,7 @@ BOOL __stdcall Mine_GetCharABCWidthsW(HDC a0,
         rv = Real_GetCharABCWidthsW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetCharABCWidthsW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetCharABCWidthsW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17170,7 +17170,7 @@ BOOL __stdcall Mine_GetCharWidth32A(HDC a0,
         rv = Real_GetCharWidth32A(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetCharWidth32A\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetCharWidth32A\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17186,7 +17186,7 @@ BOOL __stdcall Mine_GetCharWidth32W(HDC a0,
         rv = Real_GetCharWidth32W(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetCharWidth32W\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetCharWidth32W\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17202,7 +17202,7 @@ BOOL __stdcall Mine_GetCharWidthA(HDC a0,
         rv = Real_GetCharWidthA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetCharWidthA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetCharWidthA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17218,7 +17218,7 @@ BOOL __stdcall Mine_GetCharWidthFloatA(HDC a0,
         rv = Real_GetCharWidthFloatA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetCharWidthFloatA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetCharWidthFloatA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17234,7 +17234,7 @@ BOOL __stdcall Mine_GetCharWidthFloatW(HDC a0,
         rv = Real_GetCharWidthFloatW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetCharWidthFloatW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetCharWidthFloatW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17250,7 +17250,7 @@ BOOL __stdcall Mine_GetCharWidthW(HDC a0,
         rv = Real_GetCharWidthW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetCharWidthW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetCharWidthW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17268,7 +17268,7 @@ DWORD __stdcall Mine_GetCharacterPlacementA(HDC a0,
         rv = Real_GetCharacterPlacementA(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetCharacterPlacementA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetCharacterPlacementA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17286,7 +17286,7 @@ DWORD __stdcall Mine_GetCharacterPlacementW(HDC a0,
         rv = Real_GetCharacterPlacementW(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetCharacterPlacementW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetCharacterPlacementW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17300,7 +17300,7 @@ HRESULT __stdcall Mine_GetClassFile(LPCOLESTR a0,
         rv = Real_GetClassFile(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetClassFile\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetClassFile\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17315,7 +17315,7 @@ BOOL __stdcall Mine_GetClassInfoA(HINSTANCE a0,
         rv = Real_GetClassInfoA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetClassInfoA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetClassInfoA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17330,7 +17330,7 @@ BOOL __stdcall Mine_GetClassInfoExA(HINSTANCE a0,
         rv = Real_GetClassInfoExA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetClassInfoExA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetClassInfoExA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17345,7 +17345,7 @@ BOOL __stdcall Mine_GetClassInfoExW(HINSTANCE a0,
         rv = Real_GetClassInfoExW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetClassInfoExW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetClassInfoExW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17360,7 +17360,7 @@ BOOL __stdcall Mine_GetClassInfoW(HINSTANCE a0,
         rv = Real_GetClassInfoW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetClassInfoW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetClassInfoW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17374,7 +17374,7 @@ DWORD __stdcall Mine_GetClassLongA(HWND a0,
         rv = Real_GetClassLongA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetClassLongA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetClassLongA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17388,7 +17388,7 @@ DWORD __stdcall Mine_GetClassLongW(HWND a0,
         rv = Real_GetClassLongW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetClassLongW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetClassLongW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17403,7 +17403,7 @@ int __stdcall Mine_GetClassNameA(HWND a0,
         rv = Real_GetClassNameA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetClassNameA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetClassNameA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17418,7 +17418,7 @@ int __stdcall Mine_GetClassNameW(HWND a0,
         rv = Real_GetClassNameW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetClassNameW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetClassNameW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17432,7 +17432,7 @@ WORD __stdcall Mine_GetClassWord(HWND a0,
         rv = Real_GetClassWord(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetClassWord\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetClassWord\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17446,7 +17446,7 @@ BOOL __stdcall Mine_GetClientRect(HWND a0,
         rv = Real_GetClientRect(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetClientRect\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetClientRect\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17460,7 +17460,7 @@ int __stdcall Mine_GetClipBox(HDC a0,
         rv = Real_GetClipBox(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetClipBox\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetClipBox\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17473,7 +17473,7 @@ BOOL __stdcall Mine_GetClipCursor(LPRECT a0)
         rv = Real_GetClipCursor(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetClipCursor\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetClipCursor\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17487,7 +17487,7 @@ int __stdcall Mine_GetClipRgn(HDC a0,
         rv = Real_GetClipRgn(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetClipRgn\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetClipRgn\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17500,7 +17500,7 @@ HANDLE __stdcall Mine_GetClipboardData(UINT a0)
         rv = Real_GetClipboardData(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetClipboardData\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetClipboardData\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17515,7 +17515,7 @@ int __stdcall Mine_GetClipboardFormatNameA(UINT a0,
         rv = Real_GetClipboardFormatNameA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetClipboardFormatNameA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetClipboardFormatNameA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17530,7 +17530,7 @@ int __stdcall Mine_GetClipboardFormatNameW(UINT a0,
         rv = Real_GetClipboardFormatNameW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetClipboardFormatNameW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetClipboardFormatNameW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17543,7 +17543,7 @@ HWND __stdcall Mine_GetClipboardOwner(void)
         rv = Real_GetClipboardOwner();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetClipboardOwner\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetClipboardOwner\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17556,7 +17556,7 @@ HWND __stdcall Mine_GetClipboardViewer(void)
         rv = Real_GetClipboardViewer();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetClipboardViewer\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetClipboardViewer\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17570,7 +17570,7 @@ BOOL __stdcall Mine_GetColorAdjustment(HDC a0,
         rv = Real_GetColorAdjustment(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetColorAdjustment\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetColorAdjustment\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17583,7 +17583,7 @@ HCOLORSPACE __stdcall Mine_GetColorSpace(HDC a0)
         rv = Real_GetColorSpace(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetColorSpace\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetColorSpace\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17598,7 +17598,7 @@ BOOL __stdcall Mine_GetCommConfig(HANDLE a0,
         rv = Real_GetCommConfig(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetCommConfig\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetCommConfig\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17612,7 +17612,7 @@ BOOL __stdcall Mine_GetCommMask(HANDLE a0,
         rv = Real_GetCommMask(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetCommMask\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetCommMask\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17626,7 +17626,7 @@ BOOL __stdcall Mine_GetCommModemStatus(HANDLE a0,
         rv = Real_GetCommModemStatus(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetCommModemStatus\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetCommModemStatus\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17640,7 +17640,7 @@ BOOL __stdcall Mine_GetCommProperties(HANDLE a0,
         rv = Real_GetCommProperties(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetCommProperties\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetCommProperties\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17654,7 +17654,7 @@ BOOL __stdcall Mine_GetCommState(HANDLE a0,
         rv = Real_GetCommState(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetCommState\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetCommState\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17668,7 +17668,7 @@ BOOL __stdcall Mine_GetCommTimeouts(HANDLE a0,
         rv = Real_GetCommTimeouts(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetCommTimeouts\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetCommTimeouts\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17681,7 +17681,7 @@ LPSTR __stdcall Mine_GetCommandLineA(void)
         rv = Real_GetCommandLineA();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetCommandLineA\", \"fnc_args\": [], \"fnc_ret\": \"%hs\", \"ret_addr\": \"%p\"},\n", escapeStr(rv), _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetCommandLineA\", \"fnc_args\": [], \"fnc_ret\": \"%hs\", \"ret_addr\": \"%p\"}\n", escapeStr(rv), _ReturnAddress());
     };
     return rv;
 }
@@ -17694,7 +17694,7 @@ LPWSTR __stdcall Mine_GetCommandLineW(void)
         rv = Real_GetCommandLineW();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetCommandLineW\", \"fnc_args\": [], \"fnc_ret\": \"%hs\", \"ret_addr\": \"%p\"},\n", escapeStr(rv), _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetCommandLineW\", \"fnc_args\": [], \"fnc_ret\": \"%hs\", \"ret_addr\": \"%p\"}\n", escapeStr(rv), _ReturnAddress());
     };
     return rv;
 }
@@ -17708,7 +17708,7 @@ BOOL __stdcall Mine_GetComputerNameA(LPSTR a0,
         rv = Real_GetComputerNameA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetComputerNameA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetComputerNameA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17722,7 +17722,7 @@ BOOL __stdcall Mine_GetComputerNameW(LPWSTR a0,
         rv = Real_GetComputerNameW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetComputerNameW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetComputerNameW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17735,7 +17735,7 @@ UINT __stdcall Mine_GetConsoleCP(void)
         rv = Real_GetConsoleCP();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetConsoleCP\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetConsoleCP\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17749,7 +17749,7 @@ BOOL __stdcall Mine_GetConsoleCursorInfo(HANDLE a0,
         rv = Real_GetConsoleCursorInfo(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetConsoleCursorInfo\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetConsoleCursorInfo\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17763,7 +17763,7 @@ BOOL __stdcall Mine_GetConsoleMode(HANDLE a0,
         rv = Real_GetConsoleMode(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetConsoleMode\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetConsoleMode\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17776,7 +17776,7 @@ UINT __stdcall Mine_GetConsoleOutputCP(void)
         rv = Real_GetConsoleOutputCP();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetConsoleOutputCP\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetConsoleOutputCP\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17790,7 +17790,7 @@ BOOL __stdcall Mine_GetConsoleScreenBufferInfo(HANDLE a0,
         rv = Real_GetConsoleScreenBufferInfo(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetConsoleScreenBufferInfo\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetConsoleScreenBufferInfo\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17804,7 +17804,7 @@ DWORD __stdcall Mine_GetConsoleTitleA(LPSTR a0,
         rv = Real_GetConsoleTitleA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetConsoleTitleA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetConsoleTitleA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17818,7 +17818,7 @@ DWORD __stdcall Mine_GetConsoleTitleW(LPWSTR a0,
         rv = Real_GetConsoleTitleW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetConsoleTitleW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetConsoleTitleW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17831,7 +17831,7 @@ HRESULT __stdcall Mine_GetConvertStg(LPSTORAGE a0)
         rv = Real_GetConvertStg(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetConvertStg\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetConvertStg\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17849,7 +17849,7 @@ int __stdcall Mine_GetCurrencyFormatA(LCID a0,
         rv = Real_GetCurrencyFormatA(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetCurrencyFormatA\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, escapeStr(a2), a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetCurrencyFormatA\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, escapeStr(a2), a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17867,7 +17867,7 @@ int __stdcall Mine_GetCurrencyFormatW(LCID a0,
         rv = Real_GetCurrencyFormatW(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetCurrencyFormatW\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, escapeStr(a2), a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetCurrencyFormatW\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, escapeStr(a2), a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17881,7 +17881,7 @@ DWORD __stdcall Mine_GetCurrentDirectoryA(DWORD a0,
         rv = Real_GetCurrentDirectoryA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetCurrentDirectoryA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetCurrentDirectoryA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17895,7 +17895,7 @@ DWORD __stdcall Mine_GetCurrentDirectoryW(DWORD a0,
         rv = Real_GetCurrentDirectoryW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetCurrentDirectoryW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetCurrentDirectoryW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17909,7 +17909,7 @@ HGDIOBJ __stdcall Mine_GetCurrentObject(HDC a0,
         rv = Real_GetCurrentObject(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetCurrentObject\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetCurrentObject\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17923,7 +17923,7 @@ BOOL __stdcall Mine_GetCurrentPositionEx(HDC a0,
         rv = Real_GetCurrentPositionEx(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetCurrentPositionEx\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetCurrentPositionEx\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17936,7 +17936,7 @@ HANDLE __stdcall Mine_GetCurrentProcess(void)
         rv = Real_GetCurrentProcess();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetCurrentProcess\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetCurrentProcess\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17949,7 +17949,7 @@ DWORD __stdcall Mine_GetCurrentProcessId(void)
         rv = Real_GetCurrentProcessId();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetCurrentProcessId\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetCurrentProcessId\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17962,7 +17962,7 @@ DWORD __stdcall Mine_GetCurrentThreadId(void)
         rv = Real_GetCurrentThreadId();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetCurrentThreadId\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetCurrentThreadId\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17975,7 +17975,7 @@ HCURSOR __stdcall Mine_GetCursor(void)
         rv = Real_GetCursor();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetCursor\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetCursor\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -17988,7 +17988,7 @@ BOOL __stdcall Mine_GetCursorPos(POINT* a0)
         rv = Real_GetCursorPos(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetCursorPos\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetCursorPos\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18001,7 +18001,7 @@ HDC __stdcall Mine_GetDC(HWND a0)
         rv = Real_GetDC(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetDC\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetDC\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18016,7 +18016,7 @@ HDC __stdcall Mine_GetDCEx(HWND a0,
         rv = Real_GetDCEx(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetDCEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetDCEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18030,7 +18030,7 @@ BOOL __stdcall Mine_GetDCOrgEx(HDC a0,
         rv = Real_GetDCOrgEx(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetDCOrgEx\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetDCOrgEx\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18046,7 +18046,7 @@ UINT __stdcall Mine_GetDIBColorTable(HDC a0,
         rv = Real_GetDIBColorTable(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetDIBColorTable\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetDIBColorTable\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18065,7 +18065,7 @@ int __stdcall Mine_GetDIBits(HDC a0,
         rv = Real_GetDIBits(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetDIBits\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetDIBits\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18083,7 +18083,7 @@ int __stdcall Mine_GetDateFormatA(LCID a0,
         rv = Real_GetDateFormatA(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetDateFormatA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, escapeStr(a3), a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetDateFormatA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, escapeStr(a3), a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18101,7 +18101,7 @@ int __stdcall Mine_GetDateFormatW(LCID a0,
         rv = Real_GetDateFormatW(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetDateFormatW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, escapeStr(a3), a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetDateFormatW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, escapeStr(a3), a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18116,7 +18116,7 @@ BOOL __stdcall Mine_GetDefaultCommConfigA(LPCSTR a0,
         rv = Real_GetDefaultCommConfigA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetDefaultCommConfigA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetDefaultCommConfigA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18131,7 +18131,7 @@ BOOL __stdcall Mine_GetDefaultCommConfigW(LPCWSTR a0,
         rv = Real_GetDefaultCommConfigW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetDefaultCommConfigW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetDefaultCommConfigW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18144,7 +18144,7 @@ HWND __stdcall Mine_GetDesktopWindow(void)
         rv = Real_GetDesktopWindow();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetDesktopWindow\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetDesktopWindow\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18158,7 +18158,7 @@ int __stdcall Mine_GetDeviceCaps(HDC a0,
         rv = Real_GetDeviceCaps(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetDeviceCaps\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetDeviceCaps\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18172,7 +18172,7 @@ BOOL __stdcall Mine_GetDeviceGammaRamp(HDC a0,
         rv = Real_GetDeviceGammaRamp(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetDeviceGammaRamp\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetDeviceGammaRamp\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18185,7 +18185,7 @@ long __stdcall Mine_GetDialogBaseUnits(void)
         rv = Real_GetDialogBaseUnits();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetDialogBaseUnits\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetDialogBaseUnits\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18202,7 +18202,7 @@ BOOL __stdcall Mine_GetDiskFreeSpaceA(LPCSTR a0,
         rv = Real_GetDiskFreeSpaceA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetDiskFreeSpaceA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetDiskFreeSpaceA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18218,7 +18218,7 @@ BOOL __stdcall Mine_GetDiskFreeSpaceExA(LPCSTR a0,
         rv = Real_GetDiskFreeSpaceExA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetDiskFreeSpaceExA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetDiskFreeSpaceExA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18234,7 +18234,7 @@ BOOL __stdcall Mine_GetDiskFreeSpaceExW(LPCWSTR a0,
         rv = Real_GetDiskFreeSpaceExW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetDiskFreeSpaceExW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetDiskFreeSpaceExW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18251,7 +18251,7 @@ BOOL __stdcall Mine_GetDiskFreeSpaceW(LPCWSTR a0,
         rv = Real_GetDiskFreeSpaceW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetDiskFreeSpaceW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetDiskFreeSpaceW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18264,7 +18264,7 @@ int __stdcall Mine_GetDlgCtrlID(HWND a0)
         rv = Real_GetDlgCtrlID(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetDlgCtrlID\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetDlgCtrlID\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18278,7 +18278,7 @@ HWND __stdcall Mine_GetDlgItem(HWND a0,
         rv = Real_GetDlgItem(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetDlgItem\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetDlgItem\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18294,7 +18294,7 @@ UINT __stdcall Mine_GetDlgItemInt(HWND a0,
         rv = Real_GetDlgItemInt(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetDlgItemInt\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetDlgItemInt\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18310,7 +18310,7 @@ UINT __stdcall Mine_GetDlgItemTextA(HWND a0,
         rv = Real_GetDlgItemTextA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetDlgItemTextA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetDlgItemTextA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18326,7 +18326,7 @@ UINT __stdcall Mine_GetDlgItemTextW(HWND a0,
         rv = Real_GetDlgItemTextW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetDlgItemTextW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetDlgItemTextW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18339,7 +18339,7 @@ UINT __stdcall Mine_GetDoubleClickTime(void)
         rv = Real_GetDoubleClickTime();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetDoubleClickTime\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetDoubleClickTime\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18352,7 +18352,7 @@ UINT __stdcall Mine_GetDriveTypeA(LPCSTR a0)
         rv = Real_GetDriveTypeA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetDriveTypeA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetDriveTypeA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18365,7 +18365,7 @@ UINT __stdcall Mine_GetDriveTypeW(LPCWSTR a0)
         rv = Real_GetDriveTypeW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetDriveTypeW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetDriveTypeW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18378,7 +18378,7 @@ HENHMETAFILE __stdcall Mine_GetEnhMetaFileA(LPCSTR a0)
         rv = Real_GetEnhMetaFileA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetEnhMetaFileA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetEnhMetaFileA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18393,7 +18393,7 @@ UINT __stdcall Mine_GetEnhMetaFileBits(HENHMETAFILE a0,
         rv = Real_GetEnhMetaFileBits(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetEnhMetaFileBits\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetEnhMetaFileBits\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18408,7 +18408,7 @@ UINT __stdcall Mine_GetEnhMetaFileDescriptionA(HENHMETAFILE a0,
         rv = Real_GetEnhMetaFileDescriptionA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetEnhMetaFileDescriptionA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetEnhMetaFileDescriptionA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18423,7 +18423,7 @@ UINT __stdcall Mine_GetEnhMetaFileDescriptionW(HENHMETAFILE a0,
         rv = Real_GetEnhMetaFileDescriptionW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetEnhMetaFileDescriptionW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetEnhMetaFileDescriptionW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18438,7 +18438,7 @@ UINT __stdcall Mine_GetEnhMetaFileHeader(HENHMETAFILE a0,
         rv = Real_GetEnhMetaFileHeader(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetEnhMetaFileHeader\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetEnhMetaFileHeader\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18453,7 +18453,7 @@ UINT __stdcall Mine_GetEnhMetaFilePaletteEntries(HENHMETAFILE a0,
         rv = Real_GetEnhMetaFilePaletteEntries(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetEnhMetaFilePaletteEntries\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetEnhMetaFilePaletteEntries\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18468,7 +18468,7 @@ UINT __stdcall Mine_GetEnhMetaFilePixelFormat(HENHMETAFILE a0,
         rv = Real_GetEnhMetaFilePixelFormat(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetEnhMetaFilePixelFormat\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetEnhMetaFilePixelFormat\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18481,7 +18481,7 @@ HENHMETAFILE __stdcall Mine_GetEnhMetaFileW(LPCWSTR a0)
         rv = Real_GetEnhMetaFileW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetEnhMetaFileW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetEnhMetaFileW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18494,7 +18494,7 @@ LPSTR __stdcall Mine_GetEnvironmentStrings(void)
         rv = Real_GetEnvironmentStrings();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetEnvironmentStrings\", \"fnc_args\": [], \"fnc_ret\": \"%hs\", \"ret_addr\": \"%p\"},\n", escapeStr(rv), _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetEnvironmentStrings\", \"fnc_args\": [], \"fnc_ret\": \"%hs\", \"ret_addr\": \"%p\"}\n", escapeStr(rv), _ReturnAddress());
     };
     return rv;
 }
@@ -18507,7 +18507,7 @@ LPWSTR __stdcall Mine_GetEnvironmentStringsW(void)
         rv = Real_GetEnvironmentStringsW();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetEnvironmentStringsW\", \"fnc_args\": [], \"fnc_ret\": \"%hs\", \"ret_addr\": \"%p\"},\n", escapeStr(rv), _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetEnvironmentStringsW\", \"fnc_args\": [], \"fnc_ret\": \"%hs\", \"ret_addr\": \"%p\"}\n", escapeStr(rv), _ReturnAddress());
     };
     return rv;
 }
@@ -18522,7 +18522,7 @@ DWORD __stdcall Mine_GetEnvironmentVariableA(LPCSTR a0,
         rv = Real_GetEnvironmentVariableA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetEnvironmentVariableA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetEnvironmentVariableA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18537,7 +18537,7 @@ DWORD __stdcall Mine_GetEnvironmentVariableW(LPCWSTR a0,
         rv = Real_GetEnvironmentVariableW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetEnvironmentVariableW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetEnvironmentVariableW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18551,7 +18551,7 @@ BOOL __stdcall Mine_GetExitCodeProcess(HANDLE a0,
         rv = Real_GetExitCodeProcess(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetExitCodeProcess\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetExitCodeProcess\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18565,7 +18565,7 @@ BOOL __stdcall Mine_GetExitCodeThread(HANDLE a0,
         rv = Real_GetExitCodeThread(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetExitCodeThread\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetExitCodeThread\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18578,7 +18578,7 @@ DWORD __stdcall Mine_GetFileAttributesA(LPCSTR a0)
         rv = Real_GetFileAttributesA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetFileAttributesA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetFileAttributesA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18593,7 +18593,7 @@ BOOL __stdcall Mine_GetFileAttributesExA(LPCSTR a0,
         rv = Real_GetFileAttributesExA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetFileAttributesExA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetFileAttributesExA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18608,7 +18608,7 @@ BOOL __stdcall Mine_GetFileAttributesExW(LPCWSTR a0,
         rv = Real_GetFileAttributesExW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetFileAttributesExW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetFileAttributesExW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18621,7 +18621,7 @@ DWORD __stdcall Mine_GetFileAttributesW(LPCWSTR a0)
         rv = Real_GetFileAttributesW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetFileAttributesW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetFileAttributesW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18635,7 +18635,7 @@ BOOL __stdcall Mine_GetFileInformationByHandle(HANDLE a0,
         rv = Real_GetFileInformationByHandle(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetFileInformationByHandle\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetFileInformationByHandle\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18649,7 +18649,7 @@ DWORD __stdcall Mine_GetFileSize(HANDLE a0,
         rv = Real_GetFileSize(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetFileSize\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetFileSize\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18665,7 +18665,7 @@ BOOL __stdcall Mine_GetFileTime(HANDLE a0,
         rv = Real_GetFileTime(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetFileTime\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetFileTime\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18678,7 +18678,7 @@ DWORD __stdcall Mine_GetFileType(HANDLE a0)
         rv = Real_GetFileType(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetFileType\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetFileType\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18691,7 +18691,7 @@ HWND __stdcall Mine_GetFocus(void)
         rv = Real_GetFocus();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetFocus\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetFocus\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18708,7 +18708,7 @@ DWORD __stdcall Mine_GetFontData(HDC a0,
         rv = Real_GetFontData(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetFontData\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetFontData\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18721,7 +18721,7 @@ DWORD __stdcall Mine_GetFontLanguageInfo(HDC a0)
         rv = Real_GetFontLanguageInfo(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetFontLanguageInfo\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetFontLanguageInfo\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18734,7 +18734,7 @@ HWND __stdcall Mine_GetForegroundWindow(void)
         rv = Real_GetForegroundWindow();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetForegroundWindow\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetForegroundWindow\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18750,7 +18750,7 @@ DWORD __stdcall Mine_GetFullPathNameA(LPCSTR a0,
         rv = Real_GetFullPathNameA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetFullPathNameA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetFullPathNameA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18766,7 +18766,7 @@ DWORD __stdcall Mine_GetFullPathNameW(LPCWSTR a0,
         rv = Real_GetFullPathNameW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetFullPathNameW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetFullPathNameW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18785,7 +18785,7 @@ DWORD __stdcall Mine_GetGlyphOutlineA(HDC a0,
         rv = Real_GetGlyphOutlineA(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetGlyphOutlineA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetGlyphOutlineA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18804,7 +18804,7 @@ DWORD __stdcall Mine_GetGlyphOutlineW(HDC a0,
         rv = Real_GetGlyphOutlineW(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetGlyphOutlineW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetGlyphOutlineW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18817,7 +18817,7 @@ int __stdcall Mine_GetGraphicsMode(HDC a0)
         rv = Real_GetGraphicsMode(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetGraphicsMode\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetGraphicsMode\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18831,7 +18831,7 @@ HRESULT __stdcall Mine_GetHGlobalFromILockBytes(ILockBytes* a0,
         rv = Real_GetHGlobalFromILockBytes(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetHGlobalFromILockBytes\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetHGlobalFromILockBytes\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18845,7 +18845,7 @@ HRESULT __stdcall Mine_GetHGlobalFromStream(LPSTREAM a0,
         rv = Real_GetHGlobalFromStream(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetHGlobalFromStream\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetHGlobalFromStream\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18859,7 +18859,7 @@ BOOL __stdcall Mine_GetHandleInformation(HANDLE a0,
         rv = Real_GetHandleInformation(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetHandleInformation\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetHandleInformation\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18874,7 +18874,7 @@ BOOL __stdcall Mine_GetICMProfileA(HDC a0,
         rv = Real_GetICMProfileA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetICMProfileA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetICMProfileA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18889,7 +18889,7 @@ BOOL __stdcall Mine_GetICMProfileW(HDC a0,
         rv = Real_GetICMProfileW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetICMProfileW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetICMProfileW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18903,7 +18903,7 @@ BOOL __stdcall Mine_GetIconInfo(HICON a0,
         rv = Real_GetIconInfo(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetIconInfo\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetIconInfo\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18916,7 +18916,7 @@ BOOL __stdcall Mine_GetInputState(void)
         rv = Real_GetInputState();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetInputState\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetInputState\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18929,7 +18929,7 @@ UINT __stdcall Mine_GetKBCodePage(void)
         rv = Real_GetKBCodePage();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetKBCodePage\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetKBCodePage\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18944,7 +18944,7 @@ DWORD __stdcall Mine_GetKerningPairsA(HDC a0,
         rv = Real_GetKerningPairsA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetKerningPairsA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetKerningPairsA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18959,7 +18959,7 @@ DWORD __stdcall Mine_GetKerningPairsW(HDC a0,
         rv = Real_GetKerningPairsW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetKerningPairsW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetKerningPairsW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18974,7 +18974,7 @@ int __stdcall Mine_GetKeyNameTextA(LONG a0,
         rv = Real_GetKeyNameTextA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetKeyNameTextA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetKeyNameTextA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -18989,7 +18989,7 @@ int __stdcall Mine_GetKeyNameTextW(LONG a0,
         rv = Real_GetKeyNameTextW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetKeyNameTextW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetKeyNameTextW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19002,7 +19002,7 @@ SHORT __stdcall Mine_GetKeyState(int a0)
         rv = Real_GetKeyState(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetKeyState\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetKeyState\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19015,7 +19015,7 @@ HKL __stdcall Mine_GetKeyboardLayout(DWORD a0)
         rv = Real_GetKeyboardLayout(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetKeyboardLayout\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetKeyboardLayout\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19029,7 +19029,7 @@ int __stdcall Mine_GetKeyboardLayoutList(int a0,
         rv = Real_GetKeyboardLayoutList(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetKeyboardLayoutList\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetKeyboardLayoutList\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19042,7 +19042,7 @@ BOOL __stdcall Mine_GetKeyboardLayoutNameA(LPSTR a0)
         rv = Real_GetKeyboardLayoutNameA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetKeyboardLayoutNameA\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetKeyboardLayoutNameA\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19055,7 +19055,7 @@ BOOL __stdcall Mine_GetKeyboardLayoutNameW(LPWSTR a0)
         rv = Real_GetKeyboardLayoutNameW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetKeyboardLayoutNameW\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetKeyboardLayoutNameW\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19068,7 +19068,7 @@ BOOL __stdcall Mine_GetKeyboardState(PBYTE a0)
         rv = Real_GetKeyboardState(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetKeyboardState\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetKeyboardState\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19081,7 +19081,7 @@ int __stdcall Mine_GetKeyboardType(int a0)
         rv = Real_GetKeyboardType(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetKeyboardType\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetKeyboardType\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19094,7 +19094,7 @@ HWND __stdcall Mine_GetLastActivePopup(HWND a0)
         rv = Real_GetLastActivePopup(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetLastActivePopup\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetLastActivePopup\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19106,7 +19106,7 @@ void __stdcall Mine_GetLocalTime(LPSYSTEMTIME a0)
         Real_GetLocalTime(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetLocalTime\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"},\n", a0, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetLocalTime\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"}\n", a0, _ReturnAddress());
     };
 }
 
@@ -19121,7 +19121,7 @@ int __stdcall Mine_GetLocaleInfoA(LCID a0,
         rv = Real_GetLocaleInfoA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetLocaleInfoA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetLocaleInfoA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19137,7 +19137,7 @@ int __stdcall Mine_GetLocaleInfoW(LCID a0,
         rv = Real_GetLocaleInfoW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetLocaleInfoW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetLocaleInfoW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19152,7 +19152,7 @@ BOOL __stdcall Mine_GetLogColorSpaceA(HCOLORSPACE a0,
         rv = Real_GetLogColorSpaceA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetLogColorSpaceA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetLogColorSpaceA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19167,7 +19167,7 @@ BOOL __stdcall Mine_GetLogColorSpaceW(HCOLORSPACE a0,
         rv = Real_GetLogColorSpaceW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetLogColorSpaceW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetLogColorSpaceW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19181,7 +19181,7 @@ DWORD __stdcall Mine_GetLogicalDriveStringsA(DWORD a0,
         rv = Real_GetLogicalDriveStringsA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetLogicalDriveStringsA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetLogicalDriveStringsA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19195,7 +19195,7 @@ DWORD __stdcall Mine_GetLogicalDriveStringsW(DWORD a0,
         rv = Real_GetLogicalDriveStringsW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetLogicalDriveStringsW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetLogicalDriveStringsW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19208,7 +19208,7 @@ DWORD __stdcall Mine_GetLogicalDrives(void)
         rv = Real_GetLogicalDrives();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetLogicalDrives\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetLogicalDrives\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19225,7 +19225,7 @@ BOOL __stdcall Mine_GetMailslotInfo(HANDLE a0,
         rv = Real_GetMailslotInfo(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetMailslotInfo\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetMailslotInfo\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19238,7 +19238,7 @@ int __stdcall Mine_GetMapMode(HDC a0)
         rv = Real_GetMapMode(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetMapMode\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetMapMode\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19251,7 +19251,7 @@ HMENU __stdcall Mine_GetMenu(HWND a0)
         rv = Real_GetMenu(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetMenu\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetMenu\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19264,7 +19264,7 @@ LONG __stdcall Mine_GetMenuCheckMarkDimensions(void)
         rv = Real_GetMenuCheckMarkDimensions();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetMenuCheckMarkDimensions\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetMenuCheckMarkDimensions\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19277,7 +19277,7 @@ DWORD __stdcall Mine_GetMenuContextHelpId(HMENU a0)
         rv = Real_GetMenuContextHelpId(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetMenuContextHelpId\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetMenuContextHelpId\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19292,7 +19292,7 @@ UINT __stdcall Mine_GetMenuDefaultItem(HMENU a0,
         rv = Real_GetMenuDefaultItem(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetMenuDefaultItem\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetMenuDefaultItem\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19305,7 +19305,7 @@ int __stdcall Mine_GetMenuItemCount(HMENU a0)
         rv = Real_GetMenuItemCount(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetMenuItemCount\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetMenuItemCount\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19319,7 +19319,7 @@ UINT __stdcall Mine_GetMenuItemID(HMENU a0,
         rv = Real_GetMenuItemID(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetMenuItemID\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetMenuItemID\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19335,7 +19335,7 @@ BOOL __stdcall Mine_GetMenuItemInfoA(HMENU a0,
         rv = Real_GetMenuItemInfoA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetMenuItemInfoA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetMenuItemInfoA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19351,7 +19351,7 @@ BOOL __stdcall Mine_GetMenuItemInfoW(HMENU a0,
         rv = Real_GetMenuItemInfoW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetMenuItemInfoW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetMenuItemInfoW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19367,7 +19367,7 @@ BOOL __stdcall Mine_GetMenuItemRect(HWND a0,
         rv = Real_GetMenuItemRect(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetMenuItemRect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetMenuItemRect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19382,7 +19382,7 @@ UINT __stdcall Mine_GetMenuState(HMENU a0,
         rv = Real_GetMenuState(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetMenuState\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetMenuState\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19399,7 +19399,7 @@ int __stdcall Mine_GetMenuStringA(HMENU a0,
         rv = Real_GetMenuStringA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetMenuStringA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetMenuStringA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19416,7 +19416,7 @@ int __stdcall Mine_GetMenuStringW(HMENU a0,
         rv = Real_GetMenuStringW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetMenuStringW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetMenuStringW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19432,7 +19432,7 @@ BOOL __stdcall Mine_GetMessageA(LPMSG a0,
         rv = Real_GetMessageA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetMessageA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetMessageA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19445,7 +19445,7 @@ LPARAM __stdcall Mine_GetMessageExtraInfo(void)
         rv = Real_GetMessageExtraInfo();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetMessageExtraInfo\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetMessageExtraInfo\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19458,7 +19458,7 @@ DWORD __stdcall Mine_GetMessagePos(void)
         rv = Real_GetMessagePos();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetMessagePos\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetMessagePos\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19471,7 +19471,7 @@ LONG __stdcall Mine_GetMessageTime(void)
         rv = Real_GetMessageTime();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetMessageTime\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetMessageTime\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19487,7 +19487,7 @@ BOOL __stdcall Mine_GetMessageW(LPMSG a0,
         rv = Real_GetMessageW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetMessageW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetMessageW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19500,7 +19500,7 @@ HMETAFILE __stdcall Mine_GetMetaFileA(LPCSTR a0)
         rv = Real_GetMetaFileA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetMetaFileA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetMetaFileA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19515,7 +19515,7 @@ UINT __stdcall Mine_GetMetaFileBitsEx(HMETAFILE a0,
         rv = Real_GetMetaFileBitsEx(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetMetaFileBitsEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetMetaFileBitsEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19528,7 +19528,7 @@ HMETAFILE __stdcall Mine_GetMetaFileW(LPCWSTR a0)
         rv = Real_GetMetaFileW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetMetaFileW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetMetaFileW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19542,7 +19542,7 @@ int __stdcall Mine_GetMetaRgn(HDC a0,
         rv = Real_GetMetaRgn(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetMetaRgn\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetMetaRgn\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19556,7 +19556,7 @@ BOOL __stdcall Mine_GetMiterLimit(HDC a0,
         rv = Real_GetMiterLimit(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetMiterLimit\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetMiterLimit\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19571,7 +19571,7 @@ DWORD __stdcall Mine_GetModuleFileNameA(HMODULE a0,
         rv = Real_GetModuleFileNameA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetModuleFileNameA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetModuleFileNameA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19586,7 +19586,7 @@ DWORD __stdcall Mine_GetModuleFileNameW(HMODULE a0,
         rv = Real_GetModuleFileNameW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetModuleFileNameW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetModuleFileNameW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19599,7 +19599,7 @@ HMODULE __stdcall Mine_GetModuleHandleA(LPCSTR a0)
         rv = Real_GetModuleHandleA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetModuleHandleA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetModuleHandleA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19612,7 +19612,7 @@ HMODULE __stdcall Mine_GetModuleHandleW(LPCWSTR a0)
         rv = Real_GetModuleHandleW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetModuleHandleW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetModuleHandleW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19631,7 +19631,7 @@ BOOL __stdcall Mine_GetNamedPipeHandleStateA(HANDLE a0,
         rv = Real_GetNamedPipeHandleStateA(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetNamedPipeHandleStateA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetNamedPipeHandleStateA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19650,7 +19650,7 @@ BOOL __stdcall Mine_GetNamedPipeHandleStateW(HANDLE a0,
         rv = Real_GetNamedPipeHandleStateW(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetNamedPipeHandleStateW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetNamedPipeHandleStateW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19667,7 +19667,7 @@ BOOL __stdcall Mine_GetNamedPipeInfo(HANDLE a0,
         rv = Real_GetNamedPipeInfo(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetNamedPipeInfo\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetNamedPipeInfo\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19681,7 +19681,7 @@ COLORREF __stdcall Mine_GetNearestColor(HDC a0,
         rv = Real_GetNearestColor(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetNearestColor\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetNearestColor\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19695,7 +19695,7 @@ UINT __stdcall Mine_GetNearestPaletteIndex(HPALETTE a0,
         rv = Real_GetNearestPaletteIndex(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetNearestPaletteIndex\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetNearestPaletteIndex\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19710,7 +19710,7 @@ HWND __stdcall Mine_GetNextDlgGroupItem(HWND a0,
         rv = Real_GetNextDlgGroupItem(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetNextDlgGroupItem\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetNextDlgGroupItem\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19725,7 +19725,7 @@ HWND __stdcall Mine_GetNextDlgTabItem(HWND a0,
         rv = Real_GetNextDlgTabItem(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetNextDlgTabItem\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetNextDlgTabItem\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19743,7 +19743,7 @@ int __stdcall Mine_GetNumberFormatA(LCID a0,
         rv = Real_GetNumberFormatA(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetNumberFormatA\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, escapeStr(a2), a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetNumberFormatA\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, escapeStr(a2), a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19761,7 +19761,7 @@ int __stdcall Mine_GetNumberFormatW(LCID a0,
         rv = Real_GetNumberFormatW(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetNumberFormatW\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, escapeStr(a2), a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetNumberFormatW\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, escapeStr(a2), a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19775,7 +19775,7 @@ BOOL __stdcall Mine_GetNumberOfConsoleInputEvents(HANDLE a0,
         rv = Real_GetNumberOfConsoleInputEvents(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetNumberOfConsoleInputEvents\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetNumberOfConsoleInputEvents\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19788,7 +19788,7 @@ BOOL __stdcall Mine_GetNumberOfConsoleMouseButtons(LPDWORD a0)
         rv = Real_GetNumberOfConsoleMouseButtons(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetNumberOfConsoleMouseButtons\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetNumberOfConsoleMouseButtons\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19801,7 +19801,7 @@ UINT __stdcall Mine_GetOEMCP(void)
         rv = Real_GetOEMCP();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetOEMCP\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetOEMCP\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19816,7 +19816,7 @@ int __stdcall Mine_GetObjectA(HGDIOBJ a0,
         rv = Real_GetObjectA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetObjectA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetObjectA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19829,7 +19829,7 @@ DWORD __stdcall Mine_GetObjectType(HGDIOBJ a0)
         rv = Real_GetObjectType(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetObjectType\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetObjectType\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19844,7 +19844,7 @@ int __stdcall Mine_GetObjectW(HGDIOBJ a0,
         rv = Real_GetObjectW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetObjectW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetObjectW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19857,7 +19857,7 @@ HWND __stdcall Mine_GetOpenClipboardWindow(void)
         rv = Real_GetOpenClipboardWindow();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetOpenClipboardWindow\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetOpenClipboardWindow\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19872,7 +19872,7 @@ UINT __stdcall Mine_GetOutlineTextMetricsA(HDC a0,
         rv = Real_GetOutlineTextMetricsA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetOutlineTextMetricsA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetOutlineTextMetricsA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19887,7 +19887,7 @@ UINT __stdcall Mine_GetOutlineTextMetricsW(HDC a0,
         rv = Real_GetOutlineTextMetricsW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetOutlineTextMetricsW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetOutlineTextMetricsW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19903,7 +19903,7 @@ BOOL __stdcall Mine_GetOverlappedResult(HANDLE a0,
         rv = Real_GetOverlappedResult(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetOverlappedResult\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetOverlappedResult\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19919,7 +19919,7 @@ UINT __stdcall Mine_GetPaletteEntries(HPALETTE a0,
         rv = Real_GetPaletteEntries(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetPaletteEntries\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetPaletteEntries\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19932,7 +19932,7 @@ HWND __stdcall Mine_GetParent(HWND a0)
         rv = Real_GetParent(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetParent\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetParent\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19948,7 +19948,7 @@ int __stdcall Mine_GetPath(HDC a0,
         rv = Real_GetPath(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetPath\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetPath\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19963,7 +19963,7 @@ COLORREF __stdcall Mine_GetPixel(HDC a0,
         rv = Real_GetPixel(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetPixel\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetPixel\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19976,7 +19976,7 @@ int __stdcall Mine_GetPixelFormat(HDC a0)
         rv = Real_GetPixelFormat(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetPixelFormat\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetPixelFormat\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -19989,7 +19989,7 @@ int __stdcall Mine_GetPolyFillMode(HDC a0)
         rv = Real_GetPolyFillMode(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetPolyFillMode\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetPolyFillMode\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20002,7 +20002,7 @@ DWORD __stdcall Mine_GetPriorityClass(HANDLE a0)
         rv = Real_GetPriorityClass(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetPriorityClass\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetPriorityClass\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20016,7 +20016,7 @@ int __stdcall Mine_GetPriorityClipboardFormat(UINT* a0,
         rv = Real_GetPriorityClipboardFormat(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetPriorityClipboardFormat\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetPriorityClipboardFormat\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20032,7 +20032,7 @@ UINT __stdcall Mine_GetPrivateProfileIntA(LPCSTR a0,
         rv = Real_GetPrivateProfileIntA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetPrivateProfileIntA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), a2, escapeStr(a3), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetPrivateProfileIntA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), a2, escapeStr(a3), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20048,7 +20048,7 @@ UINT __stdcall Mine_GetPrivateProfileIntW(LPCWSTR a0,
         rv = Real_GetPrivateProfileIntW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetPrivateProfileIntW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), a2, escapeStr(a3), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetPrivateProfileIntW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), a2, escapeStr(a3), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20064,7 +20064,7 @@ DWORD __stdcall Mine_GetPrivateProfileSectionA(LPCSTR a0,
         rv = Real_GetPrivateProfileSectionA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetPrivateProfileSectionA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, escapeStr(a3), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetPrivateProfileSectionA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, escapeStr(a3), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20079,7 +20079,7 @@ DWORD __stdcall Mine_GetPrivateProfileSectionNamesA(LPSTR a0,
         rv = Real_GetPrivateProfileSectionNamesA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetPrivateProfileSectionNamesA\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetPrivateProfileSectionNamesA\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20094,7 +20094,7 @@ DWORD __stdcall Mine_GetPrivateProfileSectionNamesW(LPWSTR a0,
         rv = Real_GetPrivateProfileSectionNamesW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetPrivateProfileSectionNamesW\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetPrivateProfileSectionNamesW\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20110,7 +20110,7 @@ DWORD __stdcall Mine_GetPrivateProfileSectionW(LPCWSTR a0,
         rv = Real_GetPrivateProfileSectionW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetPrivateProfileSectionW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, escapeStr(a3), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetPrivateProfileSectionW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, escapeStr(a3), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20128,7 +20128,7 @@ DWORD __stdcall Mine_GetPrivateProfileStringA(LPCSTR a0,
         rv = Real_GetPrivateProfileStringA(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetPrivateProfileStringA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%hs\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), escapeStr(a2), a3, a4, escapeStr(a5), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetPrivateProfileStringA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%hs\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), escapeStr(a2), a3, a4, escapeStr(a5), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20146,7 +20146,7 @@ DWORD __stdcall Mine_GetPrivateProfileStringW(LPCWSTR a0,
         rv = Real_GetPrivateProfileStringW(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetPrivateProfileStringW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%hs\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), escapeStr(a2), a3, a4, escapeStr(a5), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetPrivateProfileStringW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%hs\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), escapeStr(a2), a3, a4, escapeStr(a5), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20163,7 +20163,7 @@ BOOL __stdcall Mine_GetPrivateProfileStructA(LPCSTR a0,
         rv = Real_GetPrivateProfileStructA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetPrivateProfileStructA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), a2, a3, escapeStr(a4), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetPrivateProfileStructA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), a2, a3, escapeStr(a4), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20180,7 +20180,7 @@ BOOL __stdcall Mine_GetPrivateProfileStructW(LPCWSTR a0,
         rv = Real_GetPrivateProfileStructW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetPrivateProfileStructW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), a2, a3, escapeStr(a4), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetPrivateProfileStructW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), a2, a3, escapeStr(a4), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20194,7 +20194,7 @@ FARPROC __stdcall Mine_GetProcAddress(HMODULE a0,
         rv = Real_GetProcAddress(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetProcAddress\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetProcAddress\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20209,7 +20209,7 @@ BOOL __stdcall Mine_GetProcessAffinityMask(HANDLE a0,
         rv = Real_GetProcessAffinityMask(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetProcessAffinityMask\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetProcessAffinityMask\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20223,7 +20223,7 @@ DWORD __stdcall Mine_GetProcessHeaps(DWORD a0,
         rv = Real_GetProcessHeaps(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetProcessHeaps\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetProcessHeaps\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20237,7 +20237,7 @@ BOOL __stdcall Mine_GetProcessShutdownParameters(LPDWORD a0,
         rv = Real_GetProcessShutdownParameters(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetProcessShutdownParameters\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetProcessShutdownParameters\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20254,7 +20254,7 @@ BOOL __stdcall Mine_GetProcessTimes(HANDLE a0,
         rv = Real_GetProcessTimes(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetProcessTimes\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetProcessTimes\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20267,7 +20267,7 @@ DWORD __stdcall Mine_GetProcessVersion(DWORD a0)
         rv = Real_GetProcessVersion(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetProcessVersion\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetProcessVersion\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20280,7 +20280,7 @@ HWINSTA __stdcall Mine_GetProcessWindowStation(void)
         rv = Real_GetProcessWindowStation();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetProcessWindowStation\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetProcessWindowStation\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20295,7 +20295,7 @@ BOOL __stdcall Mine_GetProcessWorkingSetSize(HANDLE a0,
         rv = Real_GetProcessWorkingSetSize(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetProcessWorkingSetSize\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetProcessWorkingSetSize\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20310,7 +20310,7 @@ UINT __stdcall Mine_GetProfileIntA(LPCSTR a0,
         rv = Real_GetProfileIntA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetProfileIntA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetProfileIntA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20325,7 +20325,7 @@ UINT __stdcall Mine_GetProfileIntW(LPCWSTR a0,
         rv = Real_GetProfileIntW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetProfileIntW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetProfileIntW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20340,7 +20340,7 @@ DWORD __stdcall Mine_GetProfileSectionA(LPCSTR a0,
         rv = Real_GetProfileSectionA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetProfileSectionA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetProfileSectionA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20355,7 +20355,7 @@ DWORD __stdcall Mine_GetProfileSectionW(LPCWSTR a0,
         rv = Real_GetProfileSectionW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetProfileSectionW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetProfileSectionW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20372,7 +20372,7 @@ DWORD __stdcall Mine_GetProfileStringA(LPCSTR a0,
         rv = Real_GetProfileStringA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetProfileStringA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), escapeStr(a2), a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetProfileStringA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), escapeStr(a2), a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20389,7 +20389,7 @@ DWORD __stdcall Mine_GetProfileStringW(LPCWSTR a0,
         rv = Real_GetProfileStringW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetProfileStringW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), escapeStr(a2), a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetProfileStringW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), escapeStr(a2), a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20403,7 +20403,7 @@ HANDLE __stdcall Mine_GetPropA(HWND a0,
         rv = Real_GetPropA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetPropA\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetPropA\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20417,7 +20417,7 @@ HANDLE __stdcall Mine_GetPropW(HWND a0,
         rv = Real_GetPropW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetPropW\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetPropW\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20430,7 +20430,7 @@ DWORD __stdcall Mine_GetQueueStatus(UINT a0)
         rv = Real_GetQueueStatus(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetQueueStatus\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetQueueStatus\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20447,7 +20447,7 @@ BOOL __stdcall Mine_GetQueuedCompletionStatus(HANDLE a0,
         rv = Real_GetQueuedCompletionStatus(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetQueuedCompletionStatus\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetQueuedCompletionStatus\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20460,7 +20460,7 @@ int __stdcall Mine_GetROP2(HDC a0)
         rv = Real_GetROP2(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetROP2\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetROP2\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20474,7 +20474,7 @@ BOOL __stdcall Mine_GetRasterizerCaps(LPRASTERIZER_STATUS a0,
         rv = Real_GetRasterizerCaps(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetRasterizerCaps\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetRasterizerCaps\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20489,7 +20489,7 @@ DWORD __stdcall Mine_GetRegionData(HRGN a0,
         rv = Real_GetRegionData(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetRegionData\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetRegionData\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20503,7 +20503,7 @@ int __stdcall Mine_GetRgnBox(HRGN a0,
         rv = Real_GetRgnBox(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetRgnBox\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetRgnBox\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20517,7 +20517,7 @@ HRESULT __stdcall Mine_GetRunningObjectTable(DWORD a0,
         rv = Real_GetRunningObjectTable(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetRunningObjectTable\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetRunningObjectTable\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20532,7 +20532,7 @@ BOOL __stdcall Mine_GetScrollInfo(HWND a0,
         rv = Real_GetScrollInfo(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetScrollInfo\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetScrollInfo\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20546,7 +20546,7 @@ int __stdcall Mine_GetScrollPos(HWND a0,
         rv = Real_GetScrollPos(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetScrollPos\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetScrollPos\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20562,7 +20562,7 @@ BOOL __stdcall Mine_GetScrollRange(HWND a0,
         rv = Real_GetScrollRange(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetScrollRange\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetScrollRange\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20577,7 +20577,7 @@ DWORD __stdcall Mine_GetShortPathNameA(LPCSTR a0,
         rv = Real_GetShortPathNameA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetShortPathNameA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetShortPathNameA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20592,7 +20592,7 @@ DWORD __stdcall Mine_GetShortPathNameW(LPCWSTR a0,
         rv = Real_GetShortPathNameW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetShortPathNameW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetShortPathNameW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20604,7 +20604,7 @@ void __stdcall Mine_GetStartupInfoA(LPSTARTUPINFOA a0)
         Real_GetStartupInfoA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetStartupInfoA\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"},\n", a0, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetStartupInfoA\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"}\n", a0, _ReturnAddress());
     };
 }
 
@@ -20615,7 +20615,7 @@ void __stdcall Mine_GetStartupInfoW(LPSTARTUPINFOW a0)
         Real_GetStartupInfoW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetStartupInfoW\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"},\n", a0, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetStartupInfoW\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"}\n", a0, _ReturnAddress());
     };
 }
 
@@ -20627,7 +20627,7 @@ HANDLE __stdcall Mine_GetStdHandle(DWORD a0)
         rv = Real_GetStdHandle(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetStdHandle\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetStdHandle\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20640,7 +20640,7 @@ HGDIOBJ __stdcall Mine_GetStockObject(int a0)
         rv = Real_GetStockObject(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetStockObject\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetStockObject\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20653,7 +20653,7 @@ int __stdcall Mine_GetStretchBltMode(HDC a0)
         rv = Real_GetStretchBltMode(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetStretchBltMode\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetStretchBltMode\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20667,7 +20667,7 @@ HMENU __stdcall Mine_GetSubMenu(HMENU a0,
         rv = Real_GetSubMenu(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetSubMenu\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetSubMenu\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20680,7 +20680,7 @@ DWORD __stdcall Mine_GetSysColor(int a0)
         rv = Real_GetSysColor(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetSysColor\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetSysColor\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20693,7 +20693,7 @@ HBRUSH __stdcall Mine_GetSysColorBrush(int a0)
         rv = Real_GetSysColorBrush(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetSysColorBrush\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetSysColorBrush\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20706,7 +20706,7 @@ LCID __stdcall Mine_GetSystemDefaultLCID(void)
         rv = Real_GetSystemDefaultLCID();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetSystemDefaultLCID\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetSystemDefaultLCID\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20719,7 +20719,7 @@ LANGID __stdcall Mine_GetSystemDefaultLangID(void)
         rv = Real_GetSystemDefaultLangID();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetSystemDefaultLangID\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetSystemDefaultLangID\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20733,7 +20733,7 @@ UINT __stdcall Mine_GetSystemDirectoryA(LPSTR a0,
         rv = Real_GetSystemDirectoryA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetSystemDirectoryA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetSystemDirectoryA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20747,7 +20747,7 @@ UINT __stdcall Mine_GetSystemDirectoryW(LPWSTR a0,
         rv = Real_GetSystemDirectoryW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetSystemDirectoryW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetSystemDirectoryW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20759,7 +20759,7 @@ void __stdcall Mine_GetSystemInfo(LPSYSTEM_INFO a0)
         Real_GetSystemInfo(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetSystemInfo\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"},\n", a0, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetSystemInfo\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"}\n", a0, _ReturnAddress());
     };
 }
 
@@ -20772,7 +20772,7 @@ HMENU __stdcall Mine_GetSystemMenu(HWND a0,
         rv = Real_GetSystemMenu(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetSystemMenu\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetSystemMenu\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20785,7 +20785,7 @@ int __stdcall Mine_GetSystemMetrics(int a0)
         rv = Real_GetSystemMetrics(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetSystemMetrics\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetSystemMetrics\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20801,7 +20801,7 @@ UINT __stdcall Mine_GetSystemPaletteEntries(HDC a0,
         rv = Real_GetSystemPaletteEntries(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetSystemPaletteEntries\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetSystemPaletteEntries\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20814,7 +20814,7 @@ UINT __stdcall Mine_GetSystemPaletteUse(HDC a0)
         rv = Real_GetSystemPaletteUse(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetSystemPaletteUse\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetSystemPaletteUse\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20827,7 +20827,7 @@ BOOL __stdcall Mine_GetSystemPowerStatus(LPSYSTEM_POWER_STATUS a0)
         rv = Real_GetSystemPowerStatus(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetSystemPowerStatus\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetSystemPowerStatus\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20839,7 +20839,7 @@ void __stdcall Mine_GetSystemTime(LPSYSTEMTIME a0)
         Real_GetSystemTime(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetSystemTime\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"},\n", a0, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetSystemTime\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"}\n", a0, _ReturnAddress());
     };
 }
 
@@ -20853,7 +20853,7 @@ BOOL __stdcall Mine_GetSystemTimeAdjustment(PDWORD a0,
         rv = Real_GetSystemTimeAdjustment(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetSystemTimeAdjustment\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetSystemTimeAdjustment\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20865,7 +20865,7 @@ void __stdcall Mine_GetSystemTimeAsFileTime(LPFILETIME a0)
         Real_GetSystemTimeAsFileTime(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetSystemTimeAsFileTime\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"},\n", a0, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetSystemTimeAsFileTime\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"}\n", a0, _ReturnAddress());
     };
 }
 
@@ -20881,7 +20881,7 @@ DWORD __stdcall Mine_GetTabbedTextExtentA(HDC a0,
         rv = Real_GetTabbedTextExtentA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetTabbedTextExtentA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetTabbedTextExtentA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20898,7 +20898,7 @@ DWORD __stdcall Mine_GetTabbedTextExtentW(HDC a0,
         rv = Real_GetTabbedTextExtentW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetTabbedTextExtentW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetTabbedTextExtentW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20914,7 +20914,7 @@ DWORD __stdcall Mine_GetTapeParameters(HANDLE a0,
         rv = Real_GetTapeParameters(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetTapeParameters\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetTapeParameters\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20931,7 +20931,7 @@ DWORD __stdcall Mine_GetTapePosition(HANDLE a0,
         rv = Real_GetTapePosition(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetTapePosition\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetTapePosition\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20944,7 +20944,7 @@ DWORD __stdcall Mine_GetTapeStatus(HANDLE a0)
         rv = Real_GetTapeStatus(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetTapeStatus\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetTapeStatus\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20960,7 +20960,7 @@ UINT __stdcall Mine_GetTempFileNameA(LPCSTR a0,
         rv = Real_GetTempFileNameA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetTempFileNameA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetTempFileNameA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20976,7 +20976,7 @@ UINT __stdcall Mine_GetTempFileNameW(LPCWSTR a0,
         rv = Real_GetTempFileNameW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetTempFileNameW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetTempFileNameW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -20990,7 +20990,7 @@ DWORD __stdcall Mine_GetTempPathA(DWORD a0,
         rv = Real_GetTempPathA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetTempPathA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetTempPathA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21004,7 +21004,7 @@ DWORD __stdcall Mine_GetTempPathW(DWORD a0,
         rv = Real_GetTempPathW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetTempPathW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetTempPathW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21017,7 +21017,7 @@ UINT __stdcall Mine_GetTextAlign(HDC a0)
         rv = Real_GetTextAlign(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetTextAlign\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetTextAlign\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21030,7 +21030,7 @@ int __stdcall Mine_GetTextCharacterExtra(HDC a0)
         rv = Real_GetTextCharacterExtra(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetTextCharacterExtra\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetTextCharacterExtra\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21043,7 +21043,7 @@ int __stdcall Mine_GetTextCharset(HDC a0)
         rv = Real_GetTextCharset(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetTextCharset\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetTextCharset\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21058,7 +21058,7 @@ int __stdcall Mine_GetTextCharsetInfo(HDC a0,
         rv = Real_GetTextCharsetInfo(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetTextCharsetInfo\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetTextCharsetInfo\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21071,7 +21071,7 @@ COLORREF __stdcall Mine_GetTextColor(HDC a0)
         rv = Real_GetTextColor(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetTextColor\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetTextColor\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21090,7 +21090,7 @@ BOOL __stdcall Mine_GetTextExtentExPointA(HDC a0,
         rv = Real_GetTextExtentExPointA(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetTextExtentExPointA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetTextExtentExPointA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21109,7 +21109,7 @@ BOOL __stdcall Mine_GetTextExtentExPointW(HDC a0,
         rv = Real_GetTextExtentExPointW(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetTextExtentExPointW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetTextExtentExPointW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21125,7 +21125,7 @@ BOOL __stdcall Mine_GetTextExtentPoint32A(HDC a0,
         rv = Real_GetTextExtentPoint32A(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetTextExtentPoint32A\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetTextExtentPoint32A\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21141,7 +21141,7 @@ BOOL __stdcall Mine_GetTextExtentPoint32W(HDC a0,
         rv = Real_GetTextExtentPoint32W(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetTextExtentPoint32W\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetTextExtentPoint32W\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21157,7 +21157,7 @@ BOOL __stdcall Mine_GetTextExtentPointA(HDC a0,
         rv = Real_GetTextExtentPointA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetTextExtentPointA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetTextExtentPointA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21173,7 +21173,7 @@ BOOL __stdcall Mine_GetTextExtentPointW(HDC a0,
         rv = Real_GetTextExtentPointW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetTextExtentPointW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetTextExtentPointW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21188,7 +21188,7 @@ int __stdcall Mine_GetTextFaceA(HDC a0,
         rv = Real_GetTextFaceA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetTextFaceA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetTextFaceA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21203,7 +21203,7 @@ int __stdcall Mine_GetTextFaceW(HDC a0,
         rv = Real_GetTextFaceW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetTextFaceW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetTextFaceW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21217,7 +21217,7 @@ BOOL __stdcall Mine_GetTextMetricsA(HDC a0,
         rv = Real_GetTextMetricsA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetTextMetricsA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetTextMetricsA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21231,7 +21231,7 @@ BOOL __stdcall Mine_GetTextMetricsW(HDC a0,
         rv = Real_GetTextMetricsW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetTextMetricsW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetTextMetricsW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21245,7 +21245,7 @@ BOOL __stdcall Mine_GetThreadContext(HANDLE a0,
         rv = Real_GetThreadContext(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetThreadContext\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetThreadContext\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21258,7 +21258,7 @@ HDESK __stdcall Mine_GetThreadDesktop(DWORD a0)
         rv = Real_GetThreadDesktop(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetThreadDesktop\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetThreadDesktop\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21272,7 +21272,7 @@ LCID __stdcall Mine_GetThreadLocale(void)
         rv = Real_GetThreadLocale();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetThreadLocale\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetThreadLocale\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21286,7 +21286,7 @@ int __stdcall Mine_GetThreadPriority(HANDLE a0)
         rv = Real_GetThreadPriority(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetThreadPriority\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetThreadPriority\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21300,7 +21300,7 @@ BOOL __stdcall Mine_GetThreadPriorityBoost(HANDLE a0,
         rv = Real_GetThreadPriorityBoost(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetThreadPriorityBoost\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetThreadPriorityBoost\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21315,7 +21315,7 @@ BOOL __stdcall Mine_GetThreadSelectorEntry(HANDLE a0,
         rv = Real_GetThreadSelectorEntry(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetThreadSelectorEntry\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetThreadSelectorEntry\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21332,7 +21332,7 @@ BOOL __stdcall Mine_GetThreadTimes(HANDLE a0,
         rv = Real_GetThreadTimes(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetThreadTimes\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetThreadTimes\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21345,7 +21345,7 @@ DWORD __stdcall Mine_GetTickCount(void)
         rv = Real_GetTickCount();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetTickCount\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetTickCount\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21363,7 +21363,7 @@ int __stdcall Mine_GetTimeFormatA(LCID a0,
         rv = Real_GetTimeFormatA(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetTimeFormatA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, escapeStr(a3), a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetTimeFormatA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, escapeStr(a3), a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21381,7 +21381,7 @@ int __stdcall Mine_GetTimeFormatW(LCID a0,
         rv = Real_GetTimeFormatW(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetTimeFormatW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, escapeStr(a3), a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetTimeFormatW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, escapeStr(a3), a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21394,7 +21394,7 @@ DWORD __stdcall Mine_GetTimeZoneInformation(LPTIME_ZONE_INFORMATION a0)
         rv = Real_GetTimeZoneInformation(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetTimeZoneInformation\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetTimeZoneInformation\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21407,7 +21407,7 @@ HWND __stdcall Mine_GetTopWindow(HWND a0)
         rv = Real_GetTopWindow(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetTopWindow\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetTopWindow\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21422,7 +21422,7 @@ BOOL __stdcall Mine_GetUpdateRect(HWND a0,
         rv = Real_GetUpdateRect(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetUpdateRect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetUpdateRect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21437,7 +21437,7 @@ int __stdcall Mine_GetUpdateRgn(HWND a0,
         rv = Real_GetUpdateRgn(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetUpdateRgn\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetUpdateRgn\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21450,7 +21450,7 @@ LCID __stdcall Mine_GetUserDefaultLCID(void)
         rv = Real_GetUserDefaultLCID();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetUserDefaultLCID\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetUserDefaultLCID\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21463,7 +21463,7 @@ LANGID __stdcall Mine_GetUserDefaultLangID(void)
         rv = Real_GetUserDefaultLangID();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetUserDefaultLangID\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetUserDefaultLangID\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21480,7 +21480,7 @@ BOOL __stdcall Mine_GetUserObjectInformationA(HANDLE a0,
         rv = Real_GetUserObjectInformationA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetUserObjectInformationA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetUserObjectInformationA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21497,7 +21497,7 @@ BOOL __stdcall Mine_GetUserObjectInformationW(HANDLE a0,
         rv = Real_GetUserObjectInformationW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetUserObjectInformationW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetUserObjectInformationW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21514,7 +21514,7 @@ BOOL __stdcall Mine_GetUserObjectSecurity(HANDLE a0,
         rv = Real_GetUserObjectSecurity(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetUserObjectSecurity\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetUserObjectSecurity\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21527,7 +21527,7 @@ DWORD __stdcall Mine_GetVersion(void)
         rv = Real_GetVersion();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetVersion\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetVersion\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21540,7 +21540,7 @@ BOOL __stdcall Mine_GetVersionExA(LPOSVERSIONINFOA a0)
         rv = Real_GetVersionExA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetVersionExA\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetVersionExA\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21553,7 +21553,7 @@ BOOL __stdcall Mine_GetVersionExW(LPOSVERSIONINFOW a0)
         rv = Real_GetVersionExW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetVersionExW\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetVersionExW\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21567,7 +21567,7 @@ BOOL __stdcall Mine_GetViewportExtEx(HDC a0,
         rv = Real_GetViewportExtEx(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetViewportExtEx\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetViewportExtEx\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21581,7 +21581,7 @@ BOOL __stdcall Mine_GetViewportOrgEx(HDC a0,
         rv = Real_GetViewportOrgEx(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetViewportOrgEx\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetViewportOrgEx\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21601,7 +21601,7 @@ BOOL __stdcall Mine_GetVolumeInformationA(LPCSTR a0,
         rv = Real_GetVolumeInformationA(a0, a1, a2, a3, a4, a5, a6, a7);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetVolumeInformationA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, a3, a4, a5, a6, a7, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetVolumeInformationA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, a3, a4, a5, a6, a7, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21621,7 +21621,7 @@ BOOL __stdcall Mine_GetVolumeInformationW(LPCWSTR a0,
         rv = Real_GetVolumeInformationW(a0, a1, a2, a3, a4, a5, a6, a7);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetVolumeInformationW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, a3, a4, a5, a6, a7, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetVolumeInformationW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, a3, a4, a5, a6, a7, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21638,7 +21638,7 @@ UINT __stdcall Mine_GetWinMetaFileBits(HENHMETAFILE a0,
         rv = Real_GetWinMetaFileBits(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetWinMetaFileBits\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetWinMetaFileBits\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21652,7 +21652,7 @@ HWND __stdcall Mine_GetWindow(HWND a0,
         rv = Real_GetWindow(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetWindow\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetWindow\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21665,7 +21665,7 @@ DWORD __stdcall Mine_GetWindowContextHelpId(HWND a0)
         rv = Real_GetWindowContextHelpId(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetWindowContextHelpId\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetWindowContextHelpId\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21678,7 +21678,7 @@ HDC __stdcall Mine_GetWindowDC(HWND a0)
         rv = Real_GetWindowDC(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetWindowDC\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetWindowDC\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21692,7 +21692,7 @@ BOOL __stdcall Mine_GetWindowExtEx(HDC a0,
         rv = Real_GetWindowExtEx(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetWindowExtEx\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetWindowExtEx\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21706,7 +21706,7 @@ LONG __stdcall Mine_GetWindowLongA(HWND a0,
         rv = Real_GetWindowLongA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetWindowLongA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetWindowLongA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21720,7 +21720,7 @@ LONG __stdcall Mine_GetWindowLongW(HWND a0,
         rv = Real_GetWindowLongW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetWindowLongW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetWindowLongW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21734,7 +21734,7 @@ BOOL __stdcall Mine_GetWindowOrgEx(HDC a0,
         rv = Real_GetWindowOrgEx(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetWindowOrgEx\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetWindowOrgEx\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21748,7 +21748,7 @@ BOOL __stdcall Mine_GetWindowPlacement(HWND a0,
         rv = Real_GetWindowPlacement(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetWindowPlacement\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetWindowPlacement\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21762,7 +21762,7 @@ BOOL __stdcall Mine_GetWindowRect(HWND a0,
         rv = Real_GetWindowRect(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetWindowRect\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetWindowRect\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21776,7 +21776,7 @@ int __stdcall Mine_GetWindowRgn(HWND a0,
         rv = Real_GetWindowRgn(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetWindowRgn\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetWindowRgn\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21791,7 +21791,7 @@ int __stdcall Mine_GetWindowTextA(HWND a0,
         rv = Real_GetWindowTextA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetWindowTextA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetWindowTextA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21804,7 +21804,7 @@ int __stdcall Mine_GetWindowTextLengthA(HWND a0)
         rv = Real_GetWindowTextLengthA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetWindowTextLengthA\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetWindowTextLengthA\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21817,7 +21817,7 @@ int __stdcall Mine_GetWindowTextLengthW(HWND a0)
         rv = Real_GetWindowTextLengthW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetWindowTextLengthW\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetWindowTextLengthW\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21832,7 +21832,7 @@ int __stdcall Mine_GetWindowTextW(HWND a0,
         rv = Real_GetWindowTextW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetWindowTextW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetWindowTextW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21846,7 +21846,7 @@ DWORD __stdcall Mine_GetWindowThreadProcessId(HWND a0,
         rv = Real_GetWindowThreadProcessId(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetWindowThreadProcessId\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetWindowThreadProcessId\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21860,7 +21860,7 @@ WORD __stdcall Mine_GetWindowWord(HWND a0,
         rv = Real_GetWindowWord(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetWindowWord\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetWindowWord\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21874,7 +21874,7 @@ UINT __stdcall Mine_GetWindowsDirectoryA(LPSTR a0,
         rv = Real_GetWindowsDirectoryA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetWindowsDirectoryA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetWindowsDirectoryA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21888,7 +21888,7 @@ UINT __stdcall Mine_GetWindowsDirectoryW(LPWSTR a0,
         rv = Real_GetWindowsDirectoryW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetWindowsDirectoryW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetWindowsDirectoryW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21902,7 +21902,7 @@ BOOL __stdcall Mine_GetWorldTransform(HDC a0,
         rv = Real_GetWorldTransform(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GetWorldTransform\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GetWorldTransform\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21915,7 +21915,7 @@ ATOM __stdcall Mine_GlobalAddAtomA(LPCSTR a0)
         rv = Real_GlobalAddAtomA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GlobalAddAtomA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GlobalAddAtomA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21928,7 +21928,7 @@ ATOM __stdcall Mine_GlobalAddAtomW(LPCWSTR a0)
         rv = Real_GlobalAddAtomW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GlobalAddAtomW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GlobalAddAtomW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21942,7 +21942,7 @@ HGLOBAL __stdcall Mine_GlobalAlloc(UINT a0,
         rv = Real_GlobalAlloc(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GlobalAlloc\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GlobalAlloc\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21955,7 +21955,7 @@ SIZE_T __stdcall Mine_GlobalCompact(DWORD a0)
         rv = Real_GlobalCompact(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GlobalCompact\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GlobalCompact\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21968,7 +21968,7 @@ ATOM __stdcall Mine_GlobalDeleteAtom(ATOM a0)
         rv = Real_GlobalDeleteAtom(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GlobalDeleteAtom\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GlobalDeleteAtom\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21981,7 +21981,7 @@ ATOM __stdcall Mine_GlobalFindAtomA(LPCSTR a0)
         rv = Real_GlobalFindAtomA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GlobalFindAtomA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GlobalFindAtomA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -21994,7 +21994,7 @@ ATOM __stdcall Mine_GlobalFindAtomW(LPCWSTR a0)
         rv = Real_GlobalFindAtomW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GlobalFindAtomW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GlobalFindAtomW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22006,7 +22006,7 @@ void __stdcall Mine_GlobalFix(HGLOBAL a0)
         Real_GlobalFix(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GlobalFix\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"},\n", a0, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GlobalFix\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"}\n", a0, _ReturnAddress());
     };
 }
 
@@ -22018,7 +22018,7 @@ UINT __stdcall Mine_GlobalFlags(HGLOBAL a0)
         rv = Real_GlobalFlags(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GlobalFlags\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GlobalFlags\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22031,7 +22031,7 @@ HGLOBAL __stdcall Mine_GlobalFree(HGLOBAL a0)
         rv = Real_GlobalFree(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GlobalFree\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GlobalFree\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22046,7 +22046,7 @@ UINT __stdcall Mine_GlobalGetAtomNameA(ATOM a0,
         rv = Real_GlobalGetAtomNameA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GlobalGetAtomNameA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GlobalGetAtomNameA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22061,7 +22061,7 @@ UINT __stdcall Mine_GlobalGetAtomNameW(ATOM a0,
         rv = Real_GlobalGetAtomNameW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GlobalGetAtomNameW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GlobalGetAtomNameW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22074,7 +22074,7 @@ HGLOBAL __stdcall Mine_GlobalHandle(LPCVOID a0)
         rv = Real_GlobalHandle(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GlobalHandle\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GlobalHandle\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22087,7 +22087,7 @@ LPVOID __stdcall Mine_GlobalLock(HGLOBAL a0)
         rv = Real_GlobalLock(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GlobalLock\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GlobalLock\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22099,7 +22099,7 @@ void __stdcall Mine_GlobalMemoryStatus(LPMEMORYSTATUS a0)
         Real_GlobalMemoryStatus(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GlobalMemoryStatus\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"},\n", a0, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GlobalMemoryStatus\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"}\n", a0, _ReturnAddress());
     };
 }
 
@@ -22113,7 +22113,7 @@ HGLOBAL __stdcall Mine_GlobalReAlloc(HGLOBAL a0,
         rv = Real_GlobalReAlloc(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GlobalReAlloc\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GlobalReAlloc\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22126,7 +22126,7 @@ SIZE_T __stdcall Mine_GlobalSize(HGLOBAL a0)
         rv = Real_GlobalSize(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GlobalSize\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GlobalSize\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22139,7 +22139,7 @@ BOOL __stdcall Mine_GlobalUnWire(HGLOBAL a0)
         rv = Real_GlobalUnWire(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GlobalUnWire\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GlobalUnWire\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22151,7 +22151,7 @@ void __stdcall Mine_GlobalUnfix(HGLOBAL a0)
         Real_GlobalUnfix(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GlobalUnfix\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"},\n", a0, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GlobalUnfix\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"}\n", a0, _ReturnAddress());
     };
 }
 
@@ -22163,7 +22163,7 @@ BOOL __stdcall Mine_GlobalUnlock(HGLOBAL a0)
         rv = Real_GlobalUnlock(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GlobalUnlock\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GlobalUnlock\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22176,7 +22176,7 @@ LPVOID __stdcall Mine_GlobalWire(HGLOBAL a0)
         rv = Real_GlobalWire(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GlobalWire\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GlobalWire\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22197,7 +22197,7 @@ BOOL __stdcall Mine_GrayStringA(HDC a0,
         rv = Real_GrayStringA(a0, a1, a2, a3, a4, a5, a6, a7, a8);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GrayStringA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GrayStringA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22218,7 +22218,7 @@ BOOL __stdcall Mine_GrayStringW(HDC a0,
         rv = Real_GrayStringW(a0, a1, a2, a3, a4, a5, a6, a7, a8);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"GrayStringW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"GrayStringW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22231,7 +22231,7 @@ BOOL __stdcall Mine_HeapLock(HANDLE a0)
         rv = Real_HeapLock(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"HeapLock\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"HeapLock\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22244,7 +22244,7 @@ BOOL __stdcall Mine_HeapUnlock(HANDLE a0)
         rv = Real_HeapUnlock(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"HeapUnlock\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"HeapUnlock\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22257,7 +22257,7 @@ BOOL __stdcall Mine_HideCaret(HWND a0)
         rv = Real_HideCaret(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"HideCaret\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"HideCaret\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22273,7 +22273,7 @@ BOOL __stdcall Mine_HiliteMenuItem(HWND a0,
         rv = Real_HiliteMenuItem(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"HiliteMenuItem\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"HiliteMenuItem\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22287,7 +22287,7 @@ HRESULT __stdcall Mine_IIDFromString(LPOLESTR a0,
         rv = Real_IIDFromString(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IIDFromString\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IIDFromString\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22301,7 +22301,7 @@ BOOL __stdcall Mine_ImpersonateDdeClientWindow(HWND a0,
         rv = Real_ImpersonateDdeClientWindow(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ImpersonateDdeClientWindow\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ImpersonateDdeClientWindow\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22314,7 +22314,7 @@ BOOL __stdcall Mine_InSendMessage(void)
         rv = Real_InSendMessage();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"InSendMessage\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"InSendMessage\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22329,7 +22329,7 @@ BOOL __stdcall Mine_InflateRect(LPRECT a0,
         rv = Real_InflateRect(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"InflateRect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"InflateRect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22342,7 +22342,7 @@ BOOL __stdcall Mine_InitAtomTable(DWORD a0)
         rv = Real_InitAtomTable(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"InitAtomTable\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"InitAtomTable\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22359,7 +22359,7 @@ BOOL __stdcall Mine_InsertMenuA(HMENU a0,
         rv = Real_InsertMenuA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"InsertMenuA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, escapeStr(a4), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"InsertMenuA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, escapeStr(a4), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22375,7 +22375,7 @@ BOOL __stdcall Mine_InsertMenuItemA(HMENU a0,
         rv = Real_InsertMenuItemA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"InsertMenuItemA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"InsertMenuItemA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22391,7 +22391,7 @@ BOOL __stdcall Mine_InsertMenuItemW(HMENU a0,
         rv = Real_InsertMenuItemW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"InsertMenuItemW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"InsertMenuItemW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22408,7 +22408,7 @@ BOOL __stdcall Mine_InsertMenuW(HMENU a0,
         rv = Real_InsertMenuW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"InsertMenuW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, escapeStr(a4), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"InsertMenuW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, escapeStr(a4), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22425,7 +22425,7 @@ int __stdcall Mine_IntersectClipRect(HDC a0,
         rv = Real_IntersectClipRect(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IntersectClipRect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IntersectClipRect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22440,7 +22440,7 @@ BOOL __stdcall Mine_IntersectRect(LPRECT a0,
         rv = Real_IntersectRect(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IntersectRect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IntersectRect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22455,7 +22455,7 @@ BOOL __stdcall Mine_InvalidateRect(HWND a0,
         rv = Real_InvalidateRect(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"InvalidateRect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"InvalidateRect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22470,7 +22470,7 @@ BOOL __stdcall Mine_InvalidateRgn(HWND a0,
         rv = Real_InvalidateRgn(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"InvalidateRgn\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"InvalidateRgn\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22484,7 +22484,7 @@ BOOL __stdcall Mine_InvertRect(HDC a0,
         rv = Real_InvertRect(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"InvertRect\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"InvertRect\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22498,7 +22498,7 @@ BOOL __stdcall Mine_InvertRgn(HDC a0,
         rv = Real_InvertRgn(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"InvertRgn\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"InvertRgn\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22514,7 +22514,7 @@ BOOL __stdcall Mine_IsAccelerator(HACCEL a0,
         rv = Real_IsAccelerator(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IsAccelerator\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IsAccelerator\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22527,7 +22527,7 @@ BOOL __stdcall Mine_IsBadCodePtr(FARPROC a0)
         rv = Real_IsBadCodePtr(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IsBadCodePtr\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IsBadCodePtr\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22541,7 +22541,7 @@ BOOL __stdcall Mine_IsBadHugeReadPtr(void* a0,
         rv = Real_IsBadHugeReadPtr(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IsBadHugeReadPtr\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IsBadHugeReadPtr\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22555,7 +22555,7 @@ BOOL __stdcall Mine_IsBadHugeWritePtr(LPVOID a0,
         rv = Real_IsBadHugeWritePtr(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IsBadHugeWritePtr\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IsBadHugeWritePtr\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22569,7 +22569,7 @@ BOOL __stdcall Mine_IsBadReadPtr(void* a0,
         rv = Real_IsBadReadPtr(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IsBadReadPtr\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IsBadReadPtr\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22583,7 +22583,7 @@ BOOL __stdcall Mine_IsBadStringPtrA(LPCSTR a0,
         rv = Real_IsBadStringPtrA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IsBadStringPtrA\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IsBadStringPtrA\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22597,7 +22597,7 @@ BOOL __stdcall Mine_IsBadStringPtrW(LPCWSTR a0,
         rv = Real_IsBadStringPtrW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IsBadStringPtrW\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IsBadStringPtrW\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22611,7 +22611,7 @@ BOOL __stdcall Mine_IsBadWritePtr(LPVOID a0,
         rv = Real_IsBadWritePtr(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IsBadWritePtr\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IsBadWritePtr\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22624,7 +22624,7 @@ BOOL __stdcall Mine_IsCharAlphaA(CHAR a0)
         rv = Real_IsCharAlphaA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IsCharAlphaA\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IsCharAlphaA\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22637,7 +22637,7 @@ BOOL __stdcall Mine_IsCharAlphaNumericA(CHAR a0)
         rv = Real_IsCharAlphaNumericA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IsCharAlphaNumericA\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IsCharAlphaNumericA\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22650,7 +22650,7 @@ BOOL __stdcall Mine_IsCharAlphaNumericW(WCHAR a0)
         rv = Real_IsCharAlphaNumericW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IsCharAlphaNumericW\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IsCharAlphaNumericW\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22663,7 +22663,7 @@ BOOL __stdcall Mine_IsCharAlphaW(WCHAR a0)
         rv = Real_IsCharAlphaW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IsCharAlphaW\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IsCharAlphaW\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22676,7 +22676,7 @@ BOOL __stdcall Mine_IsCharLowerA(CHAR a0)
         rv = Real_IsCharLowerA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IsCharLowerA\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IsCharLowerA\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22689,7 +22689,7 @@ BOOL __stdcall Mine_IsCharLowerW(WCHAR a0)
         rv = Real_IsCharLowerW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IsCharLowerW\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IsCharLowerW\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22702,7 +22702,7 @@ BOOL __stdcall Mine_IsCharUpperA(CHAR a0)
         rv = Real_IsCharUpperA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IsCharUpperA\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IsCharUpperA\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22715,7 +22715,7 @@ BOOL __stdcall Mine_IsCharUpperW(WCHAR a0)
         rv = Real_IsCharUpperW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IsCharUpperW\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IsCharUpperW\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22729,7 +22729,7 @@ BOOL __stdcall Mine_IsChild(HWND a0,
         rv = Real_IsChild(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IsChild\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IsChild\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22742,7 +22742,7 @@ BOOL __stdcall Mine_IsClipboardFormatAvailable(UINT a0)
         rv = Real_IsClipboardFormatAvailable(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IsClipboardFormatAvailable\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IsClipboardFormatAvailable\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22755,7 +22755,7 @@ BOOL __stdcall Mine_IsDBCSLeadByte(BYTE a0)
         rv = Real_IsDBCSLeadByte(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IsDBCSLeadByte\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IsDBCSLeadByte\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22769,7 +22769,7 @@ BOOL __stdcall Mine_IsDBCSLeadByteEx(UINT a0,
         rv = Real_IsDBCSLeadByteEx(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IsDBCSLeadByteEx\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IsDBCSLeadByteEx\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22782,7 +22782,7 @@ BOOL __stdcall Mine_IsDebuggerPresent(void)
         rv = Real_IsDebuggerPresent();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IsDebuggerPresent\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IsDebuggerPresent\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22796,7 +22796,7 @@ BOOL __stdcall Mine_IsDialogMessageA(HWND a0,
         rv = Real_IsDialogMessageA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IsDialogMessageA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IsDialogMessageA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22810,7 +22810,7 @@ BOOL __stdcall Mine_IsDialogMessageW(HWND a0,
         rv = Real_IsDialogMessageW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IsDialogMessageW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IsDialogMessageW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22824,7 +22824,7 @@ UINT __stdcall Mine_IsDlgButtonChecked(HWND a0,
         rv = Real_IsDlgButtonChecked(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IsDlgButtonChecked\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IsDlgButtonChecked\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22837,7 +22837,7 @@ BOOL __stdcall Mine_IsIconic(HWND a0)
         rv = Real_IsIconic(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IsIconic\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IsIconic\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22850,7 +22850,7 @@ BOOL __stdcall Mine_IsMenu(HMENU a0)
         rv = Real_IsMenu(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IsMenu\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IsMenu\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22864,7 +22864,7 @@ BOOL __stdcall Mine_IsProcessorFeaturePresent(DWORD a0)
         rv = Real_IsProcessorFeaturePresent(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IsProcessorFeaturePresent\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IsProcessorFeaturePresent\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22878,7 +22878,7 @@ BOOL __stdcall Mine_IsRectEmpty(RECT* a0)
         rv = Real_IsRectEmpty(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IsRectEmpty\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IsRectEmpty\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22891,7 +22891,7 @@ BOOL __stdcall Mine_IsValidCodePage(UINT a0)
         rv = Real_IsValidCodePage(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IsValidCodePage\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IsValidCodePage\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22905,7 +22905,7 @@ BOOL __stdcall Mine_IsValidLocale(LCID a0,
         rv = Real_IsValidLocale(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IsValidLocale\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IsValidLocale\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22918,7 +22918,7 @@ BOOL __stdcall Mine_IsWindow(HWND a0)
         rv = Real_IsWindow(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IsWindow\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IsWindow\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22931,7 +22931,7 @@ BOOL __stdcall Mine_IsWindowEnabled(HWND a0)
         rv = Real_IsWindowEnabled(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IsWindowEnabled\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IsWindowEnabled\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22944,7 +22944,7 @@ BOOL __stdcall Mine_IsWindowUnicode(HWND a0)
         rv = Real_IsWindowUnicode(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IsWindowUnicode\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IsWindowUnicode\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22957,7 +22957,7 @@ BOOL __stdcall Mine_IsWindowVisible(HWND a0)
         rv = Real_IsWindowVisible(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IsWindowVisible\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IsWindowVisible\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22970,7 +22970,7 @@ BOOL __stdcall Mine_IsZoomed(HWND a0)
         rv = Real_IsZoomed(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"IsZoomed\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"IsZoomed\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22984,7 +22984,7 @@ BOOL __stdcall Mine_KillTimer(HWND a0,
         rv = Real_KillTimer(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"KillTimer\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"KillTimer\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -22999,7 +22999,7 @@ BOOL __stdcall Mine_LPtoDP(HDC a0,
         rv = Real_LPtoDP(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LPtoDP\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LPtoDP\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23017,7 +23017,7 @@ BOOL __stdcall Mine_LineDDA(int a0,
         rv = Real_LineDDA(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LineDDA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LineDDA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23032,7 +23032,7 @@ BOOL __stdcall Mine_LineTo(HDC a0,
         rv = Real_LineTo(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LineTo\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LineTo\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23046,7 +23046,7 @@ HACCEL __stdcall Mine_LoadAcceleratorsA(HINSTANCE a0,
         rv = Real_LoadAcceleratorsA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LoadAcceleratorsA\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LoadAcceleratorsA\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23060,7 +23060,7 @@ HACCEL __stdcall Mine_LoadAcceleratorsW(HINSTANCE a0,
         rv = Real_LoadAcceleratorsW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LoadAcceleratorsW\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LoadAcceleratorsW\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23074,7 +23074,7 @@ HBITMAP __stdcall Mine_LoadBitmapA(HINSTANCE a0,
         rv = Real_LoadBitmapA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LoadBitmapA\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LoadBitmapA\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23088,7 +23088,7 @@ HBITMAP __stdcall Mine_LoadBitmapW(HINSTANCE a0,
         rv = Real_LoadBitmapW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LoadBitmapW\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LoadBitmapW\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23102,7 +23102,7 @@ HCURSOR __stdcall Mine_LoadCursorA(HINSTANCE a0,
         rv = Real_LoadCursorA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LoadCursorA\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LoadCursorA\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23115,7 +23115,7 @@ HCURSOR __stdcall Mine_LoadCursorFromFileA(LPCSTR a0)
         rv = Real_LoadCursorFromFileA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LoadCursorFromFileA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LoadCursorFromFileA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23128,7 +23128,7 @@ HCURSOR __stdcall Mine_LoadCursorFromFileW(LPCWSTR a0)
         rv = Real_LoadCursorFromFileW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LoadCursorFromFileW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LoadCursorFromFileW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23142,7 +23142,7 @@ HCURSOR __stdcall Mine_LoadCursorW(HINSTANCE a0,
         rv = Real_LoadCursorW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LoadCursorW\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LoadCursorW\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23156,7 +23156,7 @@ HICON __stdcall Mine_LoadIconA(HINSTANCE a0,
         rv = Real_LoadIconA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LoadIconA\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LoadIconA\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23170,7 +23170,7 @@ HICON __stdcall Mine_LoadIconW(HINSTANCE a0,
         rv = Real_LoadIconW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LoadIconW\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LoadIconW\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23188,7 +23188,7 @@ HANDLE __stdcall Mine_LoadImageA(HINSTANCE a0,
         rv = Real_LoadImageA(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LoadImageA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LoadImageA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23206,7 +23206,7 @@ HANDLE __stdcall Mine_LoadImageW(HINSTANCE a0,
         rv = Real_LoadImageW(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LoadImageW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LoadImageW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23220,7 +23220,7 @@ HKL __stdcall Mine_LoadKeyboardLayoutA(LPCSTR a0,
         rv = Real_LoadKeyboardLayoutA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LoadKeyboardLayoutA\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LoadKeyboardLayoutA\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23234,7 +23234,7 @@ HKL __stdcall Mine_LoadKeyboardLayoutW(LPCWSTR a0,
         rv = Real_LoadKeyboardLayoutW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LoadKeyboardLayoutW\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LoadKeyboardLayoutW\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23247,7 +23247,7 @@ HMODULE __stdcall Mine_LoadLibraryA(LPCSTR a0)
         rv = Real_LoadLibraryA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LoadLibraryA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LoadLibraryA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23262,7 +23262,7 @@ HMODULE __stdcall Mine_LoadLibraryExA(LPCSTR a0,
         rv = Real_LoadLibraryExA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LoadLibraryExA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LoadLibraryExA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23277,7 +23277,7 @@ HMODULE __stdcall Mine_LoadLibraryExW(LPCWSTR a0,
         rv = Real_LoadLibraryExW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LoadLibraryExW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LoadLibraryExW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23290,7 +23290,7 @@ HMODULE __stdcall Mine_LoadLibraryW(LPCWSTR a0)
         rv = Real_LoadLibraryW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LoadLibraryW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LoadLibraryW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23304,7 +23304,7 @@ HMENU __stdcall Mine_LoadMenuA(HINSTANCE a0,
         rv = Real_LoadMenuA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LoadMenuA\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LoadMenuA\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23317,7 +23317,7 @@ HMENU __stdcall Mine_LoadMenuIndirectA(MENUTEMPLATEA* a0)
         rv = Real_LoadMenuIndirectA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LoadMenuIndirectA\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LoadMenuIndirectA\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23330,7 +23330,7 @@ HMENU __stdcall Mine_LoadMenuIndirectW(MENUTEMPLATEW* a0)
         rv = Real_LoadMenuIndirectW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LoadMenuIndirectW\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LoadMenuIndirectW\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23344,7 +23344,7 @@ HMENU __stdcall Mine_LoadMenuW(HINSTANCE a0,
         rv = Real_LoadMenuW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LoadMenuW\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LoadMenuW\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23358,7 +23358,7 @@ DWORD __stdcall Mine_LoadModule(LPCSTR a0,
         rv = Real_LoadModule(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LoadModule\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LoadModule\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23372,7 +23372,7 @@ HGLOBAL __stdcall Mine_LoadResource(HMODULE a0,
         rv = Real_LoadResource(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LoadResource\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LoadResource\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23388,7 +23388,7 @@ int __stdcall Mine_LoadStringA(HINSTANCE a0,
         rv = Real_LoadStringA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LoadStringA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LoadStringA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23404,7 +23404,7 @@ int __stdcall Mine_LoadStringW(HINSTANCE a0,
         rv = Real_LoadStringW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LoadStringW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LoadStringW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23418,7 +23418,7 @@ HLOCAL __stdcall Mine_LocalAlloc(UINT a0,
         rv = Real_LocalAlloc(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LocalAlloc\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LocalAlloc\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23431,7 +23431,7 @@ SIZE_T __stdcall Mine_LocalCompact(UINT a0)
         rv = Real_LocalCompact(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LocalCompact\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LocalCompact\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23445,7 +23445,7 @@ BOOL __stdcall Mine_LocalFileTimeToFileTime(FILETIME* a0,
         rv = Real_LocalFileTimeToFileTime(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LocalFileTimeToFileTime\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LocalFileTimeToFileTime\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23458,7 +23458,7 @@ UINT __stdcall Mine_LocalFlags(HLOCAL a0)
         rv = Real_LocalFlags(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LocalFlags\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LocalFlags\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23471,7 +23471,7 @@ HLOCAL __stdcall Mine_LocalFree(HLOCAL a0)
         rv = Real_LocalFree(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LocalFree\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LocalFree\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23484,7 +23484,7 @@ HLOCAL __stdcall Mine_LocalHandle(LPCVOID a0)
         rv = Real_LocalHandle(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LocalHandle\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LocalHandle\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23497,7 +23497,7 @@ LPVOID __stdcall Mine_LocalLock(HLOCAL a0)
         rv = Real_LocalLock(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LocalLock\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LocalLock\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23512,7 +23512,7 @@ HLOCAL __stdcall Mine_LocalReAlloc(HLOCAL a0,
         rv = Real_LocalReAlloc(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LocalReAlloc\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LocalReAlloc\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23526,7 +23526,7 @@ SIZE_T __stdcall Mine_LocalShrink(HLOCAL a0,
         rv = Real_LocalShrink(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LocalShrink\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LocalShrink\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23539,7 +23539,7 @@ SIZE_T __stdcall Mine_LocalSize(HLOCAL a0)
         rv = Real_LocalSize(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LocalSize\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LocalSize\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23552,7 +23552,7 @@ BOOL __stdcall Mine_LocalUnlock(HLOCAL a0)
         rv = Real_LocalUnlock(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LocalUnlock\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LocalUnlock\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23569,7 +23569,7 @@ BOOL __stdcall Mine_LockFile(HANDLE a0,
         rv = Real_LockFile(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LockFile\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LockFile\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23587,7 +23587,7 @@ BOOL __stdcall Mine_LockFileEx(HANDLE a0,
         rv = Real_LockFileEx(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LockFileEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LockFileEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23600,7 +23600,7 @@ LPVOID __stdcall Mine_LockResource(HGLOBAL a0)
         rv = Real_LockResource(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LockResource\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LockResource\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23613,7 +23613,7 @@ BOOL __stdcall Mine_LockWindowUpdate(HWND a0)
         rv = Real_LockWindowUpdate(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LockWindowUpdate\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LockWindowUpdate\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23627,7 +23627,7 @@ int __stdcall Mine_LookupIconIdFromDirectory(PBYTE a0,
         rv = Real_LookupIconIdFromDirectory(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LookupIconIdFromDirectory\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LookupIconIdFromDirectory\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23644,7 +23644,7 @@ int __stdcall Mine_LookupIconIdFromDirectoryEx(PBYTE a0,
         rv = Real_LookupIconIdFromDirectoryEx(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"LookupIconIdFromDirectoryEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"LookupIconIdFromDirectoryEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23658,7 +23658,7 @@ BOOL __stdcall Mine_MapDialogRect(HWND a0,
         rv = Real_MapDialogRect(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"MapDialogRect\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"MapDialogRect\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23675,7 +23675,7 @@ LPVOID __stdcall Mine_MapViewOfFile(HANDLE a0,
         rv = Real_MapViewOfFile(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"MapViewOfFile\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"MapViewOfFile\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23693,7 +23693,7 @@ LPVOID __stdcall Mine_MapViewOfFileEx(HANDLE a0,
         rv = Real_MapViewOfFileEx(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"MapViewOfFileEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"MapViewOfFileEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23707,7 +23707,7 @@ UINT __stdcall Mine_MapVirtualKeyA(UINT a0,
         rv = Real_MapVirtualKeyA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"MapVirtualKeyA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"MapVirtualKeyA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23722,7 +23722,7 @@ UINT __stdcall Mine_MapVirtualKeyExA(UINT a0,
         rv = Real_MapVirtualKeyExA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"MapVirtualKeyExA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"MapVirtualKeyExA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23737,7 +23737,7 @@ UINT __stdcall Mine_MapVirtualKeyExW(UINT a0,
         rv = Real_MapVirtualKeyExW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"MapVirtualKeyExW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"MapVirtualKeyExW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23751,7 +23751,7 @@ UINT __stdcall Mine_MapVirtualKeyW(UINT a0,
         rv = Real_MapVirtualKeyW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"MapVirtualKeyW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"MapVirtualKeyW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23767,7 +23767,7 @@ int __stdcall Mine_MapWindowPoints(HWND a0,
         rv = Real_MapWindowPoints(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"MapWindowPoints\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"MapWindowPoints\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23791,7 +23791,7 @@ BOOL __stdcall Mine_MaskBlt(HDC a0,
         rv = Real_MaskBlt(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"MaskBlt\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"MaskBlt\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23806,7 +23806,7 @@ int __stdcall Mine_MenuItemFromPoint(HWND a0,
         rv = Real_MenuItemFromPoint(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"MenuItemFromPoint\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"MenuItemFromPoint\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23819,7 +23819,7 @@ BOOL __stdcall Mine_MessageBeep(UINT a0)
         rv = Real_MessageBeep(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"MessageBeep\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"MessageBeep\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23835,7 +23835,7 @@ int __stdcall Mine_MessageBoxA(HWND a0,
         rv = Real_MessageBoxA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"MessageBoxA\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), escapeStr(a2), a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"MessageBoxA\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), escapeStr(a2), a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23852,7 +23852,7 @@ int __stdcall Mine_MessageBoxExA(HWND a0,
         rv = Real_MessageBoxExA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"MessageBoxExA\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), escapeStr(a2), a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"MessageBoxExA\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), escapeStr(a2), a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23869,7 +23869,7 @@ int __stdcall Mine_MessageBoxExW(HWND a0,
         rv = Real_MessageBoxExW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"MessageBoxExW\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), escapeStr(a2), a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"MessageBoxExW\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), escapeStr(a2), a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23882,7 +23882,7 @@ int __stdcall Mine_MessageBoxIndirectA(MSGBOXPARAMSA* a0)
         rv = Real_MessageBoxIndirectA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"MessageBoxIndirectA\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"MessageBoxIndirectA\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23895,7 +23895,7 @@ int __stdcall Mine_MessageBoxIndirectW(MSGBOXPARAMSW* a0)
         rv = Real_MessageBoxIndirectW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"MessageBoxIndirectW\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"MessageBoxIndirectW\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23911,7 +23911,7 @@ int __stdcall Mine_MessageBoxW(HWND a0,
         rv = Real_MessageBoxW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"MessageBoxW\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), escapeStr(a2), a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"MessageBoxW\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), escapeStr(a2), a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23927,7 +23927,7 @@ HRESULT __stdcall Mine_MkParseDisplayName(IBindCtx* a0,
         rv = Real_MkParseDisplayName(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"MkParseDisplayName\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"MkParseDisplayName\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23944,7 +23944,7 @@ BOOL __stdcall Mine_ModifyMenuA(HMENU a0,
         rv = Real_ModifyMenuA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ModifyMenuA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, escapeStr(a4), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ModifyMenuA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, escapeStr(a4), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23961,7 +23961,7 @@ BOOL __stdcall Mine_ModifyMenuW(HMENU a0,
         rv = Real_ModifyMenuW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ModifyMenuW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, escapeStr(a4), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ModifyMenuW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, escapeStr(a4), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23976,7 +23976,7 @@ BOOL __stdcall Mine_ModifyWorldTransform(HDC a0,
         rv = Real_ModifyWorldTransform(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ModifyWorldTransform\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ModifyWorldTransform\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -23991,7 +23991,7 @@ HRESULT __stdcall Mine_MonikerCommonPrefixWith(IMoniker* a0,
         rv = Real_MonikerCommonPrefixWith(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"MonikerCommonPrefixWith\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"MonikerCommonPrefixWith\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24007,7 +24007,7 @@ HRESULT __stdcall Mine_MonikerRelativePathTo(IMoniker* a0,
         rv = Real_MonikerRelativePathTo(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"MonikerRelativePathTo\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"MonikerRelativePathTo\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24021,7 +24021,7 @@ BOOL __stdcall Mine_MoveFileA(LPCSTR a0,
         rv = Real_MoveFileA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"MoveFileA\", \"fnc_args\": [\"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"MoveFileA\", \"fnc_args\": [\"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24036,7 +24036,7 @@ BOOL __stdcall Mine_MoveFileExA(LPCSTR a0,
         rv = Real_MoveFileExA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"MoveFileExA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"MoveFileExA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24051,7 +24051,7 @@ BOOL __stdcall Mine_MoveFileExW(LPCWSTR a0,
         rv = Real_MoveFileExW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"MoveFileExW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"MoveFileExW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24065,7 +24065,7 @@ BOOL __stdcall Mine_MoveFileW(LPCWSTR a0,
         rv = Real_MoveFileW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"MoveFileW\", \"fnc_args\": [\"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"MoveFileW\", \"fnc_args\": [\"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24081,7 +24081,7 @@ BOOL __stdcall Mine_MoveToEx(HDC a0,
         rv = Real_MoveToEx(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"MoveToEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"MoveToEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24099,7 +24099,7 @@ BOOL __stdcall Mine_MoveWindow(HWND a0,
         rv = Real_MoveWindow(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"MoveWindow\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"MoveWindow\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24116,7 +24116,7 @@ DWORD __stdcall Mine_MsgWaitForMultipleObjects(DWORD a0,
         rv = Real_MsgWaitForMultipleObjects(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"MsgWaitForMultipleObjects\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"MsgWaitForMultipleObjects\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24133,7 +24133,7 @@ DWORD __stdcall Mine_MsgWaitForMultipleObjectsEx(DWORD a0,
         rv = Real_MsgWaitForMultipleObjectsEx(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"MsgWaitForMultipleObjectsEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"MsgWaitForMultipleObjectsEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24148,7 +24148,7 @@ int __stdcall Mine_MulDiv(int a0,
         rv = Real_MulDiv(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"MulDiv\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"MulDiv\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24161,7 +24161,7 @@ DWORD __stdcall Mine_OemKeyScan(WORD a0)
         rv = Real_OemKeyScan(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OemKeyScan\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OemKeyScan\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24175,7 +24175,7 @@ BOOL __stdcall Mine_OemToCharA(LPCSTR a0,
         rv = Real_OemToCharA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OemToCharA\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OemToCharA\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24190,7 +24190,7 @@ BOOL __stdcall Mine_OemToCharBuffA(LPCSTR a0,
         rv = Real_OemToCharBuffA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OemToCharBuffA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OemToCharBuffA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24205,7 +24205,7 @@ BOOL __stdcall Mine_OemToCharBuffW(LPCSTR a0,
         rv = Real_OemToCharBuffW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OemToCharBuffW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OemToCharBuffW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24219,7 +24219,7 @@ BOOL __stdcall Mine_OemToCharW(LPCSTR a0,
         rv = Real_OemToCharW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OemToCharW\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OemToCharW\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24234,7 +24234,7 @@ int __stdcall Mine_OffsetClipRgn(HDC a0,
         rv = Real_OffsetClipRgn(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OffsetClipRgn\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OffsetClipRgn\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24249,7 +24249,7 @@ BOOL __stdcall Mine_OffsetRect(LPRECT a0,
         rv = Real_OffsetRect(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OffsetRect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OffsetRect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24264,7 +24264,7 @@ int __stdcall Mine_OffsetRgn(HRGN a0,
         rv = Real_OffsetRgn(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OffsetRgn\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OffsetRgn\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24280,7 +24280,7 @@ BOOL __stdcall Mine_OffsetViewportOrgEx(HDC a0,
         rv = Real_OffsetViewportOrgEx(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OffsetViewportOrgEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OffsetViewportOrgEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24296,7 +24296,7 @@ BOOL __stdcall Mine_OffsetWindowOrgEx(HDC a0,
         rv = Real_OffsetWindowOrgEx(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OffsetWindowOrgEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OffsetWindowOrgEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24309,7 +24309,7 @@ DWORD __stdcall Mine_OleBuildVersion(void)
         rv = Real_OleBuildVersion();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleBuildVersion\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleBuildVersion\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24323,7 +24323,7 @@ HRESULT __stdcall Mine_OleConvertIStorageToOLESTREAM(LPSTORAGE a0,
         rv = Real_OleConvertIStorageToOLESTREAM(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleConvertIStorageToOLESTREAM\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleConvertIStorageToOLESTREAM\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24342,7 +24342,7 @@ HRESULT __stdcall Mine_OleConvertIStorageToOLESTREAMEx(LPSTORAGE a0,
         rv = Real_OleConvertIStorageToOLESTREAMEx(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleConvertIStorageToOLESTREAMEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleConvertIStorageToOLESTREAMEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24357,7 +24357,7 @@ HRESULT __stdcall Mine_OleConvertOLESTREAMToIStorage(LPOLESTREAM a0,
         rv = Real_OleConvertOLESTREAMToIStorage(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleConvertOLESTREAMToIStorage\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleConvertOLESTREAMToIStorage\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24376,7 +24376,7 @@ HRESULT __stdcall Mine_OleConvertOLESTREAMToIStorageEx(LPOLESTREAM a0,
         rv = Real_OleConvertOLESTREAMToIStorageEx(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleConvertOLESTREAMToIStorageEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleConvertOLESTREAMToIStorageEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24395,7 +24395,7 @@ HRESULT __stdcall Mine_OleCreate(CONST IID& a0,
         rv = Real_OleCreate(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleCreate\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleCreate\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24411,7 +24411,7 @@ HRESULT __stdcall Mine_OleCreateDefaultHandler(CONST IID& a0,
         rv = Real_OleCreateDefaultHandler(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleCreateDefaultHandler\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleCreateDefaultHandler\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24429,7 +24429,7 @@ HRESULT __stdcall Mine_OleCreateEmbeddingHelper(CONST IID& a0,
         rv = Real_OleCreateEmbeddingHelper(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleCreateEmbeddingHelper\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleCreateEmbeddingHelper\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24453,7 +24453,7 @@ HRESULT __stdcall Mine_OleCreateEx(CONST IID& a0,
         rv = Real_OleCreateEx(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleCreateEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleCreateEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24472,7 +24472,7 @@ HRESULT __stdcall Mine_OleCreateFromData(IDataObject* a0,
         rv = Real_OleCreateFromData(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleCreateFromData\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleCreateFromData\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24496,7 +24496,7 @@ HRESULT __stdcall Mine_OleCreateFromDataEx(IDataObject* a0,
         rv = Real_OleCreateFromDataEx(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleCreateFromDataEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleCreateFromDataEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24516,7 +24516,7 @@ HRESULT __stdcall Mine_OleCreateFromFile(CONST IID& a0,
         rv = Real_OleCreateFromFile(a0, a1, a2, a3, a4, a5, a6, a7);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleCreateFromFile\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleCreateFromFile\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24541,7 +24541,7 @@ HRESULT __stdcall Mine_OleCreateFromFileEx(CONST IID& a0,
         rv = Real_OleCreateFromFileEx(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleCreateFromFileEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleCreateFromFileEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24560,7 +24560,7 @@ HRESULT __stdcall Mine_OleCreateLink(IMoniker* a0,
         rv = Real_OleCreateLink(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleCreateLink\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleCreateLink\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24584,7 +24584,7 @@ HRESULT __stdcall Mine_OleCreateLinkEx(IMoniker* a0,
         rv = Real_OleCreateLinkEx(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleCreateLinkEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleCreateLinkEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24603,7 +24603,7 @@ HRESULT __stdcall Mine_OleCreateLinkFromData(IDataObject* a0,
         rv = Real_OleCreateLinkFromData(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleCreateLinkFromData\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleCreateLinkFromData\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24627,7 +24627,7 @@ HRESULT __stdcall Mine_OleCreateLinkFromDataEx(IDataObject* a0,
         rv = Real_OleCreateLinkFromDataEx(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleCreateLinkFromDataEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleCreateLinkFromDataEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24646,7 +24646,7 @@ HRESULT __stdcall Mine_OleCreateLinkToFile(LPCOLESTR a0,
         rv = Real_OleCreateLinkToFile(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleCreateLinkToFile\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleCreateLinkToFile\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24670,7 +24670,7 @@ HRESULT __stdcall Mine_OleCreateLinkToFileEx(LPCOLESTR a0,
         rv = Real_OleCreateLinkToFileEx(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleCreateLinkToFileEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleCreateLinkToFileEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24684,7 +24684,7 @@ HOLEMENU __stdcall Mine_OleCreateMenuDescriptor(HMENU a0,
         rv = Real_OleCreateMenuDescriptor(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleCreateMenuDescriptor\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleCreateMenuDescriptor\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24703,7 +24703,7 @@ HRESULT __stdcall Mine_OleCreateStaticFromData(IDataObject* a0,
         rv = Real_OleCreateStaticFromData(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleCreateStaticFromData\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleCreateStaticFromData\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24716,7 +24716,7 @@ HRESULT __stdcall Mine_OleDestroyMenuDescriptor(HOLEMENU a0)
         rv = Real_OleDestroyMenuDescriptor(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleDestroyMenuDescriptor\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleDestroyMenuDescriptor\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24730,7 +24730,7 @@ HRESULT __stdcall Mine_OleDoAutoConvert(LPSTORAGE a0,
         rv = Real_OleDoAutoConvert(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleDoAutoConvert\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleDoAutoConvert\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24746,7 +24746,7 @@ HRESULT __stdcall Mine_OleDraw(LPUNKNOWN a0,
         rv = Real_OleDraw(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleDraw\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleDraw\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24761,7 +24761,7 @@ HANDLE __stdcall Mine_OleDuplicateData(HANDLE a0,
         rv = Real_OleDuplicateData(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleDuplicateData\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleDuplicateData\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24774,7 +24774,7 @@ HRESULT __stdcall Mine_OleFlushClipboard(void)
         rv = Real_OleFlushClipboard();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleFlushClipboard\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleFlushClipboard\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24788,7 +24788,7 @@ HRESULT __stdcall Mine_OleGetAutoConvert(CONST IID& a0,
         rv = Real_OleGetAutoConvert(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleGetAutoConvert\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleGetAutoConvert\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24801,7 +24801,7 @@ HRESULT __stdcall Mine_OleGetClipboard(IDataObject** a0)
         rv = Real_OleGetClipboard(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleGetClipboard\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleGetClipboard\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24816,7 +24816,7 @@ HGLOBAL __stdcall Mine_OleGetIconOfClass(CONST IID& a0,
         rv = Real_OleGetIconOfClass(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleGetIconOfClass\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleGetIconOfClass\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24830,7 +24830,7 @@ HGLOBAL __stdcall Mine_OleGetIconOfFile(LPOLESTR a0,
         rv = Real_OleGetIconOfFile(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleGetIconOfFile\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleGetIconOfFile\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24843,7 +24843,7 @@ HRESULT __stdcall Mine_OleInitialize(LPVOID a0)
         rv = Real_OleInitialize(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleInitialize\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleInitialize\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24856,7 +24856,7 @@ HRESULT __stdcall Mine_OleIsCurrentClipboard(IDataObject* a0)
         rv = Real_OleIsCurrentClipboard(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleIsCurrentClipboard\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleIsCurrentClipboard\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24869,7 +24869,7 @@ BOOL __stdcall Mine_OleIsRunning(IOleObject* a0)
         rv = Real_OleIsRunning(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleIsRunning\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleIsRunning\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24885,7 +24885,7 @@ HRESULT __stdcall Mine_OleLoad(LPSTORAGE a0,
         rv = Real_OleLoad(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleLoad\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleLoad\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24900,7 +24900,7 @@ HRESULT __stdcall Mine_OleLoadFromStream(LPSTREAM a0,
         rv = Real_OleLoadFromStream(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleLoadFromStream\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleLoadFromStream\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24915,7 +24915,7 @@ HRESULT __stdcall Mine_OleLockRunning(LPUNKNOWN a0,
         rv = Real_OleLockRunning(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleLockRunning\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleLockRunning\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24931,7 +24931,7 @@ HGLOBAL __stdcall Mine_OleMetafilePictFromIconAndLabel(HICON a0,
         rv = Real_OleMetafilePictFromIconAndLabel(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleMetafilePictFromIconAndLabel\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleMetafilePictFromIconAndLabel\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24945,7 +24945,7 @@ HRESULT __stdcall Mine_OleNoteObjectVisible(LPUNKNOWN a0,
         rv = Real_OleNoteObjectVisible(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleNoteObjectVisible\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleNoteObjectVisible\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24958,7 +24958,7 @@ HRESULT __stdcall Mine_OleQueryCreateFromData(IDataObject* a0)
         rv = Real_OleQueryCreateFromData(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleQueryCreateFromData\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleQueryCreateFromData\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24971,7 +24971,7 @@ HRESULT __stdcall Mine_OleQueryLinkFromData(IDataObject* a0)
         rv = Real_OleQueryLinkFromData(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleQueryLinkFromData\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleQueryLinkFromData\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -24986,7 +24986,7 @@ HRESULT __stdcall Mine_OleRegEnumFormatEtc(CONST IID& a0,
         rv = Real_OleRegEnumFormatEtc(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleRegEnumFormatEtc\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleRegEnumFormatEtc\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25000,7 +25000,7 @@ HRESULT __stdcall Mine_OleRegEnumVerbs(CONST IID& a0,
         rv = Real_OleRegEnumVerbs(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleRegEnumVerbs\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleRegEnumVerbs\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25015,7 +25015,7 @@ HRESULT __stdcall Mine_OleRegGetMiscStatus(CONST IID& a0,
         rv = Real_OleRegGetMiscStatus(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleRegGetMiscStatus\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleRegGetMiscStatus\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25030,7 +25030,7 @@ HRESULT __stdcall Mine_OleRegGetUserType(CONST IID& a0,
         rv = Real_OleRegGetUserType(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleRegGetUserType\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleRegGetUserType\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25043,7 +25043,7 @@ HRESULT __stdcall Mine_OleRun(LPUNKNOWN a0)
         rv = Real_OleRun(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleRun\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleRun\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25058,7 +25058,7 @@ HRESULT __stdcall Mine_OleSave(LPPERSISTSTORAGE a0,
         rv = Real_OleSave(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleSave\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleSave\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25072,7 +25072,7 @@ HRESULT __stdcall Mine_OleSaveToStream(IPersistStream* a0,
         rv = Real_OleSaveToStream(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleSaveToStream\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleSaveToStream\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25086,7 +25086,7 @@ HRESULT __stdcall Mine_OleSetAutoConvert(CONST IID& a0,
         rv = Real_OleSetAutoConvert(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleSetAutoConvert\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleSetAutoConvert\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25099,7 +25099,7 @@ HRESULT __stdcall Mine_OleSetClipboard(IDataObject* a0)
         rv = Real_OleSetClipboard(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleSetClipboard\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleSetClipboard\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25113,7 +25113,7 @@ HRESULT __stdcall Mine_OleSetContainedObject(LPUNKNOWN a0,
         rv = Real_OleSetContainedObject(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleSetContainedObject\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleSetContainedObject\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25130,7 +25130,7 @@ HRESULT __stdcall Mine_OleSetMenuDescriptor(HOLEMENU a0,
         rv = Real_OleSetMenuDescriptor(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleSetMenuDescriptor\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleSetMenuDescriptor\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25145,7 +25145,7 @@ HRESULT __stdcall Mine_OleTranslateAccelerator(LPOLEINPLACEFRAME a0,
         rv = Real_OleTranslateAccelerator(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleTranslateAccelerator\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleTranslateAccelerator\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25157,7 +25157,7 @@ void __stdcall Mine_OleUninitialize(void)
         Real_OleUninitialize();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OleUninitialize\", \"fnc_args\": [], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"},\n", _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OleUninitialize\", \"fnc_args\": [], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"}\n", _ReturnAddress());
     };
 }
 
@@ -25169,7 +25169,7 @@ BOOL __stdcall Mine_OpenClipboard(HWND a0)
         rv = Real_OpenClipboard(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OpenClipboard\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OpenClipboard\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25192,7 +25192,7 @@ HDESK __stdcall Mine_OpenDesktopA(LPCSTR a0,
         rv = Real_OpenDesktopA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OpenDesktopA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OpenDesktopA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25215,7 +25215,7 @@ HDESK __stdcall Mine_OpenDesktopW(LPCWSTR a0,
         rv = Real_OpenDesktopW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OpenDesktopW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OpenDesktopW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25230,7 +25230,7 @@ HANDLE __stdcall Mine_OpenEventA(DWORD a0,
         rv = Real_OpenEventA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OpenEventA\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OpenEventA\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25245,7 +25245,7 @@ HANDLE __stdcall Mine_OpenEventW(DWORD a0,
         rv = Real_OpenEventW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OpenEventW\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OpenEventW\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25260,7 +25260,7 @@ HFILE __stdcall Mine_OpenFile(LPCSTR a0,
         rv = Real_OpenFile(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OpenFile\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OpenFile\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25275,7 +25275,7 @@ HANDLE __stdcall Mine_OpenFileMappingA(DWORD a0,
         rv = Real_OpenFileMappingA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OpenFileMappingA\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OpenFileMappingA\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25290,7 +25290,7 @@ HANDLE __stdcall Mine_OpenFileMappingW(DWORD a0,
         rv = Real_OpenFileMappingW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OpenFileMappingW\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OpenFileMappingW\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25303,7 +25303,7 @@ BOOL __stdcall Mine_OpenIcon(HWND a0)
         rv = Real_OpenIcon(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OpenIcon\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OpenIcon\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25318,7 +25318,7 @@ HDESK __stdcall Mine_OpenInputDesktop(DWORD a0,
         rv = Real_OpenInputDesktop(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OpenInputDesktop\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OpenInputDesktop\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25333,7 +25333,7 @@ HANDLE __stdcall Mine_OpenMutexA(DWORD a0,
         rv = Real_OpenMutexA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OpenMutexA\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OpenMutexA\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25348,7 +25348,7 @@ HANDLE __stdcall Mine_OpenMutexW(DWORD a0,
         rv = Real_OpenMutexW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OpenMutexW\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OpenMutexW\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25363,7 +25363,7 @@ HANDLE __stdcall Mine_OpenProcess(DWORD a0,
         rv = Real_OpenProcess(a0, a1, pid);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OpenProcess\", \"fnc_args\": [\"%p\", \"%p\", \"%d\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, pid, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OpenProcess\", \"fnc_args\": [\"%p\", \"%p\", \"%d\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, pid, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25382,7 +25382,7 @@ BOOL __stdcall Mine_OpenProcessToken(__in   HANDLE ProcessHandle,
 
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OpenProcessToken\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", ProcessHandle, DesiredAccess, TokenHandle, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OpenProcessToken\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", ProcessHandle, DesiredAccess, TokenHandle, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25397,7 +25397,7 @@ HANDLE __stdcall Mine_OpenSemaphoreA(DWORD a0,
         rv = Real_OpenSemaphoreA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OpenSemaphoreA\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OpenSemaphoreA\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25412,7 +25412,7 @@ HANDLE __stdcall Mine_OpenSemaphoreW(DWORD a0,
         rv = Real_OpenSemaphoreW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OpenSemaphoreW\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OpenSemaphoreW\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25427,7 +25427,7 @@ HANDLE __stdcall Mine_OpenWaitableTimerA(DWORD a0,
         rv = Real_OpenWaitableTimerA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OpenWaitableTimerA\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OpenWaitableTimerA\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25442,7 +25442,7 @@ HANDLE __stdcall Mine_OpenWaitableTimerW(DWORD a0,
         rv = Real_OpenWaitableTimerW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OpenWaitableTimerW\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OpenWaitableTimerW\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25463,7 +25463,7 @@ HWINSTA __stdcall Mine_OpenWindowStationA(LPCSTR a0,
         rv = Real_OpenWindowStationA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OpenWindowStationA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OpenWindowStationA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25484,7 +25484,7 @@ HWINSTA __stdcall Mine_OpenWindowStationW(LPCWSTR a0,
         rv = Real_OpenWindowStationW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OpenWindowStationW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OpenWindowStationW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25496,7 +25496,7 @@ void __stdcall Mine_OutputDebugStringA(LPCSTR a0)
         Real_OutputDebugStringA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OutputDebugStringA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OutputDebugStringA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), _ReturnAddress());
     };
 }
 
@@ -25507,7 +25507,7 @@ void __stdcall Mine_OutputDebugStringW(LPCWSTR a0)
         Real_OutputDebugStringW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"OutputDebugStringW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"OutputDebugStringW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), _ReturnAddress());
     };
 }
 
@@ -25521,7 +25521,7 @@ LPARAM __stdcall Mine_PackDDElParam(UINT a0,
         rv = Real_PackDDElParam(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PackDDElParam\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PackDDElParam\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25534,7 +25534,7 @@ BOOL __stdcall Mine_PaintDesktop(HDC a0)
         rv = Real_PaintDesktop(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PaintDesktop\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PaintDesktop\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25548,7 +25548,7 @@ BOOL __stdcall Mine_PaintRgn(HDC a0,
         rv = Real_PaintRgn(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PaintRgn\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PaintRgn\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25566,7 +25566,7 @@ BOOL __stdcall Mine_PatBlt(HDC a0,
         rv = Real_PatBlt(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PatBlt\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PatBlt\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25579,7 +25579,7 @@ HRGN __stdcall Mine_PathToRegion(HDC a0)
         rv = Real_PathToRegion(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PathToRegion\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PathToRegion\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25595,7 +25595,7 @@ BOOL __stdcall Mine_PeekConsoleInputA(HANDLE a0,
         rv = Real_PeekConsoleInputA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PeekConsoleInputA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PeekConsoleInputA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25611,7 +25611,7 @@ BOOL __stdcall Mine_PeekConsoleInputW(HANDLE a0,
         rv = Real_PeekConsoleInputW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PeekConsoleInputW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PeekConsoleInputW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25628,7 +25628,7 @@ BOOL __stdcall Mine_PeekMessageA(LPMSG a0,
         rv = Real_PeekMessageA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PeekMessageA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PeekMessageA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25645,7 +25645,7 @@ BOOL __stdcall Mine_PeekMessageW(LPMSG a0,
         rv = Real_PeekMessageW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PeekMessageW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PeekMessageW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25663,7 +25663,7 @@ BOOL __stdcall Mine_PeekNamedPipe(HANDLE a0,
         rv = Real_PeekNamedPipe(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PeekNamedPipe\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PeekNamedPipe\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25684,7 +25684,7 @@ BOOL __stdcall Mine_Pie(HDC a0,
         rv = Real_Pie(a0, a1, a2, a3, a4, a5, a6, a7, a8);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"Pie\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"Pie\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25699,7 +25699,7 @@ BOOL __stdcall Mine_PlayEnhMetaFile(HDC a0,
         rv = Real_PlayEnhMetaFile(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PlayEnhMetaFile\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PlayEnhMetaFile\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25715,7 +25715,7 @@ BOOL __stdcall Mine_PlayEnhMetaFileRecord(HDC a0,
         rv = Real_PlayEnhMetaFileRecord(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PlayEnhMetaFileRecord\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PlayEnhMetaFileRecord\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25729,7 +25729,7 @@ BOOL __stdcall Mine_PlayMetaFile(HDC a0,
         rv = Real_PlayMetaFile(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PlayMetaFile\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PlayMetaFile\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25745,7 +25745,7 @@ BOOL __stdcall Mine_PlayMetaFileRecord(HDC a0,
         rv = Real_PlayMetaFileRecord(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PlayMetaFileRecord\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PlayMetaFileRecord\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25767,7 +25767,7 @@ BOOL __stdcall Mine_PlgBlt(HDC a0,
         rv = Real_PlgBlt(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PlgBlt\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PlgBlt\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25782,7 +25782,7 @@ BOOL __stdcall Mine_PolyBezier(HDC a0,
         rv = Real_PolyBezier(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PolyBezier\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PolyBezier\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25797,7 +25797,7 @@ BOOL __stdcall Mine_PolyBezierTo(HDC a0,
         rv = Real_PolyBezierTo(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PolyBezierTo\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PolyBezierTo\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25813,7 +25813,7 @@ BOOL __stdcall Mine_PolyDraw(HDC a0,
         rv = Real_PolyDraw(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PolyDraw\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PolyDraw\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25829,7 +25829,7 @@ BOOL __stdcall Mine_PolyPolygon(HDC a0,
         rv = Real_PolyPolygon(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PolyPolygon\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PolyPolygon\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25845,7 +25845,7 @@ BOOL __stdcall Mine_PolyPolyline(HDC a0,
         rv = Real_PolyPolyline(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PolyPolyline\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PolyPolyline\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25860,7 +25860,7 @@ BOOL __stdcall Mine_PolyTextOutA(HDC a0,
         rv = Real_PolyTextOutA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PolyTextOutA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PolyTextOutA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25875,7 +25875,7 @@ BOOL __stdcall Mine_PolyTextOutW(HDC a0,
         rv = Real_PolyTextOutW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PolyTextOutW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PolyTextOutW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25890,7 +25890,7 @@ BOOL __stdcall Mine_Polygon(HDC a0,
         rv = Real_Polygon(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"Polygon\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"Polygon\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25905,7 +25905,7 @@ BOOL __stdcall Mine_Polyline(HDC a0,
         rv = Real_Polyline(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"Polyline\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"Polyline\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25920,7 +25920,7 @@ BOOL __stdcall Mine_PolylineTo(HDC a0,
         rv = Real_PolylineTo(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PolylineTo\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PolylineTo\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25936,7 +25936,7 @@ BOOL __stdcall Mine_PostMessageA(HWND a0,
         rv = Real_PostMessageA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PostMessageA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PostMessageA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25952,7 +25952,7 @@ BOOL __stdcall Mine_PostMessageW(HWND a0,
         rv = Real_PostMessageW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PostMessageW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PostMessageW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25968,7 +25968,7 @@ BOOL __stdcall Mine_PostQueuedCompletionStatus(HANDLE a0,
         rv = Real_PostQueuedCompletionStatus(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PostQueuedCompletionStatus\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PostQueuedCompletionStatus\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -25980,7 +25980,7 @@ void __stdcall Mine_PostQuitMessage(int a0)
         Real_PostQuitMessage(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PostQuitMessage\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"},\n", a0, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PostQuitMessage\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"}\n", a0, _ReturnAddress());
     };
 }
 
@@ -25995,7 +25995,7 @@ BOOL __stdcall Mine_PostThreadMessageA(DWORD a0,
         rv = Real_PostThreadMessageA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PostThreadMessageA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PostThreadMessageA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26011,7 +26011,7 @@ BOOL __stdcall Mine_PostThreadMessageW(DWORD a0,
         rv = Real_PostThreadMessageW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PostThreadMessageW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PostThreadMessageW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26026,7 +26026,7 @@ DWORD __stdcall Mine_PrepareTape(HANDLE a0,
         rv = Real_PrepareTape(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PrepareTape\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PrepareTape\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26040,7 +26040,7 @@ HRESULT __stdcall Mine_ProgIDFromCLSID(CONST IID& a0,
         rv = Real_ProgIDFromCLSID(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ProgIDFromCLSID\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ProgIDFromCLSID\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26053,7 +26053,7 @@ HRESULT __stdcall Mine_PropVariantClear(PROPVARIANT* a0)
         rv = Real_PropVariantClear(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PropVariantClear\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PropVariantClear\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26067,7 +26067,7 @@ HRESULT __stdcall Mine_PropVariantCopy(PROPVARIANT* a0,
         rv = Real_PropVariantCopy(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PropVariantCopy\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PropVariantCopy\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26081,7 +26081,7 @@ BOOL __stdcall Mine_PtInRect(RECT* a0,
         rv = Real_PtInRect(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PtInRect\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PtInRect\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26096,7 +26096,7 @@ BOOL __stdcall Mine_PtInRegion(HRGN a0,
         rv = Real_PtInRegion(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PtInRegion\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PtInRegion\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26111,7 +26111,7 @@ BOOL __stdcall Mine_PtVisible(HDC a0,
         rv = Real_PtVisible(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PtVisible\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PtVisible\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26124,7 +26124,7 @@ BOOL __stdcall Mine_PulseEvent(HANDLE a0)
         rv = Real_PulseEvent(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PulseEvent\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PulseEvent\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26138,7 +26138,7 @@ BOOL __stdcall Mine_PurgeComm(HANDLE a0,
         rv = Real_PurgeComm(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"PurgeComm\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"PurgeComm\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26153,7 +26153,7 @@ DWORD __stdcall Mine_QueryDosDeviceA(LPCSTR a0,
         rv = Real_QueryDosDeviceA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"QueryDosDeviceA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"QueryDosDeviceA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26168,7 +26168,7 @@ DWORD __stdcall Mine_QueryDosDeviceW(LPCWSTR a0,
         rv = Real_QueryDosDeviceW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"QueryDosDeviceW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"QueryDosDeviceW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26181,7 +26181,7 @@ BOOL __stdcall Mine_QueryPerformanceCounter(LARGE_INTEGER* a0)
         rv = Real_QueryPerformanceCounter(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"QueryPerformanceCounter\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"QueryPerformanceCounter\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26194,7 +26194,7 @@ BOOL __stdcall Mine_QueryPerformanceFrequency(LARGE_INTEGER* a0)
         rv = Real_QueryPerformanceFrequency(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"QueryPerformanceFrequency\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"QueryPerformanceFrequency\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26209,7 +26209,7 @@ DWORD __stdcall Mine_QueueUserAPC(PAPCFUNC a0,
         rv = Real_QueueUserAPC(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"QueueUserAPC\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"QueueUserAPC\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26224,7 +26224,7 @@ void __stdcall Mine_RaiseException(DWORD a0,
         Real_RaiseException(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"RaiseException\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"RaiseException\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, _ReturnAddress());
     };
 }
 
@@ -26237,7 +26237,7 @@ HRESULT __stdcall Mine_ReadClassStg(LPSTORAGE a0,
         rv = Real_ReadClassStg(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ReadClassStg\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ReadClassStg\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26251,7 +26251,7 @@ HRESULT __stdcall Mine_ReadClassStm(LPSTREAM a0,
         rv = Real_ReadClassStm(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ReadClassStm\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ReadClassStm\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26274,7 +26274,7 @@ BOOL __stdcall Mine_ReadConsoleA(
         rv = Real_ReadConsoleA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ReadConsoleA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ReadConsoleA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26290,7 +26290,7 @@ BOOL __stdcall Mine_ReadConsoleInputA(HANDLE a0,
         rv = Real_ReadConsoleInputA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ReadConsoleInputA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ReadConsoleInputA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26306,7 +26306,7 @@ BOOL __stdcall Mine_ReadConsoleInputW(HANDLE a0,
         rv = Real_ReadConsoleInputW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ReadConsoleInputW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ReadConsoleInputW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26323,7 +26323,7 @@ BOOL __stdcall Mine_ReadConsoleOutputA(HANDLE a0,
         rv = Real_ReadConsoleOutputA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ReadConsoleOutputA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ReadConsoleOutputA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26340,7 +26340,7 @@ BOOL __stdcall Mine_ReadConsoleOutputAttribute(HANDLE a0,
         rv = Real_ReadConsoleOutputAttribute(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ReadConsoleOutputAttribute\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ReadConsoleOutputAttribute\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26357,7 +26357,7 @@ BOOL __stdcall Mine_ReadConsoleOutputCharacterA(HANDLE a0,
         rv = Real_ReadConsoleOutputCharacterA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ReadConsoleOutputCharacterA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ReadConsoleOutputCharacterA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26374,7 +26374,7 @@ BOOL __stdcall Mine_ReadConsoleOutputCharacterW(HANDLE a0,
         rv = Real_ReadConsoleOutputCharacterW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ReadConsoleOutputCharacterW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ReadConsoleOutputCharacterW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26391,7 +26391,7 @@ BOOL __stdcall Mine_ReadConsoleOutputW(HANDLE a0,
         rv = Real_ReadConsoleOutputW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ReadConsoleOutputW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ReadConsoleOutputW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26414,7 +26414,7 @@ BOOL __stdcall Mine_ReadConsoleW(
         rv = Real_ReadConsoleW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ReadConsoleW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ReadConsoleW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26434,7 +26434,7 @@ BOOL __stdcall Mine_ReadDirectoryChangesW(HANDLE a0,
         rv = Real_ReadDirectoryChangesW(a0, a1, a2, a3, a4, a5, a6, a7);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ReadDirectoryChangesW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ReadDirectoryChangesW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26451,7 +26451,7 @@ BOOL __stdcall Mine_ReadFile(HANDLE a0,
         rv = Real_ReadFile(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ReadFile\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ReadFile\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26468,7 +26468,7 @@ BOOL __stdcall Mine_ReadFileEx(HANDLE a0,
         rv = Real_ReadFileEx(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ReadFileEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ReadFileEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26483,7 +26483,7 @@ HRESULT __stdcall Mine_ReadFmtUserTypeStg(LPSTORAGE a0,
         rv = Real_ReadFmtUserTypeStg(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ReadFmtUserTypeStg\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ReadFmtUserTypeStg\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26500,7 +26500,7 @@ BOOL __stdcall Mine_ReadProcessMemory(HANDLE a0,
         rv = Real_ReadProcessMemory(a0, lpBase, lpBuf, nSize, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ReadProcessMemory\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, lpBase, lpBuf, nSize, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ReadProcessMemory\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, lpBase, lpBuf, nSize, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26513,7 +26513,7 @@ UINT __stdcall Mine_RealizePalette(HDC a0)
         rv = Real_RealizePalette(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"RealizePalette\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"RealizePalette\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26527,7 +26527,7 @@ BOOL __stdcall Mine_RectInRegion(HRGN a0,
         rv = Real_RectInRegion(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"RectInRegion\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"RectInRegion\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26541,7 +26541,7 @@ BOOL __stdcall Mine_RectVisible(HDC a0,
         rv = Real_RectVisible(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"RectVisible\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"RectVisible\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26558,7 +26558,7 @@ BOOL __stdcall Mine_Rectangle(HDC a0,
         rv = Real_Rectangle(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"Rectangle\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"Rectangle\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26574,7 +26574,7 @@ BOOL __stdcall Mine_RedrawWindow(HWND a0,
         rv = Real_RedrawWindow(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"RedrawWindow\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"RedrawWindow\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26587,7 +26587,7 @@ ATOM __stdcall Mine_RegisterClassA(WNDCLASSA* a0)
         rv = Real_RegisterClassA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"RegisterClassA\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"RegisterClassA\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26600,7 +26600,7 @@ ATOM __stdcall Mine_RegisterClassExA(WNDCLASSEXA* a0)
         rv = Real_RegisterClassExA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"RegisterClassExA\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"RegisterClassExA\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26613,7 +26613,7 @@ ATOM __stdcall Mine_RegisterClassExW(WNDCLASSEXW* a0)
         rv = Real_RegisterClassExW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"RegisterClassExW\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"RegisterClassExW\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26626,7 +26626,7 @@ ATOM __stdcall Mine_RegisterClassW(WNDCLASSW* a0)
         rv = Real_RegisterClassW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"RegisterClassW\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"RegisterClassW\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26639,7 +26639,7 @@ UINT __stdcall Mine_RegisterClipboardFormatA(LPCSTR a0)
         rv = Real_RegisterClipboardFormatA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"RegisterClipboardFormatA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"RegisterClipboardFormatA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26652,7 +26652,7 @@ UINT __stdcall Mine_RegisterClipboardFormatW(LPCWSTR a0)
         rv = Real_RegisterClipboardFormatW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"RegisterClipboardFormatW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"RegisterClipboardFormatW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26666,7 +26666,7 @@ HRESULT __stdcall Mine_RegisterDragDrop(HWND a0,
         rv = Real_RegisterDragDrop(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"RegisterDragDrop\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"RegisterDragDrop\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26682,7 +26682,7 @@ BOOL __stdcall Mine_RegisterHotKey(HWND a0,
         rv = Real_RegisterHotKey(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"RegisterHotKey\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"RegisterHotKey\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26695,7 +26695,7 @@ UINT __stdcall Mine_RegisterWindowMessageA(LPCSTR a0)
         rv = Real_RegisterWindowMessageA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"RegisterWindowMessageA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"RegisterWindowMessageA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26708,7 +26708,7 @@ UINT __stdcall Mine_RegisterWindowMessageW(LPCWSTR a0)
         rv = Real_RegisterWindowMessageW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"RegisterWindowMessageW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"RegisterWindowMessageW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26721,7 +26721,7 @@ BOOL __stdcall Mine_ReleaseCapture(void)
         rv = Real_ReleaseCapture();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ReleaseCapture\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ReleaseCapture\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26735,7 +26735,7 @@ int __stdcall Mine_ReleaseDC(HWND a0,
         rv = Real_ReleaseDC(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ReleaseDC\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ReleaseDC\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26748,7 +26748,7 @@ BOOL __stdcall Mine_ReleaseMutex(HANDLE a0)
         rv = Real_ReleaseMutex(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ReleaseMutex\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ReleaseMutex\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26763,7 +26763,7 @@ BOOL __stdcall Mine_ReleaseSemaphore(HANDLE a0,
         rv = Real_ReleaseSemaphore(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ReleaseSemaphore\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ReleaseSemaphore\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26775,7 +26775,7 @@ void __stdcall Mine_ReleaseStgMedium(LPSTGMEDIUM a0)
         Real_ReleaseStgMedium(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ReleaseStgMedium\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"},\n", a0, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ReleaseStgMedium\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"}\n", a0, _ReturnAddress());
     };
 }
 
@@ -26787,7 +26787,7 @@ BOOL __stdcall Mine_RemoveDirectoryA(LPCSTR a0)
         rv = Real_RemoveDirectoryA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"RemoveDirectoryA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"RemoveDirectoryA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26800,7 +26800,7 @@ BOOL __stdcall Mine_RemoveDirectoryW(LPCWSTR a0)
         rv = Real_RemoveDirectoryW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"RemoveDirectoryW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"RemoveDirectoryW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26813,7 +26813,7 @@ BOOL __stdcall Mine_RemoveFontResourceA(LPCSTR a0)
         rv = Real_RemoveFontResourceA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"RemoveFontResourceA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"RemoveFontResourceA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26826,7 +26826,7 @@ BOOL __stdcall Mine_RemoveFontResourceW(LPCWSTR a0)
         rv = Real_RemoveFontResourceW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"RemoveFontResourceW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"RemoveFontResourceW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26841,7 +26841,7 @@ BOOL __stdcall Mine_RemoveMenu(HMENU a0,
         rv = Real_RemoveMenu(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"RemoveMenu\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"RemoveMenu\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26855,7 +26855,7 @@ HANDLE __stdcall Mine_RemovePropA(HWND a0,
         rv = Real_RemovePropA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"RemovePropA\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"RemovePropA\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26869,7 +26869,7 @@ HANDLE __stdcall Mine_RemovePropW(HWND a0,
         rv = Real_RemovePropW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"RemovePropW\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"RemovePropW\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26882,7 +26882,7 @@ BOOL __stdcall Mine_ReplyMessage(LRESULT a0)
         rv = Real_ReplyMessage(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ReplyMessage\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ReplyMessage\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26896,7 +26896,7 @@ HDC __stdcall Mine_ResetDCA(HDC a0,
         rv = Real_ResetDCA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ResetDCA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ResetDCA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26910,7 +26910,7 @@ HDC __stdcall Mine_ResetDCW(HDC a0,
         rv = Real_ResetDCW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ResetDCW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ResetDCW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26923,7 +26923,7 @@ BOOL __stdcall Mine_ResetEvent(HANDLE a0)
         rv = Real_ResetEvent(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ResetEvent\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ResetEvent\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26937,7 +26937,7 @@ BOOL __stdcall Mine_ResizePalette(HPALETTE a0,
         rv = Real_ResizePalette(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ResizePalette\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ResizePalette\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26951,7 +26951,7 @@ BOOL __stdcall Mine_RestoreDC(HDC a0,
         rv = Real_RestoreDC(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"RestoreDC\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"RestoreDC\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26964,7 +26964,7 @@ DWORD __stdcall Mine_ResumeThread(HANDLE a0)
         rv = Real_ResumeThread(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ResumeThread\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ResumeThread\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26981,7 +26981,7 @@ LPARAM __stdcall Mine_ReuseDDElParam(LPARAM a0,
         rv = Real_ReuseDDElParam(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ReuseDDElParam\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ReuseDDElParam\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -26994,7 +26994,7 @@ HRESULT __stdcall Mine_RevokeDragDrop(HWND a0)
         rv = Real_RevokeDragDrop(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"RevokeDragDrop\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"RevokeDragDrop\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27013,7 +27013,7 @@ BOOL __stdcall Mine_RoundRect(HDC a0,
         rv = Real_RoundRect(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"RoundRect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"RoundRect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27026,7 +27026,7 @@ int __stdcall Mine_SaveDC(HDC a0)
         rv = Real_SaveDC(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SaveDC\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SaveDC\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27044,7 +27044,7 @@ BOOL __stdcall Mine_ScaleViewportExtEx(HDC a0,
         rv = Real_ScaleViewportExtEx(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ScaleViewportExtEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ScaleViewportExtEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27062,7 +27062,7 @@ BOOL __stdcall Mine_ScaleWindowExtEx(HDC a0,
         rv = Real_ScaleWindowExtEx(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ScaleWindowExtEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ScaleWindowExtEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27076,7 +27076,7 @@ BOOL __stdcall Mine_ScreenToClient(HWND a0,
         rv = Real_ScreenToClient(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ScreenToClient\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ScreenToClient\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27093,7 +27093,7 @@ BOOL __stdcall Mine_ScrollConsoleScreenBufferA(HANDLE a0,
         rv = Real_ScrollConsoleScreenBufferA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ScrollConsoleScreenBufferA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ScrollConsoleScreenBufferA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27110,7 +27110,7 @@ BOOL __stdcall Mine_ScrollConsoleScreenBufferW(HANDLE a0,
         rv = Real_ScrollConsoleScreenBufferW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ScrollConsoleScreenBufferW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ScrollConsoleScreenBufferW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27129,7 +27129,7 @@ BOOL __stdcall Mine_ScrollDC(HDC a0,
         rv = Real_ScrollDC(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ScrollDC\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ScrollDC\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27146,7 +27146,7 @@ BOOL __stdcall Mine_ScrollWindow(HWND a0,
         rv = Real_ScrollWindow(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ScrollWindow\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ScrollWindow\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27166,7 +27166,7 @@ int __stdcall Mine_ScrollWindowEx(HWND a0,
         rv = Real_ScrollWindowEx(a0, a1, a2, a3, a4, a5, a6, a7);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ScrollWindowEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ScrollWindowEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27184,7 +27184,7 @@ DWORD __stdcall Mine_SearchPathA(LPCSTR a0,
         rv = Real_SearchPathA(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SearchPathA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), escapeStr(a2), a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SearchPathA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), escapeStr(a2), a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27202,7 +27202,7 @@ DWORD __stdcall Mine_SearchPathW(LPCWSTR a0,
         rv = Real_SearchPathW(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SearchPathW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), escapeStr(a2), a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SearchPathW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), escapeStr(a2), a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27216,7 +27216,7 @@ BOOL __stdcall Mine_SelectClipPath(HDC a0,
         rv = Real_SelectClipPath(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SelectClipPath\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SelectClipPath\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27230,7 +27230,7 @@ int __stdcall Mine_SelectClipRgn(HDC a0,
         rv = Real_SelectClipRgn(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SelectClipRgn\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SelectClipRgn\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27244,7 +27244,7 @@ HGDIOBJ __stdcall Mine_SelectObject(HDC a0,
         rv = Real_SelectObject(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SelectObject\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SelectObject\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27259,7 +27259,7 @@ HPALETTE __stdcall Mine_SelectPalette(HDC a0,
         rv = Real_SelectPalette(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SelectPalette\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SelectPalette\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27276,7 +27276,7 @@ LRESULT __stdcall Mine_SendDlgItemMessageA(HWND a0,
         rv = Real_SendDlgItemMessageA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SendDlgItemMessageA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SendDlgItemMessageA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27293,7 +27293,7 @@ LRESULT __stdcall Mine_SendDlgItemMessageW(HWND a0,
         rv = Real_SendDlgItemMessageW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SendDlgItemMessageW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SendDlgItemMessageW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27309,7 +27309,7 @@ LRESULT __stdcall Mine_SendMessageA(HWND a0,
         rv = Real_SendMessageA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SendMessageA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SendMessageA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27327,7 +27327,7 @@ BOOL __stdcall Mine_SendMessageCallbackA(HWND a0,
         rv = Real_SendMessageCallbackA(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SendMessageCallbackA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SendMessageCallbackA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27345,7 +27345,7 @@ BOOL __stdcall Mine_SendMessageCallbackW(HWND a0,
         rv = Real_SendMessageCallbackW(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SendMessageCallbackW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SendMessageCallbackW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27364,7 +27364,7 @@ LRESULT __stdcall Mine_SendMessageTimeoutA(HWND a0,
         rv = Real_SendMessageTimeoutA(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SendMessageTimeoutA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SendMessageTimeoutA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27383,7 +27383,7 @@ LRESULT __stdcall Mine_SendMessageTimeoutW(HWND a0,
         rv = Real_SendMessageTimeoutW(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SendMessageTimeoutW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SendMessageTimeoutW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27399,7 +27399,7 @@ LRESULT __stdcall Mine_SendMessageW(HWND a0,
         rv = Real_SendMessageW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SendMessageW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SendMessageW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27415,7 +27415,7 @@ BOOL __stdcall Mine_SendNotifyMessageA(HWND a0,
         rv = Real_SendNotifyMessageA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SendNotifyMessageA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SendNotifyMessageA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27431,7 +27431,7 @@ BOOL __stdcall Mine_SendNotifyMessageW(HWND a0,
         rv = Real_SendNotifyMessageW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SendNotifyMessageW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SendNotifyMessageW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27445,7 +27445,7 @@ int __stdcall Mine_SetAbortProc(HDC a0,
         rv = Real_SetAbortProc(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetAbortProc\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetAbortProc\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27458,7 +27458,7 @@ HWND __stdcall Mine_SetActiveWindow(HWND a0)
         rv = Real_SetActiveWindow(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetActiveWindow\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetActiveWindow\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27472,7 +27472,7 @@ int __stdcall Mine_SetArcDirection(HDC a0,
         rv = Real_SetArcDirection(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetArcDirection\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetArcDirection\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27487,7 +27487,7 @@ LONG __stdcall Mine_SetBitmapBits(HBITMAP a0,
         rv = Real_SetBitmapBits(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetBitmapBits\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetBitmapBits\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27503,7 +27503,7 @@ BOOL __stdcall Mine_SetBitmapDimensionEx(HBITMAP a0,
         rv = Real_SetBitmapDimensionEx(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetBitmapDimensionEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetBitmapDimensionEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27517,7 +27517,7 @@ COLORREF __stdcall Mine_SetBkColor(HDC a0,
         rv = Real_SetBkColor(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetBkColor\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetBkColor\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27531,7 +27531,7 @@ int __stdcall Mine_SetBkMode(HDC a0,
         rv = Real_SetBkMode(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetBkMode\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetBkMode\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27546,7 +27546,7 @@ UINT __stdcall Mine_SetBoundsRect(HDC a0,
         rv = Real_SetBoundsRect(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetBoundsRect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetBoundsRect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27562,7 +27562,7 @@ BOOL __stdcall Mine_SetBrushOrgEx(HDC a0,
         rv = Real_SetBrushOrgEx(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetBrushOrgEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetBrushOrgEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27575,7 +27575,7 @@ HWND __stdcall Mine_SetCapture(HWND a0)
         rv = Real_SetCapture(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetCapture\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetCapture\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27588,7 +27588,7 @@ BOOL __stdcall Mine_SetCaretBlinkTime(UINT a0)
         rv = Real_SetCaretBlinkTime(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetCaretBlinkTime\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetCaretBlinkTime\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27602,7 +27602,7 @@ BOOL __stdcall Mine_SetCaretPos(int a0,
         rv = Real_SetCaretPos(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetCaretPos\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetCaretPos\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27617,7 +27617,7 @@ DWORD __stdcall Mine_SetClassLongA(HWND a0,
         rv = Real_SetClassLongA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetClassLongA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetClassLongA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27632,7 +27632,7 @@ DWORD __stdcall Mine_SetClassLongW(HWND a0,
         rv = Real_SetClassLongW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetClassLongW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetClassLongW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27647,7 +27647,7 @@ WORD __stdcall Mine_SetClassWord(HWND a0,
         rv = Real_SetClassWord(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetClassWord\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetClassWord\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27661,7 +27661,7 @@ HANDLE __stdcall Mine_SetClipboardData(UINT a0,
         rv = Real_SetClipboardData(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetClipboardData\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetClipboardData\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27674,7 +27674,7 @@ HWND __stdcall Mine_SetClipboardViewer(HWND a0)
         rv = Real_SetClipboardViewer(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetClipboardViewer\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetClipboardViewer\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27688,7 +27688,7 @@ BOOL __stdcall Mine_SetColorAdjustment(HDC a0,
         rv = Real_SetColorAdjustment(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetColorAdjustment\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetColorAdjustment\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27702,7 +27702,7 @@ HCOLORSPACE __stdcall Mine_SetColorSpace(HDC a0,
         rv = Real_SetColorSpace(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetColorSpace\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetColorSpace\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27715,7 +27715,7 @@ BOOL __stdcall Mine_SetCommBreak(HANDLE a0)
         rv = Real_SetCommBreak(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetCommBreak\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetCommBreak\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27730,7 +27730,7 @@ BOOL __stdcall Mine_SetCommConfig(HANDLE a0,
         rv = Real_SetCommConfig(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetCommConfig\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetCommConfig\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27744,7 +27744,7 @@ BOOL __stdcall Mine_SetCommMask(HANDLE a0,
         rv = Real_SetCommMask(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetCommMask\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetCommMask\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27758,7 +27758,7 @@ BOOL __stdcall Mine_SetCommState(HANDLE a0,
         rv = Real_SetCommState(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetCommState\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetCommState\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27772,7 +27772,7 @@ BOOL __stdcall Mine_SetCommTimeouts(HANDLE a0,
         rv = Real_SetCommTimeouts(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetCommTimeouts\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetCommTimeouts\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27785,7 +27785,7 @@ BOOL __stdcall Mine_SetComputerNameA(LPCSTR a0)
         rv = Real_SetComputerNameA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetComputerNameA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetComputerNameA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27798,7 +27798,7 @@ BOOL __stdcall Mine_SetComputerNameW(LPCWSTR a0)
         rv = Real_SetComputerNameW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetComputerNameW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetComputerNameW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27811,7 +27811,7 @@ BOOL __stdcall Mine_SetConsoleActiveScreenBuffer(HANDLE a0)
         rv = Real_SetConsoleActiveScreenBuffer(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetConsoleActiveScreenBuffer\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetConsoleActiveScreenBuffer\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27824,7 +27824,7 @@ BOOL __stdcall Mine_SetConsoleCP(UINT a0)
         rv = Real_SetConsoleCP(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetConsoleCP\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetConsoleCP\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27838,7 +27838,7 @@ BOOL __stdcall Mine_SetConsoleCtrlHandler(PHANDLER_ROUTINE a0,
         rv = Real_SetConsoleCtrlHandler(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetConsoleCtrlHandler\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetConsoleCtrlHandler\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27852,7 +27852,7 @@ BOOL __stdcall Mine_SetConsoleCursorInfo(HANDLE a0,
         rv = Real_SetConsoleCursorInfo(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetConsoleCursorInfo\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetConsoleCursorInfo\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27866,7 +27866,7 @@ BOOL __stdcall Mine_SetConsoleCursorPosition(HANDLE a0,
         rv = Real_SetConsoleCursorPosition(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetConsoleCursorPosition\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetConsoleCursorPosition\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27880,7 +27880,7 @@ BOOL __stdcall Mine_SetConsoleMode(HANDLE a0,
         rv = Real_SetConsoleMode(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetConsoleMode\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetConsoleMode\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27893,7 +27893,7 @@ BOOL __stdcall Mine_SetConsoleOutputCP(UINT a0)
         rv = Real_SetConsoleOutputCP(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetConsoleOutputCP\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetConsoleOutputCP\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27907,7 +27907,7 @@ BOOL __stdcall Mine_SetConsoleScreenBufferSize(HANDLE a0,
         rv = Real_SetConsoleScreenBufferSize(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetConsoleScreenBufferSize\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetConsoleScreenBufferSize\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27921,7 +27921,7 @@ BOOL __stdcall Mine_SetConsoleTextAttribute(HANDLE a0,
         rv = Real_SetConsoleTextAttribute(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetConsoleTextAttribute\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetConsoleTextAttribute\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27934,7 +27934,7 @@ BOOL __stdcall Mine_SetConsoleTitleA(LPCSTR a0)
         rv = Real_SetConsoleTitleA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetConsoleTitleA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetConsoleTitleA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27947,7 +27947,7 @@ BOOL __stdcall Mine_SetConsoleTitleW(LPCWSTR a0)
         rv = Real_SetConsoleTitleW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetConsoleTitleW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetConsoleTitleW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27962,7 +27962,7 @@ BOOL __stdcall Mine_SetConsoleWindowInfo(HANDLE a0,
         rv = Real_SetConsoleWindowInfo(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetConsoleWindowInfo\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetConsoleWindowInfo\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27976,7 +27976,7 @@ HRESULT __stdcall Mine_SetConvertStg(LPSTORAGE a0,
         rv = Real_SetConvertStg(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetConvertStg\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetConvertStg\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -27989,7 +27989,7 @@ BOOL __stdcall Mine_SetCurrentDirectoryA(LPCSTR a0)
         rv = Real_SetCurrentDirectoryA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetCurrentDirectoryA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetCurrentDirectoryA\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28002,7 +28002,7 @@ BOOL __stdcall Mine_SetCurrentDirectoryW(LPCWSTR a0)
         rv = Real_SetCurrentDirectoryW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetCurrentDirectoryW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetCurrentDirectoryW\", \"fnc_args\": [\"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28015,7 +28015,7 @@ HCURSOR __stdcall Mine_SetCursor(HCURSOR a0)
         rv = Real_SetCursor(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetCursor\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetCursor\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28029,7 +28029,7 @@ BOOL __stdcall Mine_SetCursorPos(int a0,
         rv = Real_SetCursorPos(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetCursorPos\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetCursorPos\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28045,7 +28045,7 @@ UINT __stdcall Mine_SetDIBColorTable(HDC a0,
         rv = Real_SetDIBColorTable(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetDIBColorTable\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetDIBColorTable\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28064,7 +28064,7 @@ int __stdcall Mine_SetDIBits(HDC a0,
         rv = Real_SetDIBits(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetDIBits\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetDIBits\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28088,7 +28088,7 @@ int __stdcall Mine_SetDIBitsToDevice(HDC a0,
         rv = Real_SetDIBitsToDevice(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetDIBitsToDevice\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetDIBitsToDevice\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28103,7 +28103,7 @@ BOOL __stdcall Mine_SetDefaultCommConfigA(LPCSTR a0,
         rv = Real_SetDefaultCommConfigA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetDefaultCommConfigA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetDefaultCommConfigA\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28118,7 +28118,7 @@ BOOL __stdcall Mine_SetDefaultCommConfigW(LPCWSTR a0,
         rv = Real_SetDefaultCommConfigW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetDefaultCommConfigW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetDefaultCommConfigW\", \"fnc_args\": [\"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28132,7 +28132,7 @@ BOOL __stdcall Mine_SetDeviceGammaRamp(HDC a0,
         rv = Real_SetDeviceGammaRamp(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetDeviceGammaRamp\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetDeviceGammaRamp\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28148,7 +28148,7 @@ BOOL __stdcall Mine_SetDlgItemInt(HWND a0,
         rv = Real_SetDlgItemInt(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetDlgItemInt\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetDlgItemInt\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28163,7 +28163,7 @@ BOOL __stdcall Mine_SetDlgItemTextA(HWND a0,
         rv = Real_SetDlgItemTextA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetDlgItemTextA\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetDlgItemTextA\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28178,7 +28178,7 @@ BOOL __stdcall Mine_SetDlgItemTextW(HWND a0,
         rv = Real_SetDlgItemTextW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetDlgItemTextW\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetDlgItemTextW\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28191,7 +28191,7 @@ BOOL __stdcall Mine_SetDoubleClickTime(UINT a0)
         rv = Real_SetDoubleClickTime(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetDoubleClickTime\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetDoubleClickTime\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28204,7 +28204,7 @@ BOOL __stdcall Mine_SetEndOfFile(HANDLE a0)
         rv = Real_SetEndOfFile(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetEndOfFile\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetEndOfFile\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28218,7 +28218,7 @@ HENHMETAFILE __stdcall Mine_SetEnhMetaFileBits(UINT a0,
         rv = Real_SetEnhMetaFileBits(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetEnhMetaFileBits\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetEnhMetaFileBits\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28232,7 +28232,7 @@ BOOL __stdcall Mine_SetEnvironmentVariableA(LPCSTR a0,
         rv = Real_SetEnvironmentVariableA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetEnvironmentVariableA\", \"fnc_args\": [\"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetEnvironmentVariableA\", \"fnc_args\": [\"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28246,7 +28246,7 @@ BOOL __stdcall Mine_SetEnvironmentVariableW(LPCWSTR a0,
         rv = Real_SetEnvironmentVariableW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetEnvironmentVariableW\", \"fnc_args\": [\"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetEnvironmentVariableW\", \"fnc_args\": [\"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28259,7 +28259,7 @@ UINT __stdcall Mine_SetErrorMode(UINT a0)
         rv = Real_SetErrorMode(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetErrorMode\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetErrorMode\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28272,7 +28272,7 @@ BOOL __stdcall Mine_SetEvent(HANDLE a0)
         rv = Real_SetEvent(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetEvent\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetEvent\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28284,7 +28284,7 @@ void __stdcall Mine_SetFileApisToANSI(void)
         Real_SetFileApisToANSI();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetFileApisToANSI\", \"fnc_args\": [], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"},\n", _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetFileApisToANSI\", \"fnc_args\": [], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"}\n", _ReturnAddress());
     };
 }
 
@@ -28295,7 +28295,7 @@ void __stdcall Mine_SetFileApisToOEM(void)
         Real_SetFileApisToOEM();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetFileApisToOEM\", \"fnc_args\": [], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"},\n", _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetFileApisToOEM\", \"fnc_args\": [], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"}\n", _ReturnAddress());
     };
 }
 
@@ -28308,7 +28308,7 @@ BOOL __stdcall Mine_SetFileAttributesA(LPCSTR a0,
         rv = Real_SetFileAttributesA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetFileAttributesA\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetFileAttributesA\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28322,7 +28322,7 @@ BOOL __stdcall Mine_SetFileAttributesW(LPCWSTR a0,
         rv = Real_SetFileAttributesW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetFileAttributesW\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetFileAttributesW\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28338,7 +28338,7 @@ DWORD __stdcall Mine_SetFilePointer(HANDLE a0,
         rv = Real_SetFilePointer(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetFilePointer\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetFilePointer\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28354,7 +28354,7 @@ BOOL __stdcall Mine_SetFileTime(HANDLE a0,
         rv = Real_SetFileTime(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetFileTime\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetFileTime\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28367,7 +28367,7 @@ HWND __stdcall Mine_SetFocus(HWND a0)
         rv = Real_SetFocus(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetFocus\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetFocus\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28380,7 +28380,7 @@ BOOL __stdcall Mine_SetForegroundWindow(HWND a0)
         rv = Real_SetForegroundWindow(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetForegroundWindow\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetForegroundWindow\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28394,7 +28394,7 @@ int __stdcall Mine_SetGraphicsMode(HDC a0,
         rv = Real_SetGraphicsMode(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetGraphicsMode\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetGraphicsMode\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28407,7 +28407,7 @@ UINT __stdcall Mine_SetHandleCount(UINT a0)
         rv = Real_SetHandleCount(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetHandleCount\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetHandleCount\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28422,7 +28422,7 @@ BOOL __stdcall Mine_SetHandleInformation(HANDLE a0,
         rv = Real_SetHandleInformation(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetHandleInformation\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetHandleInformation\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28436,7 +28436,7 @@ int __stdcall Mine_SetICMMode(HDC a0,
         rv = Real_SetICMMode(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetICMMode\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetICMMode\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28450,7 +28450,7 @@ BOOL __stdcall Mine_SetICMProfileA(HDC a0,
         rv = Real_SetICMProfileA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetICMProfileA\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetICMProfileA\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28464,7 +28464,7 @@ BOOL __stdcall Mine_SetICMProfileW(HDC a0,
         rv = Real_SetICMProfileW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetICMProfileW\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetICMProfileW\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28477,7 +28477,7 @@ BOOL __stdcall Mine_SetKeyboardState(LPBYTE a0)
         rv = Real_SetKeyboardState(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetKeyboardState\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetKeyboardState\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28490,7 +28490,7 @@ BOOL __stdcall Mine_SetLocalTime(SYSTEMTIME* a0)
         rv = Real_SetLocalTime(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetLocalTime\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetLocalTime\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28505,7 +28505,7 @@ BOOL __stdcall Mine_SetLocaleInfoA(LCID a0,
         rv = Real_SetLocaleInfoA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetLocaleInfoA\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetLocaleInfoA\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28520,7 +28520,7 @@ BOOL __stdcall Mine_SetLocaleInfoW(LCID a0,
         rv = Real_SetLocaleInfoW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetLocaleInfoW\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetLocaleInfoW\", \"fnc_args\": [\"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, escapeStr(a2), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28534,7 +28534,7 @@ BOOL __stdcall Mine_SetMailslotInfo(HANDLE a0,
         rv = Real_SetMailslotInfo(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetMailslotInfo\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetMailslotInfo\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28548,7 +28548,7 @@ int __stdcall Mine_SetMapMode(HDC a0,
         rv = Real_SetMapMode(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetMapMode\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetMapMode\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28562,7 +28562,7 @@ DWORD __stdcall Mine_SetMapperFlags(HDC a0,
         rv = Real_SetMapperFlags(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetMapperFlags\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetMapperFlags\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28576,7 +28576,7 @@ BOOL __stdcall Mine_SetMenu(HWND a0,
         rv = Real_SetMenu(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetMenu\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetMenu\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28590,7 +28590,7 @@ BOOL __stdcall Mine_SetMenuContextHelpId(HMENU a0,
         rv = Real_SetMenuContextHelpId(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetMenuContextHelpId\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetMenuContextHelpId\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28605,7 +28605,7 @@ BOOL __stdcall Mine_SetMenuDefaultItem(HMENU a0,
         rv = Real_SetMenuDefaultItem(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetMenuDefaultItem\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetMenuDefaultItem\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28622,7 +28622,7 @@ BOOL __stdcall Mine_SetMenuItemBitmaps(HMENU a0,
         rv = Real_SetMenuItemBitmaps(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetMenuItemBitmaps\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetMenuItemBitmaps\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28638,7 +28638,7 @@ BOOL __stdcall Mine_SetMenuItemInfoA(HMENU a0,
         rv = Real_SetMenuItemInfoA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetMenuItemInfoA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetMenuItemInfoA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28654,7 +28654,7 @@ BOOL __stdcall Mine_SetMenuItemInfoW(HMENU a0,
         rv = Real_SetMenuItemInfoW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetMenuItemInfoW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetMenuItemInfoW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28667,7 +28667,7 @@ LPARAM __stdcall Mine_SetMessageExtraInfo(LPARAM a0)
         rv = Real_SetMessageExtraInfo(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetMessageExtraInfo\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetMessageExtraInfo\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28680,7 +28680,7 @@ BOOL __stdcall Mine_SetMessageQueue(int a0)
         rv = Real_SetMessageQueue(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetMessageQueue\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetMessageQueue\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28694,7 +28694,7 @@ HMETAFILE __stdcall Mine_SetMetaFileBitsEx(UINT a0,
         rv = Real_SetMetaFileBitsEx(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetMetaFileBitsEx\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetMetaFileBitsEx\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28707,7 +28707,7 @@ int __stdcall Mine_SetMetaRgn(HDC a0)
         rv = Real_SetMetaRgn(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetMetaRgn\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetMetaRgn\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28722,7 +28722,7 @@ BOOL __stdcall Mine_SetMiterLimit(HDC a0,
         rv = Real_SetMiterLimit(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetMiterLimit\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetMiterLimit\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28738,7 +28738,7 @@ BOOL __stdcall Mine_SetNamedPipeHandleState(HANDLE a0,
         rv = Real_SetNamedPipeHandleState(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetNamedPipeHandleState\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetNamedPipeHandleState\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28754,7 +28754,7 @@ UINT __stdcall Mine_SetPaletteEntries(HPALETTE a0,
         rv = Real_SetPaletteEntries(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetPaletteEntries\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetPaletteEntries\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28768,7 +28768,7 @@ HWND __stdcall Mine_SetParent(HWND a0,
         rv = Real_SetParent(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetParent\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetParent\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28784,7 +28784,7 @@ COLORREF __stdcall Mine_SetPixel(HDC a0,
         rv = Real_SetPixel(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetPixel\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetPixel\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28799,7 +28799,7 @@ BOOL __stdcall Mine_SetPixelFormat(HDC a0,
         rv = Real_SetPixelFormat(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetPixelFormat\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetPixelFormat\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28815,7 +28815,7 @@ BOOL __stdcall Mine_SetPixelV(HDC a0,
         rv = Real_SetPixelV(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetPixelV\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetPixelV\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28829,7 +28829,7 @@ int __stdcall Mine_SetPolyFillMode(HDC a0,
         rv = Real_SetPolyFillMode(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetPolyFillMode\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetPolyFillMode\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28843,7 +28843,7 @@ BOOL __stdcall Mine_SetPriorityClass(HANDLE a0,
         rv = Real_SetPriorityClass(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetPriorityClass\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetPriorityClass\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28857,7 +28857,7 @@ BOOL __stdcall Mine_SetProcessAffinityMask(HANDLE a0,
         rv = Real_SetProcessAffinityMask(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetProcessAffinityMask\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetProcessAffinityMask\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28871,7 +28871,7 @@ BOOL __stdcall Mine_SetProcessShutdownParameters(DWORD a0,
         rv = Real_SetProcessShutdownParameters(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetProcessShutdownParameters\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetProcessShutdownParameters\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28884,7 +28884,7 @@ BOOL __stdcall Mine_SetProcessWindowStation(HWINSTA a0)
         rv = Real_SetProcessWindowStation(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetProcessWindowStation\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetProcessWindowStation\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28899,7 +28899,7 @@ BOOL __stdcall Mine_SetProcessWorkingSetSize(HANDLE a0,
         rv = Real_SetProcessWorkingSetSize(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetProcessWorkingSetSize\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetProcessWorkingSetSize\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28914,7 +28914,7 @@ BOOL __stdcall Mine_SetPropA(HWND a0,
         rv = Real_SetPropA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetPropA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetPropA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28929,7 +28929,7 @@ BOOL __stdcall Mine_SetPropW(HWND a0,
         rv = Real_SetPropW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetPropW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetPropW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28943,7 +28943,7 @@ int __stdcall Mine_SetROP2(HDC a0,
         rv = Real_SetROP2(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetROP2\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetROP2\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28960,7 +28960,7 @@ BOOL __stdcall Mine_SetRect(LPRECT a0,
         rv = Real_SetRect(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetRect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetRect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28973,7 +28973,7 @@ BOOL __stdcall Mine_SetRectEmpty(LPRECT a0)
         rv = Real_SetRectEmpty(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetRectEmpty\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetRectEmpty\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -28990,7 +28990,7 @@ BOOL __stdcall Mine_SetRectRgn(HRGN a0,
         rv = Real_SetRectRgn(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetRectRgn\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetRectRgn\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29006,7 +29006,7 @@ int __stdcall Mine_SetScrollInfo(HWND a0,
         rv = Real_SetScrollInfo(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetScrollInfo\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetScrollInfo\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29022,7 +29022,7 @@ int __stdcall Mine_SetScrollPos(HWND a0,
         rv = Real_SetScrollPos(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetScrollPos\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetScrollPos\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29039,7 +29039,7 @@ BOOL __stdcall Mine_SetScrollRange(HWND a0,
         rv = Real_SetScrollRange(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetScrollRange\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetScrollRange\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29053,7 +29053,7 @@ BOOL __stdcall Mine_SetStdHandle(DWORD a0,
         rv = Real_SetStdHandle(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetStdHandle\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetStdHandle\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29067,7 +29067,7 @@ int __stdcall Mine_SetStretchBltMode(HDC a0,
         rv = Real_SetStretchBltMode(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetStretchBltMode\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetStretchBltMode\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29082,7 +29082,7 @@ BOOL __stdcall Mine_SetSysColors(int a0,
         rv = Real_SetSysColors(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetSysColors\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetSysColors\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29096,7 +29096,7 @@ BOOL __stdcall Mine_SetSystemCursor(HCURSOR a0,
         rv = Real_SetSystemCursor(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetSystemCursor\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetSystemCursor\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29110,7 +29110,7 @@ UINT __stdcall Mine_SetSystemPaletteUse(HDC a0,
         rv = Real_SetSystemPaletteUse(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetSystemPaletteUse\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetSystemPaletteUse\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29124,7 +29124,7 @@ BOOL __stdcall Mine_SetSystemPowerState(BOOL a0,
         rv = Real_SetSystemPowerState(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetSystemPowerState\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetSystemPowerState\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29137,7 +29137,7 @@ BOOL __stdcall Mine_SetSystemTime(SYSTEMTIME* a0)
         rv = Real_SetSystemTime(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetSystemTime\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetSystemTime\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29151,7 +29151,7 @@ BOOL __stdcall Mine_SetSystemTimeAdjustment(DWORD a0,
         rv = Real_SetSystemTimeAdjustment(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetSystemTimeAdjustment\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetSystemTimeAdjustment\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29166,7 +29166,7 @@ DWORD __stdcall Mine_SetTapeParameters(HANDLE a0,
         rv = Real_SetTapeParameters(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetTapeParameters\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetTapeParameters\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29184,7 +29184,7 @@ DWORD __stdcall Mine_SetTapePosition(HANDLE a0,
         rv = Real_SetTapePosition(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetTapePosition\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetTapePosition\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29198,7 +29198,7 @@ UINT __stdcall Mine_SetTextAlign(HDC a0,
         rv = Real_SetTextAlign(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetTextAlign\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetTextAlign\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29212,7 +29212,7 @@ int __stdcall Mine_SetTextCharacterExtra(HDC a0,
         rv = Real_SetTextCharacterExtra(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetTextCharacterExtra\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetTextCharacterExtra\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29226,7 +29226,7 @@ COLORREF __stdcall Mine_SetTextColor(HDC a0,
         rv = Real_SetTextColor(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetTextColor\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetTextColor\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29241,7 +29241,7 @@ BOOL __stdcall Mine_SetTextJustification(HDC a0,
         rv = Real_SetTextJustification(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetTextJustification\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetTextJustification\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29255,7 +29255,7 @@ DWORD_PTR __stdcall Mine_SetThreadAffinityMask(HANDLE a0,
         rv = Real_SetThreadAffinityMask(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetThreadAffinityMask\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetThreadAffinityMask\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29269,7 +29269,7 @@ BOOL __stdcall Mine_SetThreadContext(HANDLE a0,
         rv = Real_SetThreadContext(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetThreadContext\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetThreadContext\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29282,7 +29282,7 @@ BOOL __stdcall Mine_SetThreadDesktop(HDESK a0)
         rv = Real_SetThreadDesktop(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetThreadDesktop\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetThreadDesktop\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29296,7 +29296,7 @@ DWORD __stdcall Mine_SetThreadIdealProcessor(HANDLE a0,
         rv = Real_SetThreadIdealProcessor(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetThreadIdealProcessor\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetThreadIdealProcessor\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29310,7 +29310,7 @@ BOOL __stdcall Mine_SetThreadLocale(LCID a0)
         rv = Real_SetThreadLocale(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetThreadLocale\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetThreadLocale\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29325,7 +29325,7 @@ BOOL __stdcall Mine_SetThreadPriority(HANDLE a0,
         rv = Real_SetThreadPriority(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetThreadPriority\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetThreadPriority\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29339,7 +29339,7 @@ BOOL __stdcall Mine_SetThreadPriorityBoost(HANDLE a0,
         rv = Real_SetThreadPriorityBoost(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetThreadPriorityBoost\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetThreadPriorityBoost\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29352,7 +29352,7 @@ BOOL __stdcall Mine_SetTimeZoneInformation(TIME_ZONE_INFORMATION* a0)
         rv = Real_SetTimeZoneInformation(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetTimeZoneInformation\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetTimeZoneInformation\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29368,7 +29368,7 @@ UINT_PTR __stdcall Mine_SetTimer(HWND a0,
         rv = Real_SetTimer(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetTimer\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetTimer\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29381,7 +29381,7 @@ LPTOP_LEVEL_EXCEPTION_FILTER __stdcall Mine_SetUnhandledExceptionFilter(LPTOP_LE
         rv = Real_SetUnhandledExceptionFilter(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetUnhandledExceptionFilter\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetUnhandledExceptionFilter\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29397,7 +29397,7 @@ BOOL __stdcall Mine_SetUserObjectInformationA(HANDLE a0,
         rv = Real_SetUserObjectInformationA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetUserObjectInformationA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetUserObjectInformationA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29413,7 +29413,7 @@ BOOL __stdcall Mine_SetUserObjectInformationW(HANDLE a0,
         rv = Real_SetUserObjectInformationW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetUserObjectInformationW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetUserObjectInformationW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29428,7 +29428,7 @@ BOOL __stdcall Mine_SetUserObjectSecurity(HANDLE a0,
         rv = Real_SetUserObjectSecurity(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetUserObjectSecurity\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetUserObjectSecurity\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29444,7 +29444,7 @@ BOOL __stdcall Mine_SetViewportExtEx(HDC a0,
         rv = Real_SetViewportExtEx(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetViewportExtEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetViewportExtEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29460,7 +29460,7 @@ BOOL __stdcall Mine_SetViewportOrgEx(HDC a0,
         rv = Real_SetViewportOrgEx(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetViewportOrgEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetViewportOrgEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29474,7 +29474,7 @@ BOOL __stdcall Mine_SetVolumeLabelA(LPCSTR a0,
         rv = Real_SetVolumeLabelA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetVolumeLabelA\", \"fnc_args\": [\"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetVolumeLabelA\", \"fnc_args\": [\"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29488,7 +29488,7 @@ BOOL __stdcall Mine_SetVolumeLabelW(LPCWSTR a0,
         rv = Real_SetVolumeLabelW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetVolumeLabelW\", \"fnc_args\": [\"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetVolumeLabelW\", \"fnc_args\": [\"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29506,7 +29506,7 @@ BOOL __stdcall Mine_SetWaitableTimer(HANDLE a0,
         rv = Real_SetWaitableTimer(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetWaitableTimer\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetWaitableTimer\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29522,7 +29522,7 @@ HENHMETAFILE __stdcall Mine_SetWinMetaFileBits(UINT a0,
         rv = Real_SetWinMetaFileBits(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetWinMetaFileBits\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetWinMetaFileBits\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29536,7 +29536,7 @@ BOOL __stdcall Mine_SetWindowContextHelpId(HWND a0,
         rv = Real_SetWindowContextHelpId(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetWindowContextHelpId\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetWindowContextHelpId\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29552,7 +29552,7 @@ BOOL __stdcall Mine_SetWindowExtEx(HDC a0,
         rv = Real_SetWindowExtEx(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetWindowExtEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetWindowExtEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29567,7 +29567,7 @@ LONG __stdcall Mine_SetWindowLongA(HWND a0,
         rv = Real_SetWindowLongA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetWindowLongA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetWindowLongA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29582,7 +29582,7 @@ LONG __stdcall Mine_SetWindowLongW(HWND a0,
         rv = Real_SetWindowLongW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetWindowLongW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetWindowLongW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29598,7 +29598,7 @@ BOOL __stdcall Mine_SetWindowOrgEx(HDC a0,
         rv = Real_SetWindowOrgEx(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetWindowOrgEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetWindowOrgEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29612,7 +29612,7 @@ BOOL __stdcall Mine_SetWindowPlacement(HWND a0,
         rv = Real_SetWindowPlacement(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetWindowPlacement\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetWindowPlacement\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29631,7 +29631,7 @@ BOOL __stdcall Mine_SetWindowPos(HWND a0,
         rv = Real_SetWindowPos(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetWindowPos\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetWindowPos\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29646,7 +29646,7 @@ int __stdcall Mine_SetWindowRgn(HWND a0,
         rv = Real_SetWindowRgn(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetWindowRgn\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetWindowRgn\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29660,7 +29660,7 @@ BOOL __stdcall Mine_SetWindowTextA(HWND a0,
         rv = Real_SetWindowTextA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetWindowTextA\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetWindowTextA\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29674,7 +29674,7 @@ BOOL __stdcall Mine_SetWindowTextW(HWND a0,
         rv = Real_SetWindowTextW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetWindowTextW\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetWindowTextW\", \"fnc_args\": [\"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29689,7 +29689,7 @@ WORD __stdcall Mine_SetWindowWord(HWND a0,
         rv = Real_SetWindowWord(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetWindowWord\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetWindowWord\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29703,7 +29703,7 @@ HHOOK __stdcall Mine_SetWindowsHookA(int a0,
         rv = Real_SetWindowsHookA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetWindowsHookA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetWindowsHookA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29719,7 +29719,7 @@ HHOOK __stdcall Mine_SetWindowsHookExA(int a0,
         rv = Real_SetWindowsHookExA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetWindowsHookExA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetWindowsHookExA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29735,7 +29735,7 @@ HHOOK __stdcall Mine_SetWindowsHookExW(int a0,
         rv = Real_SetWindowsHookExW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetWindowsHookExW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetWindowsHookExW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29749,7 +29749,7 @@ HHOOK __stdcall Mine_SetWindowsHookW(int a0,
         rv = Real_SetWindowsHookW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetWindowsHookW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetWindowsHookW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29763,7 +29763,7 @@ BOOL __stdcall Mine_SetWorldTransform(HDC a0,
         rv = Real_SetWorldTransform(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetWorldTransform\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetWorldTransform\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29778,7 +29778,7 @@ BOOL __stdcall Mine_SetupComm(HANDLE a0,
         rv = Real_SetupComm(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SetupComm\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SetupComm\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29791,7 +29791,7 @@ BOOL __stdcall Mine_ShowCaret(HWND a0)
         rv = Real_ShowCaret(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ShowCaret\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ShowCaret\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29804,7 +29804,7 @@ int __stdcall Mine_ShowCursor(BOOL a0)
         rv = Real_ShowCursor(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ShowCursor\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ShowCursor\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29818,7 +29818,7 @@ BOOL __stdcall Mine_ShowOwnedPopups(HWND a0,
         rv = Real_ShowOwnedPopups(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ShowOwnedPopups\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ShowOwnedPopups\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29833,7 +29833,7 @@ BOOL __stdcall Mine_ShowScrollBar(HWND a0,
         rv = Real_ShowScrollBar(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ShowScrollBar\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ShowScrollBar\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29847,7 +29847,7 @@ BOOL __stdcall Mine_ShowWindow(HWND a0,
         rv = Real_ShowWindow(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ShowWindow\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ShowWindow\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29861,7 +29861,7 @@ BOOL __stdcall Mine_ShowWindowAsync(HWND a0,
         rv = Real_ShowWindowAsync(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ShowWindowAsync\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ShowWindowAsync\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29877,7 +29877,7 @@ DWORD __stdcall Mine_SignalObjectAndWait(HANDLE a0,
         rv = Real_SignalObjectAndWait(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SignalObjectAndWait\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SignalObjectAndWait\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29891,7 +29891,7 @@ DWORD __stdcall Mine_SizeofResource(HMODULE a0,
         rv = Real_SizeofResource(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SizeofResource\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SizeofResource\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29905,7 +29905,7 @@ DWORD __stdcall Mine_SleepEx(DWORD a0,
         rv = Real_SleepEx(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SleepEx\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SleepEx\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29919,7 +29919,7 @@ int __stdcall Mine_StartDocA(HDC a0,
         rv = Real_StartDocA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"StartDocA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"StartDocA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29933,7 +29933,7 @@ int __stdcall Mine_StartDocW(HDC a0,
         rv = Real_StartDocW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"StartDocW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"StartDocW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29946,7 +29946,7 @@ int __stdcall Mine_StartPage(HDC a0)
         rv = Real_StartPage(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"StartPage\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"StartPage\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29962,7 +29962,7 @@ HRESULT __stdcall Mine_StgCreateDocfile(OLECHAR* a0,
         rv = Real_StgCreateDocfile(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"StgCreateDocfile\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"StgCreateDocfile\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29978,7 +29978,7 @@ HRESULT __stdcall Mine_StgCreateDocfileOnILockBytes(ILockBytes* a0,
         rv = Real_StgCreateDocfileOnILockBytes(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"StgCreateDocfileOnILockBytes\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"StgCreateDocfileOnILockBytes\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -29993,7 +29993,7 @@ HRESULT __stdcall Mine_StgCreatePropSetStg(IStorage* a0,
         rv = Real_StgCreatePropSetStg(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"StgCreatePropSetStg\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"StgCreatePropSetStg\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30011,7 +30011,7 @@ HRESULT __stdcall Mine_StgCreatePropStg(IUnknown* a0,
         rv = Real_StgCreatePropStg(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"StgCreatePropStg\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"StgCreatePropStg\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30042,7 +30042,7 @@ HRESULT __stdcall Mine_StgCreateStorageEx(WCHAR* a0,
         rv = Real_StgCreateStorageEx(a0, a1, a2, a3, a4, a5, a6, a7);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"StgCreateStorageEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"StgCreateStorageEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30056,7 +30056,7 @@ HRESULT __stdcall Mine_StgGetIFillLockBytesOnFile(OLECHAR* a0,
         rv = Real_StgGetIFillLockBytesOnFile(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"StgGetIFillLockBytesOnFile\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"StgGetIFillLockBytesOnFile\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30070,7 +30070,7 @@ HRESULT __stdcall Mine_StgGetIFillLockBytesOnILockBytes(ILockBytes* a0,
         rv = Real_StgGetIFillLockBytesOnILockBytes(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"StgGetIFillLockBytesOnILockBytes\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"StgGetIFillLockBytesOnILockBytes\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30083,7 +30083,7 @@ HRESULT __stdcall Mine_StgIsStorageFile(OLECHAR* a0)
         rv = Real_StgIsStorageFile(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"StgIsStorageFile\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"StgIsStorageFile\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30096,7 +30096,7 @@ HRESULT __stdcall Mine_StgIsStorageILockBytes(ILockBytes* a0)
         rv = Real_StgIsStorageILockBytes(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"StgIsStorageILockBytes\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"StgIsStorageILockBytes\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30112,7 +30112,7 @@ HRESULT __stdcall Mine_StgOpenAsyncDocfileOnIFillLockBytes(IFillLockBytes* a0,
         rv = Real_StgOpenAsyncDocfileOnIFillLockBytes(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"StgOpenAsyncDocfileOnIFillLockBytes\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"StgOpenAsyncDocfileOnIFillLockBytes\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30129,7 +30129,7 @@ HRESULT __stdcall Mine_StgOpenPropStg(IUnknown* a0,
         rv = Real_StgOpenPropStg(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"StgOpenPropStg\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"StgOpenPropStg\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30147,7 +30147,7 @@ HRESULT __stdcall Mine_StgOpenStorage(OLECHAR* a0,
         rv = Real_StgOpenStorage(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"StgOpenStorage\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"StgOpenStorage\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30178,7 +30178,7 @@ HRESULT __stdcall Mine_StgOpenStorageEx(WCHAR* a0,
         rv = Real_StgOpenStorageEx(a0, a1, a2, a3, a4, a5, a6, a7);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"StgOpenStorageEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"StgOpenStorageEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30196,7 +30196,7 @@ HRESULT __stdcall Mine_StgOpenStorageOnILockBytes(ILockBytes* a0,
         rv = Real_StgOpenStorageOnILockBytes(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"StgOpenStorageOnILockBytes\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"StgOpenStorageOnILockBytes\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30212,7 +30212,7 @@ HRESULT __stdcall Mine_StgSetTimes(OLECHAR* a0,
         rv = Real_StgSetTimes(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"StgSetTimes\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"StgSetTimes\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30235,7 +30235,7 @@ BOOL __stdcall Mine_StretchBlt(HDC a0,
         rv = Real_StretchBlt(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"StretchBlt\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"StretchBlt\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30260,7 +30260,7 @@ int __stdcall Mine_StretchDIBits(HDC a0,
         rv = Real_StretchDIBits(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"StretchDIBits\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"StretchDIBits\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30274,7 +30274,7 @@ HRESULT __stdcall Mine_StringFromCLSID(CONST IID& a0,
         rv = Real_StringFromCLSID(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"StringFromCLSID\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"StringFromCLSID\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30289,7 +30289,7 @@ int __stdcall Mine_StringFromGUID2(CONST GUID& a0,
         rv = Real_StringFromGUID2(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"StringFromGUID2\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"StringFromGUID2\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30303,7 +30303,7 @@ HRESULT __stdcall Mine_StringFromIID(CONST IID& a0,
         rv = Real_StringFromIID(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"StringFromIID\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"StringFromIID\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30316,7 +30316,7 @@ BOOL __stdcall Mine_StrokeAndFillPath(HDC a0)
         rv = Real_StrokeAndFillPath(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"StrokeAndFillPath\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"StrokeAndFillPath\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30329,7 +30329,7 @@ BOOL __stdcall Mine_StrokePath(HDC a0)
         rv = Real_StrokePath(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"StrokePath\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"StrokePath\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30344,7 +30344,7 @@ BOOL __stdcall Mine_SubtractRect(LPRECT a0,
         rv = Real_SubtractRect(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SubtractRect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SubtractRect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30357,7 +30357,7 @@ DWORD __stdcall Mine_SuspendThread(HANDLE a0)
         rv = Real_SuspendThread(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SuspendThread\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SuspendThread\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30370,7 +30370,7 @@ BOOL __stdcall Mine_SwapBuffers(HDC a0)
         rv = Real_SwapBuffers(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SwapBuffers\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SwapBuffers\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30383,7 +30383,7 @@ BOOL __stdcall Mine_SwapMouseButton(BOOL a0)
         rv = Real_SwapMouseButton(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SwapMouseButton\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SwapMouseButton\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30396,7 +30396,7 @@ BOOL __stdcall Mine_SwitchDesktop(HDESK a0)
         rv = Real_SwitchDesktop(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SwitchDesktop\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SwitchDesktop\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30408,7 +30408,7 @@ void __stdcall Mine_SwitchToFiber(LPVOID a0)
         Real_SwitchToFiber(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SwitchToFiber\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"},\n", a0, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SwitchToFiber\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"}\n", a0, _ReturnAddress());
     };
 }
 
@@ -30420,7 +30420,7 @@ BOOL __stdcall Mine_SwitchToThread(void)
         rv = Real_SwitchToThread();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SwitchToThread\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SwitchToThread\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30436,7 +30436,7 @@ BOOL __stdcall Mine_SystemParametersInfoA(UINT a0,
         rv = Real_SystemParametersInfoA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SystemParametersInfoA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SystemParametersInfoA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30452,7 +30452,7 @@ BOOL __stdcall Mine_SystemParametersInfoW(UINT a0,
         rv = Real_SystemParametersInfoW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SystemParametersInfoW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SystemParametersInfoW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30466,7 +30466,7 @@ BOOL __stdcall Mine_SystemTimeToFileTime(SYSTEMTIME* a0,
         rv = Real_SystemTimeToFileTime(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SystemTimeToFileTime\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SystemTimeToFileTime\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30488,7 +30488,7 @@ BOOL __stdcall Mine_SystemTimeToTzSpecificLocalTime(
         rv = Real_SystemTimeToTzSpecificLocalTime(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"SystemTimeToTzSpecificLocalTime\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"SystemTimeToTzSpecificLocalTime\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30508,7 +30508,7 @@ LONG __stdcall Mine_TabbedTextOutA(HDC a0,
         rv = Real_TabbedTextOutA(a0, a1, a2, a3, a4, a5, a6, a7);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"TabbedTextOutA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, escapeStr(a3), a4, a5, a6, a7, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"TabbedTextOutA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, escapeStr(a3), a4, a5, a6, a7, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30528,7 +30528,7 @@ LONG __stdcall Mine_TabbedTextOutW(HDC a0,
         rv = Real_TabbedTextOutW(a0, a1, a2, a3, a4, a5, a6, a7);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"TabbedTextOutW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, escapeStr(a3), a4, a5, a6, a7, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"TabbedTextOutW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%hs\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, escapeStr(a3), a4, a5, a6, a7, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30542,7 +30542,7 @@ BOOL __stdcall Mine_TerminateProcess(HANDLE a0,
         rv = Real_TerminateProcess(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"TerminateProcess\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"TerminateProcess\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30556,7 +30556,7 @@ BOOL __stdcall Mine_TerminateThread(HANDLE a0,
         rv = Real_TerminateThread(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"TerminateThread\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"TerminateThread\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30573,7 +30573,7 @@ BOOL __stdcall Mine_TextOutA(HDC a0,
         rv = Real_TextOutA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"TextOutA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, escapeStr(a3), a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"TextOutA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, escapeStr(a3), a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30590,7 +30590,7 @@ BOOL __stdcall Mine_TextOutW(HDC a0,
         rv = Real_TextOutW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"TextOutW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, escapeStr(a3), a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"TextOutW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, escapeStr(a3), a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30607,7 +30607,7 @@ WORD __stdcall Mine_TileWindows(HWND a0,
         rv = Real_TileWindows(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"TileWindows\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"TileWindows\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30624,7 +30624,7 @@ int __stdcall Mine_ToAscii(UINT a0,
         rv = Real_ToAscii(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ToAscii\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ToAscii\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30642,7 +30642,7 @@ int __stdcall Mine_ToAsciiEx(UINT a0,
         rv = Real_ToAsciiEx(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ToAsciiEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ToAsciiEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30660,7 +30660,7 @@ int __stdcall Mine_ToUnicode(UINT a0,
         rv = Real_ToUnicode(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ToUnicode\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ToUnicode\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30679,7 +30679,7 @@ int __stdcall Mine_ToUnicodeEx(UINT a0,
         rv = Real_ToUnicodeEx(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ToUnicodeEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ToUnicodeEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30692,7 +30692,7 @@ BOOL __stdcall Mine_TrackMouseEvent(TRACKMOUSEEVENT* a0)
         rv = Real_TrackMouseEvent(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"TrackMouseEvent\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"TrackMouseEvent\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30711,7 +30711,7 @@ BOOL __stdcall Mine_TrackPopupMenu(HMENU a0,
         rv = Real_TrackPopupMenu(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"TrackPopupMenu\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"TrackPopupMenu\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30729,7 +30729,7 @@ BOOL __stdcall Mine_TrackPopupMenuEx(HMENU a0,
         rv = Real_TrackPopupMenuEx(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"TrackPopupMenuEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"TrackPopupMenuEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30748,7 +30748,7 @@ BOOL __stdcall Mine_TransactNamedPipe(HANDLE a0,
         rv = Real_TransactNamedPipe(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"TransactNamedPipe\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"TransactNamedPipe\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30763,7 +30763,7 @@ int __stdcall Mine_TranslateAcceleratorA(HWND a0,
         rv = Real_TranslateAcceleratorA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"TranslateAcceleratorA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"TranslateAcceleratorA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30778,7 +30778,7 @@ int __stdcall Mine_TranslateAcceleratorW(HWND a0,
         rv = Real_TranslateAcceleratorW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"TranslateAcceleratorW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"TranslateAcceleratorW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30793,7 +30793,7 @@ BOOL __stdcall Mine_TranslateCharsetInfo(DWORD* a0,
         rv = Real_TranslateCharsetInfo(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"TranslateCharsetInfo\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"TranslateCharsetInfo\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30807,7 +30807,7 @@ BOOL __stdcall Mine_TranslateMDISysAccel(HWND a0,
         rv = Real_TranslateMDISysAccel(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"TranslateMDISysAccel\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"TranslateMDISysAccel\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30820,7 +30820,7 @@ BOOL __stdcall Mine_TranslateMessage(MSG* a0)
         rv = Real_TranslateMessage(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"TranslateMessage\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"TranslateMessage\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30834,7 +30834,7 @@ BOOL __stdcall Mine_TransmitCommChar(HANDLE a0,
         rv = Real_TransmitCommChar(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"TransmitCommChar\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"TransmitCommChar\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30848,7 +30848,7 @@ BOOL __stdcall Mine_TryEnterCriticalSection(LPCRITICAL_SECTION a0)
         rv = Real_TryEnterCriticalSection(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"TryEnterCriticalSection\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"TryEnterCriticalSection\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30863,7 +30863,7 @@ BOOL __stdcall Mine_UnhookWindowsHook(int a0,
         rv = Real_UnhookWindowsHook(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"UnhookWindowsHook\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"UnhookWindowsHook\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30876,7 +30876,7 @@ BOOL __stdcall Mine_UnhookWindowsHookEx(HHOOK a0)
         rv = Real_UnhookWindowsHookEx(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"UnhookWindowsHookEx\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"UnhookWindowsHookEx\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30891,7 +30891,7 @@ BOOL __stdcall Mine_UnionRect(LPRECT a0,
         rv = Real_UnionRect(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"UnionRect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"UnionRect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30904,7 +30904,7 @@ BOOL __stdcall Mine_UnloadKeyboardLayout(HKL a0)
         rv = Real_UnloadKeyboardLayout(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"UnloadKeyboardLayout\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"UnloadKeyboardLayout\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30921,7 +30921,7 @@ BOOL __stdcall Mine_UnlockFile(HANDLE a0,
         rv = Real_UnlockFile(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"UnlockFile\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"UnlockFile\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30938,7 +30938,7 @@ BOOL __stdcall Mine_UnlockFileEx(HANDLE a0,
         rv = Real_UnlockFileEx(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"UnlockFileEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"UnlockFileEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30951,7 +30951,7 @@ BOOL __stdcall Mine_UnmapViewOfFile(LPCVOID a0)
         rv = Real_UnmapViewOfFile(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"UnmapViewOfFile\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"UnmapViewOfFile\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30967,7 +30967,7 @@ BOOL __stdcall Mine_UnpackDDElParam(UINT a0,
         rv = Real_UnpackDDElParam(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"UnpackDDElParam\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"UnpackDDElParam\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30980,7 +30980,7 @@ BOOL __stdcall Mine_UnrealizeObject(HGDIOBJ a0)
         rv = Real_UnrealizeObject(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"UnrealizeObject\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"UnrealizeObject\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -30994,7 +30994,7 @@ BOOL __stdcall Mine_UnregisterClassA(LPCSTR a0,
         rv = Real_UnregisterClassA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"UnregisterClassA\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"UnregisterClassA\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31008,7 +31008,7 @@ BOOL __stdcall Mine_UnregisterClassW(LPCWSTR a0,
         rv = Real_UnregisterClassW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"UnregisterClassW\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"UnregisterClassW\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31022,7 +31022,7 @@ BOOL __stdcall Mine_UnregisterHotKey(HWND a0,
         rv = Real_UnregisterHotKey(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"UnregisterHotKey\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"UnregisterHotKey\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31035,7 +31035,7 @@ BOOL __stdcall Mine_UpdateColors(HDC a0)
         rv = Real_UpdateColors(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"UpdateColors\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"UpdateColors\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31053,7 +31053,7 @@ BOOL __stdcall Mine_UpdateResourceA(HANDLE a0,
         rv = Real_UpdateResourceA(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"UpdateResourceA\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), escapeStr(a2), a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"UpdateResourceA\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), escapeStr(a2), a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31071,7 +31071,7 @@ BOOL __stdcall Mine_UpdateResourceW(HANDLE a0,
         rv = Real_UpdateResourceW(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"UpdateResourceW\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), escapeStr(a2), a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"UpdateResourceW\", \"fnc_args\": [\"%p\", \"%hs\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), escapeStr(a2), a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31084,7 +31084,7 @@ BOOL __stdcall Mine_UpdateWindow(HWND a0)
         rv = Real_UpdateWindow(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"UpdateWindow\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"UpdateWindow\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31098,7 +31098,7 @@ BOOL __stdcall Mine_ValidateRect(HWND a0,
         rv = Real_ValidateRect(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ValidateRect\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ValidateRect\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31112,7 +31112,7 @@ BOOL __stdcall Mine_ValidateRgn(HWND a0,
         rv = Real_ValidateRgn(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ValidateRgn\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ValidateRgn\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31127,7 +31127,7 @@ DWORD __stdcall Mine_VerLanguageNameA(DWORD a0,
         rv = Real_VerLanguageNameA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"VerLanguageNameA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"VerLanguageNameA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31142,7 +31142,7 @@ DWORD __stdcall Mine_VerLanguageNameW(DWORD a0,
         rv = Real_VerLanguageNameW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"VerLanguageNameW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"VerLanguageNameW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31159,7 +31159,7 @@ LPVOID __stdcall Mine_VirtualAllocEx(HANDLE a0,
         rv = Real_VirtualAllocEx(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"VirtualAllocEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"VirtualAllocEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31175,7 +31175,7 @@ BOOL __stdcall Mine_VirtualFreeEx(HANDLE a0,
         rv = Real_VirtualFreeEx(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"VirtualFreeEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"VirtualFreeEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31192,7 +31192,7 @@ BOOL __stdcall Mine_VirtualProtectEx(HANDLE a0,
         rv = Real_VirtualProtectEx(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"VirtualProtectEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"VirtualProtectEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31208,7 +31208,7 @@ DWORD_PTR __stdcall Mine_VirtualQueryEx(HANDLE a0,
         rv = Real_VirtualQueryEx(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"VirtualQueryEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"VirtualQueryEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31221,7 +31221,7 @@ SHORT __stdcall Mine_VkKeyScanA(CHAR a0)
         rv = Real_VkKeyScanA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"VkKeyScanA\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"VkKeyScanA\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31235,7 +31235,7 @@ SHORT __stdcall Mine_VkKeyScanExA(CHAR a0,
         rv = Real_VkKeyScanExA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"VkKeyScanExA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"VkKeyScanExA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31249,7 +31249,7 @@ SHORT __stdcall Mine_VkKeyScanExW(WCHAR a0,
         rv = Real_VkKeyScanExW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"VkKeyScanExW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"VkKeyScanExW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31262,7 +31262,7 @@ SHORT __stdcall Mine_VkKeyScanW(WCHAR a0)
         rv = Real_VkKeyScanW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"VkKeyScanW\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"VkKeyScanW\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31279,7 +31279,7 @@ SOCKET __stdcall Mine_WSAAccept(SOCKET a0,
         rv = Real_WSAAccept(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAAccept\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAAccept\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31296,7 +31296,7 @@ INT __stdcall Mine_WSAAddressToStringA(LPSOCKADDR a0,
         rv = Real_WSAAddressToStringA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAAddressToStringA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAAddressToStringA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31313,7 +31313,7 @@ INT __stdcall Mine_WSAAddressToStringW(LPSOCKADDR a0,
         rv = Real_WSAAddressToStringW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAAddressToStringW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAAddressToStringW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31332,7 +31332,7 @@ HANDLE __stdcall Mine_WSAAsyncGetHostByAddr(HWND a0,
         rv = Real_WSAAsyncGetHostByAddr(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAAsyncGetHostByAddr\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAAsyncGetHostByAddr\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31349,7 +31349,7 @@ HANDLE __stdcall Mine_WSAAsyncGetHostByName(HWND a0,
         rv = Real_WSAAsyncGetHostByName(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAAsyncGetHostByName\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAAsyncGetHostByName\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31366,7 +31366,7 @@ HANDLE __stdcall Mine_WSAAsyncGetProtoByName(HWND a0,
         rv = Real_WSAAsyncGetProtoByName(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAAsyncGetProtoByName\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAAsyncGetProtoByName\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31383,7 +31383,7 @@ HANDLE __stdcall Mine_WSAAsyncGetProtoByNumber(HWND a0,
         rv = Real_WSAAsyncGetProtoByNumber(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAAsyncGetProtoByNumber\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAAsyncGetProtoByNumber\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31401,7 +31401,7 @@ HANDLE __stdcall Mine_WSAAsyncGetServByName(HWND a0,
         rv = Real_WSAAsyncGetServByName(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAAsyncGetServByName\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAAsyncGetServByName\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31419,7 +31419,7 @@ HANDLE __stdcall Mine_WSAAsyncGetServByPort(HWND a0,
         rv = Real_WSAAsyncGetServByPort(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAAsyncGetServByPort\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAAsyncGetServByPort\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31435,7 +31435,7 @@ int __stdcall Mine_WSAAsyncSelect(SOCKET a0,
         rv = Real_WSAAsyncSelect(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAAsyncSelect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAAsyncSelect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31448,7 +31448,7 @@ int __stdcall Mine_WSACancelAsyncRequest(HANDLE a0)
         rv = Real_WSACancelAsyncRequest(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSACancelAsyncRequest\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSACancelAsyncRequest\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31461,7 +31461,7 @@ int __stdcall Mine_WSACancelBlockingCall(void)
         rv = Real_WSACancelBlockingCall();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSACancelBlockingCall\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSACancelBlockingCall\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31474,7 +31474,7 @@ int __stdcall Mine_WSACleanup(void)
         rv = Real_WSACleanup();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSACleanup\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSACleanup\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31487,7 +31487,7 @@ BOOL __stdcall Mine_WSACloseEvent(HANDLE a0)
         rv = Real_WSACloseEvent(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSACloseEvent\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSACloseEvent\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31506,7 +31506,7 @@ int __stdcall Mine_WSAConnect(SOCKET a0,
         rv = Real_WSAConnect(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAConnect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAConnect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31519,7 +31519,7 @@ HANDLE __stdcall Mine_WSACreateEvent(void)
         rv = Real_WSACreateEvent();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSACreateEvent\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSACreateEvent\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31534,7 +31534,7 @@ int __stdcall Mine_WSADuplicateSocketA(SOCKET a0,
         rv = Real_WSADuplicateSocketA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSADuplicateSocketA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSADuplicateSocketA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31549,7 +31549,7 @@ int __stdcall Mine_WSADuplicateSocketW(SOCKET a0,
         rv = Real_WSADuplicateSocketW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSADuplicateSocketW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSADuplicateSocketW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31563,7 +31563,7 @@ INT __stdcall Mine_WSAEnumNameSpaceProvidersA(LPDWORD a0,
         rv = Real_WSAEnumNameSpaceProvidersA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAEnumNameSpaceProvidersA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAEnumNameSpaceProvidersA\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31577,7 +31577,7 @@ INT __stdcall Mine_WSAEnumNameSpaceProvidersW(LPDWORD a0,
         rv = Real_WSAEnumNameSpaceProvidersW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAEnumNameSpaceProvidersW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAEnumNameSpaceProvidersW\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31592,7 +31592,7 @@ int __stdcall Mine_WSAEnumNetworkEvents(SOCKET a0,
         rv = Real_WSAEnumNetworkEvents(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAEnumNetworkEvents\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAEnumNetworkEvents\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31607,7 +31607,7 @@ int __stdcall Mine_WSAEnumProtocolsA(LPINT a0,
         rv = Real_WSAEnumProtocolsA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAEnumProtocolsA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAEnumProtocolsA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31622,7 +31622,7 @@ int __stdcall Mine_WSAEnumProtocolsW(LPINT a0,
         rv = Real_WSAEnumProtocolsW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAEnumProtocolsW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAEnumProtocolsW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31637,7 +31637,7 @@ int __stdcall Mine_WSAEventSelect(SOCKET a0,
         rv = Real_WSAEventSelect(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAEventSelect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAEventSelect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31654,7 +31654,7 @@ BOOL __stdcall Mine_WSAGetOverlappedResult(SOCKET a0,
         rv = Real_WSAGetOverlappedResult(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAGetOverlappedResult\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAGetOverlappedResult\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31669,7 +31669,7 @@ BOOL __stdcall Mine_WSAGetQOSByName(SOCKET a0,
         rv = Real_WSAGetQOSByName(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAGetQOSByName\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAGetQOSByName\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31685,7 +31685,7 @@ INT __stdcall Mine_WSAGetServiceClassInfoA(LPGUID a0,
         rv = Real_WSAGetServiceClassInfoA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAGetServiceClassInfoA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAGetServiceClassInfoA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31701,7 +31701,7 @@ INT __stdcall Mine_WSAGetServiceClassInfoW(LPGUID a0,
         rv = Real_WSAGetServiceClassInfoW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAGetServiceClassInfoW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAGetServiceClassInfoW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31716,7 +31716,7 @@ INT __stdcall Mine_WSAGetServiceClassNameByClassIdA(LPGUID a0,
         rv = Real_WSAGetServiceClassNameByClassIdA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAGetServiceClassNameByClassIdA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAGetServiceClassNameByClassIdA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31731,7 +31731,7 @@ INT __stdcall Mine_WSAGetServiceClassNameByClassIdW(LPGUID a0,
         rv = Real_WSAGetServiceClassNameByClassIdW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAGetServiceClassNameByClassIdW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAGetServiceClassNameByClassIdW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31746,7 +31746,7 @@ int __stdcall Mine_WSAHtonl(SOCKET a0,
         rv = Real_WSAHtonl(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAHtonl\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAHtonl\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31761,7 +31761,7 @@ int __stdcall Mine_WSAHtons(SOCKET a0,
         rv = Real_WSAHtons(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAHtons\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAHtons\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31774,7 +31774,7 @@ INT __stdcall Mine_WSAInstallServiceClassA(LPWSASERVICECLASSINFOA a0)
         rv = Real_WSAInstallServiceClassA(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAInstallServiceClassA\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAInstallServiceClassA\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31787,7 +31787,7 @@ INT __stdcall Mine_WSAInstallServiceClassW(LPWSASERVICECLASSINFOW a0)
         rv = Real_WSAInstallServiceClassW(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAInstallServiceClassW\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAInstallServiceClassW\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31808,7 +31808,7 @@ int __stdcall Mine_WSAIoctl(SOCKET a0,
         rv = Real_WSAIoctl(a0, a1, a2, a3, a4, a5, a6, a7, a8);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAIoctl\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAIoctl\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31821,7 +31821,7 @@ BOOL __stdcall Mine_WSAIsBlocking(void)
         rv = Real_WSAIsBlocking();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAIsBlocking\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAIsBlocking\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31841,7 +31841,7 @@ SOCKET __stdcall Mine_WSAJoinLeaf(SOCKET a0,
         rv = Real_WSAJoinLeaf(a0, a1, a2, a3, a4, a5, a6, a7);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAJoinLeaf\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAJoinLeaf\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31856,7 +31856,7 @@ INT __stdcall Mine_WSALookupServiceBeginA(LPWSAQUERYSETA a0,
         rv = Real_WSALookupServiceBeginA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSALookupServiceBeginA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSALookupServiceBeginA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31871,7 +31871,7 @@ INT __stdcall Mine_WSALookupServiceBeginW(LPWSAQUERYSETW a0,
         rv = Real_WSALookupServiceBeginW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSALookupServiceBeginW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSALookupServiceBeginW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31884,7 +31884,7 @@ INT __stdcall Mine_WSALookupServiceEnd(HANDLE a0)
         rv = Real_WSALookupServiceEnd(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSALookupServiceEnd\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSALookupServiceEnd\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31900,7 +31900,7 @@ INT __stdcall Mine_WSALookupServiceNextA(HANDLE a0,
         rv = Real_WSALookupServiceNextA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSALookupServiceNextA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSALookupServiceNextA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31916,7 +31916,7 @@ INT __stdcall Mine_WSALookupServiceNextW(HANDLE a0,
         rv = Real_WSALookupServiceNextW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSALookupServiceNextW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSALookupServiceNextW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31931,7 +31931,7 @@ int __stdcall Mine_WSANtohl(SOCKET a0,
         rv = Real_WSANtohl(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSANtohl\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSANtohl\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31946,7 +31946,7 @@ int __stdcall Mine_WSANtohs(SOCKET a0,
         rv = Real_WSANtohs(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSANtohs\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSANtohs\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31961,7 +31961,7 @@ INT __stdcall Mine_WSAProviderConfigChange(LPHANDLE a0,
         rv = Real_WSAProviderConfigChange(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAProviderConfigChange\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAProviderConfigChange\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31980,7 +31980,7 @@ int __stdcall Mine_WSARecv(SOCKET a0,
         rv = Real_WSARecv(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSARecv\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSARecv\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -31994,7 +31994,7 @@ int __stdcall Mine_WSARecvDisconnect(SOCKET a0,
         rv = Real_WSARecvDisconnect(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSARecvDisconnect\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSARecvDisconnect\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32015,7 +32015,7 @@ int __stdcall Mine_WSARecvFrom(SOCKET a0,
         rv = Real_WSARecvFrom(a0, a1, a2, a3, a4, a5, a6, a7, a8);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSARecvFrom\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSARecvFrom\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32028,7 +32028,7 @@ INT __stdcall Mine_WSARemoveServiceClass(LPGUID a0)
         rv = Real_WSARemoveServiceClass(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSARemoveServiceClass\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSARemoveServiceClass\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32041,7 +32041,7 @@ BOOL __stdcall Mine_WSAResetEvent(HANDLE a0)
         rv = Real_WSAResetEvent(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAResetEvent\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAResetEvent\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32060,7 +32060,7 @@ int __stdcall Mine_WSASend(SOCKET a0,
         rv = Real_WSASend(a0, a1, a2, a3, a4, a5, a6);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSASend\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSASend\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32074,7 +32074,7 @@ int __stdcall Mine_WSASendDisconnect(SOCKET a0,
         rv = Real_WSASendDisconnect(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSASendDisconnect\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSASendDisconnect\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32095,7 +32095,7 @@ int __stdcall Mine_WSASendTo(SOCKET a0,
         rv = Real_WSASendTo(a0, a1, a2, a3, a4, a5, a6, a7, a8);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSASendTo\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSASendTo\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, a6, a7, a8, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32108,7 +32108,7 @@ FARPROC __stdcall Mine_WSASetBlockingHook(FARPROC a0)
         rv = Real_WSASetBlockingHook(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSASetBlockingHook\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSASetBlockingHook\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32121,7 +32121,7 @@ BOOL __stdcall Mine_WSASetEvent(HANDLE a0)
         rv = Real_WSASetEvent(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSASetEvent\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSASetEvent\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32136,7 +32136,7 @@ INT __stdcall Mine_WSASetServiceA(LPWSAQUERYSETA a0,
         rv = Real_WSASetServiceA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSASetServiceA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSASetServiceA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32151,7 +32151,7 @@ INT __stdcall Mine_WSASetServiceW(LPWSAQUERYSETW a0,
         rv = Real_WSASetServiceW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSASetServiceW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSASetServiceW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32169,7 +32169,7 @@ SOCKET __stdcall Mine_WSASocketA(int a0,
         rv = Real_WSASocketA(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSASocketA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSASocketA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32187,7 +32187,7 @@ SOCKET __stdcall Mine_WSASocketW(int a0,
         rv = Real_WSASocketW(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSASocketW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSASocketW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32201,7 +32201,7 @@ int __stdcall Mine_WSAStartup(WORD a0,
         rv = Real_WSAStartup(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAStartup\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAStartup\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32218,7 +32218,7 @@ INT __stdcall Mine_WSAStringToAddressA(LPSTR a0,
         rv = Real_WSAStringToAddressA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAStringToAddressA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAStringToAddressA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32235,7 +32235,7 @@ INT __stdcall Mine_WSAStringToAddressW(LPWSTR a0,
         rv = Real_WSAStringToAddressW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAStringToAddressW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAStringToAddressW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32248,7 +32248,7 @@ int __stdcall Mine_WSAUnhookBlockingHook(void)
         rv = Real_WSAUnhookBlockingHook();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAUnhookBlockingHook\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAUnhookBlockingHook\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32265,7 +32265,7 @@ DWORD __stdcall Mine_WSAWaitForMultipleEvents(DWORD a0,
         rv = Real_WSAWaitForMultipleEvents(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WSAWaitForMultipleEvents\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WSAWaitForMultipleEvents\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32280,7 +32280,7 @@ BOOL __stdcall Mine_WaitCommEvent(HANDLE a0,
         rv = Real_WaitCommEvent(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WaitCommEvent\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WaitCommEvent\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32296,10 +32296,10 @@ BOOL __stdcall Mine_WaitForDebugEvent(LPDEBUG_EVENT a0,
     }
     __finally {
         if (rv) {
-            _PrintHook("\"fnc_name\": \"WaitForDebugEvent\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+            _PrintHook("\"fnc_name\": \"WaitForDebugEvent\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
         }
         else {
-            _PrintHook("\"fnc_name\": \"WaitForDebugEvent\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+            _PrintHook("\"fnc_name\": \"WaitForDebugEvent\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
         }
     };
     return rv;
@@ -32315,7 +32315,7 @@ DWORD __stdcall Mine_WaitForInputIdle(HANDLE a0,
         rv = Real_WaitForInputIdle(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WaitForInputIdle\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WaitForInputIdle\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32331,7 +32331,7 @@ DWORD __stdcall Mine_WaitForMultipleObjects(DWORD a0,
         rv = Real_WaitForMultipleObjects(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WaitForMultipleObjects\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WaitForMultipleObjects\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32348,7 +32348,7 @@ DWORD __stdcall Mine_WaitForMultipleObjectsEx(DWORD a0,
         rv = Real_WaitForMultipleObjectsEx(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WaitForMultipleObjectsEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WaitForMultipleObjectsEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32362,7 +32362,7 @@ DWORD __stdcall Mine_WaitForSingleObject(HANDLE a0,
         rv = Real_WaitForSingleObject(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WaitForSingleObject\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WaitForSingleObject\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32377,7 +32377,7 @@ DWORD __stdcall Mine_WaitForSingleObjectEx(HANDLE a0,
         rv = Real_WaitForSingleObjectEx(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WaitForSingleObjectEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WaitForSingleObjectEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32390,7 +32390,7 @@ BOOL __stdcall Mine_WaitMessage(void)
         rv = Real_WaitMessage();
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WaitMessage\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WaitMessage\", \"fnc_args\": [], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32404,7 +32404,7 @@ BOOL __stdcall Mine_WaitNamedPipeA(LPCSTR a0,
         rv = Real_WaitNamedPipeA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WaitNamedPipeA\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WaitNamedPipeA\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32418,7 +32418,7 @@ BOOL __stdcall Mine_WaitNamedPipeW(LPCWSTR a0,
         rv = Real_WaitNamedPipeW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WaitNamedPipeW\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WaitNamedPipeW\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32431,7 +32431,7 @@ BOOL __stdcall Mine_WidenPath(HDC a0)
         rv = Real_WidenPath(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WidenPath\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WidenPath\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32445,7 +32445,7 @@ UINT __stdcall Mine_WinExec(LPCSTR a0,
         rv = Real_WinExec(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WinExec\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WinExec\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32461,7 +32461,7 @@ BOOL __stdcall Mine_WinHelpA(HWND a0,
         rv = Real_WinHelpA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WinHelpA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WinHelpA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32477,7 +32477,7 @@ BOOL __stdcall Mine_WinHelpW(HWND a0,
         rv = Real_WinHelpW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WinHelpW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WinHelpW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32490,7 +32490,7 @@ HWND __stdcall Mine_WindowFromDC(HDC a0)
         rv = Real_WindowFromDC(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WindowFromDC\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WindowFromDC\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32503,7 +32503,7 @@ HWND __stdcall Mine_WindowFromPoint(POINT a0)
         rv = Real_WindowFromPoint(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WindowFromPoint\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WindowFromPoint\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32517,7 +32517,7 @@ HRESULT __stdcall Mine_WriteClassStg(LPSTORAGE a0,
         rv = Real_WriteClassStg(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WriteClassStg\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WriteClassStg\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32531,7 +32531,7 @@ HRESULT __stdcall Mine_WriteClassStm(LPSTREAM a0,
         rv = Real_WriteClassStm(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WriteClassStm\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WriteClassStm\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32548,7 +32548,7 @@ BOOL __stdcall Mine_WriteConsoleA(HANDLE a0,
         rv = Real_WriteConsoleA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WriteConsoleA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WriteConsoleA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32564,7 +32564,7 @@ BOOL __stdcall Mine_WriteConsoleInputA(HANDLE a0,
         rv = Real_WriteConsoleInputA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WriteConsoleInputA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WriteConsoleInputA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32580,7 +32580,7 @@ BOOL __stdcall Mine_WriteConsoleInputW(HANDLE a0,
         rv = Real_WriteConsoleInputW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WriteConsoleInputW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WriteConsoleInputW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32597,7 +32597,7 @@ BOOL __stdcall Mine_WriteConsoleOutputA(HANDLE a0,
         rv = Real_WriteConsoleOutputA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WriteConsoleOutputA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WriteConsoleOutputA\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32614,7 +32614,7 @@ BOOL __stdcall Mine_WriteConsoleOutputAttribute(HANDLE a0,
         rv = Real_WriteConsoleOutputAttribute(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WriteConsoleOutputAttribute\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WriteConsoleOutputAttribute\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32631,7 +32631,7 @@ BOOL __stdcall Mine_WriteConsoleOutputCharacterA(HANDLE a0,
         rv = Real_WriteConsoleOutputCharacterA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WriteConsoleOutputCharacterA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WriteConsoleOutputCharacterA\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32648,7 +32648,7 @@ BOOL __stdcall Mine_WriteConsoleOutputCharacterW(HANDLE a0,
         rv = Real_WriteConsoleOutputCharacterW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WriteConsoleOutputCharacterW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WriteConsoleOutputCharacterW\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32665,7 +32665,7 @@ BOOL __stdcall Mine_WriteConsoleOutputW(HANDLE a0,
         rv = Real_WriteConsoleOutputW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WriteConsoleOutputW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WriteConsoleOutputW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32682,7 +32682,7 @@ BOOL __stdcall Mine_WriteConsoleW(HANDLE a0,
         rv = Real_WriteConsoleW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WriteConsoleW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WriteConsoleW\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32699,7 +32699,7 @@ BOOL __stdcall Mine_WriteFile(HANDLE a0,
         rv = Real_WriteFile(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WriteFile\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WriteFile\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32716,7 +32716,7 @@ BOOL __stdcall Mine_WriteFileEx(HANDLE a0,
         rv = Real_WriteFileEx(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WriteFileEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WriteFileEx\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32731,7 +32731,7 @@ HRESULT __stdcall Mine_WriteFmtUserTypeStg(LPSTORAGE a0,
         rv = Real_WriteFmtUserTypeStg(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WriteFmtUserTypeStg\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WriteFmtUserTypeStg\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32746,7 +32746,7 @@ BOOL __stdcall Mine_WritePrivateProfileSectionA(LPCSTR a0,
         rv = Real_WritePrivateProfileSectionA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WritePrivateProfileSectionA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), escapeStr(a2), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WritePrivateProfileSectionA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), escapeStr(a2), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32761,7 +32761,7 @@ BOOL __stdcall Mine_WritePrivateProfileSectionW(LPCWSTR a0,
         rv = Real_WritePrivateProfileSectionW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WritePrivateProfileSectionW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), escapeStr(a2), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WritePrivateProfileSectionW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), escapeStr(a2), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32777,7 +32777,7 @@ BOOL __stdcall Mine_WritePrivateProfileStringA(LPCSTR a0,
         rv = Real_WritePrivateProfileStringA(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WritePrivateProfileStringA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), escapeStr(a2), escapeStr(a3), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WritePrivateProfileStringA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), escapeStr(a2), escapeStr(a3), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32793,7 +32793,7 @@ BOOL __stdcall Mine_WritePrivateProfileStringW(LPCWSTR a0,
         rv = Real_WritePrivateProfileStringW(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WritePrivateProfileStringW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), escapeStr(a2), escapeStr(a3), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WritePrivateProfileStringW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), escapeStr(a2), escapeStr(a3), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32810,7 +32810,7 @@ BOOL __stdcall Mine_WritePrivateProfileStructA(LPCSTR a0,
         rv = Real_WritePrivateProfileStructA(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WritePrivateProfileStructA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), a2, a3, escapeStr(a4), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WritePrivateProfileStructA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), a2, a3, escapeStr(a4), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32827,7 +32827,7 @@ BOOL __stdcall Mine_WritePrivateProfileStructW(LPCWSTR a0,
         rv = Real_WritePrivateProfileStructW(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WritePrivateProfileStructW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), a2, a3, escapeStr(a4), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WritePrivateProfileStructW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%p\", \"%p\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), a2, a3, escapeStr(a4), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32844,7 +32844,7 @@ BOOL __stdcall Mine_WriteProcessMemory(HANDLE a0,
         rv = Real_WriteProcessMemory(a0, lpBase, lpBuf, nSize, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WriteProcessMemory\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", lpBase, lpBuf, nSize, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WriteProcessMemory\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", lpBase, lpBuf, nSize, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32858,7 +32858,7 @@ BOOL __stdcall Mine_WriteProfileSectionA(LPCSTR a0,
         rv = Real_WriteProfileSectionA(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WriteProfileSectionA\", \"fnc_args\": [\"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WriteProfileSectionA\", \"fnc_args\": [\"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32872,7 +32872,7 @@ BOOL __stdcall Mine_WriteProfileSectionW(LPCWSTR a0,
         rv = Real_WriteProfileSectionW(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WriteProfileSectionW\", \"fnc_args\": [\"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WriteProfileSectionW\", \"fnc_args\": [\"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32887,7 +32887,7 @@ BOOL __stdcall Mine_WriteProfileStringA(LPCSTR a0,
         rv = Real_WriteProfileStringA(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WriteProfileStringA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), escapeStr(a2), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WriteProfileStringA\", \"fnc_args\": [\"%hs\", \"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), escapeStr(a2), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32902,7 +32902,7 @@ BOOL __stdcall Mine_WriteProfileStringW(LPCWSTR a0,
         rv = Real_WriteProfileStringW(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WriteProfileStringW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), escapeStr(a1), escapeStr(a2), rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WriteProfileStringW\", \"fnc_args\": [\"%hs\", \"%hs\", \"%hs\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), escapeStr(a1), escapeStr(a2), rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32918,7 +32918,7 @@ DWORD __stdcall Mine_WriteTapemark(HANDLE a0,
         rv = Real_WriteTapemark(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"WriteTapemark\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"WriteTapemark\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32932,7 +32932,7 @@ int __stdcall Mine___WSAFDIsSet(SOCKET a0,
         rv = Real___WSAFDIsSet(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"__WSAFDIsSet\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"__WSAFDIsSet\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32947,7 +32947,7 @@ long __stdcall Mine__hread(HFILE a0,
         rv = Real__hread(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"_hread\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"_hread\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32962,7 +32962,7 @@ long __stdcall Mine__hwrite(HFILE a0,
         rv = Real__hwrite(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"_hwrite\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"_hwrite\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32975,7 +32975,7 @@ HFILE __stdcall Mine__lclose(HFILE a0)
         rv = Real__lclose(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"_lclose\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"_lclose\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -32989,7 +32989,7 @@ HFILE __stdcall Mine__lcreat(LPCSTR a0,
         rv = Real__lcreat(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"_lcreat\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"_lcreat\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -33004,7 +33004,7 @@ LONG __stdcall Mine__llseek(HFILE a0,
         rv = Real__llseek(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"_llseek\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"_llseek\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -33018,7 +33018,7 @@ HFILE __stdcall Mine__lopen(LPCSTR a0,
         rv = Real__lopen(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"_lopen\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", escapeStr(a0), a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"_lopen\", \"fnc_args\": [\"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", escapeStr(a0), a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -33033,7 +33033,7 @@ UINT __stdcall Mine__lread(HFILE a0,
         rv = Real__lread(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"_lread\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"_lread\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -33048,7 +33048,7 @@ UINT __stdcall Mine__lwrite(HFILE a0,
         rv = Real__lwrite(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"_lwrite\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, escapeStr(a1), a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"_lwrite\", \"fnc_args\": [\"%p\", \"%hs\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, escapeStr(a1), a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -33063,7 +33063,7 @@ SOCKET __stdcall Mine_accept(SOCKET a0,
         rv = Real_accept(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"accept\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"accept\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -33078,7 +33078,7 @@ int __stdcall Mine_bind(SOCKET a0,
         rv = Real_bind(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"bind\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"bind\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -33091,7 +33091,7 @@ int __stdcall Mine_closesocket(SOCKET a0)
         rv = Real_closesocket(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"closesocket\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"closesocket\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -33106,7 +33106,7 @@ int __stdcall Mine_connect(SOCKET a0,
         rv = Real_connect(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"connect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"connect\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -33121,7 +33121,7 @@ hostent* __stdcall Mine_gethostbyaddr(char* a0,
         rv = Real_gethostbyaddr(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"gethostbyaddr\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"gethostbyaddr\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -33134,7 +33134,7 @@ hostent* __stdcall Mine_gethostbyname(char* a0)
         rv = Real_gethostbyname(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"gethostbyname\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"gethostbyname\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -33148,7 +33148,7 @@ int __stdcall Mine_gethostname(char* a0,
         rv = Real_gethostname(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"gethostname\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"gethostname\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -33163,7 +33163,7 @@ int __stdcall Mine_getpeername(SOCKET a0,
         rv = Real_getpeername(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"getpeername\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"getpeername\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -33176,7 +33176,7 @@ protoent* __stdcall Mine_getprotobyname(char* a0)
         rv = Real_getprotobyname(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"getprotobyname\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"getprotobyname\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -33189,7 +33189,7 @@ protoent* __stdcall Mine_getprotobynumber(int a0)
         rv = Real_getprotobynumber(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"getprotobynumber\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"getprotobynumber\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -33203,7 +33203,7 @@ servent* __stdcall Mine_getservbyname(char* a0,
         rv = Real_getservbyname(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"getservbyname\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"getservbyname\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -33217,7 +33217,7 @@ servent* __stdcall Mine_getservbyport(int a0,
         rv = Real_getservbyport(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"getservbyport\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"getservbyport\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -33232,7 +33232,7 @@ int __stdcall Mine_getsockname(SOCKET a0,
         rv = Real_getsockname(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"getsockname\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"getsockname\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -33249,7 +33249,7 @@ int __stdcall Mine_getsockopt(SOCKET a0,
         rv = Real_getsockopt(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"getsockopt\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"getsockopt\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -33262,7 +33262,7 @@ u_long __stdcall Mine_htonl(u_long a0)
         rv = Real_htonl(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"htonl\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"htonl\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -33275,7 +33275,7 @@ u_short __stdcall Mine_htons(u_short a0)
         rv = Real_htons(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"htons\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"htons\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -33288,7 +33288,7 @@ unsigned long __stdcall Mine_inet_addr(char* a0)
         rv = Real_inet_addr(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"inet_addr\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"inet_addr\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -33301,7 +33301,7 @@ char* __stdcall Mine_inet_ntoa(in_addr a0)
         rv = Real_inet_ntoa(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"inet_ntoa\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"inet_ntoa\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -33316,7 +33316,7 @@ int __stdcall Mine_ioctlsocket(SOCKET a0,
         rv = Real_ioctlsocket(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ioctlsocket\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ioctlsocket\", \"fnc_args\": [\"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -33331,7 +33331,7 @@ void __stdcall Mine_keybd_event(BYTE a0,
         Real_keybd_event(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"keybd_event\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"keybd_event\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, _ReturnAddress());
     };
 }
 
@@ -33344,7 +33344,7 @@ int __stdcall Mine_listen(SOCKET a0,
         rv = Real_listen(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"listen\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"listen\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -33360,7 +33360,7 @@ void __stdcall Mine_mouse_event(DWORD a0,
         Real_mouse_event(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"mouse_event\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"mouse_event\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, _ReturnAddress());
     };
 }
 
@@ -33372,7 +33372,7 @@ u_long __stdcall Mine_ntohl(u_long a0)
         rv = Real_ntohl(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ntohl\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ntohl\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -33385,7 +33385,7 @@ u_short __stdcall Mine_ntohs(u_short a0)
         rv = Real_ntohs(a0);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"ntohs\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"ntohs\", \"fnc_args\": [\"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -33401,7 +33401,7 @@ int __stdcall Mine_recv(SOCKET a0,
         rv = Real_recv(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"recv\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"recv\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -33419,7 +33419,7 @@ int __stdcall Mine_recvfrom(SOCKET a0,
         rv = Real_recvfrom(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"recvfrom\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"recvfrom\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -33436,7 +33436,7 @@ int __stdcall Mine_select(int a0,
         rv = Real_select(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"select\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"select\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -33452,7 +33452,7 @@ int __stdcall Mine_send(SOCKET a0,
         rv = Real_send(a0, a1, a2, a3);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"send\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"send\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -33470,7 +33470,7 @@ int __stdcall Mine_sendto(SOCKET a0,
         rv = Real_sendto(a0, a1, a2, a3, a4, a5);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"sendto\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"sendto\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, a5, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -33487,7 +33487,7 @@ int __stdcall Mine_setsockopt(SOCKET a0,
         rv = Real_setsockopt(a0, a1, a2, a3, a4);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"setsockopt\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"setsockopt\", \"fnc_args\": [\"%p\", \"%p\", \"%p\", \"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, a3, a4, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -33501,7 +33501,7 @@ int __stdcall Mine_shutdown(SOCKET a0,
         rv = Real_shutdown(a0, a1);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"shutdown\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"shutdown\", \"fnc_args\": [\"%p\", \"%p\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, rv, _ReturnAddress());
     };
     return rv;
 }
@@ -33516,7 +33516,7 @@ SOCKET __stdcall Mine_socket(int a0,
         rv = Real_socket(a0, a1, a2);
     }
     __finally {
-        _PrintHook("\"fnc_name\": \"socket\", \"fnc_args\": [\"%x\", \"%x\", \"%x\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"},\n", a0, a1, a2, rv, _ReturnAddress());
+        _PrintHook("\"fnc_name\": \"socket\", \"fnc_args\": [\"%x\", \"%x\", \"%x\"], \"fnc_ret\": \"%p\", \"ret_addr\": \"%p\"}\n", a0, a1, a2, rv, _ReturnAddress());
     };
     return rv;
 }
