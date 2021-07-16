@@ -16,6 +16,8 @@ ROOT = ..\Detours
 DETOURS_SOURCE_BROWSING=0
 !ENDIF
 
+BIND = .\bin.x86
+
 ##############################################################################
 
 !IFNDEF CLIB

@@ -92,9 +92,8 @@ jobs:
         with:
           name: artifacts-detours-${{ matrix.os }}
           path: |
-            agent/hooking/Detours/bin.*/withdll.exe
-            agent/hooking/Detours/bin.*/syelogd.exe
-            agent/hooking/traceapi/bin.*/*.dll
+            agent/hooking/withdll/bin.x86/withdll.exe
+            agent/hooking/traceapi/trcapi32.dll
 
   build-unpacker:
     env:

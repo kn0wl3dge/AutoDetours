@@ -9,7 +9,7 @@
 
 !include ..\common.mak
 
-BIND = bin.$(DETOURS_TARGET_PROCESSOR)$(DETOURS_CONFIG)
+#BIND = bin.$(DETOURS_TARGET_PROCESSOR)$(DETOURS_CONFIG)
 LIBS=$(LIBS) kernel32.lib gdi32.lib user32.lib shell32.lib advapi32.lib ole32.lib ws2_32.lib
 
 ##############################################################################
