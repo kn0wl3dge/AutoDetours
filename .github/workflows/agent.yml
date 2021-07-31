@@ -45,7 +45,7 @@ jobs:
       - name: Upload agent artifacts for ${{ matrix.arch }} on ${{ matrix.os }} 
         uses: actions/upload-artifact@v2
         with:
-          name: artifacts-agent-${{ matrix.os }}
+          name: artifacts-agent
           path: |
             agent/service/AutoDetoursAgent/bin/x86/Release/AutoDetoursAgent.exe
             agent/service/AutoDetoursAgent/bin/x86/Release/Newtonsoft.Json.dll
@@ -90,10 +90,10 @@ jobs:
       - name: Upload Detours artifacts for ${{ matrix.arch }} on ${{ matrix.os }} 
         uses: actions/upload-artifact@v2
         with:
-          name: artifacts-detours-${{ matrix.os }}
+          name: artifacts-agent
           path: |
-            agent/hooking/withdll/bin.x86/withdll.exe
-            agent/hooking/traceapi/bon.X86/trcapi32.dll
+            agent/hooking/bin.x86/withdll.exe
+            agent/hooking/bin.x86/trcapi32.dll
 
   build-unpacker:
     env:
@@ -132,6 +132,6 @@ jobs:
       - name: Upload unpacker artifacts for ${{ matrix.arch }} on ${{ matrix.os }} 
         uses: actions/upload-artifact@v2
         with:
-          name: artifacts-unpacker-${{ matrix.os }}
+          name: artifacts-agent
           path: |
             agent/unpacking/mal_unpack/build/Release/mal_unpack.exe
