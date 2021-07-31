@@ -4,6 +4,7 @@ import json
 import logging
 import os
 import paramiko
+import secrets
 import socket
 import sys
 import tarfile
@@ -16,6 +17,7 @@ from subprocess import Popen, PIPE
 from time import sleep
 
 # Constants
+DEV = False
 HOST = "127.0.0.1"
 SSH_PORT = 2222
 QMP_PORT = 2223
@@ -23,7 +25,7 @@ DOCKER_SOCKET = "unix://var/run/docker.sock"
 WORKERS_DIR = os.path.dirname(os.path.realpath(__file__)) + "/workers"
 BASE_QCOW2 = WORKERS_DIR + "/base.qcow2"
 WORKER_QCOW2_FORMAT = "win7-{}.qcow2"
-ENV_FILE = ".env.dev"
+ENV_FILE = ".env"
 SSH_USERNAME = "IEUser"
 SSH_PASSWORD = "Passw0rd!"
 WINDOWS_PATH = "/cygdrive/c/Temp"
@@ -293,15 +295,27 @@ def generate_workers(nbr_workers):
             )
 
 
+def generate_django_secret():
+    chars = 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)'
+    secret_key = ''.join(secrets.choice(chars) for i in range(50))
+    return secret_key
+
+
+def generate_postgres_password():
+    chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*-_=+'
+    secret_key = ''.join(secrets.choice(chars) for i in range(16))
+    return secret_key
+
+
 def update_env_file(nbr_workers):
     logger.info(f"Updating {ENV_FILE} configuration file...")
-    text = f"""DEBUG=True
-SECRET_KEY='_ejix(@eon@nv6r8rc!^+#*pi(^a2b5c$*bdnhjkeo#fn@vv8c'
+    text = f"""DEBUG={"True" if DEV else "False"}
+SECRET_KEY='{generate_django_secret()}'
 
 POSTGRES_ENGINE=django.db.backends.postgresql
 POSTGRES_DB=postgres
 POSTGRES_USER=postgres
-POSTGRES_PASSWORD=postgres
+POSTGRES_PASSWORD='{generate_postgres_password()}'
 POSTGRES_HOST=db
 POSTGRES_PORT=5432
 
@@ -319,6 +333,8 @@ def main(args):
     docker_client = docker.DockerClient(base_url=DOCKER_SOCKET)
     ssh = paramiko.SSHClient()
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+
+    DEV = args.dev
 
     handler.setFormatter(SetupFormatter())
     logger.addHandler(handler)
@@ -369,10 +385,20 @@ This dataset could then be used in machine learning to try to classify samples b
 To provide this solution we are using Detours project from Microsoft.""",
     )
     parser.add_argument(
-        "-d", "--debug", help="Run installation in debug mode", action="store_true"
+        "--dev",
+        help="Setup the environment for development",
+        action="store_true",
     )
     parser.add_argument(
-        "-c", "--clean", help="Clean all qcow2 images", action="store_true"
+        "--debug",
+        help="Run installation in debug mode",
+        action="store_true"
+    )
+    parser.add_argument(
+        "-c",
+        "--clean",
+        help="Clean all qcow2 images",
+        action="store_true"
     )
     parser.add_argument(
         "-w",

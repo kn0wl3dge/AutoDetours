@@ -7,7 +7,7 @@ services:
       autodetours_lan:
         ipv4_address: 172.20.0.13
     env_file:
-      - ./.env.dev
+      - ./.env
 
   redis:
     image: redis:alpine
@@ -33,7 +33,7 @@ services:
       - redis
       - api
     env_file:
-      - ./.env.dev
+      - ./.env
 
   celery-beat:
     build:
@@ -49,7 +49,7 @@ services:
     depends_on:
       - celery
     env_file:
-      - ./.env.dev
+      - ./.env
 
   api:
     build:
@@ -65,7 +65,7 @@ services:
     depends_on:
       - db
     env_file:
-      - ./.env.dev
+      - ./.env
 
   front:
     build:

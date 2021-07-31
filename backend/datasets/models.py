@@ -1,7 +1,7 @@
 from django.db import models
 
 
-DATASET_DIR = "/data/datasets"
+DATASET_DIR = "datasets" # /data/datasets
 
 
 class DatasetStatus(object):

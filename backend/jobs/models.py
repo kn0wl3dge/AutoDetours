@@ -7,7 +7,7 @@ from django_fsm import FSMField, transition
 
 from malwares.models import Malware
 
-RESULTS_DIR = "/data/results"
+RESULTS_DIR = "results" # /data/results
 
 
 def get_upload_filename(instance, filename):
@@ -34,7 +34,7 @@ class JobType(
     DETOURS : Microsoft tool used to hook windows system calls.
     """
 
-    PESIEVE = "unpack"
+    PESIEVE = "PESieve"
     DETOURS = "Detours"
 
 

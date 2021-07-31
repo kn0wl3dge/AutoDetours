@@ -7,6 +7,9 @@ from rest_framework.views import APIView
 from tags.rule import Rule, RULES_PATHS, valid_filename
 
 
+DATA_RULES = "/data/db_rules/"
+
+
 class RuleFormView(APIView):
     def post(self, request):
         rule = request.data["rule"]
@@ -14,7 +17,7 @@ class RuleFormView(APIView):
             return Response({"error": "Name format is incorrect"})
         functions = request.data["functions"]
         tag = request.data["tag"]
-        with open("/data/db_rules/" + rule.lower() + ".yml", "w") as f:
+        with open(DATA_RULES + rule.lower() + ".yml", "w") as f:
             f.write("name: %s\n" % rule)
             f.write("features:\n")
             for func in functions:
@@ -57,7 +60,7 @@ class RuleFormView(APIView):
     def delete(self, request):
         name = request.query_params["rule"]
         if valid_filename(name):
-            path = "/data/db_rules/" + name + ".yml"
+            path = DATA_RULES + name + ".yml"
             if exists(path):
                 remove(path)
             return Response({"success": "Rule as been deleted"})

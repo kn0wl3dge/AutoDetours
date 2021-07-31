@@ -12,6 +12,7 @@ echo "Creating /data dirs"
 [ ! -d "/data/datasets" ] && mkdir /data/datasets
 [ ! -d "/data/rules" ] && mkdir /data/db_rules
 [ ! -d "/data/malwares" ] && mkdir /data/malwares
+[ ! -d "/data/results" ] && mkdir /data/results
 
 echo "Starting Django"
 python manage.py flush --no-input

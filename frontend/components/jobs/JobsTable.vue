@@ -96,7 +96,7 @@ export default {
         Detours: {
           color: 'secondary'
         },
-        unpack: {
+        PESieve: {
           color: 'primary'
         }
       }
