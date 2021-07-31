@@ -1,4 +1,4 @@
-import json
+import jsonlines
 
 from celery import shared_task
 
@@ -17,9 +17,8 @@ def set_tags(job):
     rules = get_rules(RULES_PATHS)
 
     job = Job.objects.filter(pk=job).get()
-    json_string = json.load(job.results)["results"]
-
-    api_calls = get_apicalls_from_traces(json_string)
+    with jsonlines.open(job.results.path) as jl_reader:
+        api_calls = get_apicalls_from_traces(jl_reader)
 
     tags = set()
     for rule in rules:

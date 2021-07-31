@@ -56,21 +56,20 @@ def get_rules(directories):
     return rules
 
 
-def get_apicalls_from_traces(json_list):
+def get_apicalls_from_traces(jl_reader):
     """Extract a Set of windows api calls from Detours traces.
 
     Args:
-        json_list (List(Dict)): List of python dictionnaries.
+        jl_reader (jsonlines.Reader): Jsonlines reader object.
 
     Returns:
         List(String): List of unique Windows API calls.
     """
     func_list = set()
-    if not "error" in json_list:
-        for api_call in json_list:
-            func_list.add(api_call["funcName"])
-        return func_list
-    return ["error"]
+    for line in jl_reader:
+        if line["type"] == "hook":
+            func_list.add(line["fnc_name"])
+    return func_list
 
 
 def valid_filename(filename):
