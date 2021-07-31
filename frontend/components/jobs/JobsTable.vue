@@ -1,5 +1,5 @@
 <template>
-  <b-table :items="jobs" :fields="fields" fixed>
+  <b-table :items="jobs" :fields="fields" sort-by="start_time" fixed>
     <template #cell(start_time)="row">
       {{ $moment(row.item.start_time).format('LLL') }}
     </template>
@@ -33,8 +33,8 @@
       <b-btn
         class="mr-2"
         :disabled="row.item.state !== 'DONE'"
-        @click="downloadResults(row.item.id)"
         size="sm"
+        @click="downloadResults(row.item.id)"
       >
         Download Results
       </b-btn>
@@ -43,8 +43,8 @@
         class="ml-2"
         :disabled="row.item.state !== 'DONE'"
         variant="danger"
-        @click="deleteJob(row.item.id)"
         size="sm"
+        @click="deleteJob(row.item.id)"
       >
         Delete Job
       </b-btn>
@@ -71,7 +71,7 @@ export default {
         {
           key: 'tags',
           label: 'Tags',
-          sortable: true,
+          sortable: false,
           class: 'text-center'
         },
         {
