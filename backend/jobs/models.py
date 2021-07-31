@@ -7,7 +7,7 @@ from django_fsm import FSMField, transition
 
 from malwares.models import Malware
 
-RESULTS_DIR = "results" # /data/results
+RESULTS_DIR = "results"  # /data/results
 
 
 def get_upload_filename(instance, filename):

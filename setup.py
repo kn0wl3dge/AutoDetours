@@ -296,14 +296,14 @@ def generate_workers(nbr_workers):
 
 
 def generate_django_secret():
-    chars = 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)'
-    secret_key = ''.join(secrets.choice(chars) for i in range(50))
+    chars = "abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)"
+    secret_key = "".join(secrets.choice(chars) for i in range(50))
     return secret_key
 
 
 def generate_postgres_password():
-    chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*-_=+'
-    secret_key = ''.join(secrets.choice(chars) for i in range(16))
+    chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*-_=+"
+    secret_key = "".join(secrets.choice(chars) for i in range(16))
     return secret_key
 
 
@@ -390,15 +390,10 @@ To provide this solution we are using Detours project from Microsoft.""",
         action="store_true",
     )
     parser.add_argument(
-        "--debug",
-        help="Run installation in debug mode",
-        action="store_true"
+        "--debug", help="Run installation in debug mode", action="store_true"
     )
     parser.add_argument(
-        "-c",
-        "--clean",
-        help="Clean all qcow2 images",
-        action="store_true"
+        "-c", "--clean", help="Clean all qcow2 images", action="store_true"
     )
     parser.add_argument(
         "-w",
