@@ -78,7 +78,6 @@
     </Compile>
     <Compile Include="Logger.cs" />
     <Compile Include="Job.cs" />
-    <Compile Include="Parser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProjectInstaller.cs">
       <SubType>Component</SubType>
@@ -87,8 +86,8 @@
       <DependentUpon>ProjectInstaller.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tracer.cs" />
-    <Compile Include="Unpacker.cs" />
+    <Compile Include="JobDetours.cs" />
+    <Compile Include="JobPESieve.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

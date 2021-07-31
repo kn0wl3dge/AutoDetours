@@ -1,31 +1,25 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using st = System.Threading;
 
 namespace AutoDetoursAgent
 {
-    public class Tracer : Job
+    public class JobDetours : Job
     {
-        private Process syelogd = new Process();
         private Process withdll = new Process();
 
-        // Stores logs after parsing
-        private string logs;
+        private String defaultPathZip = "C:\\Temp\\traces.jsonl";
 
-        public Tracer(Logger logger, WorkerTask wt) : base(logger, wt)
+        public JobDetours(Logger logger, WorkerTask wt) : base(logger, wt)
         {
         }
 
         public override void ExecuteJob()
         {
             logger.Log("Starting Tracing...");
-            // Run Syelog Deamon to extract logs from traceapi32
-            syelogd.StartInfo.FileName = "C:\\Temp\\syelogd.exe";
-            syelogd.StartInfo.Arguments = "/o C:\\Temp\\traces.txt";
-            syelogd.Start();
 
             withdll.StartInfo.FileName = "C:\\Temp\\withdll.exe";
 
@@ -42,23 +36,13 @@ namespace AutoDetoursAgent
             logger.Log("Tracing started.");
             
             withdll.WaitForExit(workerTask.time * 1000);
-            // We can kill syelogd once withdll is done.
-            if (syelogd.HasExited == false)
-            {
-                syelogd.Kill();
-                syelogd.WaitForExit();
-            }
                 
             logger.Log("Tracing stopped");
         }
 
         public override void TreatResults()
         {
-            logger.Log("Starting parsing...");
-            // Convert the traces.txt to json format
-            string inputFilename = "C:\\Temp\\traces.txt";
-            logs = Parser.ParseLogs(inputFilename);
-            logger.Log("Json output has been generated.");
+
         }
 
         public override async Task<bool> SubmitResults(String workerId, HttpClient client)
@@ -67,9 +51,9 @@ namespace AutoDetoursAgent
             // Submit JSON results to the API
             string url = "workers/" + workerId + "/submit_task/";
             HttpResponseMessage response = null;
+            var byteArray = File.ReadAllBytes(defaultPathZip);
             var form = new MultipartFormDataContent();
-            var byteArray = Encoding.UTF8.GetBytes(logs);
-            form.Add(new ByteArrayContent(byteArray, 0, byteArray.Length), "results", "traces.json");
+            form.Add(new ByteArrayContent(byteArray, 0, byteArray.Length), "results", "traces.jsonl");
             try
             {
                 response = await client.PostAsync(url, form);

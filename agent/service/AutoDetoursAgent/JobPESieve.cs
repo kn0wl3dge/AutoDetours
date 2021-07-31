@@ -3,18 +3,17 @@ using System.Diagnostics;
 using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
-using st = System.Threading;
 
 namespace AutoDetoursAgent
 {
-    public class Unpacker : Job
+    public class JobPESieve : Job
     {
         private Process malunpack = new Process();
         private Process tar = new Process();
 
         private String defaultPathZip = "C:\\Temp\\unpacked.zip";
 
-        public Unpacker(Logger logger, WorkerTask wt) : base(logger, wt)
+        public JobPESieve(Logger logger, WorkerTask wt) : base(logger, wt)
         {
         }
 

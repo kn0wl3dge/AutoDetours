@@ -10,7 +10,6 @@ using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
-using st = System.Threading;
 
 namespace AutoDetoursAgent
 {
@@ -24,7 +23,6 @@ namespace AutoDetoursAgent
         private AgentState state = AgentState.INIT;
 
         private bool customMutex = true;
-        private bool isVM;
 
         private String apiBaseURL;
 
@@ -74,12 +72,6 @@ namespace AutoDetoursAgent
                 apiBaseURL = "http://172.20.0.10/api/"; // Don't change me! Check out api.txt
             }
             logger.Log("AutoDetours API is located at : " + apiBaseURL);
-
-            // Check if it's a VM
-            if (File.Exists(@"C:\Temp\agent\vm.txt"))
-            {
-                isVM = true;
-            }
 
             // Set up HTTP Client
             client.BaseAddress = new Uri(apiBaseURL);
@@ -158,9 +150,9 @@ namespace AutoDetoursAgent
 
                     // Set Job according to task
                     if (workerTask.task == "unpack")
-                        job = new Unpacker(logger, workerTask);
+                        job = new JobPESieve(logger, workerTask);
                     else
-                        job = new Tracer(logger, workerTask);
+                        job = new JobDetours(logger, workerTask);
 
                     logger.Log("Agent is now tasked with sample : " + worker.malware);
                     return true;
@@ -312,15 +304,8 @@ namespace AutoDetoursAgent
                         #if DEBUG
                             System.Environment.Exit(0);
                         #endif
-                        if (isVM)
-                        {
-                            Process.Start("shutdown", "/s /t 0");
-                        }
-                        else
-                        {
-                            ServiceController control = new ServiceController(ServiceName);
-                            control.Stop();
-                        }
+                        ServiceController control = new ServiceController(ServiceName);
+                        control.Stop();
                         break;
                 }
                 customMutex = true;
