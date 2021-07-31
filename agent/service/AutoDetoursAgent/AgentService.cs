@@ -149,12 +149,22 @@ namespace AutoDetoursAgent
                     worker.malware = workerTask.malware;
 
                     // Set Job according to task
-                    if (workerTask.task == "unpack")
-                        job = new JobPESieve(logger, workerTask);
-                    else
-                        job = new JobDetours(logger, workerTask);
+                    switch (workerTask.task)
+                    {
+                        case "PESieve":
+                            job = new JobPESieve(logger, workerTask);
+                            break;
+                        case "Detours":
+                            job = new JobDetours(logger, workerTask);
+                            break;
+                        default:
+                            job = new JobDetours(logger, workerTask);
+                            break;
+                    }
+
 
                     logger.Log("Agent is now tasked with sample : " + worker.malware);
+                    logger.Log("Job is : " + workerTask.task);
                     return true;
                 }
             }

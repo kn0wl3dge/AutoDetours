@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Net.Http;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace AutoDetoursAgent
@@ -11,7 +12,7 @@ namespace AutoDetoursAgent
     {
         private Process withdll = new Process();
 
-        private String defaultPathZip = "C:\\Temp\\traces.jsonl";
+        private String defaultPathTraces = "C:\\Temp\\traces.jsonl";
 
         public JobDetours(Logger logger, WorkerTask wt) : base(logger, wt)
         {
@@ -38,6 +39,9 @@ namespace AutoDetoursAgent
             withdll.WaitForExit(workerTask.time * 1000);
                 
             logger.Log("Tracing stopped");
+
+            // Let's sleep a while before sending results (file is not created quickly)
+            Thread.Sleep(1000);
         }
 
         public override void TreatResults()
@@ -51,7 +55,7 @@ namespace AutoDetoursAgent
             // Submit JSON results to the API
             string url = "workers/" + workerId + "/submit_task/";
             HttpResponseMessage response = null;
-            var byteArray = File.ReadAllBytes(defaultPathZip);
+            var byteArray = File.ReadAllBytes(defaultPathTraces);
             var form = new MultipartFormDataContent();
             form.Add(new ByteArrayContent(byteArray, 0, byteArray.Length), "results", "traces.jsonl");
             try
