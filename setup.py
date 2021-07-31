@@ -148,11 +148,11 @@ def disable_service(ssh, svc):
 
 def create_autodetours_svc(ssh):
     logger.info("Creating AutoDetours service...")
-    send_ssh_cmd(ssh, f"cd {WINDOWS_PATH} && chmod +x agent/AutoDetoursAgent.exe")
+    send_ssh_cmd(ssh, f"cd {WINDOWS_PATH} && chmod +x AutoDetoursAgent.exe")
 
     send_ssh_cmd(
         ssh,
-        'cmd.exe /c "sc create AgentDetours start= auto binPath= C:\\Temp\\agent\\AutoDetoursAgent.exe"',
+        'cmd.exe /c "sc create AgentDetours start= auto binPath= C:\\Temp\\AutoDetoursAgent.exe"',
     )
 
 

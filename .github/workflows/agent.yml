@@ -1,0 +1,137 @@
+name: AgentBuild
+
+
+# Triggers the workflow on push or pull request events for the master branch.
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-agent:
+    env:
+      SOLUTION_FILE_PATH: .
+      BUILD_CONFIGURATION: Release
+      AGENT_DIR: agent/service
+      
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest]
+        arch: [x86]
+        conf: [Release]
+        
+    steps:
+      - name: Clone Repository
+        uses: actions/checkout@v2
+        with:
+          submodules: 'recursive'
+
+      - name: Add MSBuild to PATH
+        uses: microsoft/setup-msbuild@v1.0.2
+
+      - name: Restore NuGet packages
+        working-directory: ${{ env.AGENT_DIR }}
+        run: nuget restore ${{ env.SOLUTION_FILE_PATH }}
+
+      - name: Build the Agent
+        working-directory: ${{ env.AGENT_DIR }}
+        # Add additional options to the MSBuild command line here (like platform or verbosity level).
+        # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
+        run: msbuild /m /p:Configuration=${{ env.BUILD_CONFIGURATION }} /p:Platform=${{ matrix.arch }} ${{ env.SOLUTION_FILE_PATH }}
+        
+      - name: Upload agent artifacts for ${{ matrix.arch }} on ${{ matrix.os }} 
+        uses: actions/upload-artifact@v2
+        with:
+          name: artifacts-agent
+          path: |
+            agent/service/AutoDetoursAgent/bin/x86/Release/AutoDetoursAgent.exe
+            agent/service/AutoDetoursAgent/bin/x86/Release/Newtonsoft.Json.dll
+    
+      
+  build-detours:
+    env:
+      # Turn on msvc analysis during build, enable once warnings are clean.
+      DETOURS_ANALYZE: true
+      DETOURS_DIR: agent/hooking
+      # Compile in parallel where possible.
+      CL: /MP
+      
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest]
+        arch: [x86]
+        conf: [Release]
+
+    steps:
+      - name: Clone Repository
+        uses: actions/checkout@v2
+        with:
+          submodules: 'recursive'
+
+      # Setup build environment variables using vcvarsall.bat.
+      - name: Configure MSCV Compiler for ${{ matrix.arch }}
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: ${{ matrix.arch }}
+
+      - name: Build Detours and TraceApi for ${{ matrix.arch }} on ${{ matrix.os }} 
+        env:
+          # Tell detours what process to target
+          DETOURS_TARGET_PROCESSOR: ${{ env.VSCMD_ARG_TGT_ARCH }}
+          DETOURS_CONFIG: ${{ matrix.conf }}
+        working-directory: ${{ env.DETOURS_DIR }}
+        run: nmake
+
+      - name: Upload Detours artifacts for ${{ matrix.arch }} on ${{ matrix.os }} 
+        uses: actions/upload-artifact@v2
+        with:
+          name: artifacts-agent
+          path: |
+            agent/hooking/bin.x86/withdll.exe
+            agent/hooking/bin.x86/trcapi32.dll
+
+  build-unpacker:
+    env:
+      UNPACKER_DIR: agent/unpacking/mal_unpack
+      # Compile in parallel where possible.
+      CL: /MP
+      
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest]
+        arch: [x86]
+        conf: [Release]
+
+    steps:
+      - name: Clone Repository
+        uses: actions/checkout@v2
+        with:
+          submodules: 'recursive'
+
+      - name: Add MSBuild to PATH
+        uses: microsoft/setup-msbuild@v1.0.2
+
+      - name: Configure mal_unpack build
+        working-directory: ${{ env.UNPACKER_DIR }}
+        run: |
+          mkdir build
+          cd build
+          cmake .. -A Win32 -T host=${{ matrix.arch }}
+
+      - name: Build the unpacker
+        working-directory: ${{ env.UNPACKER_DIR }}
+        run: cmake --build ./build --config ${{ matrix.conf }}
+
+      - name: Upload unpacker artifacts for ${{ matrix.arch }} on ${{ matrix.os }} 
+        uses: actions/upload-artifact@v2
+        with:
+          name: artifacts-agent
+          path: |
+            agent/unpacking/mal_unpack/build/Release/mal_unpack.exe

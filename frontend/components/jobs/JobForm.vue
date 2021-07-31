@@ -81,7 +81,7 @@ export default {
   },
   data () {
     return {
-      jobTypes: ['Detours', 'unpack'],
+      jobTypes: ['Detours', 'PESieve'],
       selected: [],
       selectedTime: null,
       allSelected: false,

@@ -10,3 +10,4 @@ celery==5.0.5
 docker==4.4.4
 pyyaml==5.4.1
 django-cleanup==5.2.0
+jsonlines==2.0.0
