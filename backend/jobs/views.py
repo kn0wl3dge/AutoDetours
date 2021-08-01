@@ -38,11 +38,10 @@ class JobViewSet(
 
         output = job.results
         extension = output.path.split(".")[-1]
+        filename = output.path.split('/')[-1]
 
         response = FileResponse(output, content_type="application/" + extension)
         response["Content-Length"] = len(output)
-        response["Content-Disposition"] = 'attachment; filename="%s.%s"' % (
-            job.malware.sha256,
-            extension,
-        )
+        response["Content-Disposition"] = f'attachment; filename="{filename}"'
+        
         return response
