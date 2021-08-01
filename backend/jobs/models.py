@@ -25,9 +25,7 @@ def get_upload_filename(instance, filename):
     return f"{RESULTS_DIR}/{'/'.join(dirs[:5])}/{instance.malware.sha256}_{instance.job_type}.{ext}"
 
 
-class JobType(
-    object
-):  # TODO change this in the agent and make a validation in the view (job creation)
+class JobType(object):
     """List all possibles jobs that can be passed to an agent.
 
     PESIEVE : Tool used to unpack PE malwares.
@@ -61,11 +59,16 @@ class Job(models.Model):
     on computation on the results file.
     """
 
+    TYPE_CHOICE = [
+        (JobType.PESIEVE, JobType.PESIEVE),
+        (JobType.DETOURS, JobType.DETOURS),
+    ]
+
     # ID
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 
     # Config
-    job_type = models.CharField(max_length=16)
+    job_type = models.CharField(max_length=16, choices=TYPE_CHOICE)
     job_time = models.IntegerField(default=30)
 
     # State
