@@ -214,6 +214,7 @@ agent/hooking/*/bin.X64
 agent/hooking/bin.X86
 
 # images
-*.qcow2
+workers/*.qcow2
+workers/snapshot.gz
 
 data

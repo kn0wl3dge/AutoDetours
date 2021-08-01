@@ -32,12 +32,13 @@ This dataset could then be used in machine learning to try to classify samples b
 - [X] Python3 for the setup script
 
 ### Procedure
-Just run `pip3 install -r requirements.txt` and `python3 setup.py -w <nbr_workers>` to install the project.  
+To install the project, run the following commands:
+```python
+pip3 install -r requirements.txt
+python3 setup.py -w <nbr_workers>
+```
 
-This script will download, decompress and convert a Windows7 VM to a qcow2 image.  
-Then, it will run the VM inside a container and configure the VM then install the agent and its dependencies.  
-It will make a snapshot of the VM and setup the number of workers you want.  
-Do not worry, it's going to take some time to finish...
+You can also use the option `--dev` to configure the project for developement.
 
 ## Running the projet
 To run the project, just use the following command:

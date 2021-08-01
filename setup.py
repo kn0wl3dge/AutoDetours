@@ -24,7 +24,9 @@ QMP_PORT = 2223
 DOCKER_SOCKET = "unix://var/run/docker.sock"
 WORKERS_DIR = os.path.dirname(os.path.realpath(__file__)) + "/workers"
 BASE_QCOW2 = WORKERS_DIR + "/base.qcow2"
-WORKER_QCOW2_FORMAT = "win7-{}.qcow2"
+WORKER_QCOW2 = "win7.qcow2"
+WORKER_SNAPSHOT = "snapshot.gz"
+INSTALL_CONTAINER = "autodetours_qemu_gen"
 ENV_FILE = ".env"
 SSH_USERNAME = "IEUser"
 SSH_PASSWORD = "Passw0rd!"
@@ -38,17 +40,17 @@ logger = logging.getLogger()
 
 class SetupFormatter(logging.Formatter):
     def __init__(self):
-        logging.Formatter.__init__(self, "%(bullet)s %(message)s", None)
+        logging.Formatter.__init__(self, "[%(asctime)s] [%(bullet)s] %(message)s", None)
 
     def format(self, record):
         if record.levelno == logging.INFO:
-            record.bullet = "[*]"
+            record.bullet = "*"
         elif record.levelno == logging.DEBUG:
-            record.bullet = "[+]"
+            record.bullet = "+"
         elif record.levelno == logging.WARNING:
-            record.bullet = "[!]"
+            record.bullet = "!"
         else:
-            record.bullet = "[-]"
+            record.bullet = "-"
 
         return logging.Formatter.format(self, record)
 
@@ -190,7 +192,9 @@ def make_snapshot():
         snap = json.dumps(
             {
                 "execute": "human-monitor-command",
-                "arguments": {"command-line": "savevm agent"},
+                "arguments": {
+                    "command-line": 'migrate "exec: gzip -c > /image/snapshot.gz"'
+                },
             }
         )
         snap = bytes(snap, encoding="ascii")
@@ -198,10 +202,10 @@ def make_snapshot():
         logger.debug(sock.recv(1024))
 
         while True:
-            sock.send(b'{ "execute": "query-status" }')
+            sock.send(b'{ "execute": "query-migrate" }')
             resp = sock.recv(1024)
             logger.debug(resp)
-            if b'"status": "running"' in resp:
+            if b'"status": "completed"' in resp:
                 break
             sleep(5)
         logger.info("Snapshot is done!")
@@ -215,6 +219,18 @@ def make_snapshot():
 
 
 def snapshot_generation(ssh):
+    if not ssh_connect(ssh):
+        logger.error("Could not connect to OpenSSH server !")
+        exit(1)
+
+    if not check_agent_state(ssh):
+        logger.error("Agent doesn't seems to be running!")
+        exit(1)
+
+    make_snapshot()
+
+
+def qcow2_generation(ssh):
     if not ssh_connect(ssh):
         logger.error("Could not connect to OpenSSH server !")
         exit(1)
@@ -239,9 +255,7 @@ def snapshot_generation(ssh):
         logger.error("Agent doesn't seems to be running!")
         exit(1)
 
-    if not make_snapshot():
-        logger.error("Could not make the snapshot!")
-        exit(1)
+    send_ssh_cmd(ssh, 'cmd.exe /c "shutdown /s /t 0"')
 
 
 def build_qemu_image(client):
@@ -254,20 +268,48 @@ def build_qemu_image(client):
     logger.info("Image not rebuilt because it already exists.")
 
 
-def run_qemu_container(client):
+def run_qemu_container(client, snapshot_mode=False):
     logger.info("Running qemu container...")
-    cmd = f"-nographic -hda /image/win7-0.qcow2 -m 1024 --enable-kvm -net nic -net user,hostfwd=tcp:{HOST}:{SSH_PORT}-:22 -monitor none -qmp tcp:{HOST}:{QMP_PORT},server,nowait"
+    cmd = [
+        "-nographic",
+        "-monitor none",
+        "-hda /image/win7.qcow2",
+        "-m 1024",
+        "--enable-kvm",
+        "-net nic",
+        f"-net user,hostfwd=tcp:{HOST}:{SSH_PORT}-:22",
+        f"-qmp tcp:{HOST}:{QMP_PORT},server,nowait",
+    ]
+    if snapshot_mode:
+        cmd.append("-snapshot")
+
+    cmd = " ".join(cmd)
     client.containers.run(
         QEMU_IMAGE,
         command=cmd,
         network_mode="host",
         devices=["/dev/kvm"],
         volumes={WORKERS_DIR: {"bind": "/image", "mode": "rw"}},
-        name="autodetours_qemu_gen",
+        name=INSTALL_CONTAINER,
         remove=True,
         detach=True,
         privileged=True,
     )
+
+
+def wait_qemu_container(client):
+    logger.info("Waiting for container deletion...")
+    ok = False
+    for _ in range(10):
+        try:
+            client.containers.get(INSTALL_CONTAINER)
+            sleep(10)
+        except docker.errors.NotFound:
+            ok = True
+            break
+    if not ok:
+        logger.error("Issue encountered when waiting for container ending...")
+        exit(1)
 
 
 def clean(complete_clean):
@@ -281,18 +323,11 @@ def clean(complete_clean):
 
         rmtree(WORKERS_DIR, onerror=remove_readonly)
     else:
-        logger.info("Removing previous images (win7-xx.qcow2)...")
-        os.system(f"rm -v {WORKERS_DIR}/win7* 2>/dev/null")
-
-
-def generate_workers(nbr_workers):
-    if nbr_workers > 0:
-        for i in range(1, nbr_workers):
-            logger.info(f"Generate worker {i}")
-            copyfile(
-                WORKERS_DIR + "/" + WORKER_QCOW2_FORMAT.format(0),
-                WORKERS_DIR + "/" + WORKER_QCOW2_FORMAT.format(i),
-            )
+        logger.info("Removing previous image and snapshot...")
+        if os.path.isfile(os.path.join(WORKERS_DIR, WORKER_QCOW2)):
+            os.remove(os.path.join(WORKERS_DIR, WORKER_QCOW2))
+        if os.path.isfile(os.path.join(WORKERS_DIR, WORKER_SNAPSHOT)):
+            os.remove(os.path.join(WORKERS_DIR, WORKER_SNAPSHOT))
 
 
 def generate_django_secret():
@@ -329,6 +364,30 @@ WIN7_IMAGES_DIR={WORKERS_DIR}
 
 
 def main(args):
+    """Setup the project
+
+    1. Download the Windows 7 VM
+    2. Convert the Windows 7 VM (ova) in qcow2 format
+    3. Build the qemu container image
+    1. Launch win7.qcow2 with a qemu container
+    2. Connect to OpenSSH
+    3. Install the agent and its dependecies:
+        - Disable Windows Defender
+        - Disable Windows Updates
+        - Install 7zip
+        - Install .Net 4.7.2 framework
+        - Create the Agent Windows Service
+    4. Wait for reboot to finish the installation
+    5. Connect to OpenSSH
+    6. Shutdown the system (wait for container deletion)
+    7. Launch win7.qcow2 in -snapshot mode with a qemu container
+    8. Connect to OpenSSH
+    9. Check if the agent is running
+    10. Create an external snapshot
+
+    Args:
+        args (Object): Setup args from argparser
+    """
     handler = logging.StreamHandler(sys.stdout)
     docker_client = docker.DockerClient(base_url=DOCKER_SOCKET)
     ssh = paramiko.SSHClient()
@@ -349,14 +408,18 @@ def main(args):
 
     if not os.path.exists(BASE_QCOW2):
         download_win7()
-    logger.info("Copying the base.qcow2 image to win7-0.qcow2...")
-    copyfile(BASE_QCOW2, WORKERS_DIR + "/" + WORKER_QCOW2_FORMAT.format(0))
+    logger.info("Copying the base.qcow2 image to win7.qcow2...")
+    copyfile(BASE_QCOW2, WORKERS_DIR + "/" + WORKER_QCOW2)
 
     build_qemu_image(docker_client)
-    run_qemu_container(docker_client)
+    run_qemu_container(docker_client, snapshot_mode=False)
+    qcow2_generation(ssh)
+
+    wait_qemu_container(docker_client)
+    run_qemu_container(docker_client, snapshot_mode=True)
+
     snapshot_generation(ssh)
 
-    generate_workers(args.workers)
     update_env_file(args.workers)
 
     logger.info("Done!")
