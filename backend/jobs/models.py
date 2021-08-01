@@ -76,7 +76,9 @@ class Job(models.Model):
     malware = models.ForeignKey(Malware, related_name="jobs", on_delete=models.CASCADE)
 
     # Results
-    results = models.FileField(upload_to=get_upload_filename, editable=False)
+    results = models.FileField(
+        upload_to=get_upload_filename, max_length=255, editable=False
+    )
     extras_results = models.JSONField(default=dict, editable=False)
 
     # Datetimes
