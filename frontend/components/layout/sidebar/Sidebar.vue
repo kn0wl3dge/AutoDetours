@@ -16,7 +16,6 @@
       <br>
       <br>
       <br>
-      <sidebar-entry href="/about" name="About" icon="question-circle" />
       <a
         href="javascript:void(0)"
         class="menu-item list-group-item list-group-item-action justify-content-between d-flex bg-secondary"
@@ -89,6 +88,7 @@ export default {
 
   .list-group-item {
     border-top: 1px solid $dark;
+    border-bottom: 1px solid $dark;
   }
 
   #sidebar-wrapper {
