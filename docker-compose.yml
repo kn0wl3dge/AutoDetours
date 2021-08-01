@@ -6,6 +6,8 @@ services:
     networks:
       autodetours_lan:
         ipv4_address: 172.20.0.13
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
     env_file:
       - ./.env
 
@@ -27,7 +29,7 @@ services:
     volumes:
       - ./backend:/app
       - /var/run/docker.sock:/var/run/docker.sock
-      - data:/data
+      - ./data/backend:/data
     depends_on:
       - db
       - redis
@@ -61,7 +63,7 @@ services:
         ipv4_address: 172.20.0.12
     volumes:
       - ./backend:/app
-      - data:/data
+      - ./data/backend:/data
     depends_on:
       - db
     env_file:
@@ -96,7 +98,6 @@ services:
 
 volumes:
   node_modules:
-  data:
 
 networks:
   autodetours_lan:

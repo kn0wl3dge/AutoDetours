@@ -215,3 +215,5 @@ agent/hooking/bin.X86
 
 # images
 *.qcow2
+
+data
