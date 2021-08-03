@@ -32,7 +32,7 @@ def generate_dataset(dataset):
     """
     zip_path = f"{DATASET_DIR}/{dateformat.format(timezone.now(), 'Y-m-d_H-i-s')}.zip"
     zipf = zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED)
-    zipdir("/data/" + RESULTS_DIR, zipf) # TODO :  Use django media root
+    zipdir("/data/" + RESULTS_DIR, zipf)  # TODO :  Use django media root
     zipf.close()
 
     dataset = Dataset.objects.filter(pk=dataset).get()
