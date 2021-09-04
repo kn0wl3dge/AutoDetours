@@ -14,4 +14,4 @@ RUN mkdir -p /usr/src/app/
 WORKDIR /usr/src/app/
 
 COPY package*.json ./
-RUN npm install && npm rebuild node-sass
+RUN npm install --fetch-timeout=600000 && npm rebuild node-sass
