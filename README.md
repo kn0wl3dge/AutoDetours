@@ -1,3 +1,6 @@
+***This project is no longer maintained. You should check out [SledRE](https://github.com/sledre/sledre) which is the continuation of it.***  
+
+
 <p align="center">
   <img width="200" height="200" src="doc/logoyellow.png">
 </p>
